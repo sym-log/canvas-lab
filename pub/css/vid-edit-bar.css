@@ -1,0 +1,24 @@
+#editControlPanelDiv {
+position:absolute;
+margin-left:0px;
+margin-top:250px;
+top:50%;
+z-index:100;
+
+}
+
+#timeIndexCell {
+width:70px;
+}
+
+#backwardStepCountField {
+width:50px;
+}
+
+#forwardStepCountField {
+width:50px;
+}
+
+#timeReturnField {
+width:50px;
+}

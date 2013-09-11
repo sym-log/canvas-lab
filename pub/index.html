@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" type="text/css" href="css/index.css">
+<link rel="stylesheet" type="text/css" href="css/vid-edit-bar.css">
+
+</head>
+
+<body>
+
+
+<div id="logoDiv">
+ <img id="logo" src="img/veritas-g.png"> </img> 
+</div>
+
+<div id="controlPanelDiv">
+ <a>testing2</a>
+ <a>testing</a>
+</div>
+
+<div id="containerDiv">
+
+<div id="videoDiv">
+
+  <video id="video" width="540" height="360">
+   <source src="video/policeaction.ogv" type="video/ogg"> 
+   <source src="video/policeaction.m4v" type="video/mp4">
+  </video> 
+
+</div>
+
+<div id="canvasDiv" >
+ <canvas id="canvas" width="800" height="500"> </canvas>
+</div>
+
+ <div id='editControlPanelDiv'>
+   <table id='controlTable' >
+     <tr> 
+      <td style="color:white">Time: </td>
+      <td><input id='timeIndexCell' type="text"></input></td>
+      <td><button id='skipBackwardButton'><< </button>
+      <td><input id='backwardStepCountField' type="text"></input></td>
+      <td><button id='playButton'> > </button>
+      <td><button id='pauseButton'> || </button>
+      <td><input id='forwardStepCountField' type="text"></input></td>
+      <td><button id='skipForwardButton'> >> </button></td>
+      <td><input id='timeReturnField' type="text"></input></td>
+      <td><input type="checkbox" id='autoReturnCheckbox'> </td>
+    </tr>
+   </table>    
+
+  </div> 
+
+</div> 
+
+
+ <script type="text/javascript" src="js/index.js"></script>
+
+  <script type="text/javascript">
+       goog.require('browser_connect');                   
+       symlog.cljs.app.init(); 
+  </script>  
+
+ 
+  <script type="text/javascript">
+   if (goog.dom.getElement('autoReturnCheckbox').checked) {
+       symlog.cljs.app.video.currentTime = parseFloat(goog.dom.getElement('timeReturnField').value);
+     }
+ 
+  </script>  
+
+<div id="frames">
+  <img src="img/frames/test.png" display="none">
+</div>
+
+</body>
+</html>
+
+ 
+ 

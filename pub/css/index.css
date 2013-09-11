@@ -1,0 +1,58 @@
+
+body {background-image:url('../img/mesh-background.jpg');}
+
+#containerDiv { 
+  width:500px; 
+  height:100%; 
+  background-color:#282828; 
+  position:absolute;
+  top:0;
+  left:200px;
+  right:0;
+  margin:auto;
+  box-shadow: 0px 5px 5px 5px #080808; 
+  border-radius: 5px;
+
+}
+
+#videoDiv {
+height:360px;
+width:540px;
+position:absolute;
+top:50%;
+left:50%;
+margin-top:-180px;
+margin-left:-270px;
+}
+
+#canvasDiv {
+position:absolute;
+width:800px;
+height:500px;
+top:50%;
+margin-top:-250px;
+left:50%;
+margin-left:-400px;
+}
+
+#canvas {
+}
+
+
+#logo {
+width:187px;
+}
+
+a{
+font:12px Verdana, Geneva, sans-serif;
+color:#33cc99;
+}
+
+#controlPanelDiv {
+width:70px;
+height:500px;
+top:50%;
+margin-top:-250px;
+position:absolute;
+}
+
