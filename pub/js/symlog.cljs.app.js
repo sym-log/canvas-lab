@@ -1,17 +1,31 @@
 goog.provide('symlog.cljs.app');
 goog.require('cljs.core');
+symlog.cljs.app.playing = cljs.core.atom.call(null,false);
 symlog.cljs.app.paintImage = (function paintImage(image){
 symlog.cljs.app.context.clearRect(0,0,symlog.cljs.app.canvas.width,symlog.cljs.app.canvas.height);
 return symlog.cljs.app.context.drawImage(image,0,0);
 });
 symlog.cljs.app.animate = (function animate(){
-if(cljs.core.not.call(null,symlog.cljs.app.video.ended))
-{var timeIdx = symlog.cljs.app.video.currentTime;
+var timeIdx = symlog.cljs.app.video.currentTime;
+var frameNo = Math.round((timeIdx * 15));
+var img = symlog.cljs.app.frameBuffer.nextFrame.call(null,frameNo);
+if(cljs.core._EQ_.call(null,"wait",img))
+{symlog.cljs.app.video.pause();
+cljs.core.reset_BANG_.call(null,symlog.cljs.app.playing,false);
+return window.requestAnimationFrame(animate);
+} else
+{if("\uFDD0:else")
+{symlog.cljs.app.paintImage.call(null,img);
 symlog.cljs.app.timeField.value = symlog.cljs.app.time_index_to_string.call(null,timeIdx,symlog.cljs.app.FPS);
-symlog.cljs.app.stage.paint(symlog.cljs.app.keyframes.get((timeIdx * symlog.cljs.app.FPS)));
+if(cljs.core.not.call(null,cljs.core.deref.call(null,symlog.cljs.app.playing)))
+{cljs.core.reset_BANG_.call(null,symlog.cljs.app.playing,true);
+symlog.cljs.app.video.play();
+} else
+{}
 return window.requestAnimationFrame(animate);
 } else
 {return null;
+}
 }
 });
 symlog.cljs.app.jump = (function jump(){
@@ -23,10 +37,7 @@ return symlog.cljs.app.stage.paint(symlog.cljs.app.keyframes.get((symlog.cljs.ap
 }
 });
 symlog.cljs.app.init = (function init(){
-symlog.cljs.app.buffer = cljs.core.apply.call(null,cljs.core.array,cljs.core.range.call(null,0,100));
-symlog.cljs.app.buffer.forEach((function (elem,idx,arr){
-return (arr[idx] = (new Image()));
-}));
+symlog.cljs.app.frameBuffer.init.call(null);
 symlog.cljs.app.video = goog.dom.getElement("video");
 symlog.cljs.app.canvas = goog.dom.getElement("canvas");
 symlog.cljs.app.context = symlog.cljs.app.canvas.getContext("2d");
@@ -37,7 +48,6 @@ symlog.cljs.app.vidy = Math.round(((symlog.cljs.app.canvas.height - symlog.cljs.
 symlog.cljs.app.FPS = 15;
 symlog.cljs.app.timeField = goog.dom.getElement("timeIndexCell");
 goog.events.listen(goog.dom.getElement("playButton"),symlog.cljs.dom.click,(function (evt){
-symlog.cljs.app.video.play();
 symlog.cljs.app.reqId = window.requestAnimationFrame(symlog.cljs.app.animate);
 }));
 goog.events.listen(goog.dom.getElement("pauseButton"),symlog.cljs.dom.click,(function (evt){

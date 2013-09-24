@@ -1,5 +1,7 @@
 (ns symlog.cljs.app) 
 
+(def playing (atom false))
+
 (defn paintImage [ image ]
   (do
     (. symlog.cljs.app.context clearRect
@@ -10,13 +12,30 @@
     (. symlog.cljs.app.context drawImage image 0 0)))
 
 (defn animate []
-  (if-not (. video -ended)
-    (let [ timeIdx (. video -currentTime) ]
-      
-      (set! (. timeField -value) (time-index-to-string timeIdx FPS))
-      (. stage paint (. keyframes get (* timeIdx FPS)))
-      (js.window.requestAnimationFrame animate)))
-)
+  
+     (let [ timeIdx (. video -currentTime)
+            frameNo (js.Math.round (* timeIdx 15))
+            img (symlog.cljs.app.frameBuffer.nextFrame frameNo) ]
+
+       (cond
+
+        (= "wait" img)
+        (do
+            (. video pause)
+            (reset! playing false)
+            (js.window.requestAnimationFrame animate))
+        
+        :else
+        (do
+            (paintImage img)
+            (set! (. timeField -value) (time-index-to-string timeIdx FPS))
+            (if-not @playing
+             (do
+               (reset! playing true)
+               (. video play)))
+           (js.window.requestAnimationFrame animate))
+       )
+))     
 
 
 (defn jump []
@@ -29,11 +48,7 @@
 
 (defn init [ ]
 
-  (def symlog.cljs.app.buffer (apply array (range 0 100)))
-  (.forEach symlog.cljs.app.buffer (fn [elem idx arr] (aset arr idx (js.Image.))))
-
-  
-  
+  (symlog.cljs.app.frameBuffer.init)
   (def video (goog.dom.getElement "video"))
   (def canvas (goog.dom.getElement "canvas"))
   (def context (. canvas getContext "2d"))
@@ -46,9 +61,7 @@
 
   (goog.events.listen (goog.dom.getElement "playButton")
         symlog.cljs.dom.click
-        (fn [evt] (do
-                    (. video play)
-                    (def reqId (js.window.requestAnimationFrame animate)))))
+        (fn [evt] (def reqId (js.window.requestAnimationFrame animate))))
   
   (goog.events.listen (goog.dom.getElement "pauseButton")
         symlog.cljs.dom.click

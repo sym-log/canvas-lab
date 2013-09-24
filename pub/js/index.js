@@ -22396,31 +22396,168 @@ cljs.core.special_symbol_QMARK_ = function special_symbol_QMARK_(x) {
 };
 goog.provide("symlog.cljs.app.frameBuffer");
 goog.require("cljs.core");
-symlog.cljs.app.frameBuffer.startFrame = cljs.core.atom.call(null, 0);
-symlog.cljs.app.frameBuffer.frame__GT_buffer = function frame__GT_buffer(message) {
-  var idx = message.data.frame - cljs.core.deref.call(null, symlog.cljs.app.frameBuffer.startFrame);
-  symlog.cljs.app.buffer[idx].src = message.data.image;
-  return symlog.cljs.app.buffer[idx].frame = message.data.frame
+symlog.cljs.app.frameBuffer.BUFFSIZE = 1E3;
+symlog.cljs.app.frameBuffer.FRAMEURL = "http://192.168.1.3/img/frames/";
+symlog.cljs.app.frameBuffer.buf0 = Array.apply(null, new Array(symlog.cljs.app.frameBuffer.BUFFSIZE)).map(Number.prototype.valueOf, 0);
+symlog.cljs.app.frameBuffer.buf1 = Array.apply(null, new Array(symlog.cljs.app.frameBuffer.BUFFSIZE)).map(Number.prototype.valueOf, 0);
+symlog.cljs.app.frameBuffer.buf2 = Array.apply(null, new Array(symlog.cljs.app.frameBuffer.BUFFSIZE)).map(Number.prototype.valueOf, 0);
+symlog.cljs.app.frameBuffer.buf0ready = cljs.core.atom.call(null, false);
+symlog.cljs.app.frameBuffer.buf1ready = cljs.core.atom.call(null, false);
+symlog.cljs.app.frameBuffer.buf2ready = cljs.core.atom.call(null, false);
+symlog.cljs.app.frameBuffer.switched2buf0 = cljs.core.atom.call(null, true);
+symlog.cljs.app.frameBuffer.switched2buf1 = cljs.core.atom.call(null, false);
+symlog.cljs.app.frameBuffer.switched2buf2 = cljs.core.atom.call(null, false);
+symlog.cljs.app.frameBuffer.getImages = function getImages(message) {
+  var imgarr = Array.apply(null, new Array(message.data.BUFFSIZE)).map(Number.prototype.valueOf, 0);
+  imgarr.forEach(function(elem, idx, arr) {
+    var req = new XMLHttpRequest;
+    req.open("GET", message.data.url.concat(message.data.startFrame + idx, ".png"), false);
+    req.responseType = "arraybuffer";
+    req.onload = function(evt) {
+      return imgarr[idx] = "data:image/png;base64,".concat(btoa(String.fromCharCode.apply(null, new Uint8Array(req.response))))
+    };
+    return req.send(null)
+  });
+  imgarr[message.data.BUFFSIZE] = message.data.startFrame;
+  return postMessage({"imagearr":imgarr})
 };
-symlog.cljs.app.frameBuffer.fillFrameBuffer = function fillFrameBuffer(url, buffer, workerRef, startNum) {
-  cljs.core.reset_BANG_.call(null, symlog.cljs.app.frameBuffer.startFrame, startNum);
-  return buffer.forEach(function(elem, idx, arr) {
-    return workerRef.postMessage({"url":[cljs.core.str(url), cljs.core.str(idx + cljs.core.deref.call(null, symlog.cljs.app.frameBuffer.startFrame)), cljs.core.str(".png")].join(""), "frame":idx + cljs.core.deref.call(null, symlog.cljs.app.frameBuffer.startFrame)})
-  })
+symlog.cljs.app.frameBuffer.frames__GT_buffer0 = function frames__GT_buffer0(message) {
+  message.data.imagearr.forEach(function(elem, idx, arr) {
+    if(cljs.core._EQ_.call(null, symlog.cljs.app.frameBuffer.BUFFSIZE, idx)) {
+      return symlog.cljs.app.frameBuffer.buf0[symlog.cljs.app.frameBuffer.BUFFSIZE] = elem
+    }else {
+      if("\ufdd0:else") {
+        return symlog.cljs.app.frameBuffer.buf0[idx].src = elem
+      }else {
+        return null
+      }
+    }
+  });
+  return cljs.core.reset_BANG_.call(null, symlog.cljs.app.frameBuffer.buf0ready, true)
 };
-symlog.cljs.app.frameBuffer.getImage = function getImage(message) {
-  var req = new XMLHttpRequest;
-  req.open("GET", message.data.url);
-  req.responseType = "arraybuffer";
-  req.onload = function(evt) {
-    return postMessage({"image":"data:image/png;base64,".concat(btoa(String.fromCharCode.apply(null, Uint8Array(req.response)))), "frame":message.data.frame})
-  };
-  return req.send(null)
+symlog.cljs.app.frameBuffer.frames__GT_buffer1 = function frames__GT_buffer1(message) {
+  message.data.imagearr.forEach(function(elem, idx, arr) {
+    if(cljs.core._EQ_.call(null, symlog.cljs.app.frameBuffer.BUFFSIZE, idx)) {
+      return symlog.cljs.app.frameBuffer.buf1[symlog.cljs.app.frameBuffer.BUFFSIZE] = elem
+    }else {
+      if("\ufdd0:else") {
+        return symlog.cljs.app.frameBuffer.buf1[idx].src = elem
+      }else {
+        return null
+      }
+    }
+  });
+  return cljs.core.reset_BANG_.call(null, symlog.cljs.app.frameBuffer.buf1ready, true)
 };
-symlog.cljs.app.frameBuffer.create_thread = function create_thread(callback, threadFunction) {
-  var worker = new Worker(URL.createObjectURL(new Blob([[cljs.core.str("onmessage \x3d "), cljs.core.str(threadFunction)].join("")], {"type":"text/javascript"})));
-  worker.onmessage = callback;
-  return worker
+symlog.cljs.app.frameBuffer.frames__GT_buffer2 = function frames__GT_buffer2(message) {
+  message.data.imagearr.forEach(function(elem, idx, arr) {
+    if(cljs.core._EQ_.call(null, symlog.cljs.app.frameBuffer.BUFFSIZE, idx)) {
+      return symlog.cljs.app.frameBuffer.buf2[symlog.cljs.app.frameBuffer.BUFFSIZE] = elem
+    }else {
+      if("\ufdd0:else") {
+        return symlog.cljs.app.frameBuffer.buf2[idx].src = elem
+      }else {
+        return null
+      }
+    }
+  });
+  return cljs.core.reset_BANG_.call(null, symlog.cljs.app.frameBuffer.buf2ready, true)
+};
+symlog.cljs.app.frameBuffer.requestFrameBuffer = function requestFrameBuffer(url, threadRef, startFrame) {
+  return threadRef.postMessage({"url":url, "startFrame":startFrame, "BUFFSIZE":symlog.cljs.app.frameBuffer.BUFFSIZE})
+};
+symlog.cljs.app.frameBuffer.init = function init() {
+  symlog.cljs.app.frameBuffer.buf0.forEach(function(elem, idx, arr) {
+    return arr[idx] = new Image
+  });
+  symlog.cljs.app.frameBuffer.buf1.forEach(function(elem, idx, arr) {
+    return arr[idx] = new Image
+  });
+  symlog.cljs.app.frameBuffer.buf2.forEach(function(elem, idx, arr) {
+    return arr[idx] = new Image
+  });
+  symlog.cljs.app.frameBuffer.thread0 = symlog.cljs.threads.create_thread.call(null, symlog.cljs.app.frameBuffer.frames__GT_buffer0, symlog.cljs.app.frameBuffer.getImages);
+  symlog.cljs.app.frameBuffer.thread1 = symlog.cljs.threads.create_thread.call(null, symlog.cljs.app.frameBuffer.frames__GT_buffer1, symlog.cljs.app.frameBuffer.getImages);
+  symlog.cljs.app.frameBuffer.thread2 = symlog.cljs.threads.create_thread.call(null, symlog.cljs.app.frameBuffer.frames__GT_buffer2, symlog.cljs.app.frameBuffer.getImages);
+  symlog.cljs.app.frameBuffer.requestFrameBuffer.call(null, symlog.cljs.app.frameBuffer.FRAMEURL, symlog.cljs.app.frameBuffer.thread0, 0 * symlog.cljs.app.frameBuffer.BUFFSIZE);
+  symlog.cljs.app.frameBuffer.requestFrameBuffer.call(null, symlog.cljs.app.frameBuffer.FRAMEURL, symlog.cljs.app.frameBuffer.thread1, 1 * symlog.cljs.app.frameBuffer.BUFFSIZE);
+  return symlog.cljs.app.frameBuffer.requestFrameBuffer.call(null, symlog.cljs.app.frameBuffer.FRAMEURL, symlog.cljs.app.frameBuffer.thread2, 2 * symlog.cljs.app.frameBuffer.BUFFSIZE)
+};
+symlog.cljs.app.frameBuffer.nextFrame = function nextFrame(frameNum) {
+  if(cljs.core.truth_(function() {
+    var and__3941__auto__ = cljs.core.deref.call(null, symlog.cljs.app.frameBuffer.buf0ready);
+    if(cljs.core.truth_(and__3941__auto__)) {
+      var and__3941__auto____$1 = frameNum < symlog.cljs.app.frameBuffer.buf0[symlog.cljs.app.frameBuffer.BUFFSIZE] + symlog.cljs.app.frameBuffer.BUFFSIZE;
+      if(and__3941__auto____$1) {
+        return frameNum > symlog.cljs.app.frameBuffer.buf0[symlog.cljs.app.frameBuffer.BUFFSIZE] - 1
+      }else {
+        return and__3941__auto____$1
+      }
+    }else {
+      return and__3941__auto__
+    }
+  }())) {
+    if(cljs.core.not.call(null, cljs.core.deref.call(null, symlog.cljs.app.frameBuffer.switched2buf0))) {
+      symlog.cljs.app.frameBuffer.requestFrameBuffer.call(null, symlog.cljs.app.frameBuffer.FRAMEURL, symlog.cljs.app.frameBuffer.thread2, symlog.cljs.app.frameBuffer.buf0[symlog.cljs.app.frameBuffer.BUFFSIZE] + 2 * symlog.cljs.app.frameBuffer.BUFFSIZE);
+      cljs.core.reset_BANG_.call(null, symlog.cljs.app.frameBuffer.switched2buf0, true);
+      cljs.core.reset_BANG_.call(null, symlog.cljs.app.frameBuffer.switched2buf2, false);
+      cljs.core.reset_BANG_.call(null, symlog.cljs.app.frameBuffer.buf2ready, false)
+    }else {
+    }
+    return symlog.cljs.app.frameBuffer.buf0[frameNum - symlog.cljs.app.frameBuffer.buf0[symlog.cljs.app.frameBuffer.BUFFSIZE]]
+  }else {
+    if(cljs.core.truth_(function() {
+      var and__3941__auto__ = cljs.core.deref.call(null, symlog.cljs.app.frameBuffer.buf1ready);
+      if(cljs.core.truth_(and__3941__auto__)) {
+        var and__3941__auto____$1 = frameNum < symlog.cljs.app.frameBuffer.buf1[symlog.cljs.app.frameBuffer.BUFFSIZE] + symlog.cljs.app.frameBuffer.BUFFSIZE;
+        if(and__3941__auto____$1) {
+          return frameNum > symlog.cljs.app.frameBuffer.buf1[symlog.cljs.app.frameBuffer.BUFFSIZE] - 1
+        }else {
+          return and__3941__auto____$1
+        }
+      }else {
+        return and__3941__auto__
+      }
+    }())) {
+      if(cljs.core.not.call(null, cljs.core.deref.call(null, symlog.cljs.app.frameBuffer.switched2buf1))) {
+        symlog.cljs.app.frameBuffer.requestFrameBuffer.call(null, symlog.cljs.app.frameBuffer.FRAMEURL, symlog.cljs.app.frameBuffer.thread0, symlog.cljs.app.frameBuffer.buf1[symlog.cljs.app.frameBuffer.BUFFSIZE] + 2 * symlog.cljs.app.frameBuffer.BUFFSIZE);
+        cljs.core.reset_BANG_.call(null, symlog.cljs.app.frameBuffer.switched2buf1, true);
+        cljs.core.reset_BANG_.call(null, symlog.cljs.app.frameBuffer.switched2buf0, false);
+        cljs.core.reset_BANG_.call(null, symlog.cljs.app.frameBuffer.buf0ready, false)
+      }else {
+      }
+      return symlog.cljs.app.frameBuffer.buf1[frameNum - symlog.cljs.app.frameBuffer.buf1[symlog.cljs.app.frameBuffer.BUFFSIZE]]
+    }else {
+      if(cljs.core.truth_(function() {
+        var and__3941__auto__ = cljs.core.deref.call(null, symlog.cljs.app.frameBuffer.buf2ready);
+        if(cljs.core.truth_(and__3941__auto__)) {
+          var and__3941__auto____$1 = frameNum < symlog.cljs.app.frameBuffer.buf2[symlog.cljs.app.frameBuffer.BUFFSIZE] + symlog.cljs.app.frameBuffer.BUFFSIZE;
+          if(and__3941__auto____$1) {
+            return frameNum > symlog.cljs.app.frameBuffer.buf2[symlog.cljs.app.frameBuffer.BUFFSIZE] - 1
+          }else {
+            return and__3941__auto____$1
+          }
+        }else {
+          return and__3941__auto__
+        }
+      }())) {
+        if(cljs.core.not.call(null, cljs.core.deref.call(null, symlog.cljs.app.frameBuffer.switched2buf2))) {
+          symlog.cljs.app.frameBuffer.requestFrameBuffer.call(null, symlog.cljs.app.frameBuffer.FRAMEURL, symlog.cljs.app.frameBuffer.thread1, symlog.cljs.app.frameBuffer.buf2[symlog.cljs.app.frameBuffer.BUFFSIZE] + 2 * symlog.cljs.app.frameBuffer.BUFFSIZE);
+          cljs.core.reset_BANG_.call(null, symlog.cljs.app.frameBuffer.switched2buf2, true);
+          cljs.core.reset_BANG_.call(null, symlog.cljs.app.frameBuffer.switched2buf1, false);
+          cljs.core.reset_BANG_.call(null, symlog.cljs.app.frameBuffer.buf1ready, false)
+        }else {
+        }
+        return symlog.cljs.app.frameBuffer.buf2[frameNum - symlog.cljs.app.frameBuffer.buf2[symlog.cljs.app.frameBuffer.BUFFSIZE]]
+      }else {
+        if("\ufdd0:else") {
+          return"wait"
+        }else {
+          return null
+        }
+      }
+    }
+  }
 };
 goog.provide("goog.disposable.IDisposable");
 goog.disposable.IDisposable = function() {
@@ -32322,18 +32459,32 @@ symlog.cljs.video.__GT_vidWrapper = function __GT_vidWrapper(video, FPS, per_fra
 };
 goog.provide("symlog.cljs.app");
 goog.require("cljs.core");
+symlog.cljs.app.playing = cljs.core.atom.call(null, false);
 symlog.cljs.app.paintImage = function paintImage(image) {
   symlog.cljs.app.context.clearRect(0, 0, symlog.cljs.app.canvas.width, symlog.cljs.app.canvas.height);
   return symlog.cljs.app.context.drawImage(image, 0, 0)
 };
 symlog.cljs.app.animate = function animate() {
-  if(cljs.core.not.call(null, symlog.cljs.app.video.ended)) {
-    var timeIdx = symlog.cljs.app.video.currentTime;
-    symlog.cljs.app.timeField.value = symlog.cljs.app.time_index_to_string.call(null, timeIdx, symlog.cljs.app.FPS);
-    symlog.cljs.app.stage.paint(symlog.cljs.app.keyframes.get(timeIdx * symlog.cljs.app.FPS));
+  var timeIdx = symlog.cljs.app.video.currentTime;
+  var frameNo = Math.round(timeIdx * 15);
+  var img = symlog.cljs.app.frameBuffer.nextFrame.call(null, frameNo);
+  if(cljs.core._EQ_.call(null, "wait", img)) {
+    symlog.cljs.app.video.pause();
+    cljs.core.reset_BANG_.call(null, symlog.cljs.app.playing, false);
     return window.requestAnimationFrame(animate)
   }else {
-    return null
+    if("\ufdd0:else") {
+      symlog.cljs.app.paintImage.call(null, img);
+      symlog.cljs.app.timeField.value = symlog.cljs.app.time_index_to_string.call(null, timeIdx, symlog.cljs.app.FPS);
+      if(cljs.core.not.call(null, cljs.core.deref.call(null, symlog.cljs.app.playing))) {
+        cljs.core.reset_BANG_.call(null, symlog.cljs.app.playing, true);
+        symlog.cljs.app.video.play()
+      }else {
+      }
+      return window.requestAnimationFrame(animate)
+    }else {
+      return null
+    }
   }
 };
 symlog.cljs.app.jump = function jump() {
@@ -32345,10 +32496,7 @@ symlog.cljs.app.jump = function jump() {
   }
 };
 symlog.cljs.app.init = function init() {
-  symlog.cljs.app.buffer = cljs.core.apply.call(null, cljs.core.array, cljs.core.range.call(null, 0, 100));
-  symlog.cljs.app.buffer.forEach(function(elem, idx, arr) {
-    return arr[idx] = new Image
-  });
+  symlog.cljs.app.frameBuffer.init.call(null);
   symlog.cljs.app.video = goog.dom.getElement("video");
   symlog.cljs.app.canvas = goog.dom.getElement("canvas");
   symlog.cljs.app.context = symlog.cljs.app.canvas.getContext("2d");
@@ -32359,7 +32507,6 @@ symlog.cljs.app.init = function init() {
   symlog.cljs.app.FPS = 15;
   symlog.cljs.app.timeField = goog.dom.getElement("timeIndexCell");
   goog.events.listen(goog.dom.getElement("playButton"), symlog.cljs.dom.click, function(evt) {
-    symlog.cljs.app.video.play();
     symlog.cljs.app.reqId = window.requestAnimationFrame(symlog.cljs.app.animate)
   });
   goog.events.listen(goog.dom.getElement("pauseButton"), symlog.cljs.dom.click, function(evt) {
@@ -32611,4 +32758,11 @@ symlog.cljs.svg.svgTag__GT_JSON = function svgTag__GT_JSON(tagStr) {
       }
     }
   }
+};
+goog.provide("symlog.cljs.threads");
+goog.require("cljs.core");
+symlog.cljs.threads.create_thread = function create_thread(callback, threadFunction) {
+  var worker = new Worker(URL.createObjectURL(new Blob([[cljs.core.str("onmessage \x3d "), cljs.core.str(threadFunction)].join("")], {"type":"text/javascript"})));
+  worker.onmessage = callback;
+  return worker
 };
