@@ -1,58 +1,97 @@
 
 body {background-image:url('../img/mesh-background.jpg');}
 
-#containerDiv { 
-  width:500px; 
-  height:100%; 
+#containerDiv {
+ width:1000px;
+ height:600px;
+ position:absolute;
+ left:50%;
+ top:50%;
+ margin-left:-500px;
+ margin-top:-300px;
+ }
+
+#workpadDiv { 
+  width:800px; 
+  height:600px; 
   background-color:#282828; 
   position:absolute;
-  top:0;
-  left:200px;
-  right:0;
-  margin:auto;
-  box-shadow: 0px 5px 5px 5px #080808; 
-  border-radius: 5px;
-
-}
+  top:0px;
+  left:200px; 
+  right:0px; 
+  margin:auto;    
+  box-shadow: 0px 0px 5px 5px #080808; 
+  border-radius: 10px;
+  z-index:10; }
 
 #videoDiv {
-height:360px;
-width:540px;
-position:absolute;
-top:50%;
-left:50%;
-margin-top:-180px;
-margin-left:-270px;
-}
+  height:360px;
+  width:540px;
+  position:absolute;
+  top:120px;
+  left:340px;
+  z-index:200;  }
 
-#canvasDiv {
-position:absolute;
-width:800px;
-height:500px;
-top:50%;
-margin-top:-250px;
-left:50%;
-margin-left:-400px;
-}
-
-#canvas {
-}
-
+#svgCanvasDiv {
+  position:absolute;
+  width:800px;
+  height:600px;
+  top:0px;
+  left:0px; 
+  z-index:300;
+ }
 
 #logo {
-width:187px;
+width:210px;
+height:100px;
+}
+
+#logoDiv {
+top:0px;
+left:-10px;
+position:absolute;
 }
 
 a{
 font:12px Verdana, Geneva, sans-serif;
-color:#33cc99;
-}
-
+color:#a68e00; }
+ 
 #controlPanelDiv {
-width:70px;
-height:500px;
-top:50%;
-margin-top:-250px;
-position:absolute;
-}
+  position:absolute;
+  width:250px;
+  height:490px;
+  top:110px;
+  left:0px;
+  background-color:#282828; 
+  border-radius: 10px;
+  white-space: nowrap;
+  z-index:100;
+ 
+ }
 
+#videoCanvasDiv {
+  height:500px;
+  width:800px;
+  position:absolute;
+  top:50px;
+  left:200px;
+  z-index:200;  }
+
+#controlPanelTable {
+  margin-top:5px;
+  margin-left:10px;
+  border-spacing:0;
+  border-collapse:collapse;
+
+ }
+
+#controlPanelShadowDiv {
+  position:absolute;
+  width:300px;
+  height:490px;
+  top:110px;
+  left:0px;
+  background-color:#282828; 
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px 5px #080808; }
+ 

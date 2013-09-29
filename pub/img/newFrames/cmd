@@ -1,0 +1,10 @@
+for i in {0..999..1}
+do
+
+if [ $i = 0 ]; then 
+    echo "data:image/png;base64,$(base64 "$i.png")"  >> output.txt
+else
+echo "/ / /data:image/png;base64,$(base64 "$i.png")"  >> output.txt
+fi
+
+done

@@ -22396,100 +22396,49 @@ cljs.core.special_symbol_QMARK_ = function special_symbol_QMARK_(x) {
 };
 goog.provide("symlog.cljs.app.frameBuffer");
 goog.require("cljs.core");
+symlog.cljs.app.frameBuffer.BUFFERURL = "http://192.168.1.3/img/frame-buffers/";
 symlog.cljs.app.frameBuffer.BUFFSIZE = 1E3;
-symlog.cljs.app.frameBuffer.FRAMEURL = "http://192.168.1.3/img/frames/";
-symlog.cljs.app.frameBuffer.buf0 = Array.apply(null, new Array(symlog.cljs.app.frameBuffer.BUFFSIZE)).map(Number.prototype.valueOf, 0);
-symlog.cljs.app.frameBuffer.buf1 = Array.apply(null, new Array(symlog.cljs.app.frameBuffer.BUFFSIZE)).map(Number.prototype.valueOf, 0);
-symlog.cljs.app.frameBuffer.buf2 = Array.apply(null, new Array(symlog.cljs.app.frameBuffer.BUFFSIZE)).map(Number.prototype.valueOf, 0);
+symlog.cljs.app.frameBuffer.buf0 = [];
+symlog.cljs.app.frameBuffer.buf1 = [];
 symlog.cljs.app.frameBuffer.buf0ready = cljs.core.atom.call(null, false);
 symlog.cljs.app.frameBuffer.buf1ready = cljs.core.atom.call(null, false);
-symlog.cljs.app.frameBuffer.buf2ready = cljs.core.atom.call(null, false);
-symlog.cljs.app.frameBuffer.switched2buf0 = cljs.core.atom.call(null, true);
-symlog.cljs.app.frameBuffer.switched2buf1 = cljs.core.atom.call(null, false);
-symlog.cljs.app.frameBuffer.switched2buf2 = cljs.core.atom.call(null, false);
-symlog.cljs.app.frameBuffer.getImages = function getImages(message) {
-  var imgarr = Array.apply(null, new Array(message.data.BUFFSIZE)).map(Number.prototype.valueOf, 0);
-  imgarr.forEach(function(elem, idx, arr) {
-    var req = new XMLHttpRequest;
-    req.open("GET", message.data.url.concat(message.data.startFrame + idx, ".png"), false);
-    req.responseType = "arraybuffer";
-    req.onload = function(evt) {
-      return imgarr[idx] = "data:image/png;base64,".concat(btoa(String.fromCharCode.apply(null, new Uint8Array(req.response))))
-    };
-    return req.send(null)
-  });
-  imgarr[message.data.BUFFSIZE] = message.data.startFrame;
-  return postMessage({"imagearr":imgarr})
+symlog.cljs.app.frameBuffer.switched__GT_buf0 = cljs.core.atom.call(null, true);
+symlog.cljs.app.frameBuffer.switched__GT_buf1 = cljs.core.atom.call(null, false);
+symlog.cljs.app.frameBuffer.getImageArray = function getImageArray(message) {
+  var req = new XMLHttpRequest;
+  req.open("GET", message.data.url.concat(message.data.startFrame, ".img"), true);
+  req.responseType = "text";
+  req.onload = function() {
+    var arr = req.response.split("/ / /");
+    arr[arr.length] = message.data.startFrame;
+    return postMessage({"imagearr":arr})
+  };
+  return req.send(null)
 };
-symlog.cljs.app.frameBuffer.frames__GT_buffer0 = function frames__GT_buffer0(message) {
-  message.data.imagearr.forEach(function(elem, idx, arr) {
-    if(cljs.core._EQ_.call(null, symlog.cljs.app.frameBuffer.BUFFSIZE, idx)) {
-      return symlog.cljs.app.frameBuffer.buf0[symlog.cljs.app.frameBuffer.BUFFSIZE] = elem
-    }else {
-      if("\ufdd0:else") {
-        return symlog.cljs.app.frameBuffer.buf0[idx].src = elem
-      }else {
-        return null
-      }
-    }
-  });
+symlog.cljs.app.frameBuffer.imageArray__GT_buffer0 = function imageArray__GT_buffer0(message) {
+  symlog.cljs.app.frameBuffer.buf0 = message.data.imagearr;
   return cljs.core.reset_BANG_.call(null, symlog.cljs.app.frameBuffer.buf0ready, true)
 };
-symlog.cljs.app.frameBuffer.frames__GT_buffer1 = function frames__GT_buffer1(message) {
-  message.data.imagearr.forEach(function(elem, idx, arr) {
-    if(cljs.core._EQ_.call(null, symlog.cljs.app.frameBuffer.BUFFSIZE, idx)) {
-      return symlog.cljs.app.frameBuffer.buf1[symlog.cljs.app.frameBuffer.BUFFSIZE] = elem
-    }else {
-      if("\ufdd0:else") {
-        return symlog.cljs.app.frameBuffer.buf1[idx].src = elem
-      }else {
-        return null
-      }
-    }
-  });
+symlog.cljs.app.frameBuffer.imageArray__GT_buffer1 = function imageArray__GT_buffer1(message) {
+  symlog.cljs.app.frameBuffer.buf1 = message.data.imagearr;
   return cljs.core.reset_BANG_.call(null, symlog.cljs.app.frameBuffer.buf1ready, true)
 };
-symlog.cljs.app.frameBuffer.frames__GT_buffer2 = function frames__GT_buffer2(message) {
-  message.data.imagearr.forEach(function(elem, idx, arr) {
-    if(cljs.core._EQ_.call(null, symlog.cljs.app.frameBuffer.BUFFSIZE, idx)) {
-      return symlog.cljs.app.frameBuffer.buf2[symlog.cljs.app.frameBuffer.BUFFSIZE] = elem
-    }else {
-      if("\ufdd0:else") {
-        return symlog.cljs.app.frameBuffer.buf2[idx].src = elem
-      }else {
-        return null
-      }
-    }
-  });
-  return cljs.core.reset_BANG_.call(null, symlog.cljs.app.frameBuffer.buf2ready, true)
-};
 symlog.cljs.app.frameBuffer.requestFrameBuffer = function requestFrameBuffer(url, threadRef, startFrame) {
-  return threadRef.postMessage({"url":url, "startFrame":startFrame, "BUFFSIZE":symlog.cljs.app.frameBuffer.BUFFSIZE})
+  return threadRef.postMessage({"url":url, "startFrame":startFrame})
 };
 symlog.cljs.app.frameBuffer.init = function init() {
-  symlog.cljs.app.frameBuffer.buf0.forEach(function(elem, idx, arr) {
-    return arr[idx] = new Image
-  });
-  symlog.cljs.app.frameBuffer.buf1.forEach(function(elem, idx, arr) {
-    return arr[idx] = new Image
-  });
-  symlog.cljs.app.frameBuffer.buf2.forEach(function(elem, idx, arr) {
-    return arr[idx] = new Image
-  });
-  symlog.cljs.app.frameBuffer.thread0 = symlog.cljs.threads.create_thread.call(null, symlog.cljs.app.frameBuffer.frames__GT_buffer0, symlog.cljs.app.frameBuffer.getImages);
-  symlog.cljs.app.frameBuffer.thread1 = symlog.cljs.threads.create_thread.call(null, symlog.cljs.app.frameBuffer.frames__GT_buffer1, symlog.cljs.app.frameBuffer.getImages);
-  symlog.cljs.app.frameBuffer.thread2 = symlog.cljs.threads.create_thread.call(null, symlog.cljs.app.frameBuffer.frames__GT_buffer2, symlog.cljs.app.frameBuffer.getImages);
-  symlog.cljs.app.frameBuffer.requestFrameBuffer.call(null, symlog.cljs.app.frameBuffer.FRAMEURL, symlog.cljs.app.frameBuffer.thread0, 0 * symlog.cljs.app.frameBuffer.BUFFSIZE);
-  symlog.cljs.app.frameBuffer.requestFrameBuffer.call(null, symlog.cljs.app.frameBuffer.FRAMEURL, symlog.cljs.app.frameBuffer.thread1, 1 * symlog.cljs.app.frameBuffer.BUFFSIZE);
-  return symlog.cljs.app.frameBuffer.requestFrameBuffer.call(null, symlog.cljs.app.frameBuffer.FRAMEURL, symlog.cljs.app.frameBuffer.thread2, 2 * symlog.cljs.app.frameBuffer.BUFFSIZE)
+  symlog.cljs.app.frameBuffer.thread0 = symlog.cljs.threads.create_thread.call(null, symlog.cljs.app.frameBuffer.imageArray__GT_buffer0, symlog.cljs.app.frameBuffer.getImageArray);
+  symlog.cljs.app.frameBuffer.thread1 = symlog.cljs.threads.create_thread.call(null, symlog.cljs.app.frameBuffer.imageArray__GT_buffer1, symlog.cljs.app.frameBuffer.getImageArray);
+  symlog.cljs.app.frameBuffer.requestFrameBuffer.call(null, symlog.cljs.app.frameBuffer.BUFFERURL, symlog.cljs.app.frameBuffer.thread0, symlog.cljs.app.frameBuffer.BUFFSIZE * 0);
+  return symlog.cljs.app.frameBuffer.requestFrameBuffer.call(null, symlog.cljs.app.frameBuffer.BUFFERURL, symlog.cljs.app.frameBuffer.thread1, symlog.cljs.app.frameBuffer.BUFFSIZE * 1)
 };
 symlog.cljs.app.frameBuffer.nextFrame = function nextFrame(frameNum) {
   if(cljs.core.truth_(function() {
-    var and__3941__auto__ = cljs.core.deref.call(null, symlog.cljs.app.frameBuffer.buf0ready);
-    if(cljs.core.truth_(and__3941__auto__)) {
-      var and__3941__auto____$1 = frameNum < symlog.cljs.app.frameBuffer.buf0[symlog.cljs.app.frameBuffer.BUFFSIZE] + symlog.cljs.app.frameBuffer.BUFFSIZE;
+    var and__3941__auto__ = frameNum < symlog.cljs.app.frameBuffer.buf0[symlog.cljs.app.frameBuffer.BUFFSIZE] + symlog.cljs.app.frameBuffer.BUFFSIZE;
+    if(and__3941__auto__) {
+      var and__3941__auto____$1 = frameNum > symlog.cljs.app.frameBuffer.buf0[symlog.cljs.app.frameBuffer.BUFFSIZE] - 1;
       if(and__3941__auto____$1) {
-        return frameNum > symlog.cljs.app.frameBuffer.buf0[symlog.cljs.app.frameBuffer.BUFFSIZE] - 1
+        return cljs.core.deref.call(null, symlog.cljs.app.frameBuffer.buf0ready)
       }else {
         return and__3941__auto____$1
       }
@@ -22497,21 +22446,21 @@ symlog.cljs.app.frameBuffer.nextFrame = function nextFrame(frameNum) {
       return and__3941__auto__
     }
   }())) {
-    if(cljs.core.not.call(null, cljs.core.deref.call(null, symlog.cljs.app.frameBuffer.switched2buf0))) {
-      symlog.cljs.app.frameBuffer.requestFrameBuffer.call(null, symlog.cljs.app.frameBuffer.FRAMEURL, symlog.cljs.app.frameBuffer.thread2, symlog.cljs.app.frameBuffer.buf0[symlog.cljs.app.frameBuffer.BUFFSIZE] + 2 * symlog.cljs.app.frameBuffer.BUFFSIZE);
-      cljs.core.reset_BANG_.call(null, symlog.cljs.app.frameBuffer.switched2buf0, true);
-      cljs.core.reset_BANG_.call(null, symlog.cljs.app.frameBuffer.switched2buf2, false);
-      cljs.core.reset_BANG_.call(null, symlog.cljs.app.frameBuffer.buf2ready, false)
+    if(cljs.core.not.call(null, cljs.core.deref.call(null, symlog.cljs.app.frameBuffer.switched__GT_buf0))) {
+      symlog.cljs.app.frameBuffer.requestFrameBuffer.call(null, symlog.cljs.app.frameBuffer.BUFFERURL, symlog.cljs.app.frameBuffer.thread1, symlog.cljs.app.frameBuffer.buf0[symlog.cljs.app.frameBuffer.BUFFSIZE] + symlog.cljs.app.frameBuffer.BUFFSIZE);
+      cljs.core.reset_BANG_.call(null, symlog.cljs.app.frameBuffer.switched__GT_buf0, true);
+      cljs.core.reset_BANG_.call(null, symlog.cljs.app.frameBuffer.switched__GT_buf1, false);
+      cljs.core.reset_BANG_.call(null, symlog.cljs.app.frameBuffer.buf1ready, false)
     }else {
     }
     return symlog.cljs.app.frameBuffer.buf0[frameNum - symlog.cljs.app.frameBuffer.buf0[symlog.cljs.app.frameBuffer.BUFFSIZE]]
   }else {
     if(cljs.core.truth_(function() {
-      var and__3941__auto__ = cljs.core.deref.call(null, symlog.cljs.app.frameBuffer.buf1ready);
-      if(cljs.core.truth_(and__3941__auto__)) {
-        var and__3941__auto____$1 = frameNum < symlog.cljs.app.frameBuffer.buf1[symlog.cljs.app.frameBuffer.BUFFSIZE] + symlog.cljs.app.frameBuffer.BUFFSIZE;
+      var and__3941__auto__ = frameNum < symlog.cljs.app.frameBuffer.buf1[symlog.cljs.app.frameBuffer.BUFFSIZE] + symlog.cljs.app.frameBuffer.BUFFSIZE;
+      if(and__3941__auto__) {
+        var and__3941__auto____$1 = frameNum > symlog.cljs.app.frameBuffer.buf1[symlog.cljs.app.frameBuffer.BUFFSIZE] - 1;
         if(and__3941__auto____$1) {
-          return frameNum > symlog.cljs.app.frameBuffer.buf1[symlog.cljs.app.frameBuffer.BUFFSIZE] - 1
+          return cljs.core.deref.call(null, symlog.cljs.app.frameBuffer.buf1ready)
         }else {
           return and__3941__auto____$1
         }
@@ -22519,36 +22468,40 @@ symlog.cljs.app.frameBuffer.nextFrame = function nextFrame(frameNum) {
         return and__3941__auto__
       }
     }())) {
-      if(cljs.core.not.call(null, cljs.core.deref.call(null, symlog.cljs.app.frameBuffer.switched2buf1))) {
-        symlog.cljs.app.frameBuffer.requestFrameBuffer.call(null, symlog.cljs.app.frameBuffer.FRAMEURL, symlog.cljs.app.frameBuffer.thread0, symlog.cljs.app.frameBuffer.buf1[symlog.cljs.app.frameBuffer.BUFFSIZE] + 2 * symlog.cljs.app.frameBuffer.BUFFSIZE);
-        cljs.core.reset_BANG_.call(null, symlog.cljs.app.frameBuffer.switched2buf1, true);
-        cljs.core.reset_BANG_.call(null, symlog.cljs.app.frameBuffer.switched2buf0, false);
+      if(cljs.core.not.call(null, cljs.core.deref.call(null, symlog.cljs.app.frameBuffer.switched__GT_buf1))) {
+        symlog.cljs.app.frameBuffer.requestFrameBuffer.call(null, symlog.cljs.app.frameBuffer.BUFFERURL, symlog.cljs.app.frameBuffer.thread0, symlog.cljs.app.frameBuffer.buf1[symlog.cljs.app.frameBuffer.BUFFSIZE] + symlog.cljs.app.frameBuffer.BUFFSIZE);
+        cljs.core.reset_BANG_.call(null, symlog.cljs.app.frameBuffer.switched__GT_buf1, true);
+        cljs.core.reset_BANG_.call(null, symlog.cljs.app.frameBuffer.switched__GT_buf0, false);
         cljs.core.reset_BANG_.call(null, symlog.cljs.app.frameBuffer.buf0ready, false)
       }else {
       }
       return symlog.cljs.app.frameBuffer.buf1[frameNum - symlog.cljs.app.frameBuffer.buf1[symlog.cljs.app.frameBuffer.BUFFSIZE]]
     }else {
-      if(cljs.core.truth_(function() {
-        var and__3941__auto__ = cljs.core.deref.call(null, symlog.cljs.app.frameBuffer.buf2ready);
-        if(cljs.core.truth_(and__3941__auto__)) {
-          var and__3941__auto____$1 = frameNum < symlog.cljs.app.frameBuffer.buf2[symlog.cljs.app.frameBuffer.BUFFSIZE] + symlog.cljs.app.frameBuffer.BUFFSIZE;
+      if(function() {
+        var and__3941__auto__ = frameNum < symlog.cljs.app.frameBuffer.buf0[symlog.cljs.app.frameBuffer.BUFFSIZE] + symlog.cljs.app.frameBuffer.BUFFSIZE;
+        if(and__3941__auto__) {
+          var and__3941__auto____$1 = frameNum > symlog.cljs.app.frameBuffer.buf0[symlog.cljs.app.frameBuffer.BUFFSIZE] - 1;
           if(and__3941__auto____$1) {
-            return frameNum > symlog.cljs.app.frameBuffer.buf2[symlog.cljs.app.frameBuffer.BUFFSIZE] - 1
+            var and__3941__auto____$2 = frameNum < symlog.cljs.app.frameBuffer.buf1[symlog.cljs.app.frameBuffer.BUFFSIZE] + symlog.cljs.app.frameBuffer.BUFFSIZE;
+            if(and__3941__auto____$2) {
+              return frameNum > symlog.cljs.app.frameBuffer.buf1[symlog.cljs.app.frameBuffer.BUFFSIZE] - 1
+            }else {
+              return and__3941__auto____$2
+            }
           }else {
             return and__3941__auto____$1
           }
         }else {
           return and__3941__auto__
         }
-      }())) {
-        if(cljs.core.not.call(null, cljs.core.deref.call(null, symlog.cljs.app.frameBuffer.switched2buf2))) {
-          symlog.cljs.app.frameBuffer.requestFrameBuffer.call(null, symlog.cljs.app.frameBuffer.FRAMEURL, symlog.cljs.app.frameBuffer.thread1, symlog.cljs.app.frameBuffer.buf2[symlog.cljs.app.frameBuffer.BUFFSIZE] + 2 * symlog.cljs.app.frameBuffer.BUFFSIZE);
-          cljs.core.reset_BANG_.call(null, symlog.cljs.app.frameBuffer.switched2buf2, true);
-          cljs.core.reset_BANG_.call(null, symlog.cljs.app.frameBuffer.switched2buf1, false);
-          cljs.core.reset_BANG_.call(null, symlog.cljs.app.frameBuffer.buf1ready, false)
-        }else {
-        }
-        return symlog.cljs.app.frameBuffer.buf2[frameNum - symlog.cljs.app.frameBuffer.buf2[symlog.cljs.app.frameBuffer.BUFFSIZE]]
+      }()) {
+        symlog.cljs.app.frameBuffer.requestFrameBuffer.call(null, symlog.cljs.app.frameBuffer.BUFFERURL, symlog.cljs.app.frameBuffer.thread0, Math.floor(frameNum / symlog.cljs.app.frameBuffer.BUFFSIZE));
+        symlog.cljs.app.frameBuffer.requestFrameBuffer.call(null, symlog.cljs.app.frameBuffer.BUFFERURL, symlog.cljs.app.frameBuffer.thread1, Math.floor(frameNum / symlog.cljs.app.frameBuffer.BUFFSIZE) + symlog.cljs.app.frameBuffer.BUFFSIZE);
+        cljs.core.reset_BANG_.call(null, symlog.cljs.app.frameBuffer.switched__GT_buf0, true);
+        cljs.core.reset_BANG_.call(null, symlog.cljs.app.frameBuffer.switched__GT_buf1, false);
+        cljs.core.reset_BANG_.call(null, symlog.cljs.app.frameBuffer.buf0ready, false);
+        cljs.core.reset_BANG_.call(null, symlog.cljs.app.frameBuffer.buf1ready, false);
+        return"wait"
       }else {
         if("\ufdd0:else") {
           return"wait"
@@ -32460,10 +32413,6 @@ symlog.cljs.video.__GT_vidWrapper = function __GT_vidWrapper(video, FPS, per_fra
 goog.provide("symlog.cljs.app");
 goog.require("cljs.core");
 symlog.cljs.app.playing = cljs.core.atom.call(null, false);
-symlog.cljs.app.paintImage = function paintImage(image) {
-  symlog.cljs.app.context.clearRect(0, 0, symlog.cljs.app.canvas.width, symlog.cljs.app.canvas.height);
-  return symlog.cljs.app.context.drawImage(image, 0, 0)
-};
 symlog.cljs.app.animate = function animate() {
   var timeIdx = symlog.cljs.app.video.currentTime;
   var frameNo = Math.round(timeIdx * 15);
@@ -32474,7 +32423,7 @@ symlog.cljs.app.animate = function animate() {
     return window.requestAnimationFrame(animate)
   }else {
     if("\ufdd0:else") {
-      symlog.cljs.app.paintImage.call(null, img);
+      symlog.cljs.app.imageFrame.src = img;
       symlog.cljs.app.timeField.value = symlog.cljs.app.time_index_to_string.call(null, timeIdx, symlog.cljs.app.FPS);
       if(cljs.core.not.call(null, cljs.core.deref.call(null, symlog.cljs.app.playing))) {
         cljs.core.reset_BANG_.call(null, symlog.cljs.app.playing, true);
@@ -32498,12 +32447,9 @@ symlog.cljs.app.jump = function jump() {
 symlog.cljs.app.init = function init() {
   symlog.cljs.app.frameBuffer.init.call(null);
   symlog.cljs.app.video = goog.dom.getElement("video");
-  symlog.cljs.app.canvas = goog.dom.getElement("canvas");
-  symlog.cljs.app.context = symlog.cljs.app.canvas.getContext("2d");
+  symlog.cljs.app.imageFrame = goog.dom.getElement("imageFrame");
   symlog.cljs.app.width = symlog.cljs.app.video.width;
   symlog.cljs.app.height = symlog.cljs.app.video.height;
-  symlog.cljs.app.vidx = Math.round((symlog.cljs.app.canvas.width - symlog.cljs.app.video.width) / 2);
-  symlog.cljs.app.vidy = Math.round((symlog.cljs.app.canvas.height - symlog.cljs.app.video.height) / 2);
   symlog.cljs.app.FPS = 15;
   symlog.cljs.app.timeField = goog.dom.getElement("timeIndexCell");
   goog.events.listen(goog.dom.getElement("playButton"), symlog.cljs.dom.click, function(evt) {

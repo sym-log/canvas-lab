@@ -9,30 +9,32 @@
 
 <body>
 
+<div id="containerDiv">
 
 <div id="logoDiv">
- <img id="logo" src="img/veritas-g.png"> </img> 
+ <img id="logo" src="img/logo.png"> </img> 
 </div>
 
-<div id="controlPanelDiv">
- <a>testing2</a>
- <a>testing</a>
-</div>
+<div id="controlPanelDiv"> </div>
+<div id="controlPanelShadowDiv"></div>
 
-<div id="containerDiv">
+
+<div id="workpadDiv"> </div>
+
 
 <div id="videoDiv">
 
-  <video id="video" width="540" height="360">
-   <source src="video/policeaction.ogv" type="video/ogg"> 
-   <source src="video/policeaction.m4v" type="video/mp4">
-  </video> 
+  <video id="video" >
+   <source src="video/policeaction.ogv" type="video/ogg">
+  </video>  
 
 </div>
 
-<div id="canvasDiv" >
- <canvas id="canvas" width="800" height="500"> </canvas>
-</div>
+<div id="videoCanvasDiv">
+<img id="imageFrame" src= ""></img> </div>
+
+<div id="svgCanvasDiv"><!--#include file="svg/canvas.svg"--> </div>
+
 
  <div id='editControlPanelDiv'>
    <table id='controlTable' >
@@ -48,18 +50,16 @@
       <td><input id='timeReturnField' type="text"></input></td>
       <td><input type="checkbox" id='autoReturnCheckbox'> </td>
     </tr>
-   </table>    
+ </table>    
 
-  </div> 
-
-</div> 
+  </div>
 
 
  <script type="text/javascript" src="js/index.js"></script>
 
   <script type="text/javascript">
-       goog.require('browser_connect');                   
-       symlog.cljs.app.init(); 
+      goog.require('browser_connect');                   
+      symlog.cljs.app.init(); 
   </script>  
 
  

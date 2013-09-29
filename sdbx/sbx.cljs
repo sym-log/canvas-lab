@@ -1,6 +1,33 @@
 (ns sbx)
 
 
+(def req (js.XMLHttpRequest.))
+(def  arr (.map (js.Array.apply nil (js.Array. 1000)) js.Number.prototype.valueOf 0))
+     
+    (. req open "GET" "http://localhost/img/test/output.txt")
+    (set! (. req -responseType) "text")
+
+(set! (. req -onload)
+      (fn [evt] (def mike (. req -response))))
+
+(. req send nil)
+
+(def stk "hello\" my friend \"")
+(def mike3 (.split stk \"))
+
+
+(def mike2 (. mike split "/ / /"))
+
+
+
+
+
+
+
+
+
+(def mike (array 
+(aget mike 0)
 (js.console.info "hello")
 
 

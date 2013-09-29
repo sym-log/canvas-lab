@@ -2,14 +2,15 @@
 
 (def playing (atom false))
 
-(defn paintImage [ image ]
-  (do
-    (. symlog.cljs.app.context clearRect
-                                 0
-                                 0
-                                 (. symlog.cljs.app.canvas -width)
-                                 (. symlog.cljs.app.canvas -height))
-    (. symlog.cljs.app.context drawImage image 0 0)))
+;(defn paintImage [ image ] (set! 
+;  (do
+;    (. symlog.cljs.app.context clearRect
+;                                 0
+;                                 0
+;                                 (. symlog.cljs.app.canvas -width)
+;                                 (. symlog.cljs.app.canvas -height))
+;    (. symlog.cljs.app.context drawImage image 0 0))))
+
 
 (defn animate []
   
@@ -27,7 +28,7 @@
         
         :else
         (do
-            (paintImage img)
+            (set! (. imageFrame -src) img)
             (set! (. timeField -value) (time-index-to-string timeIdx FPS))
             (if-not @playing
              (do
@@ -50,12 +51,14 @@
 
   (symlog.cljs.app.frameBuffer.init)
   (def video (goog.dom.getElement "video"))
-  (def canvas (goog.dom.getElement "canvas"))
-  (def context (. canvas getContext "2d"))
+  (def imageFrame (goog.dom.getElement "imageFrame"))
+  
+;  (def canvas (goog.dom.getElement "canvas"))
+;  (def context (. canvas getContext "2d"))
   (def width (. video -width))
   (def height (. video -height))
-  (def vidx (js.Math.round (/ (- (. canvas -width) (. video -width)) 2)))
-  (def vidy (js.Math.round (/ (- (. canvas -height) (. video -height)) 2)))
+;  (def vidx (js.Math.round (/ (- (. canvas -width) (. video -width)) 2)))
+;  (def vidy (js.Math.round (/ (- (. canvas -height) (. video -height)) 2)))
   (def FPS 15)
   (def timeField (goog.dom.getElement "timeIndexCell"))
 

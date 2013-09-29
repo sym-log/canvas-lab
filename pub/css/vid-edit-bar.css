@@ -1,8 +1,7 @@
 #editControlPanelDiv {
 position:absolute;
-margin-left:0px;
-margin-top:250px;
-top:50%;
+left:400px;
+top:650px;
 z-index:100;
 
 }
