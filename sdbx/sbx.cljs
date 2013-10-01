@@ -1,6 +1,32 @@
 (ns sbx)
 
 
+(def mike (goog.dom.getElement "narratorDiv"))
+(def mike2 (goog.dom.getElement "narratorVid"))
+
+(defn moveum [ elem1  ]
+  (set! (. elem1 -className) "activated")
+ 
+ )
+ 
+(defn moveum2 [  elem1 ]
+  (set! (. elem1 -className) "deactivated")
+ 
+  )
+
+
+
+(moveum mike )
+
+(moveum2 mike )
+
+
+
+
+(set! (. mike -className) "active")
+
+
+
 (def req (js.XMLHttpRequest.))
 (def  arr (.map (js.Array.apply nil (js.Array. 1000)) js.Number.prototype.valueOf 0))
      

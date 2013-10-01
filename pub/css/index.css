@@ -11,6 +11,63 @@ body {background-image:url('../img/mesh-background.jpg');}
  margin-top:-300px;
  }
 
+#logoDiv {
+top:0px;
+left:-10px;
+position:absolute;
+}
+
+#logo {
+width:210px;
+height:100px;
+}
+
+#narratorDiv {
+  position:absolute;
+  height:0px;
+  width:0px;
+  left:207px;
+  top:7px;
+  z-index: 500;
+  border-radius: 5px;
+  transition: .3s all;
+  transition-timing-function: linear;
+  overflow:hidden; }
+
+#narratorDiv.activated {
+            height:90px;
+            width:90px;
+}
+
+#narratorDiv.deactivated {
+            height:0px;
+            width:0px;
+}
+
+
+#controlPanelDiv {
+  position:absolute;
+  width:250px;
+  height:502px;
+  top:97px;
+  left:0px;
+  background-color:#282828; 
+  border-radius: 10px;
+  white-space: nowrap;
+  z-index:100;
+ }
+
+#controlPanelShadowDiv {
+  position:absolute;
+  width:300px;
+  height:502px;
+  top:97px;
+  left:0px;
+  background-color:#282828; 
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px 5px #080808; 
+}
+
 #workpadDiv { 
   width:800px; 
   height:600px; 
@@ -22,7 +79,8 @@ body {background-image:url('../img/mesh-background.jpg');}
   margin:auto;    
   box-shadow: 0px 0px 5px 5px #080808; 
   border-radius: 10px;
-  z-index:10; }
+  z-index:10; 
+}
 
 #videoDiv {
   height:360px;
@@ -30,44 +88,10 @@ body {background-image:url('../img/mesh-background.jpg');}
   position:absolute;
   top:120px;
   left:340px;
-  z-index:200;  }
-
-#svgCanvasDiv {
-  position:absolute;
-  width:800px;
-  height:600px;
-  top:0px;
-  left:0px; 
-  z-index:300;
- }
-
-#logo {
-width:210px;
-height:100px;
+  border-radius: 5px;
+  overflow:hidden;
+  z-index:200;  
 }
-
-#logoDiv {
-top:0px;
-left:-10px;
-position:absolute;
-}
-
-a{
-font:12px Verdana, Geneva, sans-serif;
-color:#a68e00; }
- 
-#controlPanelDiv {
-  position:absolute;
-  width:250px;
-  height:490px;
-  top:110px;
-  left:0px;
-  background-color:#282828; 
-  border-radius: 10px;
-  white-space: nowrap;
-  z-index:100;
- 
- }
 
 #videoCanvasDiv {
   height:500px;
@@ -75,23 +99,14 @@ color:#a68e00; }
   position:absolute;
   top:50px;
   left:200px;
-  z-index:200;  }
+  z-index:200;  
+}
 
-#controlPanelTable {
-  margin-top:5px;
-  margin-left:10px;
-  border-spacing:0;
-  border-collapse:collapse;
-
- }
-
-#controlPanelShadowDiv {
+#svgCanvasDiv {
   position:absolute;
-  width:300px;
-  height:490px;
-  top:110px;
-  left:0px;
-  background-color:#282828; 
-  border-radius: 10px;
-  box-shadow: 0px 0px 5px 5px #080808; }
- 
+  width:1000px;
+  height:600px;
+  top:0px;
+  left:0px; 
+  z-index:300;
+ }

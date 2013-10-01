@@ -8,33 +8,39 @@
 </head>
 
 <body>
-
 <div id="containerDiv">
 
-<div id="logoDiv">
- <img id="logo" src="img/logo.png"> </img> 
+ <div id="logoDiv">
+  <img id="logo" src="img/logo.png"> </img> 
+ </div>
+
+<div id="narratorDiv" style="height:90px; width:90px;" >
+  <video id="narratorVid" >
+   <source src="video/testing.webm" type="video/webm">
+  </video>   
 </div>
 
-<div id="controlPanelDiv"> </div>
-<div id="controlPanelShadowDiv"></div>
+ <div id="controlPanelDiv"></div>
+ <div id="controlPanelShadowDiv"></div>
 
 
-<div id="workpadDiv"> </div>
+ <div id="workpadDiv"> </div>
 
-
-<div id="videoDiv">
-
+ <div id="videoDiv">
   <video id="video" >
-   <source src="video/policeaction.ogv" type="video/ogg">
+   <source src="video/policeaction.webm" type="video/webm">
   </video>  
+ </div>
+
+ <div id="videoCanvasDiv">
+  <img id="imageFrame" src= ""></img> 
+ </div>
+
+ <div id="svgCanvasDiv" >
+  <!--#include file="svg/canvas.svg"--> 
+ </div>
 
 </div>
-
-<div id="videoCanvasDiv">
-<img id="imageFrame" src= ""></img> </div>
-
-<div id="svgCanvasDiv"><!--#include file="svg/canvas.svg"--> </div>
-
 
  <div id='editControlPanelDiv'>
    <table id='controlTable' >
@@ -51,24 +57,23 @@
       <td><input type="checkbox" id='autoReturnCheckbox'> </td>
     </tr>
  </table>    
+</div>
 
-  </div>
 
+<script type="text/javascript" src="js/index.js"></script>
 
- <script type="text/javascript" src="js/index.js"></script>
-
-  <script type="text/javascript">
-      goog.require('browser_connect');                   
-      symlog.cljs.app.init(); 
-  </script>  
+<script type="text/javascript">
+     goog.require('browser_connect');                   
+     symlog.cljs.app.init(); 
+</script>  
 
  
-  <script type="text/javascript">
+<script type="text/javascript">
    if (goog.dom.getElement('autoReturnCheckbox').checked) {
        symlog.cljs.app.video.currentTime = parseFloat(goog.dom.getElement('timeReturnField').value);
      }
  
-  </script>  
+</script>  
 
 
 </body>
