@@ -5,9 +5,9 @@ body {background-image:url('../img/mesh-background.jpg');}
  width:1000px;
  height:600px;
  position:absolute;
- left:50%;
- top:50%;
  margin-left:-500px;
+ left:50%; 
+ top:50%;
  margin-top:-300px;
  }
 
@@ -21,29 +21,6 @@ position:absolute;
 width:210px;
 height:100px;
 }
-
-#narratorDiv {
-  position:absolute;
-  height:0px;
-  width:0px;
-  left:207px;
-  top:7px;
-  z-index: 500;
-  border-radius: 5px;
-  transition: .3s all;
-  transition-timing-function: linear;
-  overflow:hidden; }
-
-#narratorDiv.activated {
-            height:90px;
-            width:90px;
-}
-
-#narratorDiv.deactivated {
-            height:0px;
-            width:0px;
-}
-
 
 #controlPanelDiv {
   position:absolute;
@@ -84,22 +61,28 @@ height:100px;
 
 #videoDiv {
   height:360px;
-  width:540px;
+  width:536px; 
   position:absolute;
   top:120px;
-  left:340px;
-  border-radius: 5px;
+  left:130px;
+  border-radius: 10px;
   overflow:hidden;
-  z-index:200;  
+  z-index:200;
+}
+#video {
+height:360px;
+width:540px;
 }
 
+
 #videoCanvasDiv {
-  height:500px;
+  height:600px;
   width:800px;
   position:absolute;
-  top:50px;
-  left:200px;
-  z-index:200;  
+  top:0px;
+  left:0px;
+  z-index:200; 
+
 }
 
 #svgCanvasDiv {
