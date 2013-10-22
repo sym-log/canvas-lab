@@ -17,12 +17,12 @@ return clojure.browser.net.transmit.call(null,conn,"\uFDD0:print",cljs.core.pr_s
 */
 clojure.browser.repl.evaluate_javascript = (function evaluate_javascript(conn,block){
 var result = (function (){try{return cljs.core.PersistentArrayMap.fromArray(["\uFDD0:status","\uFDD0:success","\uFDD0:value",[cljs.core.str(eval(block))].join('')], true);
-}catch (e4622){if((e4622 instanceof Error))
-{var e = e4622;
+}catch (e4018){if((e4018 instanceof Error))
+{var e = e4018;
 return cljs.core.PersistentArrayMap.fromArray(["\uFDD0:status","\uFDD0:exception","\uFDD0:value",cljs.core.pr_str.call(null,e),"\uFDD0:stacktrace",(cljs.core.truth_(e.hasOwnProperty("stack"))?e.stack:"No stacktrace available.")], true);
 } else
 {if("\uFDD0:else")
-{throw e4622;
+{throw e4018;
 } else
 {return null;
 }

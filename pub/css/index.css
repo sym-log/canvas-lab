@@ -10,23 +10,31 @@ body {background-image:url('../img/mesh-background.jpg');}
  top:50%;
  margin-top:-300px;
  }
-
-#logoDiv {
+/*
+#logo {
+width:210px;
+height:100px;
 top:0px;
 left:-10px;
 position:absolute;
 }
-
-#logo {
-width:210px;
-height:100px;
+*/
+#narratorVid {
+width:90px;
+height:90px;
+position:absolute;
+z-index:200;
+border-radius: 10px;
+left:220px;
+top:7px;
 }
 
+/*
 #controlPanelDiv {
   position:absolute;
   width:250px;
   height:502px;
-  top:97px;
+  top:98px;
   left:0px;
   background-color:#282828; 
   border-radius: 10px;
@@ -38,50 +46,51 @@ height:100px;
   position:absolute;
   width:300px;
   height:502px;
-  top:97px;
+  top:98px;
   left:0px;
   background-color:#282828; 
   border-radius: 10px;
   box-shadow: 0px 0px 5px 5px #080808; 
 }
+*/
+
 
 #workpadDiv { 
-  width:800px; 
+  width:1000px; 
   height:600px; 
-  background-color:#282828; 
   position:absolute;
+  background-color:#282828;  
   top:0px;
-  left:200px; 
+  left:0px; 
   right:0px; 
   margin:auto;    
   box-shadow: 0px 0px 5px 5px #080808; 
   border-radius: 10px;
   z-index:10; 
+
 }
 
-#videoDiv {
+#mainVideo 
+
+{
   height:360px;
-  width:536px; 
+  width:540px;
   position:absolute;
   top:120px;
-  left:130px;
+  left:330px;
   border-radius: 10px;
   overflow:hidden;
-  z-index:200;
-}
-#video {
-height:360px;
-width:540px;
+  z-index:100; 
+  opacity:.2;
 }
 
-
-#videoCanvasDiv {
-  height:600px;
-  width:800px;
+#canvas {
   position:absolute;
+  width:800px;
+  height:600px;
   top:0px;
-  left:0px;
-  z-index:200; 
+  left:200px; 
+  z-index:300;
 
 }
 
@@ -91,5 +100,5 @@ width:540px;
   height:600px;
   top:0px;
   left:0px; 
-  z-index:300;
+  z-index:400;
  }
