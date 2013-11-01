@@ -1,0 +1,43 @@
+:  - Main video , dimmed, loads showing car in parking lot.
+   - Pause 1 second
+   - Narrator box moves from top to screen-center as it enlarges  
+
+Narrator:  
+
+Among cops, you find some of the very best kind of people, and some of the very worst.  I am going to show you one of each:  
+
+
+: - Good cop video loads
+  - narrator box goes to top left corner, inset right and down, of video pane.
+
+Narrator: 
+This is raw video.  As near as I can tell, it  was shot in Klamath Falls, Oregon sometime in August 2012.  What you will see are two kids who decided to brandish their right to openly carry their assault-rifle-looking firearms through town.  The obviously were expecting some kind of confrontation.  Watch how the arriving officer handles it.
+
+: - narrator goes to rest position
+  - main video brightens and  plays
+
+: - video ends and dims
+  - narrator enlarges and moves to center left of main screen.
+
+This officer:
+
+1) understands and respects both the law he is enforcing and the laws governing police procedures.
+  (chiron to right:  understands the law)
+2) he calmly assesses the situation and does not overreact, so he keeps the peace.
+  (chiron to right: keeps the peace)
+3) he shows the self control of a professional.  No unnecessary aggression or hostility.
+  (chiron to right: self control)
+4) he shows integrity and a sense of duty.  No lying or manipulating.
+  (chiron to right: self control)
+
+Now lets see how they roll in post falls Idaho.
+
+:narrator pauses and moves to above top right corner of main, resizes to original,  policeaction vid loads, dimmed, narrator begins.
+
+:sequence of time-specified points unfold
+
+:canvas renewed
+
+:sequence of arrows 
+
+:narrator concludes, moves to rest position. Main video plays

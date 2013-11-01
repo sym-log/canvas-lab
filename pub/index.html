@@ -10,24 +10,18 @@
 <body>
 
 <div id="containerDiv">
-
-<!--
-  <img id="logo" src="img/logo.png"> </img> 
-  <div id="controlPanelDiv"></div>
-  <div id="controlPanelShadowDiv"></div>
--->
  
  <div id="workpadDiv"></div>
 
-
-  <video id="narratorVid"  >
+  <video id="narratorVid" 
+      style="width:90px; height:90px; position:absolute; z-index:1000; left:220px; top: 7px;  border-radius:10px;" 
+            class="unfade" >
    <source src="video/narrator.m4v"  type="video/mp4">
    <source src="video/narrator.webm"  type="video/webm">
   </video>
-   
-  <video id="mainVideo" >
+  <video id="mainVideo"  class="dark">
     <source src="video/policeaction.m4v"  type="video/mp4">
-    <source src="video/policeaction.webm" type="video/webm">
+    <source src="video/policeaction.webm" type="video/webm">  
   </video>   
 
   <canvas id='canvas' width="800" height="600"> </canvas>  
@@ -70,7 +64,7 @@
      }
  
 </script>  
-->
+-->
 
 </body>
 </html>

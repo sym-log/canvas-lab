@@ -10,50 +10,6 @@ body {background-image:url('../img/mesh-background.jpg');}
  top:50%;
  margin-top:-300px;
  }
-/*
-#logo {
-width:210px;
-height:100px;
-top:0px;
-left:-10px;
-position:absolute;
-}
-*/
-#narratorVid {
-width:90px;
-height:90px;
-position:absolute;
-z-index:200;
-border-radius: 10px;
-left:220px;
-top:7px;
-}
-
-/*
-#controlPanelDiv {
-  position:absolute;
-  width:250px;
-  height:502px;
-  top:98px;
-  left:0px;
-  background-color:#282828; 
-  border-radius: 10px;
-  white-space: nowrap;
-  z-index:100;
- }
-
-#controlPanelShadowDiv {
-  position:absolute;
-  width:300px;
-  height:502px;
-  top:98px;
-  left:0px;
-  background-color:#282828; 
-  border-radius: 10px;
-  box-shadow: 0px 0px 5px 5px #080808; 
-}
-*/
-
 
 #workpadDiv { 
   width:1000px; 
@@ -81,7 +37,6 @@ top:7px;
   border-radius: 10px;
   overflow:hidden;
   z-index:100; 
-  opacity:.2;
 }
 
 #canvas {
@@ -99,6 +54,24 @@ top:7px;
   width:1000px;
   height:600px;
   top:0px;
-  left:0px; 
-  z-index:400;
+  left:0px;
+  z-index:1000; 
  }
+
+.faded {
+opacity: 0.2;
+transition: opacity .8s linear;
+
+
+}
+
+.unfaded {
+opacity: 1;
+transition: opacity .8s linear;
+}
+
+
+.dark {
+opacity: 0;
+transition: opacity .8s linear;
+}
