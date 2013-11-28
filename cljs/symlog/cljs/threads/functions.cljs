@@ -1,17 +1,18 @@
 (ns symlog.cljs.threads.functions)
 
 (defn getImageArray [ message ]
+  
   (let [ req (js.XMLHttpRequest.) ]
      (. req open "GET" (.concat (.. message -data -url)
-                                (.. message -data -startFrame)
-                                ".img")
+                                (.. message -data -idx)
+                                ".imgs")
         true )
      (set! (. req -responseType) "text")
      (set! (. req -onload) 
            (fn []
              (let [ arr (.split (. req -response) "/ / /") ] 
-               (aset arr (. arr -length) (.. message -data -startFrame))
-               (js.postMessage (js-obj "imagearr" arr)))))
+               (aset arr (.. message -data -endpoint) (.. message -data -idx))
+               (js.postMessage (js-obj "imagearr" arr "idx" (.. message -data -idx))))))
      (. req send nil)
 
  ))

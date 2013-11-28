@@ -2,12 +2,12 @@ goog.provide('symlog.cljs.threads.functions');
 goog.require('cljs.core');
 symlog.cljs.threads.functions.getImageArray = (function getImageArray(message){
 var req = (new XMLHttpRequest());
-req.open("GET",message.data.url.concat(message.data.startFrame,".img"),true);
+req.open("GET",message.data.url.concat(message.data.idx,".imgs"),true);
 req.responseType = "text";
 req.onload = (function (){
 var arr = req.response.split("/ / /");
-(arr[arr.length] = message.data.startFrame);
-return postMessage({"imagearr":arr});
+(arr[message.data.endpoint] = message.data.idx);
+return postMessage({"imagearr":arr,"idx":message.data.idx});
 });
 return req.send(null);
 });

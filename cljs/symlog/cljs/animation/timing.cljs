@@ -1,9 +1,14 @@
 (ns symlog.cljs.animation.timing )
 
-(defn toListento [func]
+(defn listenTo [func]
   (set! (. func -toListento) true)
   func)
 
+(defn pause [duration callback]
+  (js.setTimeout callback duration))
+  
+
+             
 (defn chain [& args]
   ; takes however many functions you pass and returns a function that links each
   ; function in the list to the one before it via a listener.

@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   id="svgcanvas"
+   height="576"
+   width="1024"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="controls.svg">
+  <sodipodi:namedview
+     pagecolor="#282828"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="1"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1280"
+     inkscape:window-height="1004"
+     id="namedview3082"
+     showgrid="false"
+     inkscape:zoom="0.81743979"
+     inkscape:cx="279.80153"
+     inkscape:cy="330.78152"
+     inkscape:window-x="-4"
+     inkscape:window-y="-1"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer6"
+     inkscape:showpageshadow="false" />
+  <defs
+     id="defs4">
+    <filter
+       id="filter4532-3-2-4"
+       color-interpolation-filters="sRGB">
+      <feFlood
+         id="feFlood4534-3-3-3"
+         flood-color="rgb(0,0,0)"
+         flood-opacity="0.903"
+         result="flood" />
+      <feComposite
+         id="feComposite4536-4-1-5"
+         operator="in"
+         in="flood"
+         in2="SourceGraphic"
+         result="composite1" />
+      <feGaussianBlur
+         id="feGaussianBlur4538-6-6-7"
+         stdDeviation="3.9"
+         result="blur" />
+      <feOffset
+         id="feOffset4540-6-2-3"
+         dy="4.1"
+         dx="4"
+         result="offset" />
+      <feComposite
+         id="feComposite4542-7-4-4"
+         operator="over"
+         in="SourceGraphic"
+         in2="offset"
+         result="composite2" />
+    </filter>
+    <filter
+       id="filter4532-3-2-4-9"
+       color-interpolation-filters="sRGB">
+      <feFlood
+         id="feFlood4534-3-3-3-9"
+         flood-color="rgb(0,0,0)"
+         flood-opacity="0.903"
+         result="flood" />
+      <feComposite
+         id="feComposite4536-4-1-5-8"
+         operator="in"
+         in="flood"
+         in2="SourceGraphic"
+         result="composite1" />
+      <feGaussianBlur
+         id="feGaussianBlur4538-6-6-7-9"
+         stdDeviation="3.9"
+         result="blur" />
+      <feOffset
+         id="feOffset4540-6-2-3-9"
+         dy="4.1"
+         dx="4"
+         result="offset" />
+      <feComposite
+         id="feComposite4542-7-4-4-7"
+         operator="over"
+         in="SourceGraphic"
+         in2="offset"
+         result="composite2" />
+    </filter>
+    <filter
+       id="filter4532-3-2-4-9-0"
+       color-interpolation-filters="sRGB">
+      <feFlood
+         id="feFlood4534-3-3-3-9-0"
+         flood-color="rgb(0,0,0)"
+         flood-opacity="0.903"
+         result="flood" />
+      <feComposite
+         id="feComposite4536-4-1-5-8-2"
+         operator="in"
+         in="flood"
+         in2="SourceGraphic"
+         result="composite1" />
+      <feGaussianBlur
+         id="feGaussianBlur4538-6-6-7-9-6"
+         stdDeviation="3.9"
+         result="blur" />
+      <feOffset
+         id="feOffset4540-6-2-3-9-8"
+         dy="4.1"
+         dx="4"
+         result="offset" />
+      <feComposite
+         id="feComposite4542-7-4-4-7-7"
+         operator="over"
+         in="SourceGraphic"
+         in2="offset"
+         result="composite2" />
+    </filter>
+  </defs>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <text
+     sodipodi:linespacing="125%"
+     xml:space="preserve"
+     x="654.85205"
+     y="331.40332"
+     style="font-size:18px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;font-family:Sans"
+     id="text3996"><tspan
+       x="654.85205"
+       y="331.40332"
+       id="tspan3998" /></text>
+  <text
+     sodipodi:linespacing="125%"
+     xml:space="preserve"
+     x="491.09692"
+     y="460.41211"
+     style="font-size:18px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:1px;word-spacing:0px;fill:#ffe340;stroke:#ffe340;font-family:Sans"
+     id="text3025-6-7-6-9-3-9"><tspan
+       style="letter-spacing:1px;fill:#ffe340;stroke:#ffe340"
+       x="491.09692"
+       y="460.41211"
+       id="tspan3027-5-9-9-6-6-8" /></text>
+  <g
+     inkscape:groupmode="layer"
+     id="layer6"
+     inkscape:label="controls"
+     style="display:inline">
+    <g
+       id="g4490"
+       inkscape:export-filename="/home/user/code/canvas-lab/pub/img/controlframe.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <path
+         id="path4826"
+         style="fill:#a68e00;stroke:#a68e00;stroke-width:1.72421098px;stroke-linecap:butt;stroke-linejoin:miter"
+         d="m 111.46,18.593181 121.98,-0.04593"
+         inkscape:connector-curvature="0" />
+      <rect
+         id="rect4819"
+         style="fill:#000000;stroke:#000000;stroke-width:3.71603918;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
+         height="540.67535"
+         width="0.84992033"
+         y="17.466616"
+         x="235.85803" />
+      <text
+         id="text4822"
+         style="font-size:18px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;font-family:Sans"
+         xml:space="preserve"
+         y="22.499437"
+         x="12.223632"
+         sodipodi:linespacing="125%"><tspan
+           id="tspan4824"
+           y="22.499437"
+           x="12.223632"
+           style="font-size:16px;fill:#a68e00">Introduction</tspan></text>
+      <text
+         id="text4822-6"
+         style="font-size:18px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;font-family:Sans"
+         xml:space="preserve"
+         y="561.77344"
+         x="12.295563"
+         sodipodi:linespacing="125%"><tspan
+           id="tspan4824-6"
+           y="561.77344"
+           x="12.295563"
+           style="font-size:16px;fill:#a68e00">Conclusion</tspan></text>
+      <path
+         id="path4826-0"
+         style="fill:#a68e00;stroke:#a68e00;stroke-width:1.49821746px;stroke-linecap:butt;stroke-linejoin:miter"
+         d="m 102.33022,557.76213 131.08,0"
+         inkscape:connector-curvature="0" />
+    </g>
+    <g
+       id="slider"
+       transform="translate(41.08158,-453.76728)"
+       inkscape:export-filename="/home/user/code/canvas-lab/pub/img/controlbutton.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <path
+         inkscape:connector-curvature="0"
+         d="m 177,238.5 a 25.5,20.5 0 1 1 -51,0 25.5,20.5 0 1 1 51,0 z"
+         transform="matrix(0.61491825,0,0,0.74729124,142.74778,363.73963)"
+         style="fill:#282828;stroke:#282828;stroke-width:1;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;filter:url(#filter4532-3-2-4-9)"
+         id="path4147" />
+      <rect
+         x="224.87437"
+         y="540.32904"
+         width="22.128977"
+         height="2.6600542"
+         style="fill:#a68e00;stroke:#a68e00;stroke-width:0.34659806;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
+         id="rect4616" />
+      <rect
+         x="-552.76416"
+         y="234.61435"
+         width="22.207846"
+         height="2.6506071"
+         transform="matrix(0,-1,1,0,0,0)"
+         style="fill:#a68e00;stroke:#a68e00;stroke-width:0.34659806;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
+         id="rect4616-4" />
+    </g>
+    <g
+       id="g4480"
+       transform="matrix(1.065,0,0,1.065,-24.624844,-33.912131)"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       inkscape:export-filename="/home/user/code/canvas-lab/pub/img/scoreboard.png">
+      <text
+         inkscape:export-ydpi="162"
+         inkscape:export-xdpi="162"
+         inkscape:export-filename="/home/user/code/canvas-lab/pub/img/scoreboard.png"
+         id="text4822-6-2"
+         style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;display:inline;font-family:Sans;-inkscape-font-specification:Sans"
+         xml:space="preserve"
+         y="497.06049"
+         x="405.16406"
+         sodipodi:linespacing="125%"><tspan
+           id="tspan4824-6-8"
+           y="497.06049"
+           x="405.16406"
+           style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#a68e00;font-family:Sans;-inkscape-font-specification:Sans"> LIES:</tspan></text>
+      <text
+         inkscape:export-ydpi="162"
+         inkscape:export-xdpi="162"
+         inkscape:export-filename="/home/user/code/canvas-lab/pub/img/scoreboard.png"
+         id="text4822-6-2-9"
+         style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;display:inline;font-family:Sans;-inkscape-font-specification:Sans"
+         xml:space="preserve"
+         y="517.38641"
+         x="371.46875"
+         sodipodi:linespacing="125%"><tspan
+           id="tspan4824-6-8-1"
+           y="517.38641"
+           x="371.46875"
+           style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#a68e00;font-family:Sans;-inkscape-font-specification:Sans">THREATS:</tspan></text>
+      <text
+         inkscape:export-ydpi="162"
+         inkscape:export-xdpi="162"
+         inkscape:export-filename="/home/user/code/canvas-lab/pub/img/scoreboard.png"
+         id="text4822-6-2-5"
+         style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;display:inline;font-family:Sans;-inkscape-font-specification:Sans"
+         xml:space="preserve"
+         y="537.71228"
+         x="319.91406"
+         sodipodi:linespacing="125%"><tspan
+           id="tspan4824-6-8-9"
+           y="537.71228"
+           x="319.91406"
+           style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#a68e00;font-family:Sans;-inkscape-font-specification:Sans">CRIMINAL ACTS:</tspan></text>
+      <text
+         inkscape:export-ydpi="162"
+         inkscape:export-xdpi="162"
+         inkscape:export-filename="/home/user/code/canvas-lab/pub/img/scoreboard.png"
+         id="text4822-6-2-8"
+         style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;display:inline;font-family:Sans;-inkscape-font-specification:Sans"
+         xml:space="preserve"
+         y="558.03815"
+         x="308.60938"
+         sodipodi:linespacing="125%"><tspan
+           id="tspan4824-6-8-3"
+           y="558.03815"
+           x="308.60938"
+           style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#a68e00;font-family:Sans;-inkscape-font-specification:Sans">UNLAWFUL ACTS:</tspan></text>
+    </g>
+  </g>
+</svg>

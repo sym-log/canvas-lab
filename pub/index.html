@@ -3,52 +3,138 @@
 <head>
 
 <link rel="stylesheet" type="text/css" href="css/index.css">
-<link rel="stylesheet" type="text/css" href="css/vid-edit-bar.css">
 
 </head>
 
 <body>
-
 <div id="containerDiv">
  
- <div id="workpadDiv"></div>
+<div id="workpadDiv"></div>
 
-  <video id="narratorVid" 
-      style="width:90px; height:90px; position:absolute; z-index:1000; left:220px; top: 7px;  border-radius:10px;" 
-            class="unfade" >
+<div id="narrator"  style="position:absolute; z-index:5000; height:90px; width:90px; top:9px; left:310px">
+
+
+  <video id="narratorVid" style="width:100%;  height:100%; position:absolute;  border-radius:10px;" >
    <source src="video/narrator.m4v"  type="video/mp4">
    <source src="video/narrator.webm"  type="video/webm">
   </video>
-  <video id="mainVideo"  class="dark">
-    <source src="video/policeaction.m4v"  type="video/mp4">
-    <source src="video/policeaction.webm" type="video/webm">  
-  </video>   
 
-  <canvas id='canvas' width="800" height="600"> </canvas>  
+<svg id="narratorController" xmlns="http://www.w3.org/2000/svg" style="position:absolute; height:128%; width:128%; top:-14%; left: -14%;" viewbox="0 0 100 100">
 
-  <div id="svgCanvasDiv">
-         <!--#include file="svg/canvas.svg" --> 
-  </div>
+ <g id="narratorPlayButton" style="opacity:0;">
+  <path id="path4501" d="M50,25c-6.568,0-13.043,2.668-17.688,7.312-4.644,4.645-7.312,11.12-7.312,17.688s2.668,13.043,7.312,17.688c4.645,4.644,11.12,7.312,17.688,7.312s13.043-2.668,17.688-7.312c4.644-4.645,7.312-11.12,7.312-17.688s-2.668-13.043-7.312-17.688c-4.645-4.644-11.12-7.312-17.688-7.312zm0,3.625c5.5698,0,11.155,2.3428,15.094,6.2812,3.938,3.939,6.281,9.524,6.281,15.094,0,5.5698-2.3428,11.155-6.2812,15.094-3.939,3.938-9.524,6.281-15.094,6.281s-11.155-2.343-15.094-6.281c-3.938-3.939-6.281-9.524-6.281-15.094,0-5.5698,2.3428-11.155,6.2812-15.094,3.939-3.938,9.524-6.281,15.094-6.281z" style="baseline-shift:baseline;block-progression:tb;fill:#bfaa30;color:#000000;opacity:1;direction:ltr;text-indent:0;text-align:start;enable-background:accumulate;text-transform:none;"/>
+  <path id="path5622" style="opacity:1;fill:#bfaa30;" d="m64.536,50.318-11.111,6.9745-11.111,6.9745,0-13.949,0-13.949,11.111,6.9745z"/>
+ </g>
+ <g id="narratorDisableButton" style="opacity:0;">
+  <path id="path4501-1" d="M92.5,0c-3.972,0-7.5,3.5277-7.5,7.5,0,3.972,3.528,7.5,7.5,7.5s7.5-3.528,7.5-7.5c0-3.9723-3.528-7.5-7.5-7.5zm0,1.0938c3.3104,0,6.4062,3.0958,6.4062,6.4062s-3.0958,6.4062-6.4062,6.4062-6.4062-3.0958-6.4062-6.4062,3.0958-6.4062,6.4062-6.4062z" style="baseline-shift:baseline;block-progression:tb;fill:#bfaa30;color:#000000;opacity:1;direction:ltr;text-indent:0;text-align:start;enable-background:accumulate;text-transform:none;"/>
+  <path id="rect5624" style="opacity:1;fill-rule:evenodd;fill:#bfaa30;" d="M89.281,3.125l-1.125,1.125,3.344,3.3125-3.344,3.3435,1.125,1.125,3.344-3.3435,3.313,3.3435,1.124-1.125-3.312-3.3435,3.312-3.3125-1.124-1.125-3.313,3.3125-3.344-3.3125z"/>
+ </g>
+  <rect
+    style="opacity:0;fill:#bfaa30;fill-opacity:1;fill-rule:evenodd;stroke:none"
+     id="narratorPlayTouchArea"
+     width="70"
+     height="70"
+     x="15"
+     y="15" />
+  <rect
+    style="opacity:0;fill:#bfaa30;fill-opacity:1;fill-rule:evenodd;stroke:none"
+     id="narratorDisableTouchArea"
+     width="15"
+     height="15"
+     x="85"
+     y="0" />
+</svg>
 
 </div>
+
+<div id="mainVideoDiv" style="height:360px; width:640px; position:absolute; top:108px; left:310px; z-index:2000;  "> 
+  <video id="mainVideo" class="unfaded">
+    <source src="video/mainVideo.webm" type="video/webm">  
+  </video>  
+</div>
+
+<svg id="mainVideoPlayButton"xmlns="http://www.w3.org/2000/svg"
+ style="height:360px; width:640px; position:absolute; opacity:0; top:108px; left:310px; z-index:4000">
+ <g id="layer1" transform="matrix(4,0,0,4,220,-3929.4488)">
+  <g id="g5701" transform="translate(-25,977.3622)">
+   <path id="path4501" style="opacity:0.5;direction:ltr;enable-background:accumulate;baseline-shift:baseline;block-progression:tb;text-indent:0;color:#000000;fill:#bfaa30;text-transform:none;text-align:start;" d="M50,25c-6.568,0-13.043,2.668-17.688,7.312-4.644,4.645-7.312,11.12-7.312,17.688s2.668,13.043,7.312,17.688c4.645,4.644,11.12,7.312,17.688,7.312s13.043-2.668,17.688-7.312c4.644-4.645,7.312-11.12,7.312-17.688s-2.668-13.043-7.312-17.688c-4.645-4.644-11.12-7.312-17.688-7.312zm0,3.625c5.5698,0,11.155,2.3428,15.094,6.2812,3.938,3.939,6.281,9.524,6.281,15.094,0,5.5698-2.3428,11.155-6.2812,15.094-3.939,3.938-9.524,6.281-15.094,6.281s-11.155-2.343-15.094-6.281c-3.938-3.939-6.281-9.524-6.281-15.094,0-5.5698,2.3428-11.155,6.2812-15.094,3.939-3.938,9.524-6.281,15.094-6.281z"/>
+   <path id="path5622" style="opacity:0.5;fill:#bfaa30;" d="m64.536,50.318-11.111,6.9745-11.111,6.9745,0-13.949,0-13.949,11.111,6.9745z"/>
+  </g>
+ </g>
+ <rect id="mainVideoPlayTouchArea" style="opacity:0;" height="360" width="640" y="0" x="0"/>
+</svg>
+
+<canvas id='canvas' width="788" height="576"> </canvas>  
+
+<svg id="svgCanvas" xmlns="http://www.w3.org/2000/svg" 
+   style="height:576px; width:1025px; position:absolute; top0px; left:0px; z-index:5000 ">
+
+ <path transform="translate(0,4)" style="stroke-linejoin:miter;stroke:#a68e00;stroke-width:1.72421098px;stroke-linecap:butt;fill:#a68e00;" d="m111.46,18.593,121.98-0.04593"/>
+ <rect style="stroke-linejoin:round;stroke-dashoffset:0;stroke:#000000;stroke-linecap:round;stroke-dasharray:none;stroke-miterlimit:4;stroke-width:3.71603918;fill:#000000;" height="534" width="0.84992" y="22" x="235.86"/>
+ <text y="25" x="12.223632" style="font-size:18px;font-weight:normal;letter-spacing:0px;font-style:normal;word-spacing:0px;font-family:Sans;line-height:125%;fill:#000000;" xml:space="preserve"><tspan y="26" x="12.223632" style="font-size:16px;fill:#a68e00;">Introduction</tspan></text>
+ <text y="561.77344" x="12.295563" style="font-size:18px;font-weight:normal;letter-spacing:0px;font-style:normal;word-spacing:0px;font-family:Sans;line-height:125%;fill:#000000;" xml:space="preserve"><tspan y="558" x="12.295563" style="font-size:16px;fill:#a68e00;">Conclusion</tspan></text>
+ <path transform="translate(0,-3)" style="stroke-linejoin:miter;stroke:#a68e00;stroke-width:1.49821746px;stroke-linecap:butt;fill:#a68e00;" d="m102.33,557.76,131.08,0"/>
+
+<svg
+   xmlns="http://www.w3.org/2000/svg"
+   width="40"
+   height="40"
+   id="controlButton" 
+   x="214"
+   y="2">
+  <path
+     d="M 34.120823,6.2162062 A 19.87097,19.619397 19.090473 1 1 6.167602,33.89087 19.87097,19.619397 19.090473 0 1 34.120823,6.2162062 z"
+     id="path3970"
+     style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none" />
+  <path
+     d="m 37.857402,19.197499 a 18.279661,18.372833 0 0 1 -36.559322,0 18.279661,18.372833 0 1 1 36.559322,0 z"
+     id="path3970-5"
+     style="fill:#282828;fill-opacity:1;fill-rule:evenodd;stroke:none" />
+  <rect
+     width="4"
+     height="28"
+     x="18.603165"
+     y="6.129714"
+     id="rect4718"
+     style="fill:#a68e00;fill-opacity:1;fill-rule:evenodd;stroke:none" />
+  <rect
+     width="4"
+     height="28"
+     x="18.129713"
+     y="-34.603161"
+     transform="matrix(0,1,-1,0,0,0)"
+     id="rect4718-3"
+     style="fill:#a68e00;fill-opacity:1;fill-rule:evenodd;stroke:none" />
+  <rect
+     width="40"
+     height="40"
+     x="0"
+     y="0"
+     id="rect2994"
+     style="opacity:0;fill:#a68e00;fill-opacity:1;fill-rule:evenodd;stroke:none" />
+</svg>
+
+
+</svg>
+
+
+
 <!--
- <div id='editControlPanelDiv'>
-   <table id='controlTable' >
-     <tr> 
-      <td style="color:white">Time: </td>
-      <td><input id='timeIndexCell' type="text"></input></td>
-      <td><button id='skipBackwardButton'><< </button>
-      <td><input id='backwardStepCountField' type="text"></input></td>
-      <td><button id='playButton'> > </button>
-      <td><button id='pauseButton'> || </button>
-      <td><input id='forwardStepCountField' type="text"></input></td>
-      <td><button id='skipForwardButton'> >> </button></td>
-      <td><input id='timeReturnField' type="text"></input></td>
-      <td><input type="checkbox" id='autoReturnCheckbox'> </td>
-    </tr>
- </table>    
-</div>
+
+<img id="scoreboard" src="../img/scoreboard.png"/>
+<img id="controlbutton" draggable="true" src="../img/controlbutton.png"/>
+<img id="controlframe" src="../img/controlframe.png"/>
+
+<table id="scoretable">
+<tr><td class="label" >LIES:</td><td id="lies" class="value"></td></tr>
+<tr><td class="label" >THREATS:</td><td id="threats" class="value"></td></tr>
+<tr><td class="label" >CRIMINAL ACTS:</td><td id="crimes" class="value"></td></tr>
+<tr><td class="label" >UNLAWFUL ACTS:</td><td id="unlawfuls" class="value"></td></tr>
+</table>
 -->
+
+
+</div>
 
 <script type="text/javascript" src="js/index.js"></script>
 
@@ -57,14 +143,6 @@
      symlog.cljs.app.init(); 
 </script>  
 
-<!-- 
-<script type="text/javascript">
-   if (goog.dom.getElement('autoReturnCheckbox').checked) {
-       symlog.cljs.app.video.currentTime = parseFloat(goog.dom.getElement('timeReturnField').value);
-     }
- 
-</script>  
--->
 
 </body>
 </html>

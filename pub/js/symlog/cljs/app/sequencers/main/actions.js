@@ -1,0 +1,10 @@
+goog.provide('symlog.cljs.app.sequencers.main.actions');
+goog.require('cljs.core');
+goog.require('symlog.cljs.animation.functions');
+goog.require('symlog.cljs.app.dom.elements');
+goog.require('symlog.cljs.animation.timing');
+goog.require('symlog.cljs.animation.functions');
+goog.require('symlog.cljs.animation.timing');
+goog.require('symlog.cljs.app.dom.elements');
+symlog.cljs.app.sequencers.main.actions.sequencer = symlog.cljs.app.sequencers.main.sequencer;
+symlog.cljs.app.sequencers.main.actions.animations = cljs.core.vector.call(null,(new symlog.cljs.animation.functions.animate_path(symlog.cljs.app.dom.elements.elements.call(null,"\uFDD0:narratorDiv"),(1000 / 25),.4,3,false,[cljs.core.str("m 355,54 c 76.60172,229.51602 275,234 275,234")].join(''))),(new symlog.cljs.animation.functions.animate_path(symlog.cljs.app.dom.elements.elements.call(null,"\uFDD0:narratorDiv"),(1000 / 25),.4,.66666,false,[cljs.core.str("M 630,288 C 487.55708,313.5267 420,218 420,218")].join(''))),(new symlog.cljs.animation.functions.animate_path(symlog.cljs.app.dom.elements.elements.call(null,"\uFDD0:narratorDiv"),(1000 / 25),.3,.5,false,[cljs.core.str("M 420,218 C 355.87705,146.59579 355,54 355,54")].join(''))),(new symlog.cljs.animation.functions.animate_path(symlog.cljs.app.dom.elements.elements.call(null,"\uFDD0:narratorDiv"),(1000 / 25),.4,2,true,[cljs.core.str("M 420,218 C 355.87705,146.59579 355,54 355,54")].join(''))),(new symlog.cljs.animation.functions.animate_path(symlog.cljs.app.dom.elements.elements.call(null,"\uFDD0:narratorDiv"),(1000 / 25),.4,.5,true,[cljs.core.str("M 923,113 C 699.09177,208.04019 420,218 420,218")].join(''))),(new symlog.cljs.animation.functions.animate_path(symlog.cljs.app.dom.elements.elements.call(null,"\uFDD0:narratorDiv"),(1000 / 25),.4,1,false,[cljs.core.str("M 923,113 C 682.98326,33.262894 355,54 355,54")].join(''))));
