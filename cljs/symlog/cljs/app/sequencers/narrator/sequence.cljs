@@ -1,5 +1,5 @@
 (ns symlog.cljs.app.sequencers.narrator.sequence
-  (:use    [symlog.cljs.app.dom.elements :only [elements]]
+  (:use    [symlog.cljs.app.dom :only [elements]]
            [symlog.cljs.animation.timing :only [listenTo serialize chain enChain]]
            [symlog.cljs.animation.functions :only [paint-frames animate-path]]))
 
@@ -78,27 +78,35 @@
   
   { 1  {  ; TYPE first CHIRON
          :frame 927
-         :sequence (fn [] 
-                    (.fire (animations 0)
-                      (fn [] (reset! (. sequencer -playing) nil))))
+         :sequence (fn []
+                     (reset! (. sequencer -playing) (animations 0))
+                     (.fire (animations 0)
+                            (fn []
+                             (reset! (. sequencer -playing) nil))))
         }
 
    2  {  ; TYPE second CHIRON
         :frame 1352
-        :sequence (fn [] (.fire (animations 1)
+       :sequence (fn []
+                   (reset! (. sequencer -playing) (animations 1))
+                   (.fire (animations 1)
                       (fn [] (reset! (. sequencer -playing) nil))))
        }
 
    3 {   ; TYPE THIRD CHIRON
         :frame 1989
-        :sequence (fn [] (.fire (animations 2)
+      :sequence (fn []
+                  (reset! (. sequencer -playing) (animations 2))
+                  (.fire (animations 2)
                       (fn [] (reset! (. sequencer -playing) nil))))
         
       }
 
    4 {   ; TYPE FOURTH CHIRON
        :frame 2456
-       :sequence (fn [] (.fire (animations 3)
+      :sequence (fn []
+                  (reset! (. sequencer -playing) (animations 3))
+                  (.fire (animations 3)
                       (fn [] (reset! (. sequencer -playing) nil))))
       }
 
@@ -111,19 +119,25 @@
 
    6 {   ; SHOW ARROW LEFT
        :frame 5036
-       :sequence (fn [] (.fire (animations 4)
+      :sequence (fn []
+                  (reset! (. sequencer -playing) (animations 4))
+                  (.fire (animations 4)
                       (fn [] (reset! (. sequencer -playing) nil))))
       }
 
    7 {   ; SHOW ARROW RIGHT
        :frame 5154
-       :sequence (fn [] (.fire (animations 5)
+      :sequence (fn []
+                  (reset! (. sequencer -playing) (animations 5))
+                  (.fire (animations 5)
                       (fn [] (reset! (. sequencer -playing) nil))))
       }
 
    8 {   ; SHOW ARROW BACK
        :frame 5324 
-       :sequence (fn [] (.fire (animations 6)
+      :sequence (fn []
+                  (reset! (. sequencer -playing) (animations 6))
+                  (.fire (animations 6)
                       (fn [] (reset! (. sequencer -playing) nil))))
       }
 
@@ -135,26 +149,34 @@
 
   10 {   ; SHOW ON PRIVATE PROPERTY
         :frame 5629
-        :sequence (fn [] (.fire (animations 7)
+      :sequence (fn []
+                  (reset! (. sequencer -playing) (animations 7))
+                  (.fire (animations 7)
                       (fn [] (reset! (. sequencer -playing) nil))))
       }
 
  
   11 {   ; SHOW WITH OWNER CONSENT
         :frame 5700
-        :sequence (fn [] (.fire (animations 8)
+      :sequence (fn []
+                  (reset! (. sequencer -playing) (animations 8))
+                  (.fire (animations 8)
                       (fn [] (reset! (. sequencer -playing) nil))))
       }
 
   12 { ; SHOW NOT RESPONDING
         :frame 5832
-        :sequence (fn [] (.fire (animations 9)
+      :sequence (fn []
+                  (reset! (. sequencer -playing) (animations 9))
+                  (.fire (animations 9)
                       (fn [] (reset! (. sequencer -playing) nil))))
       }
 
   13 { ; SHOW PATROLLING PARKING LOT
         :frame 6046
-        :sequence (fn [] (.fire (animations 10)
+      :sequence (fn []
+                  (reset! (. sequencer -playing) (animations 10))
+                  (.fire (animations 10)
                       (fn [] (reset! (. sequencer -playing) nil))))             
       }
 
@@ -166,19 +188,25 @@
       
   15 {   ; FADE IN SUSPICION VS. REASONABLE SUSPICION
        :frame 6673
-       :sequence (fn [] (.fire (animations 11)
+      :sequence (fn []
+                  (reset! (. sequencer -playing) (animations 11))
+                  (.fire (animations 11)
                       (fn [] (reset! (. sequencer -playing) nil))))
       }
 
   16 {   ; DRAW CIRCLE AROUND REASONABLE
        :frame 6752
-       :sequence (fn [] (.fire (animations 12)
+      :sequence (fn []
+                  (reset! (. sequencer -playing) (animations 12))
+                  (.fire (animations 12)
                       (fn [] (reset! (. sequencer -playing) nil))))
       }
                        
   17 {   ; FACT OUTSIDE YOUR IMAGINATION
        :frame 7153
-       :sequence (fn [] (.fire (animations 13)
+      :sequence (fn []
+                  (reset! (. sequencer -playing) (animations 13))
+                  (.fire (animations 13)
                       (fn [] (reset! (. sequencer -playing) nil))))
       }
 
@@ -190,7 +218,9 @@
 
   19 {   ; FADE IN BENEFIT OF THE DOUBT
        :frame 7745
-       :sequence (fn [] (.fire (animations 14)
+      :sequence (fn []
+                  (reset! (. sequencer -playing) (animations 14))
+                  (.fire (animations 14)
                       (fn [] (reset! (. sequencer -playing) nil))))
       }
       

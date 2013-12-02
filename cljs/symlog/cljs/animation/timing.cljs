@@ -6,8 +6,6 @@
 
 (defn pause [duration callback]
   (js.setTimeout callback duration))
-  
-
              
 (defn chain [& args]
   ; takes however many functions you pass and returns a function that links each

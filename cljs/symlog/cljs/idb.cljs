@@ -5,7 +5,7 @@
 
 (goog.inherits (defn Idb [dbName dbVersion]
  (this-as this
-     (goog.events.EventTarget.call this)                         
+;CHECK     (goog.events.EventTarget.call this)                         
      (.addCallback
         (goog.db.openDatabase
            dbName

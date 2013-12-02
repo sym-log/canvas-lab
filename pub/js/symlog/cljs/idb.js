@@ -4,7 +4,6 @@ goog.require('goog.events');
 goog.require('goog.db');
 goog.inherits(symlog.cljs.idb.Idb = (function Idb(dbName,dbVersion){
 var this$ = this;
-goog.events.EventTarget.call(this$);
 goog.db.openDatabase(dbName,dbVersion,(function (ev,db,tx){
 var store = dbName.concat(".objects");
 if(cljs.core.not.call(null,db.getObjectStoreNames().contains(store)))

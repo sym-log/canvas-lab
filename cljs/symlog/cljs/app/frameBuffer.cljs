@@ -10,11 +10,6 @@
 (def switched->buf0 (atom true))
 (def switched->buf1 (atom false))
 
-(comment
-  (init)
-  
-)
-
 (defn init []
   
   (def worker
@@ -36,7 +31,9 @@
             (db->buffer1 2000))
           (doseq [ x (range 1000 17000 1000) ]
              (if (= -1 (.indexOf dbBuffers x))
-             (requestFrameBuffer BUFFERURL worker x)))))))
+               (requestFrameBuffer BUFFERURL worker x)))))))
+
+  (def dispatcher (symlog.cljs.util.dispatcher.))
  )
 
 (defn array->db [ message ]
@@ -74,15 +71,15 @@
                          "idx" startIdx
                          "endpoint" 1000)))
 
-(defn nextFrame [frameNum]
+(defn getFrame [frameNum]
   (let [ BUF0END (+ 1 (aget buf0 BUFFSIZE)) ; 1001 
-         BUF0START (- (aget buf0 BUFFSIZE) BUFFSIZE) ; 0;
+         BUF0START (- (aget buf0 BUFFSIZE) BUFFSIZE ) ; 0;
          BUF1END  (+ 1 (aget buf1 BUFFSIZE)) ; 2001 
-         BUF1START (- (aget buf1 BUFFSIZE) BUFFSIZE) ] ; 1000;
+         BUF1START (- (aget buf1 BUFFSIZE) BUFFSIZE ) ] ; 1000;
   (cond
    
    (and (< frameNum BUF0END) 
-        (> frameNum BUF0START) 
+        (>= frameNum BUF0START) 
          @buf0ready )
    (do
         (if-not @switched->buf0
@@ -91,10 +88,10 @@
              (db->buffer1 (+ BUF0START BUFFSIZE BUFFSIZE))
              (reset! switched->buf0 true)
              (reset! switched->buf1 false)))
-        (aget buf0 (- frameNum BUF0START 1 )))
+        (aget buf0 (- frameNum BUF0START )))
    
    (and (< frameNum BUF1END)
-        (> frameNum BUF1START)
+        (>= frameNum BUF1START)
          @buf1ready )
    (do  
         (if-not @switched->buf1
@@ -103,12 +100,12 @@
              (db->buffer0 (+ BUF1START BUFFSIZE BUFFSIZE))
              (reset! switched->buf1 true)
              (reset! switched->buf0 false)))
-          (aget buf1 (- frameNum BUF1START 1 )))
+          (aget buf1 (- frameNum BUF1START )))
 
    (and @buf0ready
         @buf1ready
         (or (and (< frameNum BUF0START) (< frameNum BUF1START))
-            (and (> frameNum BUF0END) (> frameNum BUF1END))))
+            (and (>= frameNum BUF0END) (>= frameNum BUF1END))))
    (do
         (reset! buf0ready false)
         (reset! buf1ready false)
@@ -117,10 +114,36 @@
         (reset! switched->buf0 true)
         (reset! switched->buf1 false)
         "wait")
-
    
    :else
      "wait" 
-     
-
 )))
+
+(defn seekFrame [frame callback]
+  (if (or
+        (not @buf0ready)
+        (< frame (- (aget buf0 BUFFSIZE) BUFFSIZE))
+        (> frame (aget buf0 BUFFSIZE)))
+      
+      (let [ idx (+ (* (js.Math.floor (/ frame BUFFSIZE)) BUFFSIZE) BUFFSIZE) ]
+          (reset! buf0ready false)
+          (reset! buf1ready false)
+          (if-not (> (+ idx BUFFSIZE) MAXBUF)
+            (. dbcache get idx
+              (fn [ data ]
+                (set! buf0 data)
+                (reset! buf0ready true)
+                (. dbcache get (+ idx BUFFSIZE)
+                  (fn [data]
+                      (set! buf1 data)
+                      (reset! buf1ready true)
+                      (callback (getFrame frame))))))
+            (. dbcache get idx
+              (fn [data]
+                (set! buf0 data)
+                (reset! buf0ready true)
+                (callback (getFrame frame))))))
+      (do
+        (callback (getFrame frame))))
+ (. dispatcher send "done"))
+

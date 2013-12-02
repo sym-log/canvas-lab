@@ -1,15 +1,8 @@
 (ns symlog.cljs.app.sequencers.narrator.sequencer
-  (:use    [symlog.cljs.app.dom.elements :only [elements]]
+  (:use    [symlog.cljs.app.dom :only [elements]]
            [symlog.cljs.animation.timing :only [listenTo serialize chain enChain]]
            [symlog.cljs.animation.functions :only [paint-frames animate-path]]))
 
-(goog.inherits
- (defn dispatch []
-   (this-as this
-            (set! (. this -send) (fn [message] (. this dispatchEvent message)))
-   this)) goog.events.EventTarget)
-
-(def dispatcher                       (dispatch.))
 (def ctxt                             symlog.cljs.app.sequencers.narrator.sequencer)
 (def label                             "narrator")
 (def target                           (goog.dom.getElement "narratorVid"))
@@ -22,18 +15,30 @@
 (def enabled                          (atom true))
 (def rested                           (atom true))
 (def callback                         (atom nil))
+(def TOCnum                           0)
+(def paintFrame                       (elements :paintFrame))
 
-(defn init []
+(comment
+
+(.-fire @playing )
+((sequence (- @step 1)):sequence)  
+)
+
+(defn init [controller]
+  (def controller controller)
   (symlog.cljs.app.sequencers.narrator.sequence.init)
   (def sequence symlog.cljs.app.sequencers.narrator.sequence.seqmap)
   (def maxsteps (count (keys sequence)))
-  (set! (.(elements :narratorVid) -sequencer) ctxt))
+  (set! (.(elements :narratorVid) -sequencer) ctxt)
+  (symlog.cljs.app.handlers.narrator.init))
   
-(defn fire [ start end returnFunc ]
+(defn fire [ start end tocNum returnFunc ]
   (reset! startFrame start)
   (reset! endFrame end)
   (reset! callback returnFunc)
+  (set! TOCnum tocNum)
   (set! (. target -currentTime) (/ @startFrame frameRate))
+  (setStep (js.Math.round (* (. target -currentTime) frameRate)))
   (play))
 
 (defn pause []
@@ -49,8 +54,24 @@
 
 (defn stop []
   (if @playing (if (. @playing -stop) (. @playing stop)))
-  (pause)
-  (goog.events.fireListeners dispatcher "stopped" false (js-obj "target" ctxt)))
+  (. target pause)
+  (reset! playing nil)
+  (.. paintFrame -clearit fire)
+  (. controller donext "narrator"))
+
+(defn clear[]
+  (if @playing (if (. @playing -stop) (. @playing stop)))
+  (reset! playing nil)
+  (.. paintFrame -clearit fire))
+
+(defn end []
+  (if @playing (if (. @playing -stop) (. @playing stop)))
+  (. target pause)
+  (reset! playing nil)
+  (reset! paused false)
+  (.. paintFrame -clearit fire)
+  (set! (. target -currentTime) (/ @endFrame frameRate))
+  (@callback))
 
 (defn cycler []
   (let [ frameNum (js.Math.round (* (. target -currentTime) frameRate)) ]
@@ -69,7 +90,19 @@
   (if (> @step maxsteps) nil
       (if (>= frameNo ((sequence @step):frame))
         (if-not @playing
-          (do (reset! playing ((sequence @step):sequence))
-              (swap! step inc)
-              (if (. @playing -fire) (. @playing fire) (@playing)))))))
+          (((sequence @step):sequence))
+          (swap! step inc)))))
+
+(defn setStep [ frameNo ]
+  (doseq [[k v] sequence] 
+    (cond (= k maxsteps)
+            (if (>= frameNo (v :frame)) (reset! step maxsteps))
+            :else
+            (if (and (>= frameNo (v :frame))
+                     (<  frameNo (+ (v :frame) frameRate)))
+                (reset! step k)
+                (if (and (>= frameNo (v :frame))
+                         (< frameNo ((sequence (+ k 1)):frame)))
+                  (reset! step (+ k 1)))))))
+
 

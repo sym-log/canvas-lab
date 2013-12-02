@@ -7,20 +7,15 @@
 </head>
 
 <body>
+
 <div id="containerDiv">
- 
-<div id="workpadDiv"></div>
 
-<div id="narrator"  style="position:absolute; z-index:5000; height:90px; width:90px; top:9px; left:310px">
-
-
-  <video id="narratorVid" style="width:100%;  height:100%; position:absolute;  border-radius:10px;" >
+<div id="narratorDiv" style="height:90px; width:90px; top:9px; left:310px;">
+  <video id="narratorVid" style="width:100%;  height:100%; position:absolute; border-radius:10px;" >
    <source src="video/narrator.m4v"  type="video/mp4">
    <source src="video/narrator.webm"  type="video/webm">
   </video>
-
-<svg id="narratorController" xmlns="http://www.w3.org/2000/svg" style="position:absolute; height:128%; width:128%; top:-14%; left: -14%;" viewbox="0 0 100 100">
-
+  <svg id="narratorController" xmlns="http://www.w3.org/2000/svg" style="position:absolute; height:128%; width:128%; top:-14%; left: -14%;" viewbox="0 0 100 100">
  <g id="narratorPlayButton" style="opacity:0;">
   <path id="path4501" d="M50,25c-6.568,0-13.043,2.668-17.688,7.312-4.644,4.645-7.312,11.12-7.312,17.688s2.668,13.043,7.312,17.688c4.645,4.644,11.12,7.312,17.688,7.312s13.043-2.668,17.688-7.312c4.644-4.645,7.312-11.12,7.312-17.688s-2.668-13.043-7.312-17.688c-4.645-4.644-11.12-7.312-17.688-7.312zm0,3.625c5.5698,0,11.155,2.3428,15.094,6.2812,3.938,3.939,6.281,9.524,6.281,15.094,0,5.5698-2.3428,11.155-6.2812,15.094-3.939,3.938-9.524,6.281-15.094,6.281s-11.155-2.343-15.094-6.281c-3.938-3.939-6.281-9.524-6.281-15.094,0-5.5698,2.3428-11.155,6.2812-15.094,3.939-3.938,9.524-6.281,15.094-6.281z" style="baseline-shift:baseline;block-progression:tb;fill:#bfaa30;color:#000000;opacity:1;direction:ltr;text-indent:0;text-align:start;enable-background:accumulate;text-transform:none;"/>
   <path id="path5622" style="opacity:1;fill:#bfaa30;" d="m64.536,50.318-11.111,6.9745-11.111,6.9745,0-13.949,0-13.949,11.111,6.9745z"/>
@@ -43,45 +38,90 @@
      height="15"
      x="85"
      y="0" />
-</svg>
+  </svg>
+
+  <div id="narratorTOC" >
+    <div id="n0" style="display:none">
+      <div id="endButton" class="toc" ></div>
+   </div>
+    <div id="n1" style="display:none; " class="toc" >
+      <p  class="tocHeader"> A GOOD COP &nbsp</p> 
+      <p id="understands" frame="927" class="toc" style="padding-top:0px">UNDERSTANDS THE LAW &#8212</p>
+      <p id="keepspeace" frame="1352" class="toc">KEEPS THE PEACE &#8212</p>
+      <p id="nooverreact" frame="1989" class="toc">DOES NOT OVERREACT &#8212</p>
+      <p id="integrity" frame="2456" class="toc">HAS INTEGRITY &#8212</p> 
+     <div id="endButton" class="toc" ></div>
+   </div> 
+    <div id="n2" style="display:none">
+      <div id="endButton" class="toc" ></div>
+   </div>
+    <div id="n3" style="display:none">
+      <div id="endButton" class="toc" ></div>
+   </div>
+    <div id="n4" style="display:none">
+      <div id="endButton" class="toc" ></div>
+   </div>
+    <div id="n5" style="display:none">
+      <div id="endButton" class="toc" ></div>
+   </div>
+    <div id="n6" style="display:none">
+      <div id="endButton" class="toc" ></div>
+   </div>
+
+ </div>
+
+
 
 </div>
+<video id="mainVideo" class="unfaded">
+   <source src="video/mainVideo.webm" type="video/webm">  
+</video>  
 
-<div id="mainVideoDiv" style="height:360px; width:640px; position:absolute; top:108px; left:310px; z-index:2000;  "> 
-  <video id="mainVideo" class="unfaded">
-    <source src="video/mainVideo.webm" type="video/webm">  
-  </video>  
-</div>
-
-<svg id="mainVideoPlayButton"xmlns="http://www.w3.org/2000/svg"
- style="height:360px; width:640px; position:absolute; opacity:0; top:108px; left:310px; z-index:4000">
+  <svg id="mainVideoPlayButton"xmlns="http://www.w3.org/2000/svg" 
+style="opacity:0" >
  <g id="layer1" transform="matrix(4,0,0,4,220,-3929.4488)">
   <g id="g5701" transform="translate(-25,977.3622)">
-   <path id="path4501" style="opacity:0.5;direction:ltr;enable-background:accumulate;baseline-shift:baseline;block-progression:tb;text-indent:0;color:#000000;fill:#bfaa30;text-transform:none;text-align:start;" d="M50,25c-6.568,0-13.043,2.668-17.688,7.312-4.644,4.645-7.312,11.12-7.312,17.688s2.668,13.043,7.312,17.688c4.645,4.644,11.12,7.312,17.688,7.312s13.043-2.668,17.688-7.312c4.644-4.645,7.312-11.12,7.312-17.688s-2.668-13.043-7.312-17.688c-4.645-4.644-11.12-7.312-17.688-7.312zm0,3.625c5.5698,0,11.155,2.3428,15.094,6.2812,3.938,3.939,6.281,9.524,6.281,15.094,0,5.5698-2.3428,11.155-6.2812,15.094-3.939,3.938-9.524,6.281-15.094,6.281s-11.155-2.343-15.094-6.281c-3.938-3.939-6.281-9.524-6.281-15.094,0-5.5698,2.3428-11.155,6.2812-15.094,3.939-3.938,9.524-6.281,15.094-6.281z"/>
-   <path id="path5622" style="opacity:0.5;fill:#bfaa30;" d="m64.536,50.318-11.111,6.9745-11.111,6.9745,0-13.949,0-13.949,11.111,6.9745z"/>
+   <path id="path4501" style="opacity:0.7;direction:ltr;enable-background:accumulate;baseline-shift:baseline;block-progression:tb;text-indent:0;color:#000000;fill:#bfaa30;text-transform:none;text-align:start;" d="M50,25c-6.568,0-13.043,2.668-17.688,7.312-4.644,4.645-7.312,11.12-7.312,17.688s2.668,13.043,7.312,17.688c4.645,4.644,11.12,7.312,17.688,7.312s13.043-2.668,17.688-7.312c4.644-4.645,7.312-11.12,7.312-17.688s-2.668-13.043-7.312-17.688c-4.645-4.644-11.12-7.312-17.688-7.312zm0,3.625c5.5698,0,11.155,2.3428,15.094,6.2812,3.938,3.939,6.281,9.524,6.281,15.094,0,5.5698-2.3428,11.155-6.2812,15.094-3.939,3.938-9.524,6.281-15.094,6.281s-11.155-2.343-15.094-6.281c-3.938-3.939-6.281-9.524-6.281-15.094,0-5.5698,2.3428-11.155,6.2812-15.094,3.939-3.938,9.524-6.281,15.094-6.281z"/>
+   <path id="path5622" style="opacity:0.7;fill:#bfaa30;" d="m64.536,50.318-11.111,6.9745-11.111,6.9745,0-13.949,0-13.949,11.111,6.9745z"/>
+     </g>
+    </g>
+    <rect id="mainVideoPlayTouchArea" style="opacity:0;" height="360" width="640" y="0" x="0"/>
+  </svg>
+
+<svg id="spinnerSVG"  xmlns="http://www.w3.org/2000/svg" width="100px" height="100px">
+
+  <g id="spinner">
+    <g id="bit6">
+      <g id="bit3">
+        <line id="bit" x1="50" opacity="0.7" y1="25" x2="50" y2="10" stroke-linecap="round" stroke-width="10" stroke="#a68e00" fill="none"/>
+        <use xlink:href="#bit" opacity="0.8" transform="rotate(-30 50 50)"/>
+        <use xlink:href="#bit" opacity="0.64" transform="rotate(-60 50 50)"/>
+      </g>
+      <use xlink:href="#bit3" opacity="0.512" transform="rotate(-90 50 50)"/>
+    </g>
+    <use xlink:href="#bit6" opacity="0.262" transform="rotate(-180 50 50)"/>
   </g>
- </g>
- <rect id="mainVideoPlayTouchArea" style="opacity:0;" height="360" width="640" y="0" x="0"/>
+
 </svg>
 
-<canvas id='canvas' width="788" height="576"> </canvas>  
+<canvas id='canvas' width="788" height="576" > </canvas>  
 
 <svg id="svgCanvas" xmlns="http://www.w3.org/2000/svg" 
-   style="height:576px; width:1025px; position:absolute; top0px; left:0px; z-index:5000 ">
+   style="height:576px; width:1025px;" >
 
  <path transform="translate(0,4)" style="stroke-linejoin:miter;stroke:#a68e00;stroke-width:1.72421098px;stroke-linecap:butt;fill:#a68e00;" d="m111.46,18.593,121.98-0.04593"/>
  <rect style="stroke-linejoin:round;stroke-dashoffset:0;stroke:#000000;stroke-linecap:round;stroke-dasharray:none;stroke-miterlimit:4;stroke-width:3.71603918;fill:#000000;" height="534" width="0.84992" y="22" x="235.86"/>
  <text y="25" x="12.223632" style="font-size:18px;font-weight:normal;letter-spacing:0px;font-style:normal;word-spacing:0px;font-family:Sans;line-height:125%;fill:#000000;" xml:space="preserve"><tspan y="26" x="12.223632" style="font-size:16px;fill:#a68e00;">Introduction</tspan></text>
  <text y="561.77344" x="12.295563" style="font-size:18px;font-weight:normal;letter-spacing:0px;font-style:normal;word-spacing:0px;font-family:Sans;line-height:125%;fill:#000000;" xml:space="preserve"><tspan y="558" x="12.295563" style="font-size:16px;fill:#a68e00;">Conclusion</tspan></text>
  <path transform="translate(0,-3)" style="stroke-linejoin:miter;stroke:#a68e00;stroke-width:1.49821746px;stroke-linecap:butt;fill:#a68e00;" d="m102.33,557.76,131.08,0"/>
+</svg>
 
 <svg
    xmlns="http://www.w3.org/2000/svg"
+   style="z-index:5000; position:absolute; left:216px; top:2px"
    width="40"
    height="40"
-   id="controlButton" 
-   x="214"
-   y="2">
+   id="controlButton" >
   <path
      d="M 34.120823,6.2162062 A 19.87097,19.619397 19.090473 1 1 6.167602,33.89087 19.87097,19.619397 19.090473 0 1 34.120823,6.2162062 z"
      id="path3970"
@@ -114,26 +154,6 @@
      style="opacity:0;fill:#a68e00;fill-opacity:1;fill-rule:evenodd;stroke:none" />
 </svg>
 
-
-</svg>
-
-
-
-<!--
-
-<img id="scoreboard" src="../img/scoreboard.png"/>
-<img id="controlbutton" draggable="true" src="../img/controlbutton.png"/>
-<img id="controlframe" src="../img/controlframe.png"/>
-
-<table id="scoretable">
-<tr><td class="label" >LIES:</td><td id="lies" class="value"></td></tr>
-<tr><td class="label" >THREATS:</td><td id="threats" class="value"></td></tr>
-<tr><td class="label" >CRIMINAL ACTS:</td><td id="crimes" class="value"></td></tr>
-<tr><td class="label" >UNLAWFUL ACTS:</td><td id="unlawfuls" class="value"></td></tr>
-</table>
--->
-
-
 </div>
 
 <script type="text/javascript" src="js/index.js"></script>
@@ -142,7 +162,6 @@
      goog.require('browser_connect');                   
      symlog.cljs.app.init(); 
 </script>  
-
 
 </body>
 </html>

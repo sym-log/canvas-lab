@@ -1,7 +1,20 @@
 (ns symlog.cljs.app.controller.actions
-  (:use    [symlog.cljs.app.dom.elements :only [elements]]
+  (:use    [symlog.cljs.app.dom :only [elements]]
            [symlog.cljs.animation.timing :only [ pause]]
            [symlog.cljs.animation.functions :only [paint-frames animate-path]]))
+
+(comment
+
+  (.fire (animations 3) #(js.console.log "OK"))
+  (reset! (.. (elements :narratorVid) -sequencer -enabled) true)
+  (reset! (.. (elements :narratorVid) -sequencer -rested) false)
+  (.fire symlog.cljs.app.sequencers.narrator.sequencer 607 3523 1
+         #(js.console.log "OK"))
+
+  @symlog.cljs.app.sequencers.narrator.sequencer.playing
+                                   
+  
+)
 
 
 (defn init [ controller ]
@@ -50,78 +63,112 @@
        1                       ; scale factor
        false                   ; reverse direction
        (str "M 923,113 C 682.98326,33.262894 355,54 355,54"))
+    (animate-path.
+      (elements :narratorDiv)  ; object to animate width:50px
+      (/ 1000 25)              ; fps
+      .4                       ; duration
+       1                       ; scale factor
+       true                   ; reverse direction
+      (str "M 923,113 C 682.98326,33.262894 355,54 355,54"))
+
     
- ))   
+    ))
 
 (def seqmap 
   {  1  { :frame 0
           :sequence
            (fn []
-            (if (.-enabled ((. controller -seqsManaged)0))
-              (pause 1000
-                (fn []     
+             (if @(.-enabled ((. controller -seqsManaged)0))
+               (do
                   (. controller interrupt)
-                  (set! (.-className (elements :mainVideo)) "faded")
+                  (set! (.. (elements :mainVideo) -style -opacity) .3)
                   (.fire (animations 0)
                          (fn []
-                             (set! (..(elements :narratorVid) -sequencer -rested) false)
-                             (.fire ((. controller -seqsManaged) 0) 0 155 
+                             (reset! (..(elements :narratorVid) -sequencer -rested) false)
+                             (.fire ((. controller -seqsManaged) 0) 0 155 0 
                                     (fn []
                                       (pause 300
                                          (fn []
                                            (.fire (animations 1)
                                                (fn []
                                                   (set! (.-currentTime(elements :mainVideo)) (/ 3 15))
-                                                  (.fire ((. controller -seqsManaged) 0) 170 595 ; ref screenplay 2)
+                                                  (.fire ((. controller -seqsManaged) 0) 170 595 0 ; ref screenplay 2)
                                                     (fn []
                                                       (pause 500
                                                          (fn []
                                                            (.fire (animations 2)
                                                               (fn []
-                                                                  (set! (..(elements :narratorVid) -sequencer -rested) true)
-                                                                  ( set! (.-className (elements :mainVideo)) "unfaded")
+                                                                  (reset! (..(elements :narratorVid) -sequencer -rested) true)
+                                                                  ( set! (.. (elements :mainVideo) -style -opacity) 1)
                                                                   (reset! (. controller -playing) nil)
-                                                                  (js.setTimeout (. controller -resume) 700)))))))))))))))))))
-         }
+                                                                  (js.setTimeout (. controller -resume) 700))))))))))))))))
+               (do
+                (js.requestAnimationFrame (. controller -cycler))
+                (.. controller -target play) )))
+              
+         } 
                                                 
      2  { :frame 2420
           :sequence
          (fn []
-            (if (.-enabled ((. controller -seqsManaged) 0))  
+            (if @(.-enabled ((. controller -seqsManaged) 0))  
                 (do
                   (. controller interrupt)
                   (set! (.-currentTime (elements :mainVideo)) (/ 2420 15))
-                  (set! (.-className (elements :mainVideo)) "faded")
+                  (set! (.. (elements :mainVideo) -style -opacity) .3) 
                   (pause 1000
                     (fn []
                        (.fire (animations 3)
                          (fn []
-                           (set! (..(elements :narratorVid) -sequencer -rested) false)
-                           (.fire ((. controller -seqsManaged) 0) 607 3523 ; ref Screenplay 3)
+                           (reset! (..(elements :narratorVid) -sequencer -rested) false)
+                           (.fire ((. controller -seqsManaged) 0) 607 3523 1 ; ref Screenplay 3)
                                   (fn []
                                     (.fire (animations 4)
                                            (fn []
                                              (set! (.-currentTime (elements :mainVideo)) (/ 2430 15))
                                              (..(elements :paintFrame)-clearit fire)
-                                             ( set! (.-className (elements :mainVideo)) "unfaded")
-                                             (.fire ((. controller -seqsManaged) 0) 3536 8744
-                                                    (fn []
-                                                      (.fire (animations 5)
-                                                             (fn []
-                                                               (set! (..(elements :narratorVid) -sequencer -rested) true)
-                                                               ( set! (.-className (elements :mainVideo)) "unfaded")
-                                                               (reset! (. controller -playing) nil)
-                                                               (js.setTimeout (. controller -resume) 700))))))))))))))))
+                                             (reset! (. controller -playing) nil)
+                                             (. controller doframe 2430))))))))))))
          }
    
-     3  { :frame 4285
+     3  { :frame 2430  
           :sequence
+         (fn []
+           (if @(.-enabled ((. controller -seqsManaged) 0))
+             (do
+               (. controller interrupt)
+               ( set! (.. (elements :mainVideo) -style -opacity) 1)
+               (if @(..(elements :narratorVid) -sequencer -rested)
+                 (.fire (animations 6)
+                        (fn []
+                          (reset! (..(elements :narratorVid) -sequencer -rested) false)
+                          (.fire ((. controller -seqsManaged) 0) 3536 8744 2
+                                 (fn []
+                                   (.fire (animations 5)
+                                          (fn []
+                                            (reset! (..(elements :narratorVid) -sequencer -rested) true)
+                                            ( set! (.. (elements :mainVideo) -style -opacity) 1)
+                                            (reset! (. controller -playing) nil)
+                                            (js.setTimeout (. controller -resume) 700)))))))
+                 (.fire ((. controller -seqsManaged) 0) 3536 8744 3
+                        (fn []
+                          (.fire (animations 5)
+                                 (fn []
+                                   (reset! (..(elements :narratorVid) -sequencer -rested) true)
+                                   ( set! (.. (elements :mainVideo) -style -opacity) 1)
+                                   (reset! (. controller -playing) nil)
+                                   (js.setTimeout (. controller -resume) 700)))))))))
+               
+         }
+   
+     4  { :frame 4285
+          :sequence  
          (fn []
            (. controller interrupt)
            (set! (.-src (elements :paintFrame)) (aget @(elements :mainVidOverlays) 0))
            (set! (.-innerHTML (elements :liesScore)) "1")
            (set! (.-innerHTML (elements :unlawfulsScore)) "1")
-           (if-not (.-enabled ((. controller -seqsManaged) 0))
+           (if-not @(.-enabled ((. controller -seqsManaged) 0))
              (do
                (pause 500
                    (fn []
@@ -132,18 +179,18 @@
                    (fn []   
                        (.fire (animations 3)
                            (fn []
-                                (set! (..(elements :narratorVid) -sequencer -rested) false)
-                                (.fire ((. controller -seqsManaged) 0) 8745 13355
+                                (reset! (..(elements :narratorVid) -sequencer -rested) false)
+                                (.fire ((. controller -seqsManaged) 0) 8745 13355 3
                                        (fn []
                                          (.fire (animations 2)
                                              (fn []
-                                                 (set! (..(elements :narratorVid) -sequencer -rested) true)
+                                                 (reset! (..(elements :narratorVid) -sequencer -rested) true)
                                                  (reset! (. controller -playing) nil)
                                                  (js.setTimeout (. controller -resume) 700))))))))))))
          }
 
  
-    4  { :frame 15000
+    5  { :frame 15000
           :sequence
          (fn [] (js.console.log "ended"))
        }

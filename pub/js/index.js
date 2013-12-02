@@ -30549,6 +30549,11 @@ goog.provide("browser_connect");
 goog.require("cljs.core");
 goog.require("clojure.browser.repl");
 clojure.browser.repl.connect.call(null, "http://localhost:9000/repl");
+goog.provide("symlog.cljs.app.dom");
+goog.require("cljs.core");
+symlog.cljs.app.dom.elements = cljs.core.PersistentHashMap.fromArrays(["\ufdd0:mainVidSrc", "n0", "n1", "\ufdd0:mainVideo", "\ufdd0:context", "\ufdd0:paintFrame", "\ufdd0:narratorFrameBuffer", "\ufdd0:threatsScore", "\ufdd0:narratorDisableTouchArea", "\ufdd0:narratorPlayTouchArea", "\ufdd0:narratorDisableButton", "\ufdd0:mainVidOverlays", "\ufdd0:goodcopSrc", "\ufdd0:liesScore", "\ufdd0:canvas", "\ufdd0:controlButton", "\ufdd0:mainVideoPlayButton", "\ufdd0:narratorPlayButton", "\ufdd0:crimesScore", 
+"\ufdd0:unlawfulsScore", "\ufdd0:mainVideoPlayTouchArea", "\ufdd0:FPS", "\ufdd0:narratorDiv", "\ufdd0:narratorVid", "\ufdd0:spinner"], ["../video/policeaction.webm", goog.dom.getElement("nscene0"), goog.dom.getElement("nscene1"), goog.dom.getElement("mainVideo"), goog.dom.getElement("canvas").getContext("2d"), new Image, cljs.core.atom.call(null, null), goog.dom.getElement("threats"), goog.dom.getElement("narratorDisableTouchArea"), goog.dom.getElement("narratorPlayTouchArea"), goog.dom.getElement("narratorDisableButton"), 
+cljs.core.atom.call(null, null), "../video/goodcop.webm", goog.dom.getElement("lies"), goog.dom.getElement("canvas"), goog.dom.getElement("controlButton"), goog.dom.getElement("mainVideoPlayButton"), goog.dom.getElement("narratorPlayButton"), goog.dom.getElement("crimes"), goog.dom.getElement("unlawfuls"), goog.dom.getElement("mainVideoPlayTouchArea"), 15, goog.dom.getElement("narratorDiv"), goog.dom.getElement("narratorVid"), goog.dom.getElement("spinner")]);
 goog.provide("symlog.cljs.animation.timing");
 goog.require("cljs.core");
 symlog.cljs.animation.timing.listenTo = function listenTo(func) {
@@ -30567,85 +30572,85 @@ symlog.cljs.animation.timing.chain = function() {
         var this$ = this;
         this$.fire = function(this$, ref, lastidx) {
           return function() {
-            var seq__51810 = cljs.core.seq.call(null, ref);
-            var chunk__51811 = null;
-            var count__51812 = 0;
-            var i__51813 = 0;
+            var seq__31478 = cljs.core.seq.call(null, ref);
+            var chunk__31479 = null;
+            var count__31480 = 0;
+            var i__31481 = 0;
             while(true) {
-              if(i__51813 < count__51812) {
-                var vec__51814 = cljs.core._nth.call(null, chunk__51811, i__51813);
-                var k = cljs.core.nth.call(null, vec__51814, 0, null);
-                var v = cljs.core.nth.call(null, vec__51814, 1, null);
+              if(i__31481 < count__31480) {
+                var vec__31482 = cljs.core._nth.call(null, chunk__31479, i__31481);
+                var k = cljs.core.nth.call(null, vec__31482, 0, null);
+                var v = cljs.core.nth.call(null, vec__31482, 1, null);
                 if(cljs.core._EQ_.call(null, k, lastidx)) {
-                  goog.events.listenOnce(ref.call(null, k), "done", function(seq__51810, chunk__51811, count__51812, i__51813, vec__51814, k, v, this$, ref, lastidx) {
+                  goog.events.listenOnce(ref.call(null, k), "done", function(seq__31478, chunk__31479, count__31480, i__31481, vec__31482, k, v, this$, ref, lastidx) {
                     return function() {
                       return this$.dispatchEvent("done")
                     }
-                  }(seq__51810, chunk__51811, count__51812, i__51813, vec__51814, k, v, this$, ref, lastidx));
+                  }(seq__31478, chunk__31479, count__31480, i__31481, vec__31482, k, v, this$, ref, lastidx));
                   ref.call(null, 0).fire()
                 }else {
                   if("\ufdd0:else") {
-                    goog.events.listenOnce(ref.call(null, k), "done", function(seq__51810, chunk__51811, count__51812, i__51813, vec__51814, k, v, this$, ref, lastidx) {
+                    goog.events.listenOnce(ref.call(null, k), "done", function(seq__31478, chunk__31479, count__31480, i__31481, vec__31482, k, v, this$, ref, lastidx) {
                       return function() {
                         return ref.call(null, k + 1).fire()
                       }
-                    }(seq__51810, chunk__51811, count__51812, i__51813, vec__51814, k, v, this$, ref, lastidx))
+                    }(seq__31478, chunk__31479, count__31480, i__31481, vec__31482, k, v, this$, ref, lastidx))
                   }else {
                   }
                 }
-                var G__51816 = seq__51810;
-                var G__51817 = chunk__51811;
-                var G__51818 = count__51812;
-                var G__51819 = i__51813 + 1;
-                seq__51810 = G__51816;
-                chunk__51811 = G__51817;
-                count__51812 = G__51818;
-                i__51813 = G__51819;
+                var G__31484 = seq__31478;
+                var G__31485 = chunk__31479;
+                var G__31486 = count__31480;
+                var G__31487 = i__31481 + 1;
+                seq__31478 = G__31484;
+                chunk__31479 = G__31485;
+                count__31480 = G__31486;
+                i__31481 = G__31487;
                 continue
               }else {
-                var temp__4092__auto__ = cljs.core.seq.call(null, seq__51810);
+                var temp__4092__auto__ = cljs.core.seq.call(null, seq__31478);
                 if(temp__4092__auto__) {
-                  var seq__51810__$1 = temp__4092__auto__;
-                  if(cljs.core.chunked_seq_QMARK_.call(null, seq__51810__$1)) {
-                    var c__2754__auto__ = cljs.core.chunk_first.call(null, seq__51810__$1);
-                    var G__51820 = cljs.core.chunk_rest.call(null, seq__51810__$1);
-                    var G__51821 = c__2754__auto__;
-                    var G__51822 = cljs.core.count.call(null, c__2754__auto__);
-                    var G__51823 = 0;
-                    seq__51810 = G__51820;
-                    chunk__51811 = G__51821;
-                    count__51812 = G__51822;
-                    i__51813 = G__51823;
+                  var seq__31478__$1 = temp__4092__auto__;
+                  if(cljs.core.chunked_seq_QMARK_.call(null, seq__31478__$1)) {
+                    var c__2754__auto__ = cljs.core.chunk_first.call(null, seq__31478__$1);
+                    var G__31488 = cljs.core.chunk_rest.call(null, seq__31478__$1);
+                    var G__31489 = c__2754__auto__;
+                    var G__31490 = cljs.core.count.call(null, c__2754__auto__);
+                    var G__31491 = 0;
+                    seq__31478 = G__31488;
+                    chunk__31479 = G__31489;
+                    count__31480 = G__31490;
+                    i__31481 = G__31491;
                     continue
                   }else {
-                    var vec__51815 = cljs.core.first.call(null, seq__51810__$1);
-                    var k = cljs.core.nth.call(null, vec__51815, 0, null);
-                    var v = cljs.core.nth.call(null, vec__51815, 1, null);
+                    var vec__31483 = cljs.core.first.call(null, seq__31478__$1);
+                    var k = cljs.core.nth.call(null, vec__31483, 0, null);
+                    var v = cljs.core.nth.call(null, vec__31483, 1, null);
                     if(cljs.core._EQ_.call(null, k, lastidx)) {
-                      goog.events.listenOnce(ref.call(null, k), "done", function(seq__51810, chunk__51811, count__51812, i__51813, vec__51815, k, v, seq__51810__$1, temp__4092__auto__, this$, ref, lastidx) {
+                      goog.events.listenOnce(ref.call(null, k), "done", function(seq__31478, chunk__31479, count__31480, i__31481, vec__31483, k, v, seq__31478__$1, temp__4092__auto__, this$, ref, lastidx) {
                         return function() {
                           return this$.dispatchEvent("done")
                         }
-                      }(seq__51810, chunk__51811, count__51812, i__51813, vec__51815, k, v, seq__51810__$1, temp__4092__auto__, this$, ref, lastidx));
+                      }(seq__31478, chunk__31479, count__31480, i__31481, vec__31483, k, v, seq__31478__$1, temp__4092__auto__, this$, ref, lastidx));
                       ref.call(null, 0).fire()
                     }else {
                       if("\ufdd0:else") {
-                        goog.events.listenOnce(ref.call(null, k), "done", function(seq__51810, chunk__51811, count__51812, i__51813, vec__51815, k, v, seq__51810__$1, temp__4092__auto__, this$, ref, lastidx) {
+                        goog.events.listenOnce(ref.call(null, k), "done", function(seq__31478, chunk__31479, count__31480, i__31481, vec__31483, k, v, seq__31478__$1, temp__4092__auto__, this$, ref, lastidx) {
                           return function() {
                             return ref.call(null, k + 1).fire()
                           }
-                        }(seq__51810, chunk__51811, count__51812, i__51813, vec__51815, k, v, seq__51810__$1, temp__4092__auto__, this$, ref, lastidx))
+                        }(seq__31478, chunk__31479, count__31480, i__31481, vec__31483, k, v, seq__31478__$1, temp__4092__auto__, this$, ref, lastidx))
                       }else {
                       }
                     }
-                    var G__51824 = cljs.core.next.call(null, seq__51810__$1);
-                    var G__51825 = null;
-                    var G__51826 = 0;
-                    var G__51827 = 0;
-                    seq__51810 = G__51824;
-                    chunk__51811 = G__51825;
-                    count__51812 = G__51826;
-                    i__51813 = G__51827;
+                    var G__31492 = cljs.core.next.call(null, seq__31478__$1);
+                    var G__31493 = null;
+                    var G__31494 = 0;
+                    var G__31495 = 0;
+                    seq__31478 = G__31492;
+                    chunk__31479 = G__31493;
+                    count__31480 = G__31494;
+                    i__31481 = G__31495;
                     continue
                   }
                 }else {
@@ -30670,8 +30675,8 @@ symlog.cljs.animation.timing.chain = function() {
     return chain__delegate.call(this, args)
   };
   chain.cljs$lang$maxFixedArity = 0;
-  chain.cljs$lang$applyTo = function(arglist__51828) {
-    var args = cljs.core.seq(arglist__51828);
+  chain.cljs$lang$applyTo = function(arglist__31496) {
+    var args = cljs.core.seq(arglist__31496);
     return chain__delegate(args)
   };
   chain.cljs$core$IFn$_invoke$arity$variadic = chain__delegate;
@@ -30723,26 +30728,26 @@ symlog.cljs.animation.timing.serialize = function() {
     var argmap = cljs.core.zipmap.call(null, cljs.core.range.call(null, cljs.core.count.call(null, args) / 2), cljs.core.partition.call(null, 2, args));
     var refseq = cljs.core.into.call(null, cljs.core.PersistentArrayMap.EMPTY, function() {
       var iter__2723__auto__ = function(argmap) {
-        return function iter__51839(s__51840) {
+        return function iter__31507(s__31508) {
           return new cljs.core.LazySeq(null, false, function(argmap) {
             return function() {
-              var s__51840__$1 = s__51840;
+              var s__31508__$1 = s__31508;
               while(true) {
-                var temp__4092__auto__ = cljs.core.seq.call(null, s__51840__$1);
+                var temp__4092__auto__ = cljs.core.seq.call(null, s__31508__$1);
                 if(temp__4092__auto__) {
-                  var s__51840__$2 = temp__4092__auto__;
-                  if(cljs.core.chunked_seq_QMARK_.call(null, s__51840__$2)) {
-                    var c__2721__auto__ = cljs.core.chunk_first.call(null, s__51840__$2);
+                  var s__31508__$2 = temp__4092__auto__;
+                  if(cljs.core.chunked_seq_QMARK_.call(null, s__31508__$2)) {
+                    var c__2721__auto__ = cljs.core.chunk_first.call(null, s__31508__$2);
                     var size__2722__auto__ = cljs.core.count.call(null, c__2721__auto__);
-                    var b__51842 = cljs.core.chunk_buffer.call(null, size__2722__auto__);
+                    var b__31510 = cljs.core.chunk_buffer.call(null, size__2722__auto__);
                     if(function() {
-                      var i__51841 = 0;
+                      var i__31509 = 0;
                       while(true) {
-                        if(i__51841 < size__2722__auto__) {
-                          var x = cljs.core._nth.call(null, c__2721__auto__, i__51841);
-                          cljs.core.chunk_append.call(null, b__51842, cljs.core.PersistentArrayMap.fromArray([x.call(null, 0), new symlog.cljs.animation.timing.serializePrep(cljs.core.first.call(null, x.call(null, 1)), cljs.core.second.call(null, x.call(null, 1)))], true));
-                          var G__51849 = i__51841 + 1;
-                          i__51841 = G__51849;
+                        if(i__31509 < size__2722__auto__) {
+                          var x = cljs.core._nth.call(null, c__2721__auto__, i__31509);
+                          cljs.core.chunk_append.call(null, b__31510, cljs.core.PersistentArrayMap.fromArray([x.call(null, 0), new symlog.cljs.animation.timing.serializePrep(cljs.core.first.call(null, x.call(null, 1)), cljs.core.second.call(null, x.call(null, 1)))], true));
+                          var G__31517 = i__31509 + 1;
+                          i__31509 = G__31517;
                           continue
                         }else {
                           return true
@@ -30750,13 +30755,13 @@ symlog.cljs.animation.timing.serialize = function() {
                         break
                       }
                     }()) {
-                      return cljs.core.chunk_cons.call(null, cljs.core.chunk.call(null, b__51842), iter__51839.call(null, cljs.core.chunk_rest.call(null, s__51840__$2)))
+                      return cljs.core.chunk_cons.call(null, cljs.core.chunk.call(null, b__31510), iter__31507.call(null, cljs.core.chunk_rest.call(null, s__31508__$2)))
                     }else {
-                      return cljs.core.chunk_cons.call(null, cljs.core.chunk.call(null, b__51842), null)
+                      return cljs.core.chunk_cons.call(null, cljs.core.chunk.call(null, b__31510), null)
                     }
                   }else {
-                    var x = cljs.core.first.call(null, s__51840__$2);
-                    return cljs.core.cons.call(null, cljs.core.PersistentArrayMap.fromArray([x.call(null, 0), new symlog.cljs.animation.timing.serializePrep(cljs.core.first.call(null, x.call(null, 1)), cljs.core.second.call(null, x.call(null, 1)))], true), iter__51839.call(null, cljs.core.rest.call(null, s__51840__$2)))
+                    var x = cljs.core.first.call(null, s__31508__$2);
+                    return cljs.core.cons.call(null, cljs.core.PersistentArrayMap.fromArray([x.call(null, 0), new symlog.cljs.animation.timing.serializePrep(cljs.core.first.call(null, x.call(null, 1)), cljs.core.second.call(null, x.call(null, 1)))], true), iter__31507.call(null, cljs.core.rest.call(null, s__31508__$2)))
                   }
                 }else {
                   return null
@@ -30775,151 +30780,151 @@ symlog.cljs.animation.timing.serialize = function() {
         var this$ = this;
         this$.fire = function(this$, argmap, refseq, lastidx) {
           return function() {
-            var seq__51843_51850 = cljs.core.seq.call(null, refseq);
-            var chunk__51844_51851 = null;
-            var count__51845_51852 = 0;
-            var i__51846_51853 = 0;
+            var seq__31511_31518 = cljs.core.seq.call(null, refseq);
+            var chunk__31512_31519 = null;
+            var count__31513_31520 = 0;
+            var i__31514_31521 = 0;
             while(true) {
-              if(i__51846_51853 < count__51845_51852) {
-                var vec__51847_51854 = cljs.core._nth.call(null, chunk__51844_51851, i__51846_51853);
-                var k_51855 = cljs.core.nth.call(null, vec__51847_51854, 0, null);
-                var v_51856 = cljs.core.nth.call(null, vec__51847_51854, 1, null);
-                if(cljs.core._EQ_.call(null, k_51855, 0)) {
-                  if(cljs.core.truth_(v_51856.func2go.toListento)) {
-                    goog.events.listen(v_51856.func2go, "done", function(seq__51843_51850, chunk__51844_51851, count__51845_51852, i__51846_51853, vec__51847_51854, k_51855, v_51856, this$, argmap, refseq, lastidx) {
+              if(i__31514_31521 < count__31513_31520) {
+                var vec__31515_31522 = cljs.core._nth.call(null, chunk__31512_31519, i__31514_31521);
+                var k_31523 = cljs.core.nth.call(null, vec__31515_31522, 0, null);
+                var v_31524 = cljs.core.nth.call(null, vec__31515_31522, 1, null);
+                if(cljs.core._EQ_.call(null, k_31523, 0)) {
+                  if(cljs.core.truth_(v_31524.func2go.toListento)) {
+                    goog.events.listen(v_31524.func2go, "done", function(seq__31511_31518, chunk__31512_31519, count__31513_31520, i__31514_31521, vec__31515_31522, k_31523, v_31524, this$, argmap, refseq, lastidx) {
                       return function() {
                         return this$.dispatchEvent("done")
                       }
-                    }(seq__51843_51850, chunk__51844_51851, count__51845_51852, i__51846_51853, vec__51847_51854, k_51855, v_51856, this$, argmap, refseq, lastidx))
+                    }(seq__31511_31518, chunk__31512_31519, count__31513_31520, i__31514_31521, vec__31515_31522, k_31523, v_31524, this$, argmap, refseq, lastidx))
                   }else {
-                    if(cljs.core._EQ_.call(null, k_51855, lastidx)) {
-                      goog.events.listen(v_51856, "done", function(seq__51843_51850, chunk__51844_51851, count__51845_51852, i__51846_51853, vec__51847_51854, k_51855, v_51856, this$, argmap, refseq, lastidx) {
+                    if(cljs.core._EQ_.call(null, k_31523, lastidx)) {
+                      goog.events.listen(v_31524, "done", function(seq__31511_31518, chunk__31512_31519, count__31513_31520, i__31514_31521, vec__31515_31522, k_31523, v_31524, this$, argmap, refseq, lastidx) {
                         return function() {
                           return this$.dispatchEvent("done")
                         }
-                      }(seq__51843_51850, chunk__51844_51851, count__51845_51852, i__51846_51853, vec__51847_51854, k_51855, v_51856, this$, argmap, refseq, lastidx))
+                      }(seq__31511_31518, chunk__31512_31519, count__31513_31520, i__31514_31521, vec__31515_31522, k_31523, v_31524, this$, argmap, refseq, lastidx))
                     }else {
                     }
                   }
                 }else {
-                  if(cljs.core._EQ_.call(null, k_51855, lastidx)) {
-                    if(cljs.core.truth_(v_51856.func2go.toListento)) {
-                      goog.events.listen(v_51856.func2go, "done", function(seq__51843_51850, chunk__51844_51851, count__51845_51852, i__51846_51853, vec__51847_51854, k_51855, v_51856, this$, argmap, refseq, lastidx) {
+                  if(cljs.core._EQ_.call(null, k_31523, lastidx)) {
+                    if(cljs.core.truth_(v_31524.func2go.toListento)) {
+                      goog.events.listen(v_31524.func2go, "done", function(seq__31511_31518, chunk__31512_31519, count__31513_31520, i__31514_31521, vec__31515_31522, k_31523, v_31524, this$, argmap, refseq, lastidx) {
                         return function() {
                           return this$.dispatchEvent("done")
                         }
-                      }(seq__51843_51850, chunk__51844_51851, count__51845_51852, i__51846_51853, vec__51847_51854, k_51855, v_51856, this$, argmap, refseq, lastidx));
-                      goog.events.listen(refseq.call(null, k_51855 - 1), "done", v_51856.fire)
+                      }(seq__31511_31518, chunk__31512_31519, count__31513_31520, i__31514_31521, vec__31515_31522, k_31523, v_31524, this$, argmap, refseq, lastidx));
+                      goog.events.listen(refseq.call(null, k_31523 - 1), "done", v_31524.fire)
                     }else {
-                      goog.events.listenOnce(refseq.call(null, k_51855 - 1), "done", v_51856.fire);
-                      goog.events.listenOnce(v_51856, "done", function(seq__51843_51850, chunk__51844_51851, count__51845_51852, i__51846_51853, vec__51847_51854, k_51855, v_51856, this$, argmap, refseq, lastidx) {
+                      goog.events.listenOnce(refseq.call(null, k_31523 - 1), "done", v_31524.fire);
+                      goog.events.listenOnce(v_31524, "done", function(seq__31511_31518, chunk__31512_31519, count__31513_31520, i__31514_31521, vec__31515_31522, k_31523, v_31524, this$, argmap, refseq, lastidx) {
                         return function() {
                           return this$.dispatchEvent("done")
                         }
-                      }(seq__51843_51850, chunk__51844_51851, count__51845_51852, i__51846_51853, vec__51847_51854, k_51855, v_51856, this$, argmap, refseq, lastidx))
+                      }(seq__31511_31518, chunk__31512_31519, count__31513_31520, i__31514_31521, vec__31515_31522, k_31523, v_31524, this$, argmap, refseq, lastidx))
                     }
                   }else {
                     if("\ufdd0:else") {
-                      if(cljs.core.truth_(v_51856.func2go.toListento)) {
-                        goog.events.listen(v_51856.func2go, "done", function(seq__51843_51850, chunk__51844_51851, count__51845_51852, i__51846_51853, vec__51847_51854, k_51855, v_51856, this$, argmap, refseq, lastidx) {
+                      if(cljs.core.truth_(v_31524.func2go.toListento)) {
+                        goog.events.listen(v_31524.func2go, "done", function(seq__31511_31518, chunk__31512_31519, count__31513_31520, i__31514_31521, vec__31515_31522, k_31523, v_31524, this$, argmap, refseq, lastidx) {
                           return function() {
                             return this$.dispatchEvent("done")
                           }
-                        }(seq__51843_51850, chunk__51844_51851, count__51845_51852, i__51846_51853, vec__51847_51854, k_51855, v_51856, this$, argmap, refseq, lastidx));
-                        goog.events.listen(refseq.call(null, k_51855 - 1), "done", v_51856.fire)
+                        }(seq__31511_31518, chunk__31512_31519, count__31513_31520, i__31514_31521, vec__31515_31522, k_31523, v_31524, this$, argmap, refseq, lastidx));
+                        goog.events.listen(refseq.call(null, k_31523 - 1), "done", v_31524.fire)
                       }else {
-                        goog.events.listen(refseq.call(null, k_51855 - 1), "done", v_51856.fire)
+                        goog.events.listen(refseq.call(null, k_31523 - 1), "done", v_31524.fire)
                       }
                     }else {
                     }
                   }
                 }
-                var G__51857 = seq__51843_51850;
-                var G__51858 = chunk__51844_51851;
-                var G__51859 = count__51845_51852;
-                var G__51860 = i__51846_51853 + 1;
-                seq__51843_51850 = G__51857;
-                chunk__51844_51851 = G__51858;
-                count__51845_51852 = G__51859;
-                i__51846_51853 = G__51860;
+                var G__31525 = seq__31511_31518;
+                var G__31526 = chunk__31512_31519;
+                var G__31527 = count__31513_31520;
+                var G__31528 = i__31514_31521 + 1;
+                seq__31511_31518 = G__31525;
+                chunk__31512_31519 = G__31526;
+                count__31513_31520 = G__31527;
+                i__31514_31521 = G__31528;
                 continue
               }else {
-                var temp__4092__auto___51861 = cljs.core.seq.call(null, seq__51843_51850);
-                if(temp__4092__auto___51861) {
-                  var seq__51843_51862__$1 = temp__4092__auto___51861;
-                  if(cljs.core.chunked_seq_QMARK_.call(null, seq__51843_51862__$1)) {
-                    var c__2754__auto___51863 = cljs.core.chunk_first.call(null, seq__51843_51862__$1);
-                    var G__51864 = cljs.core.chunk_rest.call(null, seq__51843_51862__$1);
-                    var G__51865 = c__2754__auto___51863;
-                    var G__51866 = cljs.core.count.call(null, c__2754__auto___51863);
-                    var G__51867 = 0;
-                    seq__51843_51850 = G__51864;
-                    chunk__51844_51851 = G__51865;
-                    count__51845_51852 = G__51866;
-                    i__51846_51853 = G__51867;
+                var temp__4092__auto___31529 = cljs.core.seq.call(null, seq__31511_31518);
+                if(temp__4092__auto___31529) {
+                  var seq__31511_31530__$1 = temp__4092__auto___31529;
+                  if(cljs.core.chunked_seq_QMARK_.call(null, seq__31511_31530__$1)) {
+                    var c__2754__auto___31531 = cljs.core.chunk_first.call(null, seq__31511_31530__$1);
+                    var G__31532 = cljs.core.chunk_rest.call(null, seq__31511_31530__$1);
+                    var G__31533 = c__2754__auto___31531;
+                    var G__31534 = cljs.core.count.call(null, c__2754__auto___31531);
+                    var G__31535 = 0;
+                    seq__31511_31518 = G__31532;
+                    chunk__31512_31519 = G__31533;
+                    count__31513_31520 = G__31534;
+                    i__31514_31521 = G__31535;
                     continue
                   }else {
-                    var vec__51848_51868 = cljs.core.first.call(null, seq__51843_51862__$1);
-                    var k_51869 = cljs.core.nth.call(null, vec__51848_51868, 0, null);
-                    var v_51870 = cljs.core.nth.call(null, vec__51848_51868, 1, null);
-                    if(cljs.core._EQ_.call(null, k_51869, 0)) {
-                      if(cljs.core.truth_(v_51870.func2go.toListento)) {
-                        goog.events.listen(v_51870.func2go, "done", function(seq__51843_51850, chunk__51844_51851, count__51845_51852, i__51846_51853, vec__51848_51868, k_51869, v_51870, seq__51843_51862__$1, temp__4092__auto___51861, this$, argmap, refseq, lastidx) {
+                    var vec__31516_31536 = cljs.core.first.call(null, seq__31511_31530__$1);
+                    var k_31537 = cljs.core.nth.call(null, vec__31516_31536, 0, null);
+                    var v_31538 = cljs.core.nth.call(null, vec__31516_31536, 1, null);
+                    if(cljs.core._EQ_.call(null, k_31537, 0)) {
+                      if(cljs.core.truth_(v_31538.func2go.toListento)) {
+                        goog.events.listen(v_31538.func2go, "done", function(seq__31511_31518, chunk__31512_31519, count__31513_31520, i__31514_31521, vec__31516_31536, k_31537, v_31538, seq__31511_31530__$1, temp__4092__auto___31529, this$, argmap, refseq, lastidx) {
                           return function() {
                             return this$.dispatchEvent("done")
                           }
-                        }(seq__51843_51850, chunk__51844_51851, count__51845_51852, i__51846_51853, vec__51848_51868, k_51869, v_51870, seq__51843_51862__$1, temp__4092__auto___51861, this$, argmap, refseq, lastidx))
+                        }(seq__31511_31518, chunk__31512_31519, count__31513_31520, i__31514_31521, vec__31516_31536, k_31537, v_31538, seq__31511_31530__$1, temp__4092__auto___31529, this$, argmap, refseq, lastidx))
                       }else {
-                        if(cljs.core._EQ_.call(null, k_51869, lastidx)) {
-                          goog.events.listen(v_51870, "done", function(seq__51843_51850, chunk__51844_51851, count__51845_51852, i__51846_51853, vec__51848_51868, k_51869, v_51870, seq__51843_51862__$1, temp__4092__auto___51861, this$, argmap, refseq, lastidx) {
+                        if(cljs.core._EQ_.call(null, k_31537, lastidx)) {
+                          goog.events.listen(v_31538, "done", function(seq__31511_31518, chunk__31512_31519, count__31513_31520, i__31514_31521, vec__31516_31536, k_31537, v_31538, seq__31511_31530__$1, temp__4092__auto___31529, this$, argmap, refseq, lastidx) {
                             return function() {
                               return this$.dispatchEvent("done")
                             }
-                          }(seq__51843_51850, chunk__51844_51851, count__51845_51852, i__51846_51853, vec__51848_51868, k_51869, v_51870, seq__51843_51862__$1, temp__4092__auto___51861, this$, argmap, refseq, lastidx))
+                          }(seq__31511_31518, chunk__31512_31519, count__31513_31520, i__31514_31521, vec__31516_31536, k_31537, v_31538, seq__31511_31530__$1, temp__4092__auto___31529, this$, argmap, refseq, lastidx))
                         }else {
                         }
                       }
                     }else {
-                      if(cljs.core._EQ_.call(null, k_51869, lastidx)) {
-                        if(cljs.core.truth_(v_51870.func2go.toListento)) {
-                          goog.events.listen(v_51870.func2go, "done", function(seq__51843_51850, chunk__51844_51851, count__51845_51852, i__51846_51853, vec__51848_51868, k_51869, v_51870, seq__51843_51862__$1, temp__4092__auto___51861, this$, argmap, refseq, lastidx) {
+                      if(cljs.core._EQ_.call(null, k_31537, lastidx)) {
+                        if(cljs.core.truth_(v_31538.func2go.toListento)) {
+                          goog.events.listen(v_31538.func2go, "done", function(seq__31511_31518, chunk__31512_31519, count__31513_31520, i__31514_31521, vec__31516_31536, k_31537, v_31538, seq__31511_31530__$1, temp__4092__auto___31529, this$, argmap, refseq, lastidx) {
                             return function() {
                               return this$.dispatchEvent("done")
                             }
-                          }(seq__51843_51850, chunk__51844_51851, count__51845_51852, i__51846_51853, vec__51848_51868, k_51869, v_51870, seq__51843_51862__$1, temp__4092__auto___51861, this$, argmap, refseq, lastidx));
-                          goog.events.listen(refseq.call(null, k_51869 - 1), "done", v_51870.fire)
+                          }(seq__31511_31518, chunk__31512_31519, count__31513_31520, i__31514_31521, vec__31516_31536, k_31537, v_31538, seq__31511_31530__$1, temp__4092__auto___31529, this$, argmap, refseq, lastidx));
+                          goog.events.listen(refseq.call(null, k_31537 - 1), "done", v_31538.fire)
                         }else {
-                          goog.events.listenOnce(refseq.call(null, k_51869 - 1), "done", v_51870.fire);
-                          goog.events.listenOnce(v_51870, "done", function(seq__51843_51850, chunk__51844_51851, count__51845_51852, i__51846_51853, vec__51848_51868, k_51869, v_51870, seq__51843_51862__$1, temp__4092__auto___51861, this$, argmap, refseq, lastidx) {
+                          goog.events.listenOnce(refseq.call(null, k_31537 - 1), "done", v_31538.fire);
+                          goog.events.listenOnce(v_31538, "done", function(seq__31511_31518, chunk__31512_31519, count__31513_31520, i__31514_31521, vec__31516_31536, k_31537, v_31538, seq__31511_31530__$1, temp__4092__auto___31529, this$, argmap, refseq, lastidx) {
                             return function() {
                               return this$.dispatchEvent("done")
                             }
-                          }(seq__51843_51850, chunk__51844_51851, count__51845_51852, i__51846_51853, vec__51848_51868, k_51869, v_51870, seq__51843_51862__$1, temp__4092__auto___51861, this$, argmap, refseq, lastidx))
+                          }(seq__31511_31518, chunk__31512_31519, count__31513_31520, i__31514_31521, vec__31516_31536, k_31537, v_31538, seq__31511_31530__$1, temp__4092__auto___31529, this$, argmap, refseq, lastidx))
                         }
                       }else {
                         if("\ufdd0:else") {
-                          if(cljs.core.truth_(v_51870.func2go.toListento)) {
-                            goog.events.listen(v_51870.func2go, "done", function(seq__51843_51850, chunk__51844_51851, count__51845_51852, i__51846_51853, vec__51848_51868, k_51869, v_51870, seq__51843_51862__$1, temp__4092__auto___51861, this$, argmap, refseq, lastidx) {
+                          if(cljs.core.truth_(v_31538.func2go.toListento)) {
+                            goog.events.listen(v_31538.func2go, "done", function(seq__31511_31518, chunk__31512_31519, count__31513_31520, i__31514_31521, vec__31516_31536, k_31537, v_31538, seq__31511_31530__$1, temp__4092__auto___31529, this$, argmap, refseq, lastidx) {
                               return function() {
                                 return this$.dispatchEvent("done")
                               }
-                            }(seq__51843_51850, chunk__51844_51851, count__51845_51852, i__51846_51853, vec__51848_51868, k_51869, v_51870, seq__51843_51862__$1, temp__4092__auto___51861, this$, argmap, refseq, lastidx));
-                            goog.events.listen(refseq.call(null, k_51869 - 1), "done", v_51870.fire)
+                            }(seq__31511_31518, chunk__31512_31519, count__31513_31520, i__31514_31521, vec__31516_31536, k_31537, v_31538, seq__31511_31530__$1, temp__4092__auto___31529, this$, argmap, refseq, lastidx));
+                            goog.events.listen(refseq.call(null, k_31537 - 1), "done", v_31538.fire)
                           }else {
-                            goog.events.listen(refseq.call(null, k_51869 - 1), "done", v_51870.fire)
+                            goog.events.listen(refseq.call(null, k_31537 - 1), "done", v_31538.fire)
                           }
                         }else {
                         }
                       }
                     }
-                    var G__51871 = cljs.core.next.call(null, seq__51843_51862__$1);
-                    var G__51872 = null;
-                    var G__51873 = 0;
-                    var G__51874 = 0;
-                    seq__51843_51850 = G__51871;
-                    chunk__51844_51851 = G__51872;
-                    count__51845_51852 = G__51873;
-                    i__51846_51853 = G__51874;
+                    var G__31539 = cljs.core.next.call(null, seq__31511_31530__$1);
+                    var G__31540 = null;
+                    var G__31541 = 0;
+                    var G__31542 = 0;
+                    seq__31511_31518 = G__31539;
+                    chunk__31512_31519 = G__31540;
+                    count__31513_31520 = G__31541;
+                    i__31514_31521 = G__31542;
                     continue
                   }
                 }else {
@@ -30948,8 +30953,8 @@ symlog.cljs.animation.timing.serialize = function() {
     return serialize__delegate.call(this, args)
   };
   serialize.cljs$lang$maxFixedArity = 0;
-  serialize.cljs$lang$applyTo = function(arglist__51875) {
-    var args = cljs.core.seq(arglist__51875);
+  serialize.cljs$lang$applyTo = function(arglist__31543) {
+    var args = cljs.core.seq(arglist__31543);
     return serialize__delegate(args)
   };
   serialize.cljs$core$IFn$_invoke$arity$variadic = serialize__delegate;
@@ -30957,6 +30962,23 @@ symlog.cljs.animation.timing.serialize = function() {
 }();
 goog.provide("symlog.cljs.animation.functions");
 goog.require("cljs.core");
+symlog.cljs.animation.functions.loading_circle = function loading_circle(target) {
+  var this$ = this;
+  this$.rotation = cljs.core.atom.call(null, 0);
+  this$.timer = new goog.Timer(100);
+  this$.fire = function() {
+    return this$.timer.start()
+  };
+  this$.play = function() {
+    cljs.core.swap_BANG_.call(null, this$.rotation, cljs.core._PLUS_, 30);
+    return target.setAttribute("transform", [cljs.core.str("rotate("), cljs.core.str(cljs.core.deref.call(null, this$.rotation)), cljs.core.str(",50,50)")].join(""))
+  };
+  this$.stop = function() {
+    return this$.timer.stop()
+  };
+  goog.events.listen(this$.timer, goog.Timer.TICK, this$.play, false, this$);
+  return this$
+};
 symlog.cljs.animation.functions.paint_frames = function paint_frames(image, frames, fps) {
   var this$ = this;
   this$.timer = new goog.Timer(fps);
@@ -31037,27 +31059,14 @@ symlog.cljs.animation.functions.animate_path = function animate_path(obj, fps, d
   };
   return this$
 };
-goog.provide("symlog.cljs.app.dom.elements");
-goog.require("cljs.core");
-symlog.cljs.app.dom.elements.elements = cljs.core.PersistentHashMap.fromArrays(["\ufdd0:mainVidSrc", "\ufdd0:mainVideo", "\ufdd0:context", "\ufdd0:paintFrame", "\ufdd0:narratorFrameBuffer", "\ufdd0:threatsScore", "\ufdd0:narratorDisableTouchArea", "\ufdd0:narratorPlayTouchArea", "\ufdd0:narratorDisableButton", "\ufdd0:mainVidOverlays", "\ufdd0:goodcopSrc", "\ufdd0:liesScore", "\ufdd0:canvas", "\ufdd0:controlButton", "\ufdd0:mainVideoPlayButton", "\ufdd0:narratorPlayButton", "\ufdd0:crimesScore", 
-"\ufdd0:unlawfulsScore", "\ufdd0:mainVideoPlayTouchArea", "\ufdd0:FPS", "\ufdd0:narratorDiv", "\ufdd0:narratorVid"], ["../video/policeaction.webm", goog.dom.getElement("mainVideo"), goog.dom.getElement("canvas").getContext("2d"), new Image, cljs.core.atom.call(null, null), goog.dom.getElement("threats"), goog.dom.getElement("narratorDisableTouchArea"), goog.dom.getElement("narratorPlayTouchArea"), goog.dom.getElement("narratorDisableButton"), cljs.core.atom.call(null, null), "../video/goodcop.webm", 
-goog.dom.getElement("lies"), goog.dom.getElement("canvas"), goog.dom.getElement("controlButton"), goog.dom.getElement("mainVideoPlayButton"), goog.dom.getElement("narratorPlayButton"), goog.dom.getElement("crimes"), goog.dom.getElement("unlawfuls"), goog.dom.getElement("mainVideoPlayTouchArea"), 15, goog.dom.getElement("narrator"), goog.dom.getElement("narratorVid")]);
 goog.provide("symlog.cljs.app.sequencers.narrator.sequencer");
 goog.require("cljs.core");
 goog.require("symlog.cljs.animation.functions");
 goog.require("symlog.cljs.animation.timing");
-goog.require("symlog.cljs.app.dom.elements");
+goog.require("symlog.cljs.app.dom");
 goog.require("symlog.cljs.animation.functions");
 goog.require("symlog.cljs.animation.timing");
-goog.require("symlog.cljs.app.dom.elements");
-goog.inherits(symlog.cljs.app.sequencers.narrator.sequencer.dispatch = function dispatch() {
-  var this$ = this;
-  this$.send = function(message) {
-    return this$.dispatchEvent(message)
-  };
-  return this$
-}, goog.events.EventTarget);
-symlog.cljs.app.sequencers.narrator.sequencer.dispatcher = new symlog.cljs.app.sequencers.narrator.sequencer.dispatch;
+goog.require("symlog.cljs.app.dom");
 symlog.cljs.app.sequencers.narrator.sequencer.ctxt = symlog.cljs.app.sequencers.narrator.sequencer;
 symlog.cljs.app.sequencers.narrator.sequencer.label = "narrator";
 symlog.cljs.app.sequencers.narrator.sequencer.target = goog.dom.getElement("narratorVid");
@@ -31070,17 +31079,23 @@ symlog.cljs.app.sequencers.narrator.sequencer.step = cljs.core.atom.call(null, 1
 symlog.cljs.app.sequencers.narrator.sequencer.enabled = cljs.core.atom.call(null, true);
 symlog.cljs.app.sequencers.narrator.sequencer.rested = cljs.core.atom.call(null, true);
 symlog.cljs.app.sequencers.narrator.sequencer.callback = cljs.core.atom.call(null, null);
-symlog.cljs.app.sequencers.narrator.sequencer.init = function init() {
+symlog.cljs.app.sequencers.narrator.sequencer.TOCnum = 0;
+symlog.cljs.app.sequencers.narrator.sequencer.paintFrame = symlog.cljs.app.dom.elements.call(null, "\ufdd0:paintFrame");
+symlog.cljs.app.sequencers.narrator.sequencer.init = function init(controller) {
+  symlog.cljs.app.sequencers.narrator.sequencer.controller = controller;
   symlog.cljs.app.sequencers.narrator.sequence.init.call(null);
   symlog.cljs.app.sequencers.narrator.sequencer.sequence = symlog.cljs.app.sequencers.narrator.sequence.seqmap;
   symlog.cljs.app.sequencers.narrator.sequencer.maxsteps = cljs.core.count.call(null, cljs.core.keys.call(null, symlog.cljs.app.sequencers.narrator.sequencer.sequence));
-  return symlog.cljs.app.dom.elements.elements.call(null, "\ufdd0:narratorVid").sequencer = symlog.cljs.app.sequencers.narrator.sequencer.ctxt
+  symlog.cljs.app.dom.elements.call(null, "\ufdd0:narratorVid").sequencer = symlog.cljs.app.sequencers.narrator.sequencer.ctxt;
+  return symlog.cljs.app.handlers.narrator.init.call(null)
 };
-symlog.cljs.app.sequencers.narrator.sequencer.fire = function fire(start, end, returnFunc) {
+symlog.cljs.app.sequencers.narrator.sequencer.fire = function fire(start, end, tocNum, returnFunc) {
   cljs.core.reset_BANG_.call(null, symlog.cljs.app.sequencers.narrator.sequencer.startFrame, start);
   cljs.core.reset_BANG_.call(null, symlog.cljs.app.sequencers.narrator.sequencer.endFrame, end);
   cljs.core.reset_BANG_.call(null, symlog.cljs.app.sequencers.narrator.sequencer.callback, returnFunc);
+  symlog.cljs.app.sequencers.narrator.sequencer.TOCnum = tocNum;
   symlog.cljs.app.sequencers.narrator.sequencer.target.currentTime = cljs.core.deref.call(null, symlog.cljs.app.sequencers.narrator.sequencer.startFrame) / symlog.cljs.app.sequencers.narrator.sequencer.frameRate;
+  symlog.cljs.app.sequencers.narrator.sequencer.setStep.call(null, Math.round(symlog.cljs.app.sequencers.narrator.sequencer.target.currentTime * symlog.cljs.app.sequencers.narrator.sequencer.frameRate));
   return symlog.cljs.app.sequencers.narrator.sequencer.play.call(null)
 };
 symlog.cljs.app.sequencers.narrator.sequencer.pause = function pause() {
@@ -31114,8 +31129,36 @@ symlog.cljs.app.sequencers.narrator.sequencer.stop = function stop() {
     }
   }else {
   }
-  symlog.cljs.app.sequencers.narrator.sequencer.pause.call(null);
-  return goog.events.fireListeners(symlog.cljs.app.sequencers.narrator.sequencer.dispatcher, "stopped", false, {"target":symlog.cljs.app.sequencers.narrator.sequencer.ctxt})
+  symlog.cljs.app.sequencers.narrator.sequencer.target.pause();
+  cljs.core.reset_BANG_.call(null, symlog.cljs.app.sequencers.narrator.sequencer.playing, null);
+  symlog.cljs.app.sequencers.narrator.sequencer.paintFrame.clearit.fire();
+  return symlog.cljs.app.sequencers.narrator.sequencer.controller.donext("narrator")
+};
+symlog.cljs.app.sequencers.narrator.sequencer.clear = function clear() {
+  if(cljs.core.truth_(cljs.core.deref.call(null, symlog.cljs.app.sequencers.narrator.sequencer.playing))) {
+    if(cljs.core.truth_(cljs.core.deref.call(null, symlog.cljs.app.sequencers.narrator.sequencer.playing).stop)) {
+      cljs.core.deref.call(null, symlog.cljs.app.sequencers.narrator.sequencer.playing).stop()
+    }else {
+    }
+  }else {
+  }
+  cljs.core.reset_BANG_.call(null, symlog.cljs.app.sequencers.narrator.sequencer.playing, null);
+  return symlog.cljs.app.sequencers.narrator.sequencer.paintFrame.clearit.fire()
+};
+symlog.cljs.app.sequencers.narrator.sequencer.end = function end() {
+  if(cljs.core.truth_(cljs.core.deref.call(null, symlog.cljs.app.sequencers.narrator.sequencer.playing))) {
+    if(cljs.core.truth_(cljs.core.deref.call(null, symlog.cljs.app.sequencers.narrator.sequencer.playing).stop)) {
+      cljs.core.deref.call(null, symlog.cljs.app.sequencers.narrator.sequencer.playing).stop()
+    }else {
+    }
+  }else {
+  }
+  symlog.cljs.app.sequencers.narrator.sequencer.target.pause();
+  cljs.core.reset_BANG_.call(null, symlog.cljs.app.sequencers.narrator.sequencer.playing, null);
+  cljs.core.reset_BANG_.call(null, symlog.cljs.app.sequencers.narrator.sequencer.paused, false);
+  symlog.cljs.app.sequencers.narrator.sequencer.paintFrame.clearit.fire();
+  symlog.cljs.app.sequencers.narrator.sequencer.target.currentTime = cljs.core.deref.call(null, symlog.cljs.app.sequencers.narrator.sequencer.endFrame) / symlog.cljs.app.sequencers.narrator.sequencer.frameRate;
+  return cljs.core.deref.call(null, symlog.cljs.app.sequencers.narrator.sequencer.callback).call(null)
 };
 symlog.cljs.app.sequencers.narrator.sequencer.cycler = function cycler() {
   var frameNum = Math.round(symlog.cljs.app.sequencers.narrator.sequencer.target.currentTime * symlog.cljs.app.sequencers.narrator.sequencer.frameRate);
@@ -31141,19 +31184,132 @@ symlog.cljs.app.sequencers.narrator.sequencer.doframe = function doframe(frameNo
   }else {
     if(frameNo >= symlog.cljs.app.sequencers.narrator.sequencer.sequence.call(null, cljs.core.deref.call(null, symlog.cljs.app.sequencers.narrator.sequencer.step)).call(null, "\ufdd0:frame")) {
       if(cljs.core.not.call(null, cljs.core.deref.call(null, symlog.cljs.app.sequencers.narrator.sequencer.playing))) {
-        cljs.core.reset_BANG_.call(null, symlog.cljs.app.sequencers.narrator.sequencer.playing, symlog.cljs.app.sequencers.narrator.sequencer.sequence.call(null, cljs.core.deref.call(null, symlog.cljs.app.sequencers.narrator.sequencer.step)).call(null, "\ufdd0:sequence"));
-        cljs.core.swap_BANG_.call(null, symlog.cljs.app.sequencers.narrator.sequencer.step, cljs.core.inc);
-        if(cljs.core.truth_(cljs.core.deref.call(null, symlog.cljs.app.sequencers.narrator.sequencer.playing).fire)) {
-          return cljs.core.deref.call(null, symlog.cljs.app.sequencers.narrator.sequencer.playing).fire()
-        }else {
-          return cljs.core.deref.call(null, symlog.cljs.app.sequencers.narrator.sequencer.playing).call(null)
-        }
+        return symlog.cljs.app.sequencers.narrator.sequencer.sequence.call(null, cljs.core.deref.call(null, symlog.cljs.app.sequencers.narrator.sequencer.step)).call(null, "\ufdd0:sequence").call(null)
       }else {
-        return null
+        return cljs.core.swap_BANG_.call(null, symlog.cljs.app.sequencers.narrator.sequencer.step, cljs.core.inc)
       }
     }else {
       return null
     }
+  }
+};
+symlog.cljs.app.sequencers.narrator.sequencer.setStep = function setStep(frameNo) {
+  var seq__71759 = cljs.core.seq.call(null, symlog.cljs.app.sequencers.narrator.sequencer.sequence);
+  var chunk__71760 = null;
+  var count__71761 = 0;
+  var i__71762 = 0;
+  while(true) {
+    if(i__71762 < count__71761) {
+      var vec__71763 = cljs.core._nth.call(null, chunk__71760, i__71762);
+      var k = cljs.core.nth.call(null, vec__71763, 0, null);
+      var v = cljs.core.nth.call(null, vec__71763, 1, null);
+      if(cljs.core._EQ_.call(null, k, symlog.cljs.app.sequencers.narrator.sequencer.maxsteps)) {
+        if(frameNo >= v.call(null, "\ufdd0:frame")) {
+          cljs.core.reset_BANG_.call(null, symlog.cljs.app.sequencers.narrator.sequencer.step, symlog.cljs.app.sequencers.narrator.sequencer.maxsteps)
+        }else {
+        }
+      }else {
+        if("\ufdd0:else") {
+          if(function() {
+            var and__3941__auto__ = frameNo >= v.call(null, "\ufdd0:frame");
+            if(and__3941__auto__) {
+              return frameNo < v.call(null, "\ufdd0:frame") + symlog.cljs.app.sequencers.narrator.sequencer.frameRate
+            }else {
+              return and__3941__auto__
+            }
+          }()) {
+            cljs.core.reset_BANG_.call(null, symlog.cljs.app.sequencers.narrator.sequencer.step, k)
+          }else {
+            if(function() {
+              var and__3941__auto__ = frameNo >= v.call(null, "\ufdd0:frame");
+              if(and__3941__auto__) {
+                return frameNo < symlog.cljs.app.sequencers.narrator.sequencer.sequence.call(null, k + 1).call(null, "\ufdd0:frame")
+              }else {
+                return and__3941__auto__
+              }
+            }()) {
+              cljs.core.reset_BANG_.call(null, symlog.cljs.app.sequencers.narrator.sequencer.step, k + 1)
+            }else {
+            }
+          }
+        }else {
+        }
+      }
+      var G__71765 = seq__71759;
+      var G__71766 = chunk__71760;
+      var G__71767 = count__71761;
+      var G__71768 = i__71762 + 1;
+      seq__71759 = G__71765;
+      chunk__71760 = G__71766;
+      count__71761 = G__71767;
+      i__71762 = G__71768;
+      continue
+    }else {
+      var temp__4092__auto__ = cljs.core.seq.call(null, seq__71759);
+      if(temp__4092__auto__) {
+        var seq__71759__$1 = temp__4092__auto__;
+        if(cljs.core.chunked_seq_QMARK_.call(null, seq__71759__$1)) {
+          var c__2754__auto__ = cljs.core.chunk_first.call(null, seq__71759__$1);
+          var G__71769 = cljs.core.chunk_rest.call(null, seq__71759__$1);
+          var G__71770 = c__2754__auto__;
+          var G__71771 = cljs.core.count.call(null, c__2754__auto__);
+          var G__71772 = 0;
+          seq__71759 = G__71769;
+          chunk__71760 = G__71770;
+          count__71761 = G__71771;
+          i__71762 = G__71772;
+          continue
+        }else {
+          var vec__71764 = cljs.core.first.call(null, seq__71759__$1);
+          var k = cljs.core.nth.call(null, vec__71764, 0, null);
+          var v = cljs.core.nth.call(null, vec__71764, 1, null);
+          if(cljs.core._EQ_.call(null, k, symlog.cljs.app.sequencers.narrator.sequencer.maxsteps)) {
+            if(frameNo >= v.call(null, "\ufdd0:frame")) {
+              cljs.core.reset_BANG_.call(null, symlog.cljs.app.sequencers.narrator.sequencer.step, symlog.cljs.app.sequencers.narrator.sequencer.maxsteps)
+            }else {
+            }
+          }else {
+            if("\ufdd0:else") {
+              if(function() {
+                var and__3941__auto__ = frameNo >= v.call(null, "\ufdd0:frame");
+                if(and__3941__auto__) {
+                  return frameNo < v.call(null, "\ufdd0:frame") + symlog.cljs.app.sequencers.narrator.sequencer.frameRate
+                }else {
+                  return and__3941__auto__
+                }
+              }()) {
+                cljs.core.reset_BANG_.call(null, symlog.cljs.app.sequencers.narrator.sequencer.step, k)
+              }else {
+                if(function() {
+                  var and__3941__auto__ = frameNo >= v.call(null, "\ufdd0:frame");
+                  if(and__3941__auto__) {
+                    return frameNo < symlog.cljs.app.sequencers.narrator.sequencer.sequence.call(null, k + 1).call(null, "\ufdd0:frame")
+                  }else {
+                    return and__3941__auto__
+                  }
+                }()) {
+                  cljs.core.reset_BANG_.call(null, symlog.cljs.app.sequencers.narrator.sequencer.step, k + 1)
+                }else {
+                }
+              }
+            }else {
+            }
+          }
+          var G__71773 = cljs.core.next.call(null, seq__71759__$1);
+          var G__71774 = null;
+          var G__71775 = 0;
+          var G__71776 = 0;
+          seq__71759 = G__71773;
+          chunk__71760 = G__71774;
+          count__71761 = G__71775;
+          i__71762 = G__71776;
+          continue
+        }
+      }else {
+        return null
+      }
+    }
+    break
   }
 };
 goog.provide("goog.db.Error");
@@ -31636,34 +31792,32 @@ goog.db.ObjectStore.prototype.deleteIndex = function(name) {
 goog.provide("symlog.cljs.app.controller.actions");
 goog.require("cljs.core");
 goog.require("symlog.cljs.animation.functions");
-goog.require("symlog.cljs.app.dom.elements");
+goog.require("symlog.cljs.app.dom");
 goog.require("symlog.cljs.animation.timing");
 goog.require("symlog.cljs.animation.functions");
 goog.require("symlog.cljs.animation.timing");
-goog.require("symlog.cljs.app.dom.elements");
+goog.require("symlog.cljs.app.dom");
 symlog.cljs.app.controller.actions.init = function init(controller) {
-  symlog.cljs.app.controller.actions.animations = cljs.core.vector.call(null, new symlog.cljs.animation.functions.animate_path(symlog.cljs.app.dom.elements.elements.call(null, "\ufdd0:narratorDiv"), 1E3 / 25, 0.4, 3, false, [cljs.core.str("m 355,54 c 76.60172,229.51602 275,234 275,234")].join("")), new symlog.cljs.animation.functions.animate_path(symlog.cljs.app.dom.elements.elements.call(null, "\ufdd0:narratorDiv"), 1E3 / 25, 0.4, 0.66666, false, [cljs.core.str("M 630,288 C 487.55708,313.5267 420,218 420,218")].join("")), 
-  new symlog.cljs.animation.functions.animate_path(symlog.cljs.app.dom.elements.elements.call(null, "\ufdd0:narratorDiv"), 1E3 / 25, 0.3, 0.5, false, [cljs.core.str("M 420,218 C 355.87705,146.59579 355,54 355,54")].join("")), new symlog.cljs.animation.functions.animate_path(symlog.cljs.app.dom.elements.elements.call(null, "\ufdd0:narratorDiv"), 1E3 / 25, 0.4, 2, true, [cljs.core.str("M 420,218 C 355.87705,146.59579 355,54 355,54")].join("")), new symlog.cljs.animation.functions.animate_path(symlog.cljs.app.dom.elements.elements.call(null, 
-  "\ufdd0:narratorDiv"), 1E3 / 25, 0.4, 0.5, true, [cljs.core.str("M 923,113 C 699.09177,208.04019 420,218 420,218")].join("")), new symlog.cljs.animation.functions.animate_path(symlog.cljs.app.dom.elements.elements.call(null, "\ufdd0:narratorDiv"), 1E3 / 25, 0.4, 1, false, [cljs.core.str("M 923,113 C 682.98326,33.262894 355,54 355,54")].join("")));
+  symlog.cljs.app.controller.actions.animations = cljs.core.vector.call(null, new symlog.cljs.animation.functions.animate_path(symlog.cljs.app.dom.elements.call(null, "\ufdd0:narratorDiv"), 1E3 / 25, 0.4, 3, false, [cljs.core.str("m 355,54 c 76.60172,229.51602 275,234 275,234")].join("")), new symlog.cljs.animation.functions.animate_path(symlog.cljs.app.dom.elements.call(null, "\ufdd0:narratorDiv"), 1E3 / 25, 0.4, 0.66666, false, [cljs.core.str("M 630,288 C 487.55708,313.5267 420,218 420,218")].join("")), 
+  new symlog.cljs.animation.functions.animate_path(symlog.cljs.app.dom.elements.call(null, "\ufdd0:narratorDiv"), 1E3 / 25, 0.3, 0.5, false, [cljs.core.str("M 420,218 C 355.87705,146.59579 355,54 355,54")].join("")), new symlog.cljs.animation.functions.animate_path(symlog.cljs.app.dom.elements.call(null, "\ufdd0:narratorDiv"), 1E3 / 25, 0.4, 2, true, [cljs.core.str("M 420,218 C 355.87705,146.59579 355,54 355,54")].join("")), new symlog.cljs.animation.functions.animate_path(symlog.cljs.app.dom.elements.call(null, 
+  "\ufdd0:narratorDiv"), 1E3 / 25, 0.4, 0.5, true, [cljs.core.str("M 923,113 C 699.09177,208.04019 420,218 420,218")].join("")), new symlog.cljs.animation.functions.animate_path(symlog.cljs.app.dom.elements.call(null, "\ufdd0:narratorDiv"), 1E3 / 25, 0.4, 1, false, [cljs.core.str("M 923,113 C 682.98326,33.262894 355,54 355,54")].join("")), new symlog.cljs.animation.functions.animate_path(symlog.cljs.app.dom.elements.call(null, "\ufdd0:narratorDiv"), 1E3 / 25, 0.4, 1, true, [cljs.core.str("M 923,113 C 682.98326,33.262894 355,54 355,54")].join("")));
   symlog.cljs.app.controller.actions.seqmap = cljs.core.PersistentArrayMap.fromArray([1, cljs.core.PersistentArrayMap.fromArray(["\ufdd0:frame", 0, "\ufdd0:sequence", function seqmap() {
-    if(cljs.core.truth_(controller.seqsManaged.call(null, 0).enabled)) {
-      return symlog.cljs.animation.timing.pause.call(null, 1E3, function() {
-        controller.interrupt();
-        symlog.cljs.app.dom.elements.elements.call(null, "\ufdd0:mainVideo").className = "faded";
-        return symlog.cljs.app.controller.actions.animations.call(null, 0).fire(function() {
-          symlog.cljs.app.dom.elements.elements.call(null, "\ufdd0:narratorVid").sequencer.rested = false;
-          return controller.seqsManaged.call(null, 0).fire(0, 155, function() {
-            return symlog.cljs.animation.timing.pause.call(null, 300, function() {
-              return symlog.cljs.app.controller.actions.animations.call(null, 1).fire(function() {
-                symlog.cljs.app.dom.elements.elements.call(null, "\ufdd0:mainVideo").currentTime = 3 / 15;
-                return controller.seqsManaged.call(null, 0).fire(170, 595, function() {
-                  return symlog.cljs.animation.timing.pause.call(null, 500, function() {
-                    return symlog.cljs.app.controller.actions.animations.call(null, 2).fire(function() {
-                      symlog.cljs.app.dom.elements.elements.call(null, "\ufdd0:narratorVid").sequencer.rested = true;
-                      symlog.cljs.app.dom.elements.elements.call(null, "\ufdd0:mainVideo").className = "unfaded";
-                      cljs.core.reset_BANG_.call(null, controller.playing, null);
-                      return setTimeout(controller.resume, 700)
-                    })
+    if(cljs.core.truth_(cljs.core.deref.call(null, controller.seqsManaged.call(null, 0).enabled))) {
+      controller.interrupt();
+      symlog.cljs.app.dom.elements.call(null, "\ufdd0:mainVideo").style.opacity = 0.3;
+      return symlog.cljs.app.controller.actions.animations.call(null, 0).fire(function() {
+        cljs.core.reset_BANG_.call(null, symlog.cljs.app.dom.elements.call(null, "\ufdd0:narratorVid").sequencer.rested, false);
+        return controller.seqsManaged.call(null, 0).fire(0, 155, 0, function() {
+          return symlog.cljs.animation.timing.pause.call(null, 300, function() {
+            return symlog.cljs.app.controller.actions.animations.call(null, 1).fire(function() {
+              symlog.cljs.app.dom.elements.call(null, "\ufdd0:mainVideo").currentTime = 3 / 15;
+              return controller.seqsManaged.call(null, 0).fire(170, 595, 0, function() {
+                return symlog.cljs.animation.timing.pause.call(null, 500, function() {
+                  return symlog.cljs.app.controller.actions.animations.call(null, 2).fire(function() {
+                    cljs.core.reset_BANG_.call(null, symlog.cljs.app.dom.elements.call(null, "\ufdd0:narratorVid").sequencer.rested, true);
+                    symlog.cljs.app.dom.elements.call(null, "\ufdd0:mainVideo").style.opacity = 1;
+                    cljs.core.reset_BANG_.call(null, controller.playing, null);
+                    return setTimeout(controller.resume, 700)
                   })
                 })
               })
@@ -31672,29 +31826,23 @@ symlog.cljs.app.controller.actions.init = function init(controller) {
         })
       })
     }else {
-      return null
+      requestAnimationFrame(controller.cycler);
+      return controller.target.play()
     }
   }], true), 2, cljs.core.PersistentArrayMap.fromArray(["\ufdd0:frame", 2420, "\ufdd0:sequence", function seqmap() {
-    if(cljs.core.truth_(controller.seqsManaged.call(null, 0).enabled)) {
+    if(cljs.core.truth_(cljs.core.deref.call(null, controller.seqsManaged.call(null, 0).enabled))) {
       controller.interrupt();
-      symlog.cljs.app.dom.elements.elements.call(null, "\ufdd0:mainVideo").currentTime = 2420 / 15;
-      symlog.cljs.app.dom.elements.elements.call(null, "\ufdd0:mainVideo").className = "faded";
+      symlog.cljs.app.dom.elements.call(null, "\ufdd0:mainVideo").currentTime = 2420 / 15;
+      symlog.cljs.app.dom.elements.call(null, "\ufdd0:mainVideo").style.opacity = 0.3;
       return symlog.cljs.animation.timing.pause.call(null, 1E3, function() {
         return symlog.cljs.app.controller.actions.animations.call(null, 3).fire(function() {
-          symlog.cljs.app.dom.elements.elements.call(null, "\ufdd0:narratorVid").sequencer.rested = false;
-          return controller.seqsManaged.call(null, 0).fire(607, 3523, function() {
+          cljs.core.reset_BANG_.call(null, symlog.cljs.app.dom.elements.call(null, "\ufdd0:narratorVid").sequencer.rested, false);
+          return controller.seqsManaged.call(null, 0).fire(607, 3523, 1, function() {
             return symlog.cljs.app.controller.actions.animations.call(null, 4).fire(function() {
-              symlog.cljs.app.dom.elements.elements.call(null, "\ufdd0:mainVideo").currentTime = 2430 / 15;
-              symlog.cljs.app.dom.elements.elements.call(null, "\ufdd0:paintFrame").clearit.fire();
-              symlog.cljs.app.dom.elements.elements.call(null, "\ufdd0:mainVideo").className = "unfaded";
-              return controller.seqsManaged.call(null, 0).fire(3536, 8744, function() {
-                return symlog.cljs.app.controller.actions.animations.call(null, 5).fire(function() {
-                  symlog.cljs.app.dom.elements.elements.call(null, "\ufdd0:narratorVid").sequencer.rested = true;
-                  symlog.cljs.app.dom.elements.elements.call(null, "\ufdd0:mainVideo").className = "unfaded";
-                  cljs.core.reset_BANG_.call(null, controller.playing, null);
-                  return setTimeout(controller.resume, 700)
-                })
-              })
+              symlog.cljs.app.dom.elements.call(null, "\ufdd0:mainVideo").currentTime = 2430 / 15;
+              symlog.cljs.app.dom.elements.call(null, "\ufdd0:paintFrame").clearit.fire();
+              cljs.core.reset_BANG_.call(null, controller.playing, null);
+              return controller.doframe(2430)
             })
           })
         })
@@ -31702,12 +31850,41 @@ symlog.cljs.app.controller.actions.init = function init(controller) {
     }else {
       return null
     }
-  }], true), 3, cljs.core.PersistentArrayMap.fromArray(["\ufdd0:frame", 4285, "\ufdd0:sequence", function seqmap() {
+  }], true), 3, cljs.core.PersistentArrayMap.fromArray(["\ufdd0:frame", 2430, "\ufdd0:sequence", function seqmap() {
+    if(cljs.core.truth_(cljs.core.deref.call(null, controller.seqsManaged.call(null, 0).enabled))) {
+      controller.interrupt();
+      symlog.cljs.app.dom.elements.call(null, "\ufdd0:mainVideo").style.opacity = 1;
+      if(cljs.core.truth_(cljs.core.deref.call(null, symlog.cljs.app.dom.elements.call(null, "\ufdd0:narratorVid").sequencer.rested))) {
+        return symlog.cljs.app.controller.actions.animations.call(null, 6).fire(function() {
+          cljs.core.reset_BANG_.call(null, symlog.cljs.app.dom.elements.call(null, "\ufdd0:narratorVid").sequencer.rested, false);
+          return controller.seqsManaged.call(null, 0).fire(3536, 8744, 2, function() {
+            return symlog.cljs.app.controller.actions.animations.call(null, 5).fire(function() {
+              cljs.core.reset_BANG_.call(null, symlog.cljs.app.dom.elements.call(null, "\ufdd0:narratorVid").sequencer.rested, true);
+              symlog.cljs.app.dom.elements.call(null, "\ufdd0:mainVideo").style.opacity = 1;
+              cljs.core.reset_BANG_.call(null, controller.playing, null);
+              return setTimeout(controller.resume, 700)
+            })
+          })
+        })
+      }else {
+        return controller.seqsManaged.call(null, 0).fire(3536, 8744, 3, function() {
+          return symlog.cljs.app.controller.actions.animations.call(null, 5).fire(function() {
+            cljs.core.reset_BANG_.call(null, symlog.cljs.app.dom.elements.call(null, "\ufdd0:narratorVid").sequencer.rested, true);
+            symlog.cljs.app.dom.elements.call(null, "\ufdd0:mainVideo").style.opacity = 1;
+            cljs.core.reset_BANG_.call(null, controller.playing, null);
+            return setTimeout(controller.resume, 700)
+          })
+        })
+      }
+    }else {
+      return null
+    }
+  }], true), 4, cljs.core.PersistentArrayMap.fromArray(["\ufdd0:frame", 4285, "\ufdd0:sequence", function seqmap() {
     controller.interrupt();
-    symlog.cljs.app.dom.elements.elements.call(null, "\ufdd0:paintFrame").src = cljs.core.deref.call(null, symlog.cljs.app.dom.elements.elements.call(null, "\ufdd0:mainVidOverlays"))[0];
-    symlog.cljs.app.dom.elements.elements.call(null, "\ufdd0:liesScore").innerHTML = "1";
-    symlog.cljs.app.dom.elements.elements.call(null, "\ufdd0:unlawfulsScore").innerHTML = "1";
-    if(cljs.core.not.call(null, controller.seqsManaged.call(null, 0).enabled)) {
+    symlog.cljs.app.dom.elements.call(null, "\ufdd0:paintFrame").src = cljs.core.deref.call(null, symlog.cljs.app.dom.elements.call(null, "\ufdd0:mainVidOverlays"))[0];
+    symlog.cljs.app.dom.elements.call(null, "\ufdd0:liesScore").innerHTML = "1";
+    symlog.cljs.app.dom.elements.call(null, "\ufdd0:unlawfulsScore").innerHTML = "1";
+    if(cljs.core.not.call(null, cljs.core.deref.call(null, controller.seqsManaged.call(null, 0).enabled))) {
       return symlog.cljs.animation.timing.pause.call(null, 500, function() {
         cljs.core.reset_BANG_.call(null, controller.playing, null);
         return controller.resume()
@@ -31715,10 +31892,10 @@ symlog.cljs.app.controller.actions.init = function init(controller) {
     }else {
       return symlog.cljs.animation.timing.pause.call(null, 500, function() {
         return symlog.cljs.app.controller.actions.animations.call(null, 3).fire(function() {
-          symlog.cljs.app.dom.elements.elements.call(null, "\ufdd0:narratorVid").sequencer.rested = false;
-          return controller.seqsManaged.call(null, 0).fire(8745, 13355, function() {
+          cljs.core.reset_BANG_.call(null, symlog.cljs.app.dom.elements.call(null, "\ufdd0:narratorVid").sequencer.rested, false);
+          return controller.seqsManaged.call(null, 0).fire(8745, 13355, 3, function() {
             return symlog.cljs.app.controller.actions.animations.call(null, 2).fire(function() {
-              symlog.cljs.app.dom.elements.elements.call(null, "\ufdd0:narratorVid").sequencer.rested = true;
+              cljs.core.reset_BANG_.call(null, symlog.cljs.app.dom.elements.call(null, "\ufdd0:narratorVid").sequencer.rested, true);
               cljs.core.reset_BANG_.call(null, controller.playing, null);
               return setTimeout(controller.resume, 700)
             })
@@ -31726,7 +31903,7 @@ symlog.cljs.app.controller.actions.init = function init(controller) {
         })
       })
     }
-  }], true), 4, cljs.core.PersistentArrayMap.fromArray(["\ufdd0:frame", 15E3, "\ufdd0:sequence", function seqmap() {
+  }], true), 5, cljs.core.PersistentArrayMap.fromArray(["\ufdd0:frame", 15E3, "\ufdd0:sequence", function seqmap() {
     return console.log("ended")
   }], true)], true)
 };
@@ -31743,14 +31920,6 @@ symlog.cljs.canvas.clearCanvas = function clearCanvas(context, canvas) {
   };
   return this$
 };
-goog.provide("sbx");
-goog.require("cljs.core");
-goog.require("symlog.cljs.animation.functions");
-goog.require("symlog.cljs.animation.timing");
-goog.require("symlog.cljs.app.dom.elements");
-goog.require("symlog.cljs.animation.functions");
-goog.require("symlog.cljs.animation.timing");
-goog.require("symlog.cljs.app.dom.elements");
 goog.provide("symlog.cljs.threads.functions");
 goog.require("cljs.core");
 symlog.cljs.threads.functions.getImageArray = function getImageArray(message) {
@@ -31981,6 +32150,59 @@ goog.db.deleteDatabase = function(name, opt_onBlocked) {
   };
   return d
 };
+goog.provide("symlog.cljs.util");
+goog.require("cljs.core");
+goog.inherits(symlog.cljs.util.dispatcher = function dispatcher() {
+  var this$ = this;
+  this$.send = function(message) {
+    return this$.dispatchEvent(message)
+  };
+  return this$
+}, goog.events.EventTarget);
+symlog.cljs.util.nodelist__GT_coll = function nodelist__GT_coll(nl) {
+  var iter__2723__auto__ = function iter__61445(s__61446) {
+    return new cljs.core.LazySeq(null, false, function() {
+      var s__61446__$1 = s__61446;
+      while(true) {
+        var temp__4092__auto__ = cljs.core.seq.call(null, s__61446__$1);
+        if(temp__4092__auto__) {
+          var s__61446__$2 = temp__4092__auto__;
+          if(cljs.core.chunked_seq_QMARK_.call(null, s__61446__$2)) {
+            var c__2721__auto__ = cljs.core.chunk_first.call(null, s__61446__$2);
+            var size__2722__auto__ = cljs.core.count.call(null, c__2721__auto__);
+            var b__61448 = cljs.core.chunk_buffer.call(null, size__2722__auto__);
+            if(function() {
+              var i__61447 = 0;
+              while(true) {
+                if(i__61447 < size__2722__auto__) {
+                  var x = cljs.core._nth.call(null, c__2721__auto__, i__61447);
+                  cljs.core.chunk_append.call(null, b__61448, nl[x]);
+                  var G__61449 = i__61447 + 1;
+                  i__61447 = G__61449;
+                  continue
+                }else {
+                  return true
+                }
+                break
+              }
+            }()) {
+              return cljs.core.chunk_cons.call(null, cljs.core.chunk.call(null, b__61448), iter__61445.call(null, cljs.core.chunk_rest.call(null, s__61446__$2)))
+            }else {
+              return cljs.core.chunk_cons.call(null, cljs.core.chunk.call(null, b__61448), null)
+            }
+          }else {
+            var x = cljs.core.first.call(null, s__61446__$2);
+            return cljs.core.cons.call(null, nl[x], iter__61445.call(null, cljs.core.rest.call(null, s__61446__$2)))
+          }
+        }else {
+          return null
+        }
+        break
+      }
+    }, null)
+  };
+  return iter__2723__auto__.call(null, cljs.core.range.call(null, 0, nl.length))
+};
 goog.provide("symlog.cljs.net");
 goog.require("cljs.core");
 symlog.cljs.net.getTextArray = function getTextArray(url, callbackOnResponse) {
@@ -31996,95 +32218,109 @@ goog.provide("symlog.cljs.app.sequencers.narrator.sequence");
 goog.require("cljs.core");
 goog.require("symlog.cljs.animation.functions");
 goog.require("symlog.cljs.animation.timing");
-goog.require("symlog.cljs.app.dom.elements");
+goog.require("symlog.cljs.app.dom");
 goog.require("symlog.cljs.animation.functions");
 goog.require("symlog.cljs.animation.timing");
-goog.require("symlog.cljs.app.dom.elements");
+goog.require("symlog.cljs.app.dom");
 symlog.cljs.app.sequencers.narrator.sequence.init = function init() {
   symlog.cljs.app.sequencers.narrator.sequence.sequencer = symlog.cljs.app.sequencers.narrator.sequencer;
-  symlog.cljs.app.dom.elements.elements.call(null, "\ufdd0:narratorVid").sequencer = symlog.cljs.app.sequencers.narrator.sequence.sequencer;
-  symlog.cljs.app.sequencers.narrator.sequence.animations = cljs.core.vector.call(null, new symlog.cljs.animation.functions.paint_frames(symlog.cljs.app.dom.elements.elements.call(null, "\ufdd0:paintFrame"), cljs.core.deref.call(null, symlog.cljs.app.dom.elements.elements.call(null, "\ufdd0:narratorFrameBuffer")).slice(0, 32), 1E3 / 20), new symlog.cljs.animation.functions.paint_frames(symlog.cljs.app.dom.elements.elements.call(null, "\ufdd0:paintFrame"), cljs.core.deref.call(null, symlog.cljs.app.dom.elements.elements.call(null, 
-  "\ufdd0:narratorFrameBuffer")).slice(33, 67), 1E3 / 20), new symlog.cljs.animation.functions.paint_frames(symlog.cljs.app.dom.elements.elements.call(null, "\ufdd0:paintFrame"), cljs.core.deref.call(null, symlog.cljs.app.dom.elements.elements.call(null, "\ufdd0:narratorFrameBuffer")).slice(68, 99), 1E3 / 20), new symlog.cljs.animation.functions.paint_frames(symlog.cljs.app.dom.elements.elements.call(null, "\ufdd0:paintFrame"), cljs.core.deref.call(null, symlog.cljs.app.dom.elements.elements.call(null, 
-  "\ufdd0:narratorFrameBuffer")).slice(100, 130), 1E3 / 20), new symlog.cljs.animation.functions.paint_frames(symlog.cljs.app.dom.elements.elements.call(null, "\ufdd0:paintFrame"), cljs.core.deref.call(null, symlog.cljs.app.dom.elements.elements.call(null, "\ufdd0:narratorFrameBuffer")).slice(131, 135), 1E3 / 20), new symlog.cljs.animation.functions.paint_frames(symlog.cljs.app.dom.elements.elements.call(null, "\ufdd0:paintFrame"), cljs.core.deref.call(null, symlog.cljs.app.dom.elements.elements.call(null, 
-  "\ufdd0:narratorFrameBuffer")).slice(136, 140), 1E3 / 20), new symlog.cljs.animation.functions.paint_frames(symlog.cljs.app.dom.elements.elements.call(null, "\ufdd0:paintFrame"), cljs.core.deref.call(null, symlog.cljs.app.dom.elements.elements.call(null, "\ufdd0:narratorFrameBuffer")).slice(141, 144), 1E3 / 20), new symlog.cljs.animation.functions.paint_frames(symlog.cljs.app.dom.elements.elements.call(null, "\ufdd0:paintFrame"), cljs.core.deref.call(null, symlog.cljs.app.dom.elements.elements.call(null, 
-  "\ufdd0:narratorFrameBuffer")).slice(145, 163), 1E3 / 20), new symlog.cljs.animation.functions.paint_frames(symlog.cljs.app.dom.elements.elements.call(null, "\ufdd0:paintFrame"), cljs.core.deref.call(null, symlog.cljs.app.dom.elements.elements.call(null, "\ufdd0:narratorFrameBuffer")).slice(164, 185), 1E3 / 20), new symlog.cljs.animation.functions.paint_frames(symlog.cljs.app.dom.elements.elements.call(null, "\ufdd0:paintFrame"), cljs.core.deref.call(null, symlog.cljs.app.dom.elements.elements.call(null, 
-  "\ufdd0:narratorFrameBuffer")).slice(186, 228), 1E3 / 20), new symlog.cljs.animation.functions.paint_frames(symlog.cljs.app.dom.elements.elements.call(null, "\ufdd0:paintFrame"), cljs.core.deref.call(null, symlog.cljs.app.dom.elements.elements.call(null, "\ufdd0:narratorFrameBuffer")).slice(229, 262), 1E3 / 20), new symlog.cljs.animation.functions.paint_frames(symlog.cljs.app.dom.elements.elements.call(null, "\ufdd0:paintFrame"), cljs.core.deref.call(null, symlog.cljs.app.dom.elements.elements.call(null, 
-  "\ufdd0:narratorFrameBuffer")).slice(263, 268), 1E3 / 20), new symlog.cljs.animation.functions.paint_frames(symlog.cljs.app.dom.elements.elements.call(null, "\ufdd0:paintFrame"), cljs.core.deref.call(null, symlog.cljs.app.dom.elements.elements.call(null, "\ufdd0:narratorFrameBuffer")).slice(269, 278), 1E3 / 20), new symlog.cljs.animation.functions.paint_frames(symlog.cljs.app.dom.elements.elements.call(null, "\ufdd0:paintFrame"), cljs.core.deref.call(null, symlog.cljs.app.dom.elements.elements.call(null, 
-  "\ufdd0:narratorFrameBuffer")).slice(279, 300), 1E3 / 20), new symlog.cljs.animation.functions.paint_frames(symlog.cljs.app.dom.elements.elements.call(null, "\ufdd0:paintFrame"), cljs.core.deref.call(null, symlog.cljs.app.dom.elements.elements.call(null, "\ufdd0:narratorFrameBuffer")).slice(301, 306), 1E3 / 20));
+  symlog.cljs.app.dom.elements.call(null, "\ufdd0:narratorVid").sequencer = symlog.cljs.app.sequencers.narrator.sequence.sequencer;
+  symlog.cljs.app.sequencers.narrator.sequence.animations = cljs.core.vector.call(null, new symlog.cljs.animation.functions.paint_frames(symlog.cljs.app.dom.elements.call(null, "\ufdd0:paintFrame"), cljs.core.deref.call(null, symlog.cljs.app.dom.elements.call(null, "\ufdd0:narratorFrameBuffer")).slice(0, 32), 1E3 / 20), new symlog.cljs.animation.functions.paint_frames(symlog.cljs.app.dom.elements.call(null, "\ufdd0:paintFrame"), cljs.core.deref.call(null, symlog.cljs.app.dom.elements.call(null, "\ufdd0:narratorFrameBuffer")).slice(33, 
+  67), 1E3 / 20), new symlog.cljs.animation.functions.paint_frames(symlog.cljs.app.dom.elements.call(null, "\ufdd0:paintFrame"), cljs.core.deref.call(null, symlog.cljs.app.dom.elements.call(null, "\ufdd0:narratorFrameBuffer")).slice(68, 99), 1E3 / 20), new symlog.cljs.animation.functions.paint_frames(symlog.cljs.app.dom.elements.call(null, "\ufdd0:paintFrame"), cljs.core.deref.call(null, symlog.cljs.app.dom.elements.call(null, "\ufdd0:narratorFrameBuffer")).slice(100, 130), 1E3 / 20), new symlog.cljs.animation.functions.paint_frames(symlog.cljs.app.dom.elements.call(null, 
+  "\ufdd0:paintFrame"), cljs.core.deref.call(null, symlog.cljs.app.dom.elements.call(null, "\ufdd0:narratorFrameBuffer")).slice(131, 135), 1E3 / 20), new symlog.cljs.animation.functions.paint_frames(symlog.cljs.app.dom.elements.call(null, "\ufdd0:paintFrame"), cljs.core.deref.call(null, symlog.cljs.app.dom.elements.call(null, "\ufdd0:narratorFrameBuffer")).slice(136, 140), 1E3 / 20), new symlog.cljs.animation.functions.paint_frames(symlog.cljs.app.dom.elements.call(null, "\ufdd0:paintFrame"), cljs.core.deref.call(null, 
+  symlog.cljs.app.dom.elements.call(null, "\ufdd0:narratorFrameBuffer")).slice(141, 144), 1E3 / 20), new symlog.cljs.animation.functions.paint_frames(symlog.cljs.app.dom.elements.call(null, "\ufdd0:paintFrame"), cljs.core.deref.call(null, symlog.cljs.app.dom.elements.call(null, "\ufdd0:narratorFrameBuffer")).slice(145, 163), 1E3 / 20), new symlog.cljs.animation.functions.paint_frames(symlog.cljs.app.dom.elements.call(null, "\ufdd0:paintFrame"), cljs.core.deref.call(null, symlog.cljs.app.dom.elements.call(null, 
+  "\ufdd0:narratorFrameBuffer")).slice(164, 185), 1E3 / 20), new symlog.cljs.animation.functions.paint_frames(symlog.cljs.app.dom.elements.call(null, "\ufdd0:paintFrame"), cljs.core.deref.call(null, symlog.cljs.app.dom.elements.call(null, "\ufdd0:narratorFrameBuffer")).slice(186, 228), 1E3 / 20), new symlog.cljs.animation.functions.paint_frames(symlog.cljs.app.dom.elements.call(null, "\ufdd0:paintFrame"), cljs.core.deref.call(null, symlog.cljs.app.dom.elements.call(null, "\ufdd0:narratorFrameBuffer")).slice(229, 
+  262), 1E3 / 20), new symlog.cljs.animation.functions.paint_frames(symlog.cljs.app.dom.elements.call(null, "\ufdd0:paintFrame"), cljs.core.deref.call(null, symlog.cljs.app.dom.elements.call(null, "\ufdd0:narratorFrameBuffer")).slice(263, 268), 1E3 / 20), new symlog.cljs.animation.functions.paint_frames(symlog.cljs.app.dom.elements.call(null, "\ufdd0:paintFrame"), cljs.core.deref.call(null, symlog.cljs.app.dom.elements.call(null, "\ufdd0:narratorFrameBuffer")).slice(269, 278), 1E3 / 20), new symlog.cljs.animation.functions.paint_frames(symlog.cljs.app.dom.elements.call(null, 
+  "\ufdd0:paintFrame"), cljs.core.deref.call(null, symlog.cljs.app.dom.elements.call(null, "\ufdd0:narratorFrameBuffer")).slice(279, 300), 1E3 / 20), new symlog.cljs.animation.functions.paint_frames(symlog.cljs.app.dom.elements.call(null, "\ufdd0:paintFrame"), cljs.core.deref.call(null, symlog.cljs.app.dom.elements.call(null, "\ufdd0:narratorFrameBuffer")).slice(301, 306), 1E3 / 20));
   symlog.cljs.app.sequencers.narrator.sequence.seqmap = cljs.core.PersistentHashMap.fromArrays([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21], [cljs.core.PersistentArrayMap.fromArray(["\ufdd0:frame", 927, "\ufdd0:sequence", function seqmap() {
+    cljs.core.reset_BANG_.call(null, symlog.cljs.app.sequencers.narrator.sequence.sequencer.playing, symlog.cljs.app.sequencers.narrator.sequence.animations.call(null, 0));
     return symlog.cljs.app.sequencers.narrator.sequence.animations.call(null, 0).fire(function() {
       return cljs.core.reset_BANG_.call(null, symlog.cljs.app.sequencers.narrator.sequence.sequencer.playing, null)
     })
   }], true), cljs.core.PersistentArrayMap.fromArray(["\ufdd0:frame", 1352, "\ufdd0:sequence", function seqmap() {
+    cljs.core.reset_BANG_.call(null, symlog.cljs.app.sequencers.narrator.sequence.sequencer.playing, symlog.cljs.app.sequencers.narrator.sequence.animations.call(null, 1));
     return symlog.cljs.app.sequencers.narrator.sequence.animations.call(null, 1).fire(function() {
       return cljs.core.reset_BANG_.call(null, symlog.cljs.app.sequencers.narrator.sequence.sequencer.playing, null)
     })
   }], true), cljs.core.PersistentArrayMap.fromArray(["\ufdd0:frame", 1989, "\ufdd0:sequence", function seqmap() {
+    cljs.core.reset_BANG_.call(null, symlog.cljs.app.sequencers.narrator.sequence.sequencer.playing, symlog.cljs.app.sequencers.narrator.sequence.animations.call(null, 2));
     return symlog.cljs.app.sequencers.narrator.sequence.animations.call(null, 2).fire(function() {
       return cljs.core.reset_BANG_.call(null, symlog.cljs.app.sequencers.narrator.sequence.sequencer.playing, null)
     })
   }], true), cljs.core.PersistentArrayMap.fromArray(["\ufdd0:frame", 2456, "\ufdd0:sequence", function seqmap() {
+    cljs.core.reset_BANG_.call(null, symlog.cljs.app.sequencers.narrator.sequence.sequencer.playing, symlog.cljs.app.sequencers.narrator.sequence.animations.call(null, 3));
     return symlog.cljs.app.sequencers.narrator.sequence.animations.call(null, 3).fire(function() {
       return cljs.core.reset_BANG_.call(null, symlog.cljs.app.sequencers.narrator.sequence.sequencer.playing, null)
     })
   }], true), cljs.core.PersistentArrayMap.fromArray(["\ufdd0:frame", 3448, "\ufdd0:sequence", function seqmap() {
-    symlog.cljs.app.dom.elements.elements.call(null, "\ufdd0:paintFrame").clearit.fire();
+    symlog.cljs.app.dom.elements.call(null, "\ufdd0:paintFrame").clearit.fire();
     return cljs.core.reset_BANG_.call(null, symlog.cljs.app.sequencers.narrator.sequence.sequencer.playing, null)
   }], true), cljs.core.PersistentArrayMap.fromArray(["\ufdd0:frame", 5036, "\ufdd0:sequence", function seqmap() {
+    cljs.core.reset_BANG_.call(null, symlog.cljs.app.sequencers.narrator.sequence.sequencer.playing, symlog.cljs.app.sequencers.narrator.sequence.animations.call(null, 4));
     return symlog.cljs.app.sequencers.narrator.sequence.animations.call(null, 4).fire(function() {
       return cljs.core.reset_BANG_.call(null, symlog.cljs.app.sequencers.narrator.sequence.sequencer.playing, null)
     })
   }], true), cljs.core.PersistentArrayMap.fromArray(["\ufdd0:frame", 5154, "\ufdd0:sequence", function seqmap() {
+    cljs.core.reset_BANG_.call(null, symlog.cljs.app.sequencers.narrator.sequence.sequencer.playing, symlog.cljs.app.sequencers.narrator.sequence.animations.call(null, 5));
     return symlog.cljs.app.sequencers.narrator.sequence.animations.call(null, 5).fire(function() {
       return cljs.core.reset_BANG_.call(null, symlog.cljs.app.sequencers.narrator.sequence.sequencer.playing, null)
     })
   }], true), cljs.core.PersistentArrayMap.fromArray(["\ufdd0:frame", 5324, "\ufdd0:sequence", function seqmap() {
+    cljs.core.reset_BANG_.call(null, symlog.cljs.app.sequencers.narrator.sequence.sequencer.playing, symlog.cljs.app.sequencers.narrator.sequence.animations.call(null, 6));
     return symlog.cljs.app.sequencers.narrator.sequence.animations.call(null, 6).fire(function() {
       return cljs.core.reset_BANG_.call(null, symlog.cljs.app.sequencers.narrator.sequence.sequencer.playing, null)
     })
   }], true), cljs.core.PersistentArrayMap.fromArray(["\ufdd0:frame", 5480, "\ufdd0:sequence", function seqmap() {
-    symlog.cljs.app.dom.elements.elements.call(null, "\ufdd0:paintFrame").clearit.fire();
+    symlog.cljs.app.dom.elements.call(null, "\ufdd0:paintFrame").clearit.fire();
     return cljs.core.reset_BANG_.call(null, symlog.cljs.app.sequencers.narrator.sequence.sequencer.playing, null)
   }], true), cljs.core.PersistentArrayMap.fromArray(["\ufdd0:frame", 5629, "\ufdd0:sequence", function seqmap() {
+    cljs.core.reset_BANG_.call(null, symlog.cljs.app.sequencers.narrator.sequence.sequencer.playing, symlog.cljs.app.sequencers.narrator.sequence.animations.call(null, 7));
     return symlog.cljs.app.sequencers.narrator.sequence.animations.call(null, 7).fire(function() {
       return cljs.core.reset_BANG_.call(null, symlog.cljs.app.sequencers.narrator.sequence.sequencer.playing, null)
     })
   }], true), cljs.core.PersistentArrayMap.fromArray(["\ufdd0:frame", 5700, "\ufdd0:sequence", function seqmap() {
+    cljs.core.reset_BANG_.call(null, symlog.cljs.app.sequencers.narrator.sequence.sequencer.playing, symlog.cljs.app.sequencers.narrator.sequence.animations.call(null, 8));
     return symlog.cljs.app.sequencers.narrator.sequence.animations.call(null, 8).fire(function() {
       return cljs.core.reset_BANG_.call(null, symlog.cljs.app.sequencers.narrator.sequence.sequencer.playing, null)
     })
   }], true), cljs.core.PersistentArrayMap.fromArray(["\ufdd0:frame", 5832, "\ufdd0:sequence", function seqmap() {
+    cljs.core.reset_BANG_.call(null, symlog.cljs.app.sequencers.narrator.sequence.sequencer.playing, symlog.cljs.app.sequencers.narrator.sequence.animations.call(null, 9));
     return symlog.cljs.app.sequencers.narrator.sequence.animations.call(null, 9).fire(function() {
       return cljs.core.reset_BANG_.call(null, symlog.cljs.app.sequencers.narrator.sequence.sequencer.playing, null)
     })
   }], true), cljs.core.PersistentArrayMap.fromArray(["\ufdd0:frame", 6046, "\ufdd0:sequence", function seqmap() {
+    cljs.core.reset_BANG_.call(null, symlog.cljs.app.sequencers.narrator.sequence.sequencer.playing, symlog.cljs.app.sequencers.narrator.sequence.animations.call(null, 10));
     return symlog.cljs.app.sequencers.narrator.sequence.animations.call(null, 10).fire(function() {
       return cljs.core.reset_BANG_.call(null, symlog.cljs.app.sequencers.narrator.sequence.sequencer.playing, null)
     })
   }], true), cljs.core.PersistentArrayMap.fromArray(["\ufdd0:frame", 6140, "\ufdd0:sequence", function seqmap() {
-    symlog.cljs.app.dom.elements.elements.call(null, "\ufdd0:paintFrame").clearit.fire();
+    symlog.cljs.app.dom.elements.call(null, "\ufdd0:paintFrame").clearit.fire();
     return cljs.core.reset_BANG_.call(null, symlog.cljs.app.sequencers.narrator.sequence.sequencer.playing, null)
   }], true), cljs.core.PersistentArrayMap.fromArray(["\ufdd0:frame", 6673, "\ufdd0:sequence", function seqmap() {
+    cljs.core.reset_BANG_.call(null, symlog.cljs.app.sequencers.narrator.sequence.sequencer.playing, symlog.cljs.app.sequencers.narrator.sequence.animations.call(null, 11));
     return symlog.cljs.app.sequencers.narrator.sequence.animations.call(null, 11).fire(function() {
       return cljs.core.reset_BANG_.call(null, symlog.cljs.app.sequencers.narrator.sequence.sequencer.playing, null)
     })
   }], true), cljs.core.PersistentArrayMap.fromArray(["\ufdd0:frame", 6752, "\ufdd0:sequence", function seqmap() {
+    cljs.core.reset_BANG_.call(null, symlog.cljs.app.sequencers.narrator.sequence.sequencer.playing, symlog.cljs.app.sequencers.narrator.sequence.animations.call(null, 12));
     return symlog.cljs.app.sequencers.narrator.sequence.animations.call(null, 12).fire(function() {
       return cljs.core.reset_BANG_.call(null, symlog.cljs.app.sequencers.narrator.sequence.sequencer.playing, null)
     })
   }], true), cljs.core.PersistentArrayMap.fromArray(["\ufdd0:frame", 7153, "\ufdd0:sequence", function seqmap() {
+    cljs.core.reset_BANG_.call(null, symlog.cljs.app.sequencers.narrator.sequence.sequencer.playing, symlog.cljs.app.sequencers.narrator.sequence.animations.call(null, 13));
     return symlog.cljs.app.sequencers.narrator.sequence.animations.call(null, 13).fire(function() {
       return cljs.core.reset_BANG_.call(null, symlog.cljs.app.sequencers.narrator.sequence.sequencer.playing, null)
     })
   }], true), cljs.core.PersistentArrayMap.fromArray(["\ufdd0:frame", 7410, "\ufdd0:sequence", function seqmap() {
-    symlog.cljs.app.dom.elements.elements.call(null, "\ufdd0:paintFrame").clearit.fire();
+    symlog.cljs.app.dom.elements.call(null, "\ufdd0:paintFrame").clearit.fire();
     return cljs.core.reset_BANG_.call(null, symlog.cljs.app.sequencers.narrator.sequence.sequencer.playing, null)
   }], true), cljs.core.PersistentArrayMap.fromArray(["\ufdd0:frame", 7745, "\ufdd0:sequence", function seqmap() {
+    cljs.core.reset_BANG_.call(null, symlog.cljs.app.sequencers.narrator.sequence.sequencer.playing, symlog.cljs.app.sequencers.narrator.sequence.animations.call(null, 14));
     return symlog.cljs.app.sequencers.narrator.sequence.animations.call(null, 14).fire(function() {
       return cljs.core.reset_BANG_.call(null, symlog.cljs.app.sequencers.narrator.sequence.sequencer.playing, null)
     })
   }], true), cljs.core.PersistentArrayMap.fromArray(["\ufdd0:frame", 8409, "\ufdd0:sequence", function seqmap() {
-    symlog.cljs.app.dom.elements.elements.call(null, "\ufdd0:paintFrame").clearit.fire();
+    symlog.cljs.app.dom.elements.call(null, "\ufdd0:paintFrame").clearit.fire();
     return cljs.core.reset_BANG_.call(null, symlog.cljs.app.sequencers.narrator.sequence.sequencer.playing, null)
   }], true), cljs.core.PersistentArrayMap.fromArray(["\ufdd0:frame", 15E3, "\ufdd0:sequence", function seqmap() {
     return console.log("done")
@@ -32092,8 +32328,8 @@ symlog.cljs.app.sequencers.narrator.sequence.init = function init() {
 };
 goog.provide("symlog.cljs.app.controller.main");
 goog.require("cljs.core");
-goog.require("symlog.cljs.app.dom.elements");
-goog.require("symlog.cljs.app.dom.elements");
+goog.require("symlog.cljs.app.dom");
+goog.require("symlog.cljs.app.dom");
 symlog.cljs.app.controller.main.ctxt = symlog.cljs.app.controller.main;
 symlog.cljs.app.controller.main.target = goog.dom.getElement("mainVideo");
 symlog.cljs.app.controller.main.frameRate = 15;
@@ -32102,65 +32338,15 @@ symlog.cljs.app.controller.main.startFrame = 0;
 symlog.cljs.app.controller.main.playing = cljs.core.atom.call(null, null);
 symlog.cljs.app.controller.main.step = cljs.core.atom.call(null, 1);
 symlog.cljs.app.controller.main.paused = cljs.core.atom.call(null, false);
-symlog.cljs.app.controller.main.interrupted = cljs.core.atom.call(null, true);
+symlog.cljs.app.controller.main.interrupted = cljs.core.atom.call(null, false);
 symlog.cljs.app.controller.main.init = function init() {
   symlog.cljs.app.controller.actions.init.call(null, symlog.cljs.app.controller.main.ctxt);
   symlog.cljs.app.controller.main.actions = symlog.cljs.app.controller.actions.seqmap;
   symlog.cljs.app.controller.main.maxsteps = cljs.core.count.call(null, cljs.core.keys.call(null, symlog.cljs.app.controller.main.actions));
-  symlog.cljs.app.sequencers.narrator.sequencer.init.call(null);
+  symlog.cljs.app.sequencers.narrator.sequencer.init.call(null, symlog.cljs.app.controller.main.ctxt);
   symlog.cljs.app.controller.main.seqsManaged = cljs.core.vector.call(null, symlog.cljs.app.sequencers.narrator.sequencer);
-  symlog.cljs.app.dom.elements.elements.call(null, "\ufdd0:mainVideo").controller = symlog.cljs.app.controller.main.ctxt;
-  var seq__31121 = cljs.core.seq.call(null, symlog.cljs.app.controller.main.seqsManaged);
-  var chunk__31122 = null;
-  var count__31123 = 0;
-  var i__31124 = 0;
-  while(true) {
-    if(i__31124 < count__31123) {
-      var v = cljs.core._nth.call(null, chunk__31122, i__31124);
-      goog.events.listen(v.dispatcher, "stopped", symlog.cljs.app.controller.main.donext);
-      var G__31125 = seq__31121;
-      var G__31126 = chunk__31122;
-      var G__31127 = count__31123;
-      var G__31128 = i__31124 + 1;
-      seq__31121 = G__31125;
-      chunk__31122 = G__31126;
-      count__31123 = G__31127;
-      i__31124 = G__31128;
-      continue
-    }else {
-      var temp__4092__auto__ = cljs.core.seq.call(null, seq__31121);
-      if(temp__4092__auto__) {
-        var seq__31121__$1 = temp__4092__auto__;
-        if(cljs.core.chunked_seq_QMARK_.call(null, seq__31121__$1)) {
-          var c__2754__auto__ = cljs.core.chunk_first.call(null, seq__31121__$1);
-          var G__31129 = cljs.core.chunk_rest.call(null, seq__31121__$1);
-          var G__31130 = c__2754__auto__;
-          var G__31131 = cljs.core.count.call(null, c__2754__auto__);
-          var G__31132 = 0;
-          seq__31121 = G__31129;
-          chunk__31122 = G__31130;
-          count__31123 = G__31131;
-          i__31124 = G__31132;
-          continue
-        }else {
-          var v = cljs.core.first.call(null, seq__31121__$1);
-          goog.events.listen(v.dispatcher, "stopped", symlog.cljs.app.controller.main.donext);
-          var G__31133 = cljs.core.next.call(null, seq__31121__$1);
-          var G__31134 = null;
-          var G__31135 = 0;
-          var G__31136 = 0;
-          seq__31121 = G__31133;
-          chunk__31122 = G__31134;
-          count__31123 = G__31135;
-          i__31124 = G__31136;
-          continue
-        }
-      }else {
-        return null
-      }
-    }
-    break
-  }
+  symlog.cljs.app.dom.elements.call(null, "\ufdd0:mainVideo").sequencer = symlog.cljs.app.controller.main.ctxt;
+  return symlog.cljs.app.handlers.mainVideo.init.call(null)
 };
 symlog.cljs.app.controller.main.interrupt = function interrupt() {
   symlog.cljs.app.controller.main.pause.call(null);
@@ -32169,10 +32355,6 @@ symlog.cljs.app.controller.main.interrupt = function interrupt() {
 symlog.cljs.app.controller.main.resume = function resume() {
   symlog.cljs.app.controller.main.play.call(null);
   return cljs.core.reset_BANG_.call(null, symlog.cljs.app.controller.main.interrupted, false)
-};
-symlog.cljs.app.controller.main.fire = function fire() {
-  symlog.cljs.app.controller.main.target.currentTime = symlog.cljs.app.controller.main.startFrame / symlog.cljs.app.controller.main.frameRate;
-  return symlog.cljs.app.controller.main.doframe.call(null, 0)
 };
 symlog.cljs.app.controller.main.pause = function pause() {
   if(cljs.core.truth_(cljs.core.deref.call(null, symlog.cljs.app.controller.main.playing))) {
@@ -32197,12 +32379,17 @@ symlog.cljs.app.controller.main.play = function play() {
     }
   }else {
   }
-  requestAnimationFrame(symlog.cljs.app.controller.main.cycler);
-  return symlog.cljs.app.controller.main.target.play()
+  if(cljs.core._EQ_.call(null, 0, symlog.cljs.app.controller.main.target.currentTime)) {
+    cljs.core.reset_BANG_.call(null, symlog.cljs.app.controller.main.step, 1);
+    return symlog.cljs.app.controller.main.doframe.call(null, 0)
+  }else {
+    requestAnimationFrame(symlog.cljs.app.controller.main.cycler);
+    return symlog.cljs.app.controller.main.target.play()
+  }
 };
 symlog.cljs.app.controller.main.cycler = function cycler() {
   var frameNum = Math.round(symlog.cljs.app.controller.main.target.currentTime * symlog.cljs.app.controller.main.frameRate);
-  var img = symlog.cljs.app.frameBuffer.nextFrame.call(null, frameNum);
+  var img = symlog.cljs.app.frameBuffer.getFrame.call(null, frameNum);
   if(frameNum <= symlog.cljs.app.controller.main.endFrame) {
     if(cljs.core._EQ_.call(null, "wait", img)) {
       return symlog.cljs.app.controller.main.wait.call(null)
@@ -32211,7 +32398,7 @@ symlog.cljs.app.controller.main.cycler = function cycler() {
         return null
       }else {
         if("\ufdd0:else") {
-          symlog.cljs.app.dom.elements.elements.call(null, "\ufdd0:paintFrame").src = img;
+          symlog.cljs.app.dom.elements.call(null, "\ufdd0:paintFrame").src = img;
           symlog.cljs.app.controller.main.doframe.call(null, frameNum);
           return requestAnimationFrame(cycler)
         }else {
@@ -32244,87 +32431,131 @@ symlog.cljs.app.controller.main.doframe = function doframe(frameNo) {
     }
   }
 };
-symlog.cljs.app.controller.main.donext = function donext(evt) {
-  if(cljs.core._EQ_.call(null, evt.target.label, "narrator")) {
+symlog.cljs.app.controller.main.donext = function donext(sender) {
+  if(cljs.core._EQ_.call(null, sender, "narrator")) {
     if(cljs.core.truth_(cljs.core.deref.call(null, symlog.cljs.app.controller.main.playing))) {
       cljs.core.reset_BANG_.call(null, symlog.cljs.app.controller.main.playing, null)
     }else {
     }
     cljs.core.reset_BANG_.call(null, symlog.cljs.app.controller.main.interrupted, false);
-    return goog.events.fireListeners(symlog.cljs.app.dom.elements.elements.call(null, "\ufdd0:mainVideoPlayTouchArea"), "click", false, {"type":"click", "target":symlog.cljs.app.dom.elements.elements.call(null, "\ufdd0:mainVideoPlayTouchArea")})
+    return goog.events.fireListeners(symlog.cljs.app.dom.elements.call(null, "\ufdd0:mainVideoPlayTouchArea"), "click", false, {"type":"click", "target":symlog.cljs.app.dom.elements.call(null, "\ufdd0:mainVideoPlayTouchArea")})
   }else {
     return null
   }
 };
 symlog.cljs.app.controller.main.reset = function reset(frame) {
-  var img = symlog.cljs.app.frameBuffer.nextFrame.call(null, frame);
-  var seq__31143_31149 = cljs.core.seq.call(null, symlog.cljs.app.controller.main.actions);
-  var chunk__31144_31150 = null;
-  var count__31145_31151 = 0;
-  var i__31146_31152 = 0;
+  symlog.cljs.app.frameBuffer.seekFrame.call(null, frame, function(img) {
+    return symlog.cljs.app.dom.elements.call(null, "\ufdd0:paintFrame").src = img
+  });
+  var seq__79864_79870 = cljs.core.seq.call(null, symlog.cljs.app.controller.main.actions);
+  var chunk__79865_79871 = null;
+  var count__79866_79872 = 0;
+  var i__79867_79873 = 0;
   while(true) {
-    if(i__31146_31152 < count__31145_31151) {
-      var vec__31147_31153 = cljs.core._nth.call(null, chunk__31144_31150, i__31146_31152);
-      var k_31154 = cljs.core.nth.call(null, vec__31147_31153, 0, null);
-      var v_31155 = cljs.core.nth.call(null, vec__31147_31153, 1, null);
-      if(function() {
-        var and__3941__auto__ = v_31155.call(null, "\ufdd0:frame") <= frame;
-        if(and__3941__auto__) {
-          return frame >= symlog.cljs.app.controller.main.actions.call(null, k_31154 + 1).call(null, "\ufdd0:frame")
+    if(i__79867_79873 < count__79866_79872) {
+      var vec__79868_79874 = cljs.core._nth.call(null, chunk__79865_79871, i__79867_79873);
+      var k_79875 = cljs.core.nth.call(null, vec__79868_79874, 0, null);
+      var v_79876 = cljs.core.nth.call(null, vec__79868_79874, 1, null);
+      if(cljs.core._EQ_.call(null, k_79875, symlog.cljs.app.controller.main.maxsteps)) {
+        if(frame >= v_79876.call(null, "\ufdd0:frame")) {
+          cljs.core.reset_BANG_.call(null, symlog.cljs.app.controller.main.step, symlog.cljs.app.controller.main.maxsteps)
         }else {
-          return and__3941__auto__
         }
-      }()) {
-        cljs.core.reset_BANG_.call(null, symlog.cljs.app.controller.main.step, k_31154)
       }else {
-      }
-      var G__31156 = seq__31143_31149;
-      var G__31157 = chunk__31144_31150;
-      var G__31158 = count__31145_31151;
-      var G__31159 = i__31146_31152 + 1;
-      seq__31143_31149 = G__31156;
-      chunk__31144_31150 = G__31157;
-      count__31145_31151 = G__31158;
-      i__31146_31152 = G__31159;
-      continue
-    }else {
-      var temp__4092__auto___31160 = cljs.core.seq.call(null, seq__31143_31149);
-      if(temp__4092__auto___31160) {
-        var seq__31143_31161__$1 = temp__4092__auto___31160;
-        if(cljs.core.chunked_seq_QMARK_.call(null, seq__31143_31161__$1)) {
-          var c__2754__auto___31162 = cljs.core.chunk_first.call(null, seq__31143_31161__$1);
-          var G__31163 = cljs.core.chunk_rest.call(null, seq__31143_31161__$1);
-          var G__31164 = c__2754__auto___31162;
-          var G__31165 = cljs.core.count.call(null, c__2754__auto___31162);
-          var G__31166 = 0;
-          seq__31143_31149 = G__31163;
-          chunk__31144_31150 = G__31164;
-          count__31145_31151 = G__31165;
-          i__31146_31152 = G__31166;
-          continue
-        }else {
-          var vec__31148_31167 = cljs.core.first.call(null, seq__31143_31161__$1);
-          var k_31168 = cljs.core.nth.call(null, vec__31148_31167, 0, null);
-          var v_31169 = cljs.core.nth.call(null, vec__31148_31167, 1, null);
+        if("\ufdd0:else") {
           if(function() {
-            var and__3941__auto__ = v_31169.call(null, "\ufdd0:frame") <= frame;
+            var and__3941__auto__ = frame >= v_79876.call(null, "\ufdd0:frame");
             if(and__3941__auto__) {
-              return frame >= symlog.cljs.app.controller.main.actions.call(null, k_31168 + 1).call(null, "\ufdd0:frame")
+              return frame < v_79876.call(null, "\ufdd0:frame") + symlog.cljs.app.controller.main.frameRate
             }else {
               return and__3941__auto__
             }
           }()) {
-            cljs.core.reset_BANG_.call(null, symlog.cljs.app.controller.main.step, k_31168)
+            cljs.core.reset_BANG_.call(null, symlog.cljs.app.controller.main.step, k_79875)
           }else {
+            if(function() {
+              var and__3941__auto__ = frame >= v_79876.call(null, "\ufdd0:frame");
+              if(and__3941__auto__) {
+                return frame < symlog.cljs.app.controller.main.actions.call(null, k_79875 + 1).call(null, "\ufdd0:frame")
+              }else {
+                return and__3941__auto__
+              }
+            }()) {
+              cljs.core.reset_BANG_.call(null, symlog.cljs.app.controller.main.step, k_79875 + 1)
+            }else {
+            }
           }
-          var G__31170 = cljs.core.next.call(null, seq__31143_31161__$1);
-          var G__31171 = null;
-          var G__31172 = 0;
-          var G__31173 = 0;
-          seq__31143_31149 = G__31170;
-          chunk__31144_31150 = G__31171;
-          count__31145_31151 = G__31172;
-          i__31146_31152 = G__31173;
+        }else {
+        }
+      }
+      var G__79877 = seq__79864_79870;
+      var G__79878 = chunk__79865_79871;
+      var G__79879 = count__79866_79872;
+      var G__79880 = i__79867_79873 + 1;
+      seq__79864_79870 = G__79877;
+      chunk__79865_79871 = G__79878;
+      count__79866_79872 = G__79879;
+      i__79867_79873 = G__79880;
+      continue
+    }else {
+      var temp__4092__auto___79881 = cljs.core.seq.call(null, seq__79864_79870);
+      if(temp__4092__auto___79881) {
+        var seq__79864_79882__$1 = temp__4092__auto___79881;
+        if(cljs.core.chunked_seq_QMARK_.call(null, seq__79864_79882__$1)) {
+          var c__2754__auto___79883 = cljs.core.chunk_first.call(null, seq__79864_79882__$1);
+          var G__79884 = cljs.core.chunk_rest.call(null, seq__79864_79882__$1);
+          var G__79885 = c__2754__auto___79883;
+          var G__79886 = cljs.core.count.call(null, c__2754__auto___79883);
+          var G__79887 = 0;
+          seq__79864_79870 = G__79884;
+          chunk__79865_79871 = G__79885;
+          count__79866_79872 = G__79886;
+          i__79867_79873 = G__79887;
+          continue
+        }else {
+          var vec__79869_79888 = cljs.core.first.call(null, seq__79864_79882__$1);
+          var k_79889 = cljs.core.nth.call(null, vec__79869_79888, 0, null);
+          var v_79890 = cljs.core.nth.call(null, vec__79869_79888, 1, null);
+          if(cljs.core._EQ_.call(null, k_79889, symlog.cljs.app.controller.main.maxsteps)) {
+            if(frame >= v_79890.call(null, "\ufdd0:frame")) {
+              cljs.core.reset_BANG_.call(null, symlog.cljs.app.controller.main.step, symlog.cljs.app.controller.main.maxsteps)
+            }else {
+            }
+          }else {
+            if("\ufdd0:else") {
+              if(function() {
+                var and__3941__auto__ = frame >= v_79890.call(null, "\ufdd0:frame");
+                if(and__3941__auto__) {
+                  return frame < v_79890.call(null, "\ufdd0:frame") + symlog.cljs.app.controller.main.frameRate
+                }else {
+                  return and__3941__auto__
+                }
+              }()) {
+                cljs.core.reset_BANG_.call(null, symlog.cljs.app.controller.main.step, k_79889)
+              }else {
+                if(function() {
+                  var and__3941__auto__ = frame >= v_79890.call(null, "\ufdd0:frame");
+                  if(and__3941__auto__) {
+                    return frame < symlog.cljs.app.controller.main.actions.call(null, k_79889 + 1).call(null, "\ufdd0:frame")
+                  }else {
+                    return and__3941__auto__
+                  }
+                }()) {
+                  cljs.core.reset_BANG_.call(null, symlog.cljs.app.controller.main.step, k_79889 + 1)
+                }else {
+                }
+              }
+            }else {
+            }
+          }
+          var G__79891 = cljs.core.next.call(null, seq__79864_79882__$1);
+          var G__79892 = null;
+          var G__79893 = 0;
+          var G__79894 = 0;
+          seq__79864_79870 = G__79891;
+          chunk__79865_79871 = G__79892;
+          count__79866_79872 = G__79893;
+          i__79867_79873 = G__79894;
           continue
         }
       }else {
@@ -32332,11 +32563,144 @@ symlog.cljs.app.controller.main.reset = function reset(frame) {
     }
     break
   }
-  if(!cljs.core._EQ_.call(null, img, "wait")) {
-    return symlog.cljs.app.dom.elements.elements.call(null, "\ufdd0:paintFrame").src = img
-  }else {
-    return symlog.cljs.app.dom.elements.elements.call(null, "\ufdd0:paintFrame").clearit.fire()
-  }
+  return cljs.core.reset_BANG_.call(null, symlog.cljs.app.controller.main.playing, null)
+};
+goog.provide("symlog.cljs.app.handlers.mainVideo");
+goog.require("cljs.core");
+goog.require("symlog.cljs.app.dom");
+goog.require("symlog.cljs.app.dom");
+symlog.cljs.app.handlers.mainVideo.init = function init() {
+  symlog.cljs.app.handlers.mainVideo.videoDuration = symlog.cljs.app.dom.elements.call(null, "\ufdd0:mainVideo").duration;
+  symlog.cljs.app.handlers.mainVideo.travelLength = 532;
+  symlog.cljs.app.handlers.mainVideo.multiplier = symlog.cljs.app.handlers.mainVideo.travelLength / symlog.cljs.app.handlers.mainVideo.videoDuration;
+  symlog.cljs.app.handlers.mainVideo.buttonStartY = 2;
+  symlog.cljs.app.handlers.mainVideo.buttonEndY = 534;
+  symlog.cljs.app.handlers.mainVideo.video = symlog.cljs.app.dom.elements.call(null, "\ufdd0:mainVideo");
+  symlog.cljs.app.handlers.mainVideo.playButton = symlog.cljs.app.dom.elements.call(null, "\ufdd0:mainVideoPlayButton");
+  symlog.cljs.app.handlers.mainVideo.FPS = symlog.cljs.app.dom.elements.call(null, "\ufdd0:FPS");
+  symlog.cljs.app.handlers.mainVideo.button = symlog.cljs.app.dom.elements.call(null, "\ufdd0:controlButton");
+  symlog.cljs.app.handlers.mainVideo.buttonHandler = new symlog.cljs.app.handlers.mainVideo.controlButton(symlog.cljs.app.handlers.mainVideo.button);
+  symlog.cljs.app.handlers.mainVideo.touchArea = symlog.cljs.app.dom.elements.call(null, "\ufdd0:mainVideoPlayTouchArea");
+  symlog.cljs.app.handlers.mainVideo.touchHandler = new symlog.cljs.app.handlers.mainVideo.touchScreen(symlog.cljs.app.handlers.mainVideo.video);
+  symlog.cljs.app.handlers.mainVideo._subseq = symlog.cljs.app.dom.elements.call(null, "\ufdd0:narratorVid").sequencer;
+  goog.events.listen(symlog.cljs.app.handlers.mainVideo.video, "timeupdate", function(evt) {
+    var locY = symlog.cljs.app.handlers.mainVideo.multiplier * evt.target.currentTime;
+    if(cljs.core._EQ_.call(null, 0, locY)) {
+      return symlog.cljs.app.handlers.mainVideo.button.style.top = [cljs.core.str(symlog.cljs.app.handlers.mainVideo.buttonStartY), cljs.core.str("px")].join("")
+    }else {
+      if(cljs.core._EQ_.call(null, symlog.cljs.app.handlers.mainVideo.travelLength, locY)) {
+        return symlog.cljs.app.handlers.mainVideo.button.style.top = [cljs.core.str(symlog.cljs.app.handlers.mainVideo.buttonEndY), cljs.core.str("px")].join("")
+      }else {
+        if("\ufdd0:else") {
+          return symlog.cljs.app.handlers.mainVideo.button.style.top = [cljs.core.str(locY), cljs.core.str("px")].join("")
+        }else {
+          return null
+        }
+      }
+    }
+  });
+  goog.events.listen(symlog.cljs.app.handlers.mainVideo.button, ["mousedown", "mousemove", "mouseup", "mouseout"], symlog.cljs.app.handlers.mainVideo.buttonHandler.fire);
+  return goog.events.listen(symlog.cljs.app.handlers.mainVideo.touchArea, "click", symlog.cljs.app.handlers.mainVideo.touchHandler.handler, false)
+};
+symlog.cljs.app.handlers.mainVideo.controlButton = function controlButton(button) {
+  var this$ = this;
+  this$.fire = function(evt) {
+    evt.preventDefault();
+    if(cljs.core._EQ_.call(null, evt.type, "mousedown")) {
+      if(cljs.core.truth_(cljs.core.deref.call(null, symlog.cljs.app.handlers.mainVideo._subseq.rested))) {
+        this$.selected = true;
+        this$.startY = evt.screenY;
+        this$.beginY = parseInt(button.style.top);
+        symlog.cljs.app.controller.main.pause.call(null);
+        if(cljs.core._EQ_.call(null, cljs.core.deref.call(null, symlog.cljs.app.handlers.mainVideo.touchHandler.state), 0)) {
+          return goog.events.fireListeners(symlog.cljs.app.handlers.mainVideo.touchArea, "click", false, {"type":"click", "target":symlog.cljs.app.handlers.mainVideo.touchArea})
+        }else {
+          return null
+        }
+      }else {
+        return null
+      }
+    }else {
+      if(function() {
+        var or__3943__auto__ = cljs.core._EQ_.call(null, evt.type, "mouseup");
+        if(or__3943__auto__) {
+          return or__3943__auto__
+        }else {
+          return cljs.core._EQ_.call(null, evt.type, "mouseout")
+        }
+      }()) {
+        if(cljs.core.truth_(this$.selected)) {
+          var locY = parseInt(button.style.top);
+          this$.selected = false;
+          if(cljs.core._EQ_.call(null, locY, symlog.cljs.app.handlers.mainVideo.buttonStartY)) {
+            symlog.cljs.app.handlers.mainVideo.video.currentTime = 0
+          }else {
+            if(cljs.core._EQ_.call(null, locY, symlog.cljs.app.handlers.mainVideo.buttonEndY)) {
+              symlog.cljs.app.handlers.mainVideo.video.currentTime = symlog.cljs.app.handlers.mainVideo.videoDuration
+            }else {
+              if("\ufdd0:else") {
+                symlog.cljs.app.handlers.mainVideo.video.currentTime = symlog.cljs.app.handlers.mainVideo.videoDuration * (locY / symlog.cljs.app.handlers.mainVideo.travelLength)
+              }else {
+              }
+            }
+          }
+          return symlog.cljs.app.controller.main.reset.call(null, Math.round(symlog.cljs.app.handlers.mainVideo.video.currentTime * symlog.cljs.app.handlers.mainVideo.FPS))
+        }else {
+          return null
+        }
+      }else {
+        if(cljs.core._EQ_.call(null, evt.type, "mousemove")) {
+          if(cljs.core.truth_(this$.selected)) {
+            var locY = this$.beginY + (evt.screenY - this$.startY);
+            if(locY > symlog.cljs.app.handlers.mainVideo.buttonEndY) {
+              return button.style.top = [cljs.core.str(symlog.cljs.app.handlers.mainVideo.buttonEndY), cljs.core.str("px")].join("")
+            }else {
+              if(locY < symlog.cljs.app.handlers.mainVideo.buttonStartY) {
+                return button.style.top = [cljs.core.str(symlog.cljs.app.handlers.mainVideo.buttonStartY), cljs.core.str("px")].join("")
+              }else {
+                if("\ufdd0:else") {
+                  return button.style.top = [cljs.core.str(this$.beginY + (evt.screenY - this$.startY)), cljs.core.str("px")].join("")
+                }else {
+                  return null
+                }
+              }
+            }
+          }else {
+            return null
+          }
+        }else {
+          return null
+        }
+      }
+    }
+  };
+  return this$
+};
+symlog.cljs.app.handlers.mainVideo.touchScreen = function touchScreen(video) {
+  var this$ = this;
+  this$.state = cljs.core.atom.call(null, 0);
+  this$.handler = function(evt) {
+    if(cljs.core._EQ_.call(null, 0, cljs.core.deref.call(null, this$.state))) {
+      if(cljs.core.not.call(null, cljs.core.deref.call(null, video.sequencer.interrupted))) {
+        cljs.core.reset_BANG_.call(null, this$.state, 1);
+        video.sequencer.pause();
+        video.style.opacity = 0.3;
+        return symlog.cljs.app.handlers.mainVideo.playButton.style.opacity = 1
+      }else {
+        return null
+      }
+    }else {
+      if(cljs.core._EQ_.call(null, 1, cljs.core.deref.call(null, this$.state))) {
+        cljs.core.reset_BANG_.call(null, this$.state, 0);
+        video.style.opacity = 1;
+        symlog.cljs.app.handlers.mainVideo.playButton.style.opacity = 0;
+        return video.sequencer.play()
+      }else {
+        return null
+      }
+    }
+  };
+  return this$
 };
 goog.provide("symlog.cljs.app.frameBuffer");
 goog.require("cljs.core");
@@ -32351,7 +32715,7 @@ symlog.cljs.app.frameBuffer.switched__GT_buf0 = cljs.core.atom.call(null, true);
 symlog.cljs.app.frameBuffer.switched__GT_buf1 = cljs.core.atom.call(null, false);
 symlog.cljs.app.frameBuffer.init = function init() {
   symlog.cljs.app.frameBuffer.worker = symlog.cljs.threads.create_thread.call(null, symlog.cljs.threads.functions.getImageArray, symlog.cljs.app.frameBuffer.array__GT_db);
-  return goog.events.listenOnce(symlog.cljs.app.frameBuffer.dbcache = new symlog.cljs.idb.Idb("mainFrames", 1), "dbOpen", function() {
+  goog.events.listenOnce(symlog.cljs.app.frameBuffer.dbcache = new symlog.cljs.idb.Idb("mainFrames", 1), "dbOpen", function() {
     return symlog.cljs.app.frameBuffer.dbcache.get("keys", function(keys) {
       symlog.cljs.app.frameBuffer.dbBuffers = keys;
       if(!cljs.core._EQ_.call(null, -1, symlog.cljs.app.frameBuffer.dbBuffers.indexOf(1E3))) {
@@ -32362,55 +32726,55 @@ symlog.cljs.app.frameBuffer.init = function init() {
         symlog.cljs.app.frameBuffer.db__GT_buffer1.call(null, 2E3)
       }else {
       }
-      var seq__29787 = cljs.core.seq.call(null, cljs.core.range.call(null, 1E3, 17E3, 1E3));
-      var chunk__29788 = null;
-      var count__29789 = 0;
-      var i__29790 = 0;
+      var seq__74447 = cljs.core.seq.call(null, cljs.core.range.call(null, 1E3, 17E3, 1E3));
+      var chunk__74448 = null;
+      var count__74449 = 0;
+      var i__74450 = 0;
       while(true) {
-        if(i__29790 < count__29789) {
-          var x = cljs.core._nth.call(null, chunk__29788, i__29790);
+        if(i__74450 < count__74449) {
+          var x = cljs.core._nth.call(null, chunk__74448, i__74450);
           if(cljs.core._EQ_.call(null, -1, symlog.cljs.app.frameBuffer.dbBuffers.indexOf(x))) {
             symlog.cljs.app.frameBuffer.requestFrameBuffer.call(null, symlog.cljs.app.frameBuffer.BUFFERURL, symlog.cljs.app.frameBuffer.worker, x)
           }else {
           }
-          var G__29791 = seq__29787;
-          var G__29792 = chunk__29788;
-          var G__29793 = count__29789;
-          var G__29794 = i__29790 + 1;
-          seq__29787 = G__29791;
-          chunk__29788 = G__29792;
-          count__29789 = G__29793;
-          i__29790 = G__29794;
+          var G__74451 = seq__74447;
+          var G__74452 = chunk__74448;
+          var G__74453 = count__74449;
+          var G__74454 = i__74450 + 1;
+          seq__74447 = G__74451;
+          chunk__74448 = G__74452;
+          count__74449 = G__74453;
+          i__74450 = G__74454;
           continue
         }else {
-          var temp__4092__auto__ = cljs.core.seq.call(null, seq__29787);
+          var temp__4092__auto__ = cljs.core.seq.call(null, seq__74447);
           if(temp__4092__auto__) {
-            var seq__29787__$1 = temp__4092__auto__;
-            if(cljs.core.chunked_seq_QMARK_.call(null, seq__29787__$1)) {
-              var c__2754__auto__ = cljs.core.chunk_first.call(null, seq__29787__$1);
-              var G__29795 = cljs.core.chunk_rest.call(null, seq__29787__$1);
-              var G__29796 = c__2754__auto__;
-              var G__29797 = cljs.core.count.call(null, c__2754__auto__);
-              var G__29798 = 0;
-              seq__29787 = G__29795;
-              chunk__29788 = G__29796;
-              count__29789 = G__29797;
-              i__29790 = G__29798;
+            var seq__74447__$1 = temp__4092__auto__;
+            if(cljs.core.chunked_seq_QMARK_.call(null, seq__74447__$1)) {
+              var c__2754__auto__ = cljs.core.chunk_first.call(null, seq__74447__$1);
+              var G__74455 = cljs.core.chunk_rest.call(null, seq__74447__$1);
+              var G__74456 = c__2754__auto__;
+              var G__74457 = cljs.core.count.call(null, c__2754__auto__);
+              var G__74458 = 0;
+              seq__74447 = G__74455;
+              chunk__74448 = G__74456;
+              count__74449 = G__74457;
+              i__74450 = G__74458;
               continue
             }else {
-              var x = cljs.core.first.call(null, seq__29787__$1);
+              var x = cljs.core.first.call(null, seq__74447__$1);
               if(cljs.core._EQ_.call(null, -1, symlog.cljs.app.frameBuffer.dbBuffers.indexOf(x))) {
                 symlog.cljs.app.frameBuffer.requestFrameBuffer.call(null, symlog.cljs.app.frameBuffer.BUFFERURL, symlog.cljs.app.frameBuffer.worker, x)
               }else {
               }
-              var G__29799 = cljs.core.next.call(null, seq__29787__$1);
-              var G__29800 = null;
-              var G__29801 = 0;
-              var G__29802 = 0;
-              seq__29787 = G__29799;
-              chunk__29788 = G__29800;
-              count__29789 = G__29801;
-              i__29790 = G__29802;
+              var G__74459 = cljs.core.next.call(null, seq__74447__$1);
+              var G__74460 = null;
+              var G__74461 = 0;
+              var G__74462 = 0;
+              seq__74447 = G__74459;
+              chunk__74448 = G__74460;
+              count__74449 = G__74461;
+              i__74450 = G__74462;
               continue
             }
           }else {
@@ -32420,7 +32784,8 @@ symlog.cljs.app.frameBuffer.init = function init() {
         break
       }
     })
-  })
+  });
+  symlog.cljs.app.frameBuffer.dispatcher = new symlog.cljs.util.dispatcher
 };
 symlog.cljs.app.frameBuffer.array__GT_db = function array__GT_db(message) {
   symlog.cljs.app.frameBuffer.dbcache.put(message.data.imagearr, message.data.idx);
@@ -32461,7 +32826,7 @@ symlog.cljs.app.frameBuffer.db__GT_buffer1 = function db__GT_buffer1(idx) {
 symlog.cljs.app.frameBuffer.requestFrameBuffer = function requestFrameBuffer(url, threadRef, startIdx) {
   return threadRef.postMessage({"url":url, "idx":startIdx, "endpoint":1E3})
 };
-symlog.cljs.app.frameBuffer.nextFrame = function nextFrame(frameNum) {
+symlog.cljs.app.frameBuffer.getFrame = function getFrame(frameNum) {
   var BUF0END = 1 + symlog.cljs.app.frameBuffer.buf0[symlog.cljs.app.frameBuffer.BUFFSIZE];
   var BUF0START = symlog.cljs.app.frameBuffer.buf0[symlog.cljs.app.frameBuffer.BUFFSIZE] - symlog.cljs.app.frameBuffer.BUFFSIZE;
   var BUF1END = 1 + symlog.cljs.app.frameBuffer.buf1[symlog.cljs.app.frameBuffer.BUFFSIZE];
@@ -32469,7 +32834,7 @@ symlog.cljs.app.frameBuffer.nextFrame = function nextFrame(frameNum) {
   if(cljs.core.truth_(function() {
     var and__3941__auto__ = frameNum < BUF0END;
     if(and__3941__auto__) {
-      var and__3941__auto____$1 = frameNum > BUF0START;
+      var and__3941__auto____$1 = frameNum >= BUF0START;
       if(and__3941__auto____$1) {
         return cljs.core.deref.call(null, symlog.cljs.app.frameBuffer.buf0ready)
       }else {
@@ -32486,12 +32851,12 @@ symlog.cljs.app.frameBuffer.nextFrame = function nextFrame(frameNum) {
       cljs.core.reset_BANG_.call(null, symlog.cljs.app.frameBuffer.switched__GT_buf1, false)
     }else {
     }
-    return symlog.cljs.app.frameBuffer.buf0[frameNum - BUF0START - 1]
+    return symlog.cljs.app.frameBuffer.buf0[frameNum - BUF0START]
   }else {
     if(cljs.core.truth_(function() {
       var and__3941__auto__ = frameNum < BUF1END;
       if(and__3941__auto__) {
-        var and__3941__auto____$1 = frameNum > BUF1START;
+        var and__3941__auto____$1 = frameNum >= BUF1START;
         if(and__3941__auto____$1) {
           return cljs.core.deref.call(null, symlog.cljs.app.frameBuffer.buf1ready)
         }else {
@@ -32508,7 +32873,7 @@ symlog.cljs.app.frameBuffer.nextFrame = function nextFrame(frameNum) {
         cljs.core.reset_BANG_.call(null, symlog.cljs.app.frameBuffer.switched__GT_buf0, false)
       }else {
       }
-      return symlog.cljs.app.frameBuffer.buf1[frameNum - BUF1START - 1]
+      return symlog.cljs.app.frameBuffer.buf1[frameNum - BUF1START]
     }else {
       if(cljs.core.truth_(function() {
         var and__3941__auto__ = cljs.core.deref.call(null, symlog.cljs.app.frameBuffer.buf0ready);
@@ -32526,9 +32891,9 @@ symlog.cljs.app.frameBuffer.nextFrame = function nextFrame(frameNum) {
             if(cljs.core.truth_(or__3943__auto__)) {
               return or__3943__auto__
             }else {
-              var and__3941__auto____$2 = frameNum > BUF0END;
+              var and__3941__auto____$2 = frameNum >= BUF0END;
               if(and__3941__auto____$2) {
-                return frameNum > BUF1END
+                return frameNum >= BUF1END
               }else {
                 return and__3941__auto____$2
               }
@@ -32557,115 +32922,416 @@ symlog.cljs.app.frameBuffer.nextFrame = function nextFrame(frameNum) {
     }
   }
 };
-goog.provide("symlog.cljs.app.dom.eventHandlers");
-goog.require("cljs.core");
-goog.require("symlog.cljs.app.dom.elements");
-goog.require("symlog.cljs.app.dom.elements");
-symlog.cljs.app.dom.eventHandlers.narratorTouchHandler = function narratorTouchHandler(target) {
-  var this$ = this;
-  this$.state = cljs.core.atom.call(null, 0);
-  this$.handler = function(evt) {
-    if(cljs.core._EQ_.call(null, 0, cljs.core.deref.call(null, this$.state))) {
-      if(cljs.core.truth_(target.sequencer.rested)) {
-        if(cljs.core.truth_(target.sequencer.enabled)) {
-          target.style.opacity = 0.2;
-          target.sequencer.enabled = false
-        }else {
-          target.style.opacity = 1;
-          target.sequencer.enabled = true
-        }
+symlog.cljs.app.frameBuffer.seekFrame = function seekFrame(frame, callback) {
+  if(function() {
+    var or__3943__auto__ = cljs.core.not.call(null, cljs.core.deref.call(null, symlog.cljs.app.frameBuffer.buf0ready));
+    if(or__3943__auto__) {
+      return or__3943__auto__
+    }else {
+      var or__3943__auto____$1 = frame < symlog.cljs.app.frameBuffer.buf0[symlog.cljs.app.frameBuffer.BUFFSIZE] - symlog.cljs.app.frameBuffer.BUFFSIZE;
+      if(or__3943__auto____$1) {
+        return or__3943__auto____$1
       }else {
-        target.sequencer.pause();
-        symlog.cljs.app.dom.elements.elements.call(null, "\ufdd0:narratorPlayButton").style.opacity = 1;
-        symlog.cljs.app.dom.elements.elements.call(null, "\ufdd0:narratorDisableButton").style.opacity = 1;
-        this$.listener = goog.events.listen(symlog.cljs.app.dom.elements.elements.call(null, "\ufdd0:narratorDisableTouchArea"), "click", function() {
-          symlog.cljs.app.dom.elements.elements.call(null, "\ufdd0:narratorPlayButton").style.opacity = 0;
-          symlog.cljs.app.dom.elements.elements.call(null, "\ufdd0:narratorDisableButton").style.opacity = 0;
-          symlog.cljs.app.dom.elements.elements.call(null, "\ufdd0:narratorVid").style.opacity = 0;
-          symlog.cljs.app.dom.elements.elements.call(null, "\ufdd0:narratorDiv").style.top = "9px";
-          symlog.cljs.app.dom.elements.elements.call(null, "\ufdd0:narratorDiv").style.left = "310px";
-          symlog.cljs.app.dom.elements.elements.call(null, "\ufdd0:narratorDiv").style.height = "90px";
-          symlog.cljs.app.dom.elements.elements.call(null, "\ufdd0:narratorDiv").style.width = "90px";
-          symlog.cljs.app.dom.elements.elements.call(null, "\ufdd0:narratorVid").style.opacity = 0.2;
-          target.sequencer.rested = true;
-          target.sequencer.enabled = false;
-          target.sequencer.stop();
-          return goog.events.unlistenByKey(this$.listener)
+        return frame > symlog.cljs.app.frameBuffer.buf0[symlog.cljs.app.frameBuffer.BUFFSIZE]
+      }
+    }
+  }()) {
+    var idx_74463 = Math.floor(frame / symlog.cljs.app.frameBuffer.BUFFSIZE) * symlog.cljs.app.frameBuffer.BUFFSIZE + symlog.cljs.app.frameBuffer.BUFFSIZE;
+    cljs.core.reset_BANG_.call(null, symlog.cljs.app.frameBuffer.buf0ready, false);
+    cljs.core.reset_BANG_.call(null, symlog.cljs.app.frameBuffer.buf1ready, false);
+    if(!(idx_74463 + symlog.cljs.app.frameBuffer.BUFFSIZE > symlog.cljs.app.frameBuffer.MAXBUF)) {
+      symlog.cljs.app.frameBuffer.dbcache.get(idx_74463, function(data) {
+        symlog.cljs.app.frameBuffer.buf0 = data;
+        cljs.core.reset_BANG_.call(null, symlog.cljs.app.frameBuffer.buf0ready, true);
+        return symlog.cljs.app.frameBuffer.dbcache.get(idx_74463 + symlog.cljs.app.frameBuffer.BUFFSIZE, function(data__$1) {
+          symlog.cljs.app.frameBuffer.buf1 = data__$1;
+          cljs.core.reset_BANG_.call(null, symlog.cljs.app.frameBuffer.buf1ready, true);
+          return callback.call(null, symlog.cljs.app.frameBuffer.getFrame.call(null, frame))
         })
-      }
-      return cljs.core.reset_BANG_.call(null, this$.state, 1)
+      })
     }else {
-      if(cljs.core._EQ_.call(null, 1, cljs.core.deref.call(null, this$.state))) {
-        cljs.core.reset_BANG_.call(null, this$.state, 0);
-        if(cljs.core.truth_(target.sequencer.rested)) {
-          if(cljs.core.truth_(target.sequencer.enabled)) {
-            target.style.opacity = 0.2;
-            return target.sequencer.enabled = false
-          }else {
-            target.style.opacity = 1;
-            return target.sequencer.enabled = true
-          }
-        }else {
-          symlog.cljs.app.dom.elements.elements.call(null, "\ufdd0:narratorPlayButton").style.opacity = 0;
-          symlog.cljs.app.dom.elements.elements.call(null, "\ufdd0:narratorDisableButton").style.opacity = 0;
-          goog.events.unlistenByKey(this$.listener);
-          return target.sequencer.play()
-        }
-      }else {
-        return null
-      }
+      symlog.cljs.app.frameBuffer.dbcache.get(idx_74463, function(data) {
+        symlog.cljs.app.frameBuffer.buf0 = data;
+        cljs.core.reset_BANG_.call(null, symlog.cljs.app.frameBuffer.buf0ready, true);
+        return callback.call(null, symlog.cljs.app.frameBuffer.getFrame.call(null, frame))
+      })
     }
-  };
-  return this$
-};
-symlog.cljs.app.dom.eventHandlers.mainVideoTouchHandler = function mainVideoTouchHandler(target) {
-  var this$ = this;
-  this$.state = cljs.core.atom.call(null, 0);
-  this$.handler = function(evt) {
-    if(cljs.core._EQ_.call(null, 0, cljs.core.deref.call(null, this$.state))) {
-      if(cljs.core.not.call(null, cljs.core.deref.call(null, target.controller.interrupted))) {
-        cljs.core.reset_BANG_.call(null, this$.state, 1);
-        target.controller.pause();
-        target.style.opacity = 0.2;
-        symlog.cljs.app.dom.elements.elements.call(null, "\ufdd0:mainVideoPlayButton").style.opacity = 1;
-        return symlog.cljs.app.dom.elements.elements.call(null, "\ufdd0:mainVideoPlayButton").style.opacity = 1
-      }else {
-        return null
-      }
-    }else {
-      if(cljs.core._EQ_.call(null, 1, cljs.core.deref.call(null, this$.state))) {
-        cljs.core.reset_BANG_.call(null, this$.state, 0);
-        target.style.opacity = 1;
-        symlog.cljs.app.dom.elements.elements.call(null, "\ufdd0:mainVideoPlayButton").style.opacity = 0;
-        return target.controller.play()
-      }else {
-        return null
-      }
-    }
-  };
-  return this$
+  }else {
+    callback.call(null, symlog.cljs.app.frameBuffer.getFrame.call(null, frame))
+  }
+  return symlog.cljs.app.frameBuffer.dispatcher.send("done")
 };
 goog.provide("symlog.cljs.app");
 goog.require("cljs.core");
-goog.require("symlog.cljs.app.dom.eventHandlers");
-goog.require("symlog.cljs.app.dom.elements");
-goog.require("symlog.cljs.app.dom.eventHandlers");
-goog.require("symlog.cljs.app.dom.elements");
+goog.require("symlog.cljs.app.dom");
+goog.require("symlog.cljs.app.dom");
 symlog.cljs.app.init = function init() {
-  symlog.cljs.app.dom.elements.elements.call(null, "\ufdd0:paintFrame").onload = function() {
-    return symlog.cljs.canvas.paintImage.call(null, symlog.cljs.app.dom.elements.elements.call(null, "\ufdd0:context"), symlog.cljs.app.dom.elements.elements.call(null, "\ufdd0:canvas"), symlog.cljs.app.dom.elements.elements.call(null, "\ufdd0:paintFrame"))
-  };
-  symlog.cljs.app.dom.elements.elements.call(null, "\ufdd0:paintFrame").clearit = new symlog.cljs.canvas.clearCanvas(symlog.cljs.app.dom.elements.elements.call(null, "\ufdd0:context"), symlog.cljs.app.dom.elements.elements.call(null, "\ufdd0:canvas"));
   symlog.cljs.app.frameBuffer.init.call(null);
+  symlog.cljs.app.dom.elements.call(null, "\ufdd0:paintFrame").onload = function() {
+    return symlog.cljs.canvas.paintImage.call(null, symlog.cljs.app.dom.elements.call(null, "\ufdd0:context"), symlog.cljs.app.dom.elements.call(null, "\ufdd0:canvas"), symlog.cljs.app.dom.elements.call(null, "\ufdd0:paintFrame"))
+  };
+  symlog.cljs.app.dom.elements.call(null, "\ufdd0:paintFrame").clearit = new symlog.cljs.canvas.clearCanvas(symlog.cljs.app.dom.elements.call(null, "\ufdd0:context"), symlog.cljs.app.dom.elements.call(null, "\ufdd0:canvas"));
   return symlog.cljs.net.getTextArray.call(null, "http://192.168.1.2/img/frame-buffers/narrator.imgs", function(response) {
-    cljs.core.reset_BANG_.call(null, symlog.cljs.app.dom.elements.elements.call(null, "\ufdd0:narratorFrameBuffer"), response.split("/ / /"));
+    cljs.core.reset_BANG_.call(null, symlog.cljs.app.dom.elements.call(null, "\ufdd0:narratorFrameBuffer"), response.split("/ / /"));
     return symlog.cljs.net.getTextArray.call(null, "http://192.168.1.2/img/frame-buffers/mainoverlays.imgs", function(response__$1) {
-      cljs.core.reset_BANG_.call(null, symlog.cljs.app.dom.elements.elements.call(null, "\ufdd0:mainVidOverlays"), response__$1.split("/ / /"));
+      cljs.core.reset_BANG_.call(null, symlog.cljs.app.dom.elements.call(null, "\ufdd0:mainVidOverlays"), response__$1.split("/ / /"));
       symlog.cljs.app.controller.main.init.call(null);
-      goog.events.listen(symlog.cljs.app.dom.elements.elements.call(null, "\ufdd0:narratorPlayTouchArea"), "click", (new symlog.cljs.app.dom.eventHandlers.narratorTouchHandler(symlog.cljs.app.dom.elements.elements.call(null, "\ufdd0:narratorVid"))).handler, false);
-      return goog.events.listen(symlog.cljs.app.dom.elements.elements.call(null, "\ufdd0:mainVideoPlayTouchArea"), "click", (new symlog.cljs.app.dom.eventHandlers.mainVideoTouchHandler(symlog.cljs.app.dom.elements.elements.call(null, "\ufdd0:mainVideo"))).handler, false)
+      return goog.events.fireListeners(symlog.cljs.app.dom.elements.call(null, "\ufdd0:mainVideoPlayTouchArea"), "click", false, {"type":"click", "target":symlog.cljs.app.dom.elements.call(null, "\ufdd0:mainVideoPlayTouchArea")})
     })
   })
+};
+goog.provide("symlog.cljs.app.handlers.narrator");
+goog.require("cljs.core");
+goog.require("symlog.cljs.app.dom");
+goog.require("symlog.cljs.app.dom");
+symlog.cljs.app.handlers.narrator.FPS = 15;
+symlog.cljs.app.handlers.narrator.ctxt = symlog.cljs.app.handlers.narrator;
+symlog.cljs.app.handlers.narrator.init = function init() {
+  symlog.cljs.app.handlers.narrator.disableButton = symlog.cljs.app.dom.elements.call(null, "\ufdd0:narratorDisableButton");
+  symlog.cljs.app.handlers.narrator.disableTouchArea = symlog.cljs.app.dom.elements.call(null, "\ufdd0:narratorDisableTouchArea");
+  symlog.cljs.app.handlers.narrator.playButton = symlog.cljs.app.dom.elements.call(null, "\ufdd0:narratorPlayButton");
+  symlog.cljs.app.handlers.narrator.playTouchArea = symlog.cljs.app.dom.elements.call(null, "\ufdd0:narratorPlayTouchArea");
+  symlog.cljs.app.handlers.narrator.video = symlog.cljs.app.dom.elements.call(null, "\ufdd0:narratorVid");
+  symlog.cljs.app.handlers.narrator.container = symlog.cljs.app.dom.elements.call(null, "\ufdd0:narratorDiv");
+  symlog.cljs.app.handlers.narrator.nodeList = null;
+  symlog.cljs.app.handlers.narrator.state = cljs.core.atom.call(null, 0);
+  symlog.cljs.app.handlers.narrator.tocRef = null;
+  symlog.cljs.app.handlers.narrator.listener = null;
+  return goog.events.listen(symlog.cljs.app.handlers.narrator.playTouchArea, "click", symlog.cljs.app.handlers.narrator.touchHandler, true, symlog.cljs.app.handlers.narrator.ctxt)
+};
+symlog.cljs.app.handlers.narrator.touchHandler = function touchHandler(evt) {
+  if(cljs.core._EQ_.call(null, 0, cljs.core.deref.call(null, symlog.cljs.app.handlers.narrator.state))) {
+    if(cljs.core.truth_(cljs.core.deref.call(null, symlog.cljs.app.handlers.narrator.video.sequencer.rested))) {
+      if(cljs.core.truth_(cljs.core.deref.call(null, symlog.cljs.app.handlers.narrator.video.sequencer.enabled))) {
+        symlog.cljs.app.handlers.narrator.video.style.opacity = 0.2;
+        cljs.core.reset_BANG_.call(null, symlog.cljs.app.handlers.narrator.video.sequencer.enabled, false)
+      }else {
+        symlog.cljs.app.handlers.narrator.video.style.opacity = 1;
+        cljs.core.reset_BANG_.call(null, symlog.cljs.app.handlers.narrator.video.sequencer.enabled, true)
+      }
+    }else {
+      symlog.cljs.app.handlers.narrator.video.sequencer.pause();
+      symlog.cljs.app.handlers.narrator.playButton.style.opacity = 1;
+      symlog.cljs.app.handlers.narrator.disableButton.style.opacity = 1;
+      symlog.cljs.app.handlers.narrator.tocRef = goog.dom.getElement([cljs.core.str("n"), cljs.core.str(symlog.cljs.app.handlers.narrator.video.sequencer.TOCnum)].join(""));
+      symlog.cljs.app.handlers.narrator.nodeList = symlog.cljs.util.nodelist__GT_coll.call(null, goog.dom.getElementsByClass("toc", symlog.cljs.app.handlers.narrator.tocRef));
+      var seq__76437_76449 = cljs.core.seq.call(null, symlog.cljs.app.handlers.narrator.nodeList);
+      var chunk__76438_76450 = null;
+      var count__76439_76451 = 0;
+      var i__76440_76452 = 0;
+      while(true) {
+        if(i__76440_76452 < count__76439_76451) {
+          var v_76453 = cljs.core._nth.call(null, chunk__76438_76450, i__76440_76452);
+          goog.events.listenOnce(v_76453, "click", symlog.cljs.app.handlers.narrator.TOChandler, true, symlog.cljs.app.handlers.narrator.ctxt);
+          var G__76454 = seq__76437_76449;
+          var G__76455 = chunk__76438_76450;
+          var G__76456 = count__76439_76451;
+          var G__76457 = i__76440_76452 + 1;
+          seq__76437_76449 = G__76454;
+          chunk__76438_76450 = G__76455;
+          count__76439_76451 = G__76456;
+          i__76440_76452 = G__76457;
+          continue
+        }else {
+          var temp__4092__auto___76458 = cljs.core.seq.call(null, seq__76437_76449);
+          if(temp__4092__auto___76458) {
+            var seq__76437_76459__$1 = temp__4092__auto___76458;
+            if(cljs.core.chunked_seq_QMARK_.call(null, seq__76437_76459__$1)) {
+              var c__2754__auto___76460 = cljs.core.chunk_first.call(null, seq__76437_76459__$1);
+              var G__76461 = cljs.core.chunk_rest.call(null, seq__76437_76459__$1);
+              var G__76462 = c__2754__auto___76460;
+              var G__76463 = cljs.core.count.call(null, c__2754__auto___76460);
+              var G__76464 = 0;
+              seq__76437_76449 = G__76461;
+              chunk__76438_76450 = G__76462;
+              count__76439_76451 = G__76463;
+              i__76440_76452 = G__76464;
+              continue
+            }else {
+              var v_76465 = cljs.core.first.call(null, seq__76437_76459__$1);
+              goog.events.listenOnce(v_76465, "click", symlog.cljs.app.handlers.narrator.TOChandler, true, symlog.cljs.app.handlers.narrator.ctxt);
+              var G__76466 = cljs.core.next.call(null, seq__76437_76459__$1);
+              var G__76467 = null;
+              var G__76468 = 0;
+              var G__76469 = 0;
+              seq__76437_76449 = G__76466;
+              chunk__76438_76450 = G__76467;
+              count__76439_76451 = G__76468;
+              i__76440_76452 = G__76469;
+              continue
+            }
+          }else {
+          }
+        }
+        break
+      }
+      symlog.cljs.app.handlers.narrator.tocRef.style.display = "inline";
+      symlog.cljs.app.handlers.narrator.listener = goog.events.listen(symlog.cljs.app.handlers.narrator.disableTouchArea, "click", function() {
+        symlog.cljs.app.handlers.narrator.playButton.style.opacity = 0;
+        symlog.cljs.app.handlers.narrator.disableButton.style.opacity = 0;
+        symlog.cljs.app.handlers.narrator.tocRef.style.display = "none";
+        symlog.cljs.app.handlers.narrator.video.style.opacity = 0;
+        symlog.cljs.app.handlers.narrator.container.style.top = "9px";
+        symlog.cljs.app.handlers.narrator.container.style.left = "310px";
+        symlog.cljs.app.handlers.narrator.container.style.height = "90px";
+        symlog.cljs.app.handlers.narrator.container.style.width = "90px";
+        symlog.cljs.app.handlers.narrator.video.style.opacity = 0.2;
+        cljs.core.reset_BANG_.call(null, symlog.cljs.app.handlers.narrator.video.sequencer.rested, true);
+        cljs.core.reset_BANG_.call(null, symlog.cljs.app.handlers.narrator.video.sequencer.enabled, false);
+        symlog.cljs.app.handlers.narrator.video.sequencer.stop();
+        goog.events.unlistenByKey(symlog.cljs.app.handlers.narrator.listener);
+        var seq__76441 = cljs.core.seq.call(null, symlog.cljs.app.handlers.narrator.nodeList);
+        var chunk__76442 = null;
+        var count__76443 = 0;
+        var i__76444 = 0;
+        while(true) {
+          if(i__76444 < count__76443) {
+            var v = cljs.core._nth.call(null, chunk__76442, i__76444);
+            goog.events.unlisten(v, "click", symlog.cljs.app.handlers.narrator.TOChandler, true, symlog.cljs.app.handlers.narrator.ctxt);
+            var G__76470 = seq__76441;
+            var G__76471 = chunk__76442;
+            var G__76472 = count__76443;
+            var G__76473 = i__76444 + 1;
+            seq__76441 = G__76470;
+            chunk__76442 = G__76471;
+            count__76443 = G__76472;
+            i__76444 = G__76473;
+            continue
+          }else {
+            var temp__4092__auto__ = cljs.core.seq.call(null, seq__76441);
+            if(temp__4092__auto__) {
+              var seq__76441__$1 = temp__4092__auto__;
+              if(cljs.core.chunked_seq_QMARK_.call(null, seq__76441__$1)) {
+                var c__2754__auto__ = cljs.core.chunk_first.call(null, seq__76441__$1);
+                var G__76474 = cljs.core.chunk_rest.call(null, seq__76441__$1);
+                var G__76475 = c__2754__auto__;
+                var G__76476 = cljs.core.count.call(null, c__2754__auto__);
+                var G__76477 = 0;
+                seq__76441 = G__76474;
+                chunk__76442 = G__76475;
+                count__76443 = G__76476;
+                i__76444 = G__76477;
+                continue
+              }else {
+                var v = cljs.core.first.call(null, seq__76441__$1);
+                goog.events.unlisten(v, "click", symlog.cljs.app.handlers.narrator.TOChandler, true, symlog.cljs.app.handlers.narrator.ctxt);
+                var G__76478 = cljs.core.next.call(null, seq__76441__$1);
+                var G__76479 = null;
+                var G__76480 = 0;
+                var G__76481 = 0;
+                seq__76441 = G__76478;
+                chunk__76442 = G__76479;
+                count__76443 = G__76480;
+                i__76444 = G__76481;
+                continue
+              }
+            }else {
+              return null
+            }
+          }
+          break
+        }
+      })
+    }
+    return cljs.core.reset_BANG_.call(null, symlog.cljs.app.handlers.narrator.state, 1)
+  }else {
+    if(cljs.core._EQ_.call(null, 1, cljs.core.deref.call(null, symlog.cljs.app.handlers.narrator.state))) {
+      cljs.core.reset_BANG_.call(null, symlog.cljs.app.handlers.narrator.state, 0);
+      if(cljs.core.truth_(cljs.core.deref.call(null, symlog.cljs.app.handlers.narrator.video.sequencer.rested))) {
+        if(cljs.core.truth_(cljs.core.deref.call(null, symlog.cljs.app.handlers.narrator.video.sequencer.enabled))) {
+          symlog.cljs.app.handlers.narrator.video.style.opacity = 0.2;
+          return cljs.core.reset_BANG_.call(null, symlog.cljs.app.handlers.narrator.video.sequencer.enabled, false)
+        }else {
+          symlog.cljs.app.handlers.narrator.video.style.opacity = 1;
+          return cljs.core.reset_BANG_.call(null, symlog.cljs.app.handlers.narrator.video.sequencer.enabled, true)
+        }
+      }else {
+        symlog.cljs.app.handlers.narrator.tocRef.style.display = "none";
+        symlog.cljs.app.handlers.narrator.playButton.style.opacity = 0;
+        symlog.cljs.app.handlers.narrator.disableButton.style.opacity = 0;
+        var seq__76445_76482 = cljs.core.seq.call(null, symlog.cljs.app.handlers.narrator.nodeList);
+        var chunk__76446_76483 = null;
+        var count__76447_76484 = 0;
+        var i__76448_76485 = 0;
+        while(true) {
+          if(i__76448_76485 < count__76447_76484) {
+            var v_76486 = cljs.core._nth.call(null, chunk__76446_76483, i__76448_76485);
+            goog.events.unlisten(v_76486, "click", symlog.cljs.app.handlers.narrator.TOChandler, true, symlog.cljs.app.handlers.narrator.ctxt);
+            var G__76487 = seq__76445_76482;
+            var G__76488 = chunk__76446_76483;
+            var G__76489 = count__76447_76484;
+            var G__76490 = i__76448_76485 + 1;
+            seq__76445_76482 = G__76487;
+            chunk__76446_76483 = G__76488;
+            count__76447_76484 = G__76489;
+            i__76448_76485 = G__76490;
+            continue
+          }else {
+            var temp__4092__auto___76491 = cljs.core.seq.call(null, seq__76445_76482);
+            if(temp__4092__auto___76491) {
+              var seq__76445_76492__$1 = temp__4092__auto___76491;
+              if(cljs.core.chunked_seq_QMARK_.call(null, seq__76445_76492__$1)) {
+                var c__2754__auto___76493 = cljs.core.chunk_first.call(null, seq__76445_76492__$1);
+                var G__76494 = cljs.core.chunk_rest.call(null, seq__76445_76492__$1);
+                var G__76495 = c__2754__auto___76493;
+                var G__76496 = cljs.core.count.call(null, c__2754__auto___76493);
+                var G__76497 = 0;
+                seq__76445_76482 = G__76494;
+                chunk__76446_76483 = G__76495;
+                count__76447_76484 = G__76496;
+                i__76448_76485 = G__76497;
+                continue
+              }else {
+                var v_76498 = cljs.core.first.call(null, seq__76445_76492__$1);
+                goog.events.unlisten(v_76498, "click", symlog.cljs.app.handlers.narrator.TOChandler, true, symlog.cljs.app.handlers.narrator.ctxt);
+                var G__76499 = cljs.core.next.call(null, seq__76445_76492__$1);
+                var G__76500 = null;
+                var G__76501 = 0;
+                var G__76502 = 0;
+                seq__76445_76482 = G__76499;
+                chunk__76446_76483 = G__76500;
+                count__76447_76484 = G__76501;
+                i__76448_76485 = G__76502;
+                continue
+              }
+            }else {
+            }
+          }
+          break
+        }
+        goog.events.unlistenByKey(symlog.cljs.app.handlers.narrator.listener);
+        return symlog.cljs.app.handlers.narrator.video.sequencer.play()
+      }
+    }else {
+      return null
+    }
+  }
+};
+symlog.cljs.app.handlers.narrator.TOChandler = function TOChandler(evt) {
+  if(cljs.core._EQ_.call(null, "endButton", evt.target.id)) {
+    cljs.core.reset_BANG_.call(null, symlog.cljs.app.handlers.narrator.state, 0);
+    symlog.cljs.app.handlers.narrator.tocRef.style.display = "none";
+    symlog.cljs.app.handlers.narrator.playButton.style.opacity = 0;
+    symlog.cljs.app.handlers.narrator.disableButton.style.opacity = 0;
+    var seq__76511_76519 = cljs.core.seq.call(null, symlog.cljs.app.handlers.narrator.nodeList);
+    var chunk__76512_76520 = null;
+    var count__76513_76521 = 0;
+    var i__76514_76522 = 0;
+    while(true) {
+      if(i__76514_76522 < count__76513_76521) {
+        var v_76523 = cljs.core._nth.call(null, chunk__76512_76520, i__76514_76522);
+        goog.events.unlisten(v_76523, "click", TOChandler, true, symlog.cljs.app.handlers.narrator.ctxt);
+        var G__76524 = seq__76511_76519;
+        var G__76525 = chunk__76512_76520;
+        var G__76526 = count__76513_76521;
+        var G__76527 = i__76514_76522 + 1;
+        seq__76511_76519 = G__76524;
+        chunk__76512_76520 = G__76525;
+        count__76513_76521 = G__76526;
+        i__76514_76522 = G__76527;
+        continue
+      }else {
+        var temp__4092__auto___76528 = cljs.core.seq.call(null, seq__76511_76519);
+        if(temp__4092__auto___76528) {
+          var seq__76511_76529__$1 = temp__4092__auto___76528;
+          if(cljs.core.chunked_seq_QMARK_.call(null, seq__76511_76529__$1)) {
+            var c__2754__auto___76530 = cljs.core.chunk_first.call(null, seq__76511_76529__$1);
+            var G__76531 = cljs.core.chunk_rest.call(null, seq__76511_76529__$1);
+            var G__76532 = c__2754__auto___76530;
+            var G__76533 = cljs.core.count.call(null, c__2754__auto___76530);
+            var G__76534 = 0;
+            seq__76511_76519 = G__76531;
+            chunk__76512_76520 = G__76532;
+            count__76513_76521 = G__76533;
+            i__76514_76522 = G__76534;
+            continue
+          }else {
+            var v_76535 = cljs.core.first.call(null, seq__76511_76529__$1);
+            goog.events.unlisten(v_76535, "click", TOChandler, true, symlog.cljs.app.handlers.narrator.ctxt);
+            var G__76536 = cljs.core.next.call(null, seq__76511_76529__$1);
+            var G__76537 = null;
+            var G__76538 = 0;
+            var G__76539 = 0;
+            seq__76511_76519 = G__76536;
+            chunk__76512_76520 = G__76537;
+            count__76513_76521 = G__76538;
+            i__76514_76522 = G__76539;
+            continue
+          }
+        }else {
+        }
+      }
+      break
+    }
+    goog.events.unlistenByKey(symlog.cljs.app.handlers.narrator.listener);
+    return symlog.cljs.app.handlers.narrator.video.sequencer.end()
+  }else {
+    if("\ufdd0:else") {
+      var frame = parseInt(evt.target.attributes.frame.value);
+      var time = frame / symlog.cljs.app.handlers.narrator.FPS;
+      cljs.core.reset_BANG_.call(null, symlog.cljs.app.handlers.narrator.state, 0);
+      symlog.cljs.app.handlers.narrator.tocRef.style.display = "none";
+      symlog.cljs.app.handlers.narrator.playButton.style.opacity = 0;
+      symlog.cljs.app.handlers.narrator.disableButton.style.opacity = 0;
+      var seq__76515_76540 = cljs.core.seq.call(null, symlog.cljs.app.handlers.narrator.nodeList);
+      var chunk__76516_76541 = null;
+      var count__76517_76542 = 0;
+      var i__76518_76543 = 0;
+      while(true) {
+        if(i__76518_76543 < count__76517_76542) {
+          var v_76544 = cljs.core._nth.call(null, chunk__76516_76541, i__76518_76543);
+          goog.events.unlisten(v_76544, "click", TOChandler, true, symlog.cljs.app.handlers.narrator.ctxt);
+          var G__76545 = seq__76515_76540;
+          var G__76546 = chunk__76516_76541;
+          var G__76547 = count__76517_76542;
+          var G__76548 = i__76518_76543 + 1;
+          seq__76515_76540 = G__76545;
+          chunk__76516_76541 = G__76546;
+          count__76517_76542 = G__76547;
+          i__76518_76543 = G__76548;
+          continue
+        }else {
+          var temp__4092__auto___76549 = cljs.core.seq.call(null, seq__76515_76540);
+          if(temp__4092__auto___76549) {
+            var seq__76515_76550__$1 = temp__4092__auto___76549;
+            if(cljs.core.chunked_seq_QMARK_.call(null, seq__76515_76550__$1)) {
+              var c__2754__auto___76551 = cljs.core.chunk_first.call(null, seq__76515_76550__$1);
+              var G__76552 = cljs.core.chunk_rest.call(null, seq__76515_76550__$1);
+              var G__76553 = c__2754__auto___76551;
+              var G__76554 = cljs.core.count.call(null, c__2754__auto___76551);
+              var G__76555 = 0;
+              seq__76515_76540 = G__76552;
+              chunk__76516_76541 = G__76553;
+              count__76517_76542 = G__76554;
+              i__76518_76543 = G__76555;
+              continue
+            }else {
+              var v_76556 = cljs.core.first.call(null, seq__76515_76550__$1);
+              goog.events.unlisten(v_76556, "click", TOChandler, true, symlog.cljs.app.handlers.narrator.ctxt);
+              var G__76557 = cljs.core.next.call(null, seq__76515_76550__$1);
+              var G__76558 = null;
+              var G__76559 = 0;
+              var G__76560 = 0;
+              seq__76515_76540 = G__76557;
+              chunk__76516_76541 = G__76558;
+              count__76517_76542 = G__76559;
+              i__76518_76543 = G__76560;
+              continue
+            }
+          }else {
+          }
+        }
+        break
+      }
+      goog.events.unlistenByKey(symlog.cljs.app.handlers.narrator.listener);
+      symlog.cljs.app.handlers.narrator.video.currentTime = time;
+      symlog.cljs.app.handlers.narrator.video.sequencer.setStep(frame);
+      symlog.cljs.app.handlers.narrator.video.sequencer.clear();
+      return symlog.cljs.app.handlers.narrator.video.sequencer.play()
+    }else {
+      return null
+    }
+  }
 };
 goog.provide("symlog.cljs.svg");
 goog.require("cljs.core");
@@ -32685,7 +33351,6 @@ goog.require("goog.events");
 goog.require("goog.db");
 goog.inherits(symlog.cljs.idb.Idb = function Idb(dbName, dbVersion) {
   var this$ = this;
-  goog.events.EventTarget.call(this$);
   goog.db.openDatabase(dbName, dbVersion, function(ev, db, tx) {
     var store = dbName.concat(".objects");
     if(cljs.core.not.call(null, db.getObjectStoreNames().contains(store))) {

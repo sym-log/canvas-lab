@@ -1,12 +1,36 @@
 (ns symlog.cljs.animation.functions)
 
+(defn loading-circle [ target ]
+  (this-as this 
+     (set! (. this -rotation) (atom 0))
+     (set! (. this -timer) (goog.Timer. 100))
+     (set! (. this -fire) (fn [] (.. this -timer start)))
+     
+     (set! (. this -play)
+           (fn []
+              (swap! (. this -rotation) + 30)
+              (. target setAttribute
+                    "transform"
+                    (str
+                       "rotate("
+                       @(. this -rotation)
+                       ",50,50)"))))
+
+     (set! (. this -stop) (fn [] (.. this -timer stop)))
+     
+     (goog.events.listen (. this -timer)
+                         goog.Timer.TICK
+                         (. this -play) false this)
+  this))
+
 (defn paint-frames [ image frames fps ]
    ; the rider is a function you can pass that will be submitted to execute async when
    ; an instance of this function is triggered                
    (this-as this
      (set! (. this -timer) (goog.Timer. fps))
      (set! (. this -counter) (atom 0))
-     (set! (. this -pause) (fn [] (.. this -timer stop)))
+     (set! (. this -pause) (fn []
+                             (.. this -timer stop)))
                              
      (set! (. this -play) (fn [] (.. this -timer start)))
      (set! (. this -fire) (fn [callback]
