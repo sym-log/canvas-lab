@@ -11,85 +11,97 @@
 <div id="containerDiv">
 
 <div id="narratorDiv" style="height:90px; width:90px; top:9px; left:310px;">
+
   <video id="narratorVid" style="width:100%;  height:100%; position:absolute; border-radius:10px;" >
    <source src="video/narrator.m4v"  type="video/mp4">
    <source src="video/narrator.webm"  type="video/webm">
   </video>
-  <svg id="narratorController" xmlns="http://www.w3.org/2000/svg" style="position:absolute; height:128%; width:128%; top:-14%; left: -14%;" viewbox="0 0 100 100">
- <g id="narratorPlayButton" style="opacity:0;">
-  <path id="path4501" d="M50,25c-6.568,0-13.043,2.668-17.688,7.312-4.644,4.645-7.312,11.12-7.312,17.688s2.668,13.043,7.312,17.688c4.645,4.644,11.12,7.312,17.688,7.312s13.043-2.668,17.688-7.312c4.644-4.645,7.312-11.12,7.312-17.688s-2.668-13.043-7.312-17.688c-4.645-4.644-11.12-7.312-17.688-7.312zm0,3.625c5.5698,0,11.155,2.3428,15.094,6.2812,3.938,3.939,6.281,9.524,6.281,15.094,0,5.5698-2.3428,11.155-6.2812,15.094-3.939,3.938-9.524,6.281-15.094,6.281s-11.155-2.343-15.094-6.281c-3.938-3.939-6.281-9.524-6.281-15.094,0-5.5698,2.3428-11.155,6.2812-15.094,3.939-3.938,9.524-6.281,15.094-6.281z" style="baseline-shift:baseline;block-progression:tb;fill:#bfaa30;color:#000000;opacity:1;direction:ltr;text-indent:0;text-align:start;enable-background:accumulate;text-transform:none;"/>
-  <path id="path5622" style="opacity:1;fill:#bfaa30;" d="m64.536,50.318-11.111,6.9745-11.111,6.9745,0-13.949,0-13.949,11.111,6.9745z"/>
- </g>
- <g id="narratorDisableButton" style="opacity:0;">
-  <path id="path4501-1" d="M92.5,0c-3.972,0-7.5,3.5277-7.5,7.5,0,3.972,3.528,7.5,7.5,7.5s7.5-3.528,7.5-7.5c0-3.9723-3.528-7.5-7.5-7.5zm0,1.0938c3.3104,0,6.4062,3.0958,6.4062,6.4062s-3.0958,6.4062-6.4062,6.4062-6.4062-3.0958-6.4062-6.4062,3.0958-6.4062,6.4062-6.4062z" style="baseline-shift:baseline;block-progression:tb;fill:#bfaa30;color:#000000;opacity:1;direction:ltr;text-indent:0;text-align:start;enable-background:accumulate;text-transform:none;"/>
-  <path id="rect5624" style="opacity:1;fill-rule:evenodd;fill:#bfaa30;" d="M89.281,3.125l-1.125,1.125,3.344,3.3125-3.344,3.3435,1.125,1.125,3.344-3.3435,3.313,3.3435,1.124-1.125-3.312-3.3435,3.312-3.3125-1.124-1.125-3.313,3.3125-3.344-3.3125z"/>
- </g>
-  <rect
-    style="opacity:0;fill:#bfaa30;fill-opacity:1;fill-rule:evenodd;stroke:none"
-     id="narratorPlayTouchArea"
-     width="70"
-     height="70"
-     x="15"
-     y="15" />
-  <rect
-    style="opacity:0;fill:#bfaa30;fill-opacity:1;fill-rule:evenodd;stroke:none"
-     id="narratorDisableTouchArea"
-     width="15"
-     height="15"
-     x="85"
-     y="0" />
-  </svg>
 
-  <div id="narratorTOC" >
-    <div id="n0" style="display:none">
-      <div id="endButton" class="toc" ></div>
+  <svg id="narratorController" xmlns="http://www.w3.org/2000/svg" style="position:absolute; height:128%; width:128%; top:-14%; left: -14%;" viewbox="0 0 100 100">
+   <g id="narratorPlayButton" style="opacity:0;">
+     <path id="path4501" d="M50,25c-6.568,0-13.043,2.668-17.688,7.312-4.644,4.645-7.312,11.12-7.312,17.688s2.668,13.043,7.312,17.688c4.645,4.644,11.12,7.312,17.688,7.312s13.043-2.668,17.688-7.312c4.644-4.645,7.312-11.12,7.312-17.688s-2.668-13.043-7.312-17.688c-4.645-4.644-11.12-7.312-17.688-7.312zm0,3.625c5.5698,0,11.155,2.3428,15.094,6.2812,3.938,3.939,6.281,9.524,6.281,15.094,0,5.5698-2.3428,11.155-6.2812,15.094-3.939,3.938-9.524,6.281-15.094,6.281s-11.155-2.343-15.094-6.281c-3.938-3.939-6.281-9.524-6.281-15.094,0-5.5698,2.3428-11.155,6.2812-15.094,3.939-3.938,9.524-6.281,15.094-6.281z" style="baseline-shift:baseline;block-progression:tb;fill:#bfaa30;color:#000000;opacity:1;direction:ltr;text-indent:0;text-align:start;enable-background:accumulate;text-transform:none;"/>
+     <path id="path5622" style="opacity:1;fill:#bfaa30;" d="m64.536,50.318-11.111,6.9745-11.111,6.9745,0-13.949,0-13.949,11.111,6.9745z"/>
+    </g>
+    <g id="narratorDisableButton" style="opacity:0;">
+     <path id="path4501-1" d="M92.5,0c-3.972,0-7.5,3.5277-7.5,7.5,0,3.972,3.528,7.5,7.5,7.5s7.5-3.528,7.5-7.5c0-3.9723-3.528-7.5-7.5-7.5zm0,1.0938c3.3104,0,6.4062,3.0958,6.4062,6.4062s-3.0958,6.4062-6.4062,6.4062-6.4062-3.0958-6.4062-6.4062,3.0958-6.4062,6.4062-6.4062z" style="baseline-shift:baseline;block-progression:tb;fill:#bfaa30;color:#000000;opacity:1;direction:ltr;text-indent:0;text-align:start;enable-background:accumulate;text-transform:none;"/>
+     <path id="rect5624" style="opacity:1;fill-rule:evenodd;fill:#bfaa30;" d="M89.281,3.125l-1.125,1.125,3.344,3.3125-3.344,3.3435,1.125,1.125,3.344-3.3435,3.313,3.3435,1.124-1.125-3.312-3.3435,3.312-3.3125-1.124-1.125-3.313,3.3125-3.344-3.3125z"/>
+    </g> 
+<rect style="opacity:0;fill:#bfaa30;fill-opacity:1;fill-rule:evenodd;stroke:none" id="narratorPlayTouchArea" width="70" height="70" x="15" y="15" />
+<rect style="opacity:0;fill:#bfaa30;fill-opacity:1;fill-rule:evenodd;stroke:none" id="narratorDisableTouchArea" width="15" height="15" x="85" y="0" />
+
+<g id="narratorSkipButton" style="opacity:0">
+ <path style="opacity:1;direction:ltr;enable-background:accumulate;baseline-shift:baseline;block-progression:tb;text-indent:0;color:#000000;fill:#bfaa30;text-transform:none;text-align:start;" d="m7.7295,84.771c-3.972,0-7.5,3.5277-7.5,7.5,0,3.972,3.528,7.5,7.5,7.5s7.5-3.528,7.5-7.5c0-3.9723-3.528-7.5-7.5-7.5zm0,1.0938c3.3104,0,6.4062,3.0958,6.4062,6.4062s-3.0958,6.4062-6.4062,6.4062-6.4062-3.0958-6.4062-6.4062,3.0958-6.4062,6.4062-6.4062z"/>
+ <path style="opacity:1;stroke:#bfaa30;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-width:1.56700003;fill:none;" d="m6.1625,88.074,4.5829,4.2712-4.5631,4.2528"/>
+ <rect id="narratorSkipTouchArea" style="opacity:0;stroke-width:0.10000000000000001;" height="15" width="15" y="85.197" x="0.22773"/>
+</g>
+
+
+
+ </svg>
+
+
+ <div id="narratorTOCs" >
+
+  <div id="nt0" class="toc" style="display:none;">
+     <div id="endButton" class="toc" >
+     </div>
+  </div>
+  <div id="nt1" class="toc" style="display:none;">
+     <div id="endButton" class="toc" >
+
    </div>
-    <div id="n1" style="display:none; " class="toc" >
+  </div>
+  <div id="nt2" class="toc" style="display:none;" class="toc n1" >
       <p  class="tocHeader"> A GOOD COP &nbsp</p> 
       <p id="understands" frame="927" class="toc" style="padding-top:0px">UNDERSTANDS THE LAW &#8212</p>
       <p id="keepspeace" frame="1352" class="toc">KEEPS THE PEACE &#8212</p>
       <p id="nooverreact" frame="1989" class="toc">DOES NOT OVERREACT &#8212</p>
       <p id="integrity" frame="2456" class="toc">HAS INTEGRITY &#8212</p> 
      <div id="endButton" class="toc" ></div>
-   </div> 
-    <div id="n2" style="display:none">
-      <div id="endButton" class="toc" ></div>
-   </div>
-    <div id="n3" style="display:none">
-      <div id="endButton" class="toc" ></div>
-   </div>
-    <div id="n4" style="display:none">
-      <div id="endButton" class="toc" ></div>
-   </div>
-    <div id="n5" style="display:none">
-      <div id="endButton" class="toc" ></div>
-   </div>
-    <div id="n6" style="display:none">
-      <div id="endButton" class="toc" ></div>
-   </div>
+  </div> 
 
- </div>
+  <div id="nt3" class="toc" style="display:none">
+      <div id="endButton" class="toc" ></div>
+  </div>
+  <div id="nt4" class="toc" style="display:none">
+      <div id="endButton" class="toc" ></div>
+  </div>
+  <div id="nt5" class="toc" style="display:none">
+      <div id="endButton" class="toc" ></div>
+  </div>
+  <div id="nt6" class="toc" style="display:none">
+      <div id="endButton" class="toc" ></div>
+  </div>
+    <div id="nt7" class="toc" style="display:none">
+      <div id="endButton" class="toc" ></div>
+   </div>
+  <div id="nt8" class="toc" style="display:none">
+      <div id="endButton" class="toc" ></div>
+  </div>
+  <div id="nt9" class="toc" style="display:none">
+      <div id="endButton" class="toc" ></div>
+  </div>
 
+  </div>
 
 
 </div>
+
 <video id="mainVideo" class="unfaded">
    <source src="video/mainVideo.webm" type="video/webm">  
 </video>  
 
-  <svg id="mainVideoPlayButton"xmlns="http://www.w3.org/2000/svg" 
-style="opacity:0" >
+<svg id="mainVideoPlayButton"xmlns="http://www.w3.org/2000/svg" style="opacity:0" >
  <g id="layer1" transform="matrix(4,0,0,4,220,-3929.4488)">
   <g id="g5701" transform="translate(-25,977.3622)">
-   <path id="path4501" style="opacity:0.7;direction:ltr;enable-background:accumulate;baseline-shift:baseline;block-progression:tb;text-indent:0;color:#000000;fill:#bfaa30;text-transform:none;text-align:start;" d="M50,25c-6.568,0-13.043,2.668-17.688,7.312-4.644,4.645-7.312,11.12-7.312,17.688s2.668,13.043,7.312,17.688c4.645,4.644,11.12,7.312,17.688,7.312s13.043-2.668,17.688-7.312c4.644-4.645,7.312-11.12,7.312-17.688s-2.668-13.043-7.312-17.688c-4.645-4.644-11.12-7.312-17.688-7.312zm0,3.625c5.5698,0,11.155,2.3428,15.094,6.2812,3.938,3.939,6.281,9.524,6.281,15.094,0,5.5698-2.3428,11.155-6.2812,15.094-3.939,3.938-9.524,6.281-15.094,6.281s-11.155-2.343-15.094-6.281c-3.938-3.939-6.281-9.524-6.281-15.094,0-5.5698,2.3428-11.155,6.2812-15.094,3.939-3.938,9.524-6.281,15.094-6.281z"/>
-   <path id="path5622" style="opacity:0.7;fill:#bfaa30;" d="m64.536,50.318-11.111,6.9745-11.111,6.9745,0-13.949,0-13.949,11.111,6.9745z"/>
-     </g>
-    </g>
-    <rect id="mainVideoPlayTouchArea" style="opacity:0;" height="360" width="640" y="0" x="0"/>
-  </svg>
+   <path id="path4501" style="opacity:0.7;direction:ltr;enable-background:accumulate;baseline-shift:baseline;block-progression:tb;text-indent:0;color:#000000;fill:#7247d7;text-transform:none;text-align:start;" d="M50,25c-6.568,0-13.043,2.668-17.688,7.312-4.644,4.645-7.312,11.12-7.312,17.688s2.668,13.043,7.312,17.688c4.645,4.644,11.12,7.312,17.688,7.312s13.043-2.668,17.688-7.312c4.644-4.645,7.312-11.12,7.312-17.688s-2.668-13.043-7.312-17.688c-4.645-4.644-11.12-7.312-17.688-7.312zm0,3.625c5.5698,0,11.155,2.3428,15.094,6.2812,3.938,3.939,6.281,9.524,6.281,15.094,0,5.5698-2.3428,11.155-6.2812,15.094-3.939,3.938-9.524,6.281-15.094,6.281s-11.155-2.343-15.094-6.281c-3.938-3.939-6.281-9.524-6.281-15.094,0-5.5698,2.3428-11.155,6.2812-15.094,3.939-3.938,9.524-6.281,15.094-6.281z"/>
+   <path id="path5622" style="opacity:0.7;fill:#7247d7;" d="m64.536,50.318-11.111,6.9745-11.111,6.9745,0-13.949,0-13.949,11.111,6.9745z"/>
+  </g>
+ </g>
+ <rect id="mainVideoPlayTouchArea" style="opacity:0;" height="360" width="640" y="0" x="0"/>
+</svg>
 
 <svg id="spinnerSVG"  xmlns="http://www.w3.org/2000/svg" width="100px" height="100px">
-
   <g id="spinner">
     <g id="bit6">
       <g id="bit3">
@@ -101,20 +113,112 @@ style="opacity:0" >
     </g>
     <use xlink:href="#bit6" opacity="0.262" transform="rotate(-180 50 50)"/>
   </g>
-
 </svg>
 
 <canvas id='canvas' width="788" height="576" > </canvas>  
 
-<svg id="svgCanvas" xmlns="http://www.w3.org/2000/svg" 
-   style="height:576px; width:1025px;" >
+<svg id="svgCanvas" xmlns="http://www.w3.org/2000/svg" style="height:576px; width:1025px;" >
+ <rect id="controllerPath" style="stroke-linejoin:round;stroke-dashoffset:0;stroke:#000000;stroke-linecap:round;stroke-dasharray:none;stroke-miterlimit:4;stroke-width:3.71603918;fill:#000000;" height="534" width="0.84992" y="22" x="235.86"/>
 
- <path transform="translate(0,4)" style="stroke-linejoin:miter;stroke:#a68e00;stroke-width:1.72421098px;stroke-linecap:butt;fill:#a68e00;" d="m111.46,18.593,121.98-0.04593"/>
- <rect style="stroke-linejoin:round;stroke-dashoffset:0;stroke:#000000;stroke-linecap:round;stroke-dasharray:none;stroke-miterlimit:4;stroke-width:3.71603918;fill:#000000;" height="534" width="0.84992" y="22" x="235.86"/>
- <text y="25" x="12.223632" style="font-size:18px;font-weight:normal;letter-spacing:0px;font-style:normal;word-spacing:0px;font-family:Sans;line-height:125%;fill:#000000;" xml:space="preserve"><tspan y="26" x="12.223632" style="font-size:16px;fill:#a68e00;">Introduction</tspan></text>
- <text y="561.77344" x="12.295563" style="font-size:18px;font-weight:normal;letter-spacing:0px;font-style:normal;word-spacing:0px;font-family:Sans;line-height:125%;fill:#000000;" xml:space="preserve"><tspan y="558" x="12.295563" style="font-size:16px;fill:#a68e00;">Conclusion</tspan></text>
- <path transform="translate(0,-3)" style="stroke-linejoin:miter;stroke:#a68e00;stroke-width:1.49821746px;stroke-linecap:butt;fill:#a68e00;" d="m102.33,557.76,131.08,0"/>
+<g id="ns.0" fstart="0" fend="155" class="nscene"  tidx="0" transform="translate(0,3.5)" style="opacity:1;">
+ <g class="playbutton" transform="translate(0, -1)">
+   <path  style="stroke-miterlimit:4;stroke:#a68e00; stroke-width:1.92750549;stroke-dasharray:none;fill:none;" d="m24.973,17.941a9.5046,9.5049,0,1,1,-19.009,0,9.5046,9.5049,0,1,1,19.009,0z"/>
+   <path  style="fill:#a68e00;" d="m22.809,17.805-5.7721,3.3325-5.7721,3.3325,0-6.6651,0-6.6651,5.7721,3.3325z"/>
+ </g>
+ <g class="playlabel" style="opacity:1">
+   <text y="22.499437" x="31.429688" style="font-size:18px;font-weight:normal;letter-spacing:0px;font-style:normal;word-spacing:0px;font-family:Sans;line-height:125%;fill:#000000;" xml:space="preserve"><tspan id="tspan4824" y="22.499437" x="31.429688" style="font-size:16px;fill:#a68e00;">Introduction</tspan></text>
+   <path  style="stroke-linejoin:miter;stroke:#a68e00;stroke-width:1px;stroke-linecap:butt;fill:#a68e00;" d="m130.76,18.593,101-0.04593"/>
+ </g>
+</g>
+
+<g id="ns.1" fstart="170" fend="595"  tidx="0" class="nscene" transform="translate(0,3.5)" style="display:none">
+<g class="playlabel" />
+<g class="playbutton"/>
+</g>
+
+<g id="ns.2" fstart="607" fend="3523" class="nscene"  tidx="2420" transform="translate(0,60)" style="opacity:1;">
+ <g class="playbutton" transform="translate(0, -1)">
+   <path  style="stroke-miterlimit:4;stroke:#a68e00; stroke-width:1.92750549;stroke-dasharray:none;fill:none;" d="m24.973,17.941a9.5046,9.5049,0,1,1,-19.009,0,9.5046,9.5049,0,1,1,19.009,0z"/>
+   <path  style="fill:#a68e00;" d="m22.809,17.805-5.7721,3.3325-5.7721,3.3325,0-6.6651,0-6.6651,5.7721,3.3325z"/>
+ </g>
+ <g class="playlabel" style="opacity:1">
+   <text y="22.499437" x="31.429688" style="font-size:18px;font-weight:normal;letter-spacing:0px;font-style:normal;word-spacing:0px;font-family:Sans;line-height:125%;fill:#000000;" xml:space="preserve"><tspan id="tspan4824" y="22.499437" x="31.429688" style="font-size:16px;fill:#a68e00;">Introduction</tspan></text>
+   <path  style="stroke-linejoin:miter;stroke:#a68e00;stroke-width:1px;stroke-linecap:butt;fill:#a68e00;" d="m130.76,18.593,101-0.04593"/>
+ </g>
+</g>
+
+ <g id="ns.3" class="nscene" fstart="3536" fend="8744"  tidx="2430" style="opacity:1;" transform="translate(0,80)">
+ <g class="playbutton" transform="translate(0, -1)">
+   <path  style="stroke-miterlimit:4;stroke:#a68e00; stroke-width:1.92750549;stroke-dasharray:none;fill:none;" d="m24.973,17.941a9.5046,9.5049,0,1,1,-19.009,0,9.5046,9.5049,0,1,1,19.009,0z"/>
+   <path  style="fill:#a68e00;" d="m22.809,17.805-5.7721,3.3325-5.7721,3.3325,0-6.6651,0-6.6651,5.7721,3.3325z"/>
+ </g>
+ <g class="playlabel" style="opacity:1">
+  <text y="22.499437" x="31.429688" style="font-size:18px;font-weight:normal;letter-spacing:0px;font-style:normal;word-spacing:0px;font-family:Sans;line-height:125%;fill:#000000;" xml:space="preserve"><tspan id="tspan4824" y="22.499437" x="31.429688" style="font-size:16px;fill:#a68e00;">Intro</tspan></text>
+  <path  style="stroke-linejoin:miter;stroke:#a68e00;stroke-width:1px;stroke-linecap:butt;fill:#a68e00;" d="m72.3,18.593,159-0.04593"/>
+ </g>
+</g>
+
+
+ <g id="ns4" class="nscene" fstart="607" fend="3523"  tidx="4285" style="opacity:1;" transform="translate(0,120)">
+ <g class="playbutton" transform="translate(0, -1)">
+   <path  style="stroke-miterlimit:4;stroke:#a68e00; stroke-width:1.92750549;stroke-dasharray:none;fill:none;" d="m24.973,17.941a9.5046,9.5049,0,1,1,-19.009,0,9.5046,9.5049,0,1,1,19.009,0z"/>
+   <path  style="fill:#a68e00;" d="m22.809,17.805-5.7721,3.3325-5.7721,3.3325,0-6.6651,0-6.6651,5.7721,3.3325z"/>
+ </g>
+ <g class="playlabel" style="opacity:1">
+  <text y="22.499437" x="31.429688" style="font-size:18px;font-weight:normal;letter-spacing:0px;font-style:normal;word-spacing:0px;font-family:Sans;line-height:125%;fill:#000000;" xml:space="preserve"><tspan id="tspan4824" y="22.499437" x="31.429688" style="font-size:16px;fill:#a68e00;">Intro</tspan></text>
+  <path  style="stroke-linejoin:miter;stroke:#a68e00;stroke-width:1px;stroke-linecap:butt;fill:#a68e00;" d="m72.3,18.593,159-0.04593"/>
+ </g>
+</g>
+
+
+ <g id="ns5" class="nscene" fstart="3536" fend="8744"  tidx="15000" style="opacity:1;" transform="translate(0,140)">
+ <g class="playbutton" transform="translate(0, -1)">
+   <path  style="stroke-miterlimit:4;stroke:#a68e00; stroke-width:1.92750549;stroke-dasharray:none;fill:none;" d="m24.973,17.941a9.5046,9.5049,0,1,1,-19.009,0,9.5046,9.5049,0,1,1,19.009,0z"/>
+   <path  style="fill:#a68e00;" d="m22.809,17.805-5.7721,3.3325-5.7721,3.3325,0-6.6651,0-6.6651,5.7721,3.3325z"/>
+ </g>
+ <g class="playlabel" style="opacity:1">
+  <text y="22.499437" x="31.429688" style="font-size:18px;font-weight:normal;letter-spacing:0px;font-style:normal;word-spacing:0px;font-family:Sans;line-height:125%;fill:#000000;" xml:space="preserve"><tspan id="tspan4824" y="22.499437" x="31.429688" style="font-size:16px;fill:#a68e00;">Intro</tspan></text>
+  <path  style="stroke-linejoin:miter;stroke:#a68e00;stroke-width:1px;stroke-linecap:butt;fill:#a68e00;" d="m72.3,18.593,159-0.04593"/>
+ </g>
+</g>
+
+
+ <g id="ns6" class="nscene" fstart="8745" fend="13355"  tidx="15000" style="opacity:1;" transform="translate(0,200)">
+ <g class="playbutton" transform="translate(0, -1)">
+   <path  style="stroke-miterlimit:4;stroke:#a68e00; stroke-width:1.92750549;stroke-dasharray:none;fill:none;" d="m24.973,17.941a9.5046,9.5049,0,1,1,-19.009,0,9.5046,9.5049,0,1,1,19.009,0z"/>
+   <path  style="fill:#a68e00;" d="m22.809,17.805-5.7721,3.3325-5.7721,3.3325,0-6.6651,0-6.6651,5.7721,3.3325z"/>
+ </g>
+ <g class="playlabel" style="opacity:1">
+  <text y="22.499437" x="31.429688" style="font-size:18px;font-weight:normal;letter-spacing:0px;font-style:normal;word-spacing:0px;font-family:Sans;line-height:125%;fill:#000000;" xml:space="preserve"><tspan id="tspan4824" y="22.499437" x="31.429688" style="font-size:16px;fill:#a68e00;">Intro</tspan></text>
+  <path  style="stroke-linejoin:miter;stroke:#a68e00;stroke-width:1px;stroke-linecap:butt;fill:#a68e00;" d="m72.3,18.593,159-0.04593"/>
+ </g>
+</g>
+
+
+ <g id="ns7" fstart="15000" fend="16000" class="nscene"   tidx="15000" style="opacity:1;" class="nscene" transform="translate(0,240)">
+ <g class="playbutton" transform="translate(0, -1)">
+   <path  style="stroke-miterlimit:4;stroke:#a68e00; stroke-width:1.92750549;stroke-dasharray:none;fill:none;" d="m24.973,17.941a9.5046,9.5049,0,1,1,-19.009,0,9.5046,9.5049,0,1,1,19.009,0z"/>
+   <path  style="fill:#a68e00;" d="m22.809,17.805-5.7721,3.3325-5.7721,3.3325,0-6.6651,0-6.6651,5.7721,3.3325z"/>
+ </g>
+ <g class="playlabel" style="opacity:1">
+  <text y="22.499437" x="31.429688" style="font-size:18px;font-weight:normal;letter-spacing:0px;font-style:normal;word-spacing:0px;font-family:Sans;line-height:125%;fill:#000000;" xml:space="preserve"><tspan id="tspan4824" y="22.499437" x="31.429688" style="font-size:16px;fill:#a68e00;">Intro</tspan></text>
+  <path  style="stroke-linejoin:miter;stroke:#a68e00;stroke-width:1px;stroke-linecap:butt;fill:#a68e00;" d="m72.3,18.593,159-0.04593"/>
+ </g>
+</g>
+
+<g id="ns20" fstart="0" fend="155" class="nscene" tidx="15000" transform="translate(0,535.5)" style="opacity:1;">
+ <g class="playbutton" transform="translate(0, -1)">
+   <path  style="stroke-miterlimit:4;stroke:#a68e00; stroke-width:1.92750549;stroke-dasharray:none;fill:none;" d="m24.973,17.941a9.5046,9.5049,0,1,1,-19.009,0,9.5046,9.5049,0,1,1,19.009,0z"/>
+   <path  style="fill:#a68e00;" d="m22.809,17.805-5.7721,3.3325-5.7721,3.3325,0-6.6651,0-6.6651,5.7721,3.3325z"/>
+ </g>
+ <g class="playlabel" style="opacity:1">
+   <text y="22.499437" x="31.429688" style="font-size:18px;font-weight:normal;letter-spacing:0px;font-style:normal;word-spacing:0px;font-family:Sans;line-height:125%;fill:#000000;" xml:space="preserve"><tspan id="tspan4824" y="22.499437" x="31.429688" style="font-size:16px;fill:#a68e00;">Last Words</tspan></text>
+   <path  style="stroke-linejoin:miter;stroke:#a68e00;stroke-width:1px;stroke-linecap:butt;fill:#a68e00;" d="m125,18.593,106-0.04593"/>
+ </g>
+</g>
+
 </svg>
+
 
 <svg
    xmlns="http://www.w3.org/2000/svg"
@@ -153,6 +257,7 @@ style="opacity:0" >
      id="rect2994"
      style="opacity:0;fill:#a68e00;fill-opacity:1;fill-rule:evenodd;stroke:none" />
 </svg>
+
 
 </div>
 

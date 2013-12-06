@@ -7,26 +7,25 @@
 (def endFrame                         15608)
 (def startFrame                       0)
 (def playing                          (atom nil))
-(def step                             (atom 1))
+(def step                             (atom 0))
 (def paused                           (atom false))
 (def interrupted                      (atom false))
 
-(comment
-  (play)
-  @step
-  @paused
-  (doframe 2430)
-  (.-currentTime (elements :mainVideo))
-)
-
 (defn init []
-  (symlog.cljs.app.controller.actions.init ctxt)
-  (def actions symlog.cljs.app.controller.actions.seqmap)
-  (def maxsteps (count (keys actions)))
   (symlog.cljs.app.sequencers.narrator.sequencer.init ctxt)
-  (def seqsManaged (vector symlog.cljs.app.sequencers.narrator.sequencer))
+  (symlog.cljs.app.controller.actions.init ctxt)
+  (def actions symlog.cljs.app.controller.actions.dom)
+  (def handlers symlog.cljs.app.handlers.mainVideo)
+  (def maxsteps (count (keys actions)))
+  (def sequencers (vector symlog.cljs.app.sequencers.narrator.sequencer))
   (set! (. (elements :mainVideo) -sequencer) ctxt)
   (symlog.cljs.app.handlers.mainVideo.init)
+;  (goog.events.fireListeners
+;     (elements :mainVideoPlayTouchArea)   
+;     "click"
+;     false
+;     (js-obj "type" "click" "target" (elements :mainVideoPlayTouchArea)))
+
 )
   
 (defn interrupt []
@@ -49,9 +48,7 @@
   (reset! paused false)
   (if @playing (if (. @playing -play) (. @playing play)))
   (if (= 0 (. target -currentTime))
-    (do
-      (reset! step 1)
-      (doframe 0))
+      (doframe 0)
     (do
         (js.requestAnimationFrame cycler)
         (. target play))))
@@ -62,7 +59,6 @@
     (if (<= frameNum endFrame)
       (cond
        (= "wait" img) (wait)
-       
        (= @paused true) nil
       :else   
        (do
@@ -72,13 +68,11 @@
    (pause))))
 
 (defn doframe [frameNo]
-  (if (> @step maxsteps) nil
-        (if (>= frameNo ((actions @step) :frame))
-          (if-not @playing
-            (do
-              (reset! playing ((actions @step):sequence))
-              (swap! step inc)
-              (if (. @playing -fire) (. @playing fire) (@playing)))))))
+  (if (= @step maxsteps) nil
+      (if (>= frameNo ((actions @step) :frame))
+        (do
+          (((actions @step) :sequence))
+          (swap! step inc)))))
 
 (defn donext [sender]
   (if (= sender "narrator")
@@ -91,14 +85,28 @@
            false
            (js-obj "type" "click" "target" (elements :mainVideoPlayTouchArea)))  )))
 
+(defn stop []
+  (if @playing (if (. @playing -stop) (. @playing stop)))
+  (reset! paused true)
+  (. target pause)
+  (if (= 1 @(.. handlers -touchHandler -state))
+    (do
+      (reset! (.. handlers -touchHandler -state) 0)
+      (set! (. target -opacity) 1)
+      (set! (.. handlers -playButton -style -opacity) 0)))
+  (doseq [ v sequencers ] (do
+                            (. v stop)
+                            (. v home))))
+
 (defn reset [frame]
+  (set! (. target -currentTime) (/ frame frameRate))
   (symlog.cljs.app.frameBuffer.seekFrame
    frame
    (fn [img]
       (set! (.-src (elements :paintFrame)) img)))
   (doseq [[k v] actions] 
-    (cond (= k maxsteps)
-            (if (>= frame (v :frame)) (reset! step maxsteps))
+    (cond (= k (- maxsteps 1))
+            (if (>= frame (v :frame)) (reset! step (- maxsteps 1)))
             :else
             (if (and (>= frame (v :frame))
                      (<  frame (+ (v :frame) frameRate)))

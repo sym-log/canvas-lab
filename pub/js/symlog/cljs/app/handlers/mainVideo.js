@@ -116,7 +116,6 @@ if(cljs.core._EQ_.call(null,0,cljs.core.deref.call(null,this$.state)))
 {if(cljs.core.not.call(null,cljs.core.deref.call(null,video.sequencer.interrupted)))
 {cljs.core.reset_BANG_.call(null,this$.state,1);
 video.sequencer.pause();
-video.style.opacity = .3;
 return symlog.cljs.app.handlers.mainVideo.playButton.style.opacity = 1;
 } else
 {return null;
@@ -124,7 +123,6 @@ return symlog.cljs.app.handlers.mainVideo.playButton.style.opacity = 1;
 } else
 {if(cljs.core._EQ_.call(null,1,cljs.core.deref.call(null,this$.state)))
 {cljs.core.reset_BANG_.call(null,this$.state,0);
-video.style.opacity = 1;
 symlog.cljs.app.handlers.mainVideo.playButton.style.opacity = 0;
 return video.sequencer.play();
 } else

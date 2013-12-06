@@ -1,13 +1,7 @@
 (ns symlog.cljs.app.handlers.mainVideo
   (:use    [symlog.cljs.app.dom :only [elements]]))
 
-(comment
-(init)
-)
-
-
 (defn init []
-  
    (def videoDuration (.-duration (elements :mainVideo)))
    (def travelLength 532)
    (def multiplier (/ travelLength videoDuration))
@@ -45,7 +39,7 @@
       "click"
       (. touchHandler -handler )
       false  )
-
+   
  )
 
 (defn controlButton [button]
@@ -110,14 +104,12 @@
                     (do
                        (reset! (. this -state) 1)
                        (.. video -sequencer pause)
-                       (set! (.. video -style -opacity) .3)
                        (set! (.. playButton -style -opacity) 1)))
                    
                (= 1 @(. this -state))
                 (do
                   (reset! (. this -state) 0)
-                  (set! (.. video -style -opacity) 1)
-                  (set! (..  playButton -style -opacity) 0)
+                   (set! (..  playButton -style -opacity) 0)
                   (.. video -sequencer play))
          )))       
   this))

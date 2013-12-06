@@ -1,290 +1,53 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
-
-<svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:xlink="http://www.w3.org/1999/xlink"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   id="svgcanvas"
-   height="576"
-   width="1024"
-   version="1.1"
-   inkscape:version="0.48.4 r9939"
-   sodipodi:docname="canvas.svg">
-  <sodipodi:namedview
-     pagecolor="#282828"
-     bordercolor="#666666"
-     borderopacity="1"
-     objecttolerance="10"
-     gridtolerance="10"
-     guidetolerance="10"
-     inkscape:pageopacity="1"
-     inkscape:pageshadow="2"
-     inkscape:window-width="1280"
-     inkscape:window-height="1004"
-     id="namedview3082"
-     showgrid="false"
-     inkscape:zoom="1.2881589"
-     inkscape:cx="157.23213"
-     inkscape:cy="321.70529"
-     inkscape:window-x="-4"
-     inkscape:window-y="-1"
-     inkscape:window-maximized="1"
-     inkscape:current-layer="layer6"
-     inkscape:showpageshadow="false" />
-  <defs
-     id="defs4">
-    <filter
-       id="filter4532-3-2-4"
-       color-interpolation-filters="sRGB">
-      <feFlood
-         id="feFlood4534-3-3-3"
-         flood-color="rgb(0,0,0)"
-         flood-opacity="0.903"
-         result="flood" />
-      <feComposite
-         id="feComposite4536-4-1-5"
-         operator="in"
-         in="flood"
-         in2="SourceGraphic"
-         result="composite1" />
-      <feGaussianBlur
-         id="feGaussianBlur4538-6-6-7"
-         stdDeviation="3.9"
-         result="blur" />
-      <feOffset
-         id="feOffset4540-6-2-3"
-         dy="4.1"
-         dx="4"
-         result="offset" />
-      <feComposite
-         id="feComposite4542-7-4-4"
-         operator="over"
-         in="SourceGraphic"
-         in2="offset"
-         result="composite2" />
-    </filter>
-    <filter
-       id="filter4532-3-2-4-9"
-       color-interpolation-filters="sRGB">
-      <feFlood
-         id="feFlood4534-3-3-3-9"
-         flood-color="rgb(0,0,0)"
-         flood-opacity="0.903"
-         result="flood" />
-      <feComposite
-         id="feComposite4536-4-1-5-8"
-         operator="in"
-         in="flood"
-         in2="SourceGraphic"
-         result="composite1" />
-      <feGaussianBlur
-         id="feGaussianBlur4538-6-6-7-9"
-         stdDeviation="3.9"
-         result="blur" />
-      <feOffset
-         id="feOffset4540-6-2-3-9"
-         dy="4.1"
-         dx="4"
-         result="offset" />
-      <feComposite
-         id="feComposite4542-7-4-4-7"
-         operator="over"
-         in="SourceGraphic"
-         in2="offset"
-         result="composite2" />
-    </filter>
-    <filter
-       id="filter4532-3-2-4-9-0"
-       color-interpolation-filters="sRGB">
-      <feFlood
-         id="feFlood4534-3-3-3-9-0"
-         flood-color="rgb(0,0,0)"
-         flood-opacity="0.903"
-         result="flood" />
-      <feComposite
-         id="feComposite4536-4-1-5-8-2"
-         operator="in"
-         in="flood"
-         in2="SourceGraphic"
-         result="composite1" />
-      <feGaussianBlur
-         id="feGaussianBlur4538-6-6-7-9-6"
-         stdDeviation="3.9"
-         result="blur" />
-      <feOffset
-         id="feOffset4540-6-2-3-9-8"
-         dy="4.1"
-         dx="4"
-         result="offset" />
-      <feComposite
-         id="feComposite4542-7-4-4-7-7"
-         operator="over"
-         in="SourceGraphic"
-         in2="offset"
-         result="composite2" />
-    </filter>
-  </defs>
-  <metadata
-     id="metadata7">
-    <rdf:RDF>
-      <cc:Work
-         rdf:about="">
-        <dc:format>image/svg+xml</dc:format>
-        <dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
-      </cc:Work>
-    </rdf:RDF>
-  </metadata>
-  <text
-     sodipodi:linespacing="125%"
-     xml:space="preserve"
-     x="654.85205"
-     y="331.40332"
-     style="font-size:18px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;font-family:Sans"
-     id="text3996"><tspan
-       x="654.85205"
-       y="331.40332"
-       id="tspan3998" /></text>
-  <text
-     sodipodi:linespacing="125%"
-     xml:space="preserve"
-     x="491.09692"
-     y="460.41211"
-     style="font-size:18px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:1px;word-spacing:0px;fill:#ffe340;stroke:#ffe340;font-family:Sans"
-     id="text3025-6-7-6-9-3-9"><tspan
-       style="letter-spacing:1px;fill:#ffe340;stroke:#ffe340"
-       x="491.09692"
-       y="460.41211"
-       id="tspan3027-5-9-9-6-6-8" /></text>
-  <g
-     inkscape:groupmode="layer"
-     id="layer1"
-     inkscape:label="background"
-     sodipodi:insensitive="true"
-     style="display:none">
-    <image
-       y="-224"
-       x="-128"
-       id="image3147"
-       xlink:href="file:///home/user/code/canvas-lab/project/snapshot.png"
-       height="1024"
-       width="1280" />
+<svg id="svgcanvas" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="576" width="1024" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/">
+ <defs id="defs4">
+  <filter id="filter4532-3-2-4-9" color-interpolation-filters="sRGB">
+   <feFlood id="feFlood4534-3-3-3-9" result="flood" flood-opacity="0.903" flood-color="rgb(0,0,0)"/>
+   <feComposite id="feComposite4536-4-1-5-8" operator="in" result="composite1" in2="SourceGraphic" in="flood"/>
+   <feGaussianBlur id="feGaussianBlur4538-6-6-7-9" stdDeviation="3.9" result="blur"/>
+   <feOffset id="feOffset4540-6-2-3-9" result="offset" dx="4" dy="4.1"/>
+   <feComposite id="feComposite4542-7-4-4-7" operator="over" result="composite2" in2="offset" in="SourceGraphic"/>
+  </filter>
+ </defs>
+ <metadata id="metadata7">
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <text id="text3996" style="font-size:18px;font-family:Sans;letter-spacing:0px;line-height:125%;word-spacing:0px;font-weight:normal;font-style:normal;fill:#000000;" y="331.40332" x="654.85205" xml:space="preserve"><tspan id="tspan3998" y="331.40332" x="654.85205"/></text>
+ <text id="text3025-6-7-6-9-3-9" style="font-size:18px;font-family:Sans;letter-spacing:1px;line-height:125%;word-spacing:0px;stroke:#ffe340;font-weight:normal;font-style:normal;fill:#ffe340;" y="460.41211" x="491.09692" xml:space="preserve"><tspan id="tspan3027-5-9-9-6-6-8" y="460.41211" x="491.09692" style="letter-spacing:1px;stroke:#ffe340;fill:#ffe340;"/></text>
+ <g id="layer1" style="display:none;">
+  <image id="image3147" xlink:href="file:///home/user/code/canvas-lab/project/snapshot.png" height="1024" width="1280" y="-224" x="-128"/>
+ </g>
+ <g id="layer3" style="display:none;">
+  <g id="layer4" transform="translate(0,4.4656992e-6)">
+   <path id="path3229" style="stroke-linejoin:miter;stroke:#ec0c21;stroke-width:1px;stroke-linecap:butt;fill:none;" d="m355,54c76.602,229.52,275,234,275,234"/>
+   <path id="path3229-5" style="stroke-linejoin:miter;stroke:#ec0c21;stroke-width:1px;stroke-linecap:butt;fill:none;" d="m420,218c89.31,103.62,210,70,210,70"/>
+   <path id="path4068" style="stroke-linejoin:miter;stroke:#ed0707;stroke-width:1px;stroke-linecap:butt;fill:none;" d="M420,218c-64.12-71.4-65-164-65-164"/>
+   <path id="path3913" style="stroke-linejoin:miter;stroke:#f50a0a;stroke-width:1px;stroke-linecap:butt;fill:none;" d="M630,288c-142.44,25.53-210-70-210-70"/>
+   <path id="path3915" style="stroke-linejoin:miter;stroke:#f20b0b;stroke-width:1px;stroke-linecap:butt;fill:none;" d="M923,113c-223.91,95.04-503,105-503,105"/>
+   <path id="path3935" style="stroke-linejoin:miter;stroke:#f40505;stroke-width:1px;stroke-linecap:butt;fill:none;" d="M923,113c-240.02-79.737-568-59-568-59"/>
   </g>
-  <g
-     inkscape:groupmode="layer"
-     id="layer3"
-     inkscape:label="paths"
-     style="display:none">
-    <g
-       transform="translate(0,4.4656992e-6)"
-       id="layer4">
-      <path
-         id="path3229"
-         style="fill:none;stroke:#ec0c21;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter"
-         d="m 355,54 c 76.602,229.52 275,234 275,234"
-         inkscape:connector-curvature="0" />
-      <path
-         id="path3229-5"
-         style="fill:none;stroke:#ec0c21;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter"
-         d="m 420,218 c 89.31,103.62 210,70 210,70"
-         inkscape:connector-curvature="0" />
-      <path
-         id="path4068"
-         style="fill:none;stroke:#ed0707;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter"
-         d="M 420,218 C 355.88,146.6 355,54 355,54"
-         inkscape:connector-curvature="0" />
-      <path
-         id="path3913"
-         style="fill:none;stroke:#f50a0a;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter"
-         d="M 630,288 C 487.56,313.53 420,218 420,218"
-         inkscape:connector-curvature="0" />
-      <path
-         id="path3915"
-         style="fill:none;stroke:#f20b0b;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter"
-         d="M 923,113 C 699.09,208.04 420,218 420,218"
-         inkscape:connector-curvature="0" />
-      <path
-         id="path3935"
-         style="fill:none;stroke:#f40505;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter"
-         d="M 923,113 C 682.98,33.263 355,54 355,54"
-         inkscape:connector-curvature="0" />
-    </g>
+ </g>
+ <g id="layer6">
+  <path id="path4826" style="stroke-linejoin:miter;stroke:#a68e00;stroke-width:1.72421098px;stroke-linecap:butt;fill:#a68e00;" d="m111.46,18.593,121.98-0.04593"/>
+  <rect id="rect4819" style="stroke-linejoin:round;stroke-dashoffset:0;stroke:#000000;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-width:3.71603918;fill:#000000;" height="540.68" width="0.84992" y="17.467" x="235.86"/>
+  <text id="text4822" style="font-size:18px;font-family:Sans;letter-spacing:0px;line-height:125%;word-spacing:0px;font-weight:normal;font-style:normal;fill:#000000;" y="22.499437" x="12.223632" xml:space="preserve"><tspan id="tspan4824" y="22.499437" x="12.223632" style="font-size:16px;fill:#a68e00;">Introduction</tspan></text>
+  <text id="text4822-6" style="font-size:18px;font-family:Sans;letter-spacing:0px;line-height:125%;word-spacing:0px;font-weight:normal;font-style:normal;fill:#000000;" y="561.77344" x="12.295563" xml:space="preserve"><tspan id="tspan4824-6" y="561.77344" x="12.295563" style="font-size:16px;fill:#a68e00;">Conclusion</tspan></text>
+  <path id="path4826-0" style="stroke-linejoin:miter;stroke:#a68e00;stroke-width:1.49821746px;stroke-linecap:butt;fill:#a68e00;" d="m102.33,557.76,131.08,0"/>
+  <text id="text4822-4" style="font-size:18px;font-family:Sans;letter-spacing:0px;line-height:125%;word-spacing:0px;font-weight:normal;font-style:normal;fill:#000000;" y="111.52599" x="91.838287" xml:space="preserve"><tspan id="tspan4824-1" y="111.52599" x="91.838287" style="font-size:16px;fill:#a68e00;">Scene1</tspan></text>
+  <path id="path3040" style="stroke:#a68e00;stroke-dasharray:none;stroke-miterlimit:4;stroke-width:2.43895698;fill:none;" d="m88.498,112.55a12.421,11.645,0,1,1,-24.842,0,12.421,11.645,0,1,1,24.842,0z" transform="matrix(0.76520378,0,0,0.81621744,212.11837,15.975258)"/>
+  <path id="path3810" style="fill:#a68e00;" transform="matrix(0.76035719,0,0,0.76035719,229.83976,-14.469683)" d="m62.91,160.68-7.5913,4.3828-7.5913,4.3828,0-8.7657,0-8.7657,7.5913,4.3828z"/>
+  <g id="slider" transform="translate(0.17758001,-387.79528)">
+   <path id="path4147" style="stroke-linejoin:round;stroke-dashoffset:0;filter:url(#filter4532-3-2-4-9);stroke:#282828;stroke-linecap:square;stroke-miterlimit:4;stroke-dasharray:none;stroke-width:1;fill:#282828;" transform="matrix(0.61491825,0,0,0.74729124,142.74778,363.73963)" d="m177,238.5a25.5,20.5,0,1,1,-51,0,25.5,20.5,0,1,1,51,0z"/>
+   <rect id="rect4616" style="stroke-linejoin:round;stroke-dashoffset:0;stroke:#a68e00;stroke-linecap:square;stroke-miterlimit:4;stroke-dasharray:none;stroke-width:0.34659806;fill:#a68e00;" height="2.6601" width="22.129" y="540.33" x="224.87"/>
+   <rect id="rect4616-4" style="stroke-linejoin:round;stroke-dashoffset:0;stroke:#a68e00;stroke-linecap:square;stroke-miterlimit:4;stroke-dasharray:none;stroke-width:0.34659806;fill:#a68e00;" transform="matrix(0,-1,1,0,0,0)" height="2.6506" width="22.208" y="234.61" x="-552.76"/>
   </g>
-  <g
-     inkscape:groupmode="layer"
-     id="layer6"
-     inkscape:label="controls"
-     style="display:inline">
-    <path
-       inkscape:connector-curvature="0"
-       d="m 111.46,18.593181 121.98,-0.04593"
-       style="fill:#a68e00;stroke:#a68e00;stroke-width:1.72421098px;stroke-linecap:butt;stroke-linejoin:miter"
-       id="path4826" />
-    <rect
-       x="235.85803"
-       y="17.466616"
-       width="0.84992033"
-       height="540.67535"
-       style="fill:#000000;stroke:#000000;stroke-width:3.71603918;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
-       id="rect4819" />
-    <text
-       sodipodi:linespacing="125%"
-       x="12.223632"
-       y="22.499437"
-       xml:space="preserve"
-       style="font-size:18px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;font-family:Sans"
-       id="text4822"><tspan
-         style="font-size:16px;fill:#a68e00"
-         x="12.223632"
-         y="22.499437"
-         id="tspan4824">Introduction</tspan></text>
-    <text
-       sodipodi:linespacing="125%"
-       x="12.295563"
-       y="561.77344"
-       xml:space="preserve"
-       style="font-size:18px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;font-family:Sans"
-       id="text4822-6"><tspan
-         style="font-size:16px;fill:#a68e00"
-         x="12.295563"
-         y="561.77344"
-         id="tspan4824-6">Conclusion</tspan></text>
-    <path
-       inkscape:connector-curvature="0"
-       d="m 102.33022,557.76213 131.08,0"
-       style="fill:#a68e00;stroke:#a68e00;stroke-width:1.49821746px;stroke-linecap:butt;stroke-linejoin:miter"
-       id="path4826-0" />
-    <g
-       id="slider"
-       transform="translate(0.08158001,-522.96728)">
-      <path
-         inkscape:connector-curvature="0"
-         d="m 177,238.5 a 25.5,20.5 0 1 1 -51,0 25.5,20.5 0 1 1 51,0 z"
-         transform="matrix(0.61491825,0,0,0.74729124,142.74778,363.73963)"
-         style="fill:#282828;stroke:#282828;stroke-width:1;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;filter:url(#filter4532-3-2-4-9)"
-         id="path4147" />
-      <rect
-         x="224.87437"
-         y="540.32904"
-         width="22.128977"
-         height="2.6600542"
-         style="fill:#a68e00;stroke:#a68e00;stroke-width:0.34659806;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
-         id="rect4616" />
-      <rect
-         x="-552.76416"
-         y="234.61435"
-         width="22.207846"
-         height="2.6506071"
-         transform="matrix(0,-1,1,0,0,0)"
-         style="fill:#a68e00;stroke:#a68e00;stroke-width:0.34659806;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
-         id="rect4616-4" />
-    </g>
-  </g>
+  <rect id="rect3884" style="fill-rule:evenodd;fill:#a68e00;" height="1.5" width="82.751" y="106.17" x="150.65"/>
+  <rect id="rect3884-6" style="fill-rule:evenodd;fill:#a68e00;" height="1.5" width="21.545" y="106.19" x="239.26"/>
+ </g>
 </svg>

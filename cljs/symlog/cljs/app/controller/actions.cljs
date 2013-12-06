@@ -3,22 +3,10 @@
            [symlog.cljs.animation.timing :only [ pause]]
            [symlog.cljs.animation.functions :only [paint-frames animate-path]]))
 
-(comment
-
-  (.fire (animations 3) #(js.console.log "OK"))
-  (reset! (.. (elements :narratorVid) -sequencer -enabled) true)
-  (reset! (.. (elements :narratorVid) -sequencer -rested) false)
-  (.fire symlog.cljs.app.sequencers.narrator.sequencer 607 3523 1
-         #(js.console.log "OK"))
-
-  @symlog.cljs.app.sequencers.narrator.sequencer.playing
-                                   
-  
-)
-
-
 (defn init [ controller ]
-
+ 
+(def sequencers (vector symlog.cljs.app.sequencers.narrator.sequencer))
+(def controller controller)
 (def animations
   (vector
     (animate-path.
@@ -70,94 +58,114 @@
        1                       ; scale factor
        true                   ; reverse direction
       (str "M 923,113 C 682.98326,33.262894 355,54 355,54"))
-
     
     ))
 
-(def seqmap 
-  {  1  { :frame 0
+(def dom 
+  {  0  { :frame 0
           :sequence
            (fn []
-             (if @(.-enabled ((. controller -seqsManaged)0))
+             (if @(((.-scenes (sequencers 0))0):enabled)
                (do
-                  (. controller interrupt)
-                  (set! (.. (elements :mainVideo) -style -opacity) .3)
-                  (.fire (animations 0)
-                         (fn []
-                             (reset! (..(elements :narratorVid) -sequencer -rested) false)
-                             (.fire ((. controller -seqsManaged) 0) 0 155 0 
+                   (. controller interrupt)
+                   (set! (.. controller -target -style -opacity) .3)
+                   (reset! (. controller -playing) (animations 0))
+                   (.fire (animations 0)
+                         (fn []  
+                             (reset! (.-rested (sequencers 0)) false)
+                             (.fire (sequencers 0) 0
                                     (fn []
-                                      (pause 300
-                                         (fn []
-                                           (.fire (animations 1)
-                                               (fn []
-                                                  (set! (.-currentTime(elements :mainVideo)) (/ 3 15))
-                                                  (.fire ((. controller -seqsManaged) 0) 170 595 0 ; ref screenplay 2)
-                                                    (fn []
-                                                      (pause 500
-                                                         (fn []
-                                                           (.fire (animations 2)
-                                                              (fn []
-                                                                  (reset! (..(elements :narratorVid) -sequencer -rested) true)
-                                                                  ( set! (.. (elements :mainVideo) -style -opacity) 1)
-                                                                  (reset! (. controller -playing) nil)
-                                                                  (js.setTimeout (. controller -resume) 700))))))))))))))))
+                                      (. controller doframe 0))))))
+               (do
+                 (reset! (. controller -step) 1)
+                 (. controller doframe 0))))
+         }
+     1 { :frame 0
+         :sequence 
+           (fn []
+             (if  @(((.-scenes (sequencers 0))1):enabled)
+               (do
+                 (set! (.. controller -target -currentTime) (/ 3 15))
+                 (pause 300
+                   (fn []
+                     (.fire (animations 1)
+                        (fn []
+                          (.fire (sequencers 0) 1 
+                             (fn []
+                               (pause 300
+                                  (fn []
+                                      (.fire (animations 2)
+                                            (fn []
+                                                (reset! (.-rested (sequencers 0)) true)
+                                                ( set! (.. controller -target -style -opacity) 1)
+                                                (reset! (. controller -playing) nil)
+                                                (js.setTimeout (. controller -resume) 700))))))))))))
                (do
                 (js.requestAnimationFrame (. controller -cycler))
-                (.. controller -target play) )))
-              
+                (.. controller -target play))))
          } 
                                                 
-     2  { :frame 2420
+     2  { :frame 2420 
           :sequence
          (fn []
-            (if @(.-enabled ((. controller -seqsManaged) 0))  
+            (if @(((.-scenes (sequencers 0))2):enabled)  
                 (do
                   (. controller interrupt)
-                  (set! (.-currentTime (elements :mainVideo)) (/ 2420 15))
-                  (set! (.. (elements :mainVideo) -style -opacity) .3) 
+                  (set! (.. controller -target -style -opacity) .3) 
                   (pause 1000
                     (fn []
                        (.fire (animations 3)
-                         (fn []
-                           (reset! (..(elements :narratorVid) -sequencer -rested) false)
-                           (.fire ((. controller -seqsManaged) 0) 607 3523 1 ; ref Screenplay 3)
-                                  (fn []
-                                    (.fire (animations 4)
-                                           (fn []
-                                             (set! (.-currentTime (elements :mainVideo)) (/ 2430 15))
-                                             (..(elements :paintFrame)-clearit fire)
+                           (fn []
+                               (reset! (.-rested (sequencers 0)) false)
+                               (.fire (sequencers  0)
+                                      2
+                                     (fn []
+                                      (.fire (animations 4) ;from left corner main to top right main
+                                        (fn []
+                                             (set! (.. controller -target -currentTime) (/ 2430 15))
+                                             (..(elements :paintFrame) -clearit fire)
                                              (reset! (. controller -playing) nil)
-                                             (. controller doframe 2430))))))))))))
+                                             (. controller doframe 2430))))))))))
+                (do
+                  ( set! (.. controller -target -style -opacity) 1)
+                  (reset! (. controller -playing) nil)
+                  (js.requestAnimationFrame (. controller -cycler))
+                  (.. controller -target play)))) 
          }
    
      3  { :frame 2430  
           :sequence
          (fn []
-           (if @(.-enabled ((. controller -seqsManaged) 0))
+           (if @(((.-scenes (sequencers 0))3):enabled)
              (do
                (. controller interrupt)
-               ( set! (.. (elements :mainVideo) -style -opacity) 1)
-               (if @(..(elements :narratorVid) -sequencer -rested)
-                 (.fire (animations 6)
+               (set! (.. controller -target -style -opacity) 1)
+               (if @(.-rested (sequencers 0)) 
+                 (.fire (animations 6)  ; puts it in right corner
                         (fn []
-                          (reset! (..(elements :narratorVid) -sequencer -rested) false)
-                          (.fire ((. controller -seqsManaged) 0) 3536 8744 2
+                          (reset! (.(sequencers 0) -rested) false)
+                          (.fire (sequencers 0)
+                                 3
                                  (fn []
-                                   (.fire (animations 5)
-                                          (fn []
-                                            (reset! (..(elements :narratorVid) -sequencer -rested) true)
-                                            ( set! (.. (elements :mainVideo) -style -opacity) 1)
+                                   (.fire (animations 5); from right corner to home
+                                      (fn []
+                                            (reset! (.-rested (sequencers 0)) true)
+                                            (set! (.. controller -target  -style -opacity) 1)
                                             (reset! (. controller -playing) nil)
                                             (js.setTimeout (. controller -resume) 700)))))))
-                 (.fire ((. controller -seqsManaged) 0) 3536 8744 3
+                 (.fire (sequencers 0)
+                        3
                         (fn []
-                          (.fire (animations 5)
-                                 (fn []
-                                   (reset! (..(elements :narratorVid) -sequencer -rested) true)
-                                   ( set! (.. (elements :mainVideo) -style -opacity) 1)
-                                   (reset! (. controller -playing) nil)
-                                   (js.setTimeout (. controller -resume) 700)))))))))
+                          (.fire (animations 5) ;takes it back
+                            (fn []
+                              (reset! (.-rested (sequencers 0)) true)
+                              ( set! (.. controller -target -style -opacity) 1)
+                              (reset! (. controller -playing) nil)
+                              (js.setTimeout (. controller -resume) 700)))))))
+             
+             (do
+                (js.requestAnimationFrame (. controller -cycler))
+                (.. controller -target play) )))
                
          }
    
@@ -168,7 +176,7 @@
            (set! (.-src (elements :paintFrame)) (aget @(elements :mainVidOverlays) 0))
            (set! (.-innerHTML (elements :liesScore)) "1")
            (set! (.-innerHTML (elements :unlawfulsScore)) "1")
-           (if-not @(.-enabled ((. controller -seqsManaged) 0))
+           (if-not @(((.-scenes (sequencers 0))4):enabled)
              (do
                (pause 500
                    (fn []
@@ -176,21 +184,20 @@
                        (. controller resume))))
              (do
                (pause 500
-                   (fn []   
-                       (.fire (animations 3)
+                      (fn []
+                        (.fire (animations 3)
                            (fn []
-                                (reset! (..(elements :narratorVid) -sequencer -rested) false)
-                                (.fire ((. controller -seqsManaged) 0) 8745 13355 3
+                                (reset! (.(sequencers 0)-rested) false)
+                                (.fire (sequencers 0) 4
                                        (fn []
-                                         (.fire (animations 2)
+                                          (.fire (animations 2)
                                              (fn []
-                                                 (reset! (..(elements :narratorVid) -sequencer -rested) true)
+                                                 (reset! (.(sequencers 0)-rested) true)
                                                  (reset! (. controller -playing) nil)
                                                  (js.setTimeout (. controller -resume) 700))))))))))))
          }
 
- 
-    5  { :frame 15000
+     5 { :frame 15000
           :sequence
          (fn [] (js.console.log "ended"))
        }

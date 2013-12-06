@@ -23,6 +23,7 @@ z-index:1000;
 #narratorDiv {
 position:absolute; 
 z-index:5000; 
+
 }
 #mainVideo {
 height:360px; 
@@ -32,7 +33,8 @@ border-radius:10px;
 background:color:#000000; 
 top:108px; 
 left:310px; 
-z-index:2000;  
+z-index:2000;
+ 
 }
 #spinnerSVG {
 position:absolute;
@@ -79,7 +81,7 @@ div.toc {
 height:100%;
 width:100%;
 }
-#narratorTOC {
+#narratorTOCs {
 margin:0px; 
 padding:0px; 
 font-family:Arial Helvetica,sans-serif; 
@@ -94,11 +96,10 @@ width:150px;
 }
 #endButton{
 position:absolute; 
-height:15px; 
-width:15px; 
-left:125px; 
-background-color:#a68e00; 
-bottom:0px;
+height:35px; 
+width:35px; 
+left:135px; 
+bottom:-15px;
 }
 .tocHeader {
 margin:0px; 
@@ -107,4 +108,7 @@ padding-bottom:3%;
 font-size:12px;
 font-weight:bold;
 float:right;
+}
+.nscene {
+cursor:default;
 }
