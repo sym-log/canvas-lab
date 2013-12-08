@@ -1,7 +1,8 @@
 (ns symlog.cljs.app.controller.actions
-  (:use    [symlog.cljs.app.dom :only [elements]]
-           [symlog.cljs.animation.timing :only [ pause]]
+  (:require [symlog.cljs.app.elements :as elements])
+  (:use    [symlog.cljs.animation.timing :only [ pause]]
            [symlog.cljs.animation.functions :only [paint-frames animate-path]]))
+
 
 (defn init [ controller ]
  
@@ -10,49 +11,49 @@
 (def animations
   (vector
     (animate-path.
-      (elements :narratorDiv)    ; object to animate width:50px; 
+      elements/narratorDiv    ; object to animate width:50px; 
       (/ 1000 25)                ; fps
       .4                         ; duration
        3                         ; scale factor
        false                     ; reverse direction
        (str "m 355,54 c 76.60172,229.51602 275,234 275,234"))
     (animate-path.
-      (elements :narratorDiv)  ; object to animate width:50px
+       elements/narratorDiv  ; object to animate width:50px
       (/ 1000 25)              ; fps
       .4                       ; duration
       .66666                   ; scale factor
        false                   ; reverse direction
        (str "M 630,288 C 487.55708,313.5267 420,218 420,218"))
     (animate-path.
-      (elements :narratorDiv)  ; object to animate
+       elements/narratorDiv  ; object to animate
       (/ 1000 25)              ; fps
       .3                       ; durat
       .5                       ; scale factor
        false                   ; reverse direction
        (str "M 420,218 C 355.87705,146.59579 355,54 355,54"))
     (animate-path.
-      (elements :narratorDiv)      ; object to animate
+       elements/narratorDiv      ; object to animate
       (/ 1000 25)                  ; fps
       .4                           ; duration
        2                           ; scale factor
        true                        ; reverse direction
        (str  "M 420,218 C 355.87705,146.59579 355,54 355,54" ))
     (animate-path.
-      (elements :narratorDiv)     ; object to animate width:50px
+       elements/narratorDiv     ; object to animate width:50px
       (/ 1000 25)                 ; fps
       .4                          ; duration
       .5                          ; scale factor
        true                       ; reverse direction
        (str "M 923,113 C 699.09177,208.04019 420,218 420,218"))
     (animate-path.
-      (elements :narratorDiv)  ; object to animate width:50px
+       elements/narratorDiv  ; object to animate width:50px
       (/ 1000 25)              ; fps
       .4                       ; duration
        1                       ; scale factor
        false                   ; reverse direction
        (str "M 923,113 C 682.98326,33.262894 355,54 355,54"))
     (animate-path.
-      (elements :narratorDiv)  ; object to animate width:50px
+       elements/narratorDiv  ; object to animate width:50px
       (/ 1000 25)              ; fps
       .4                       ; duration
        1                       ; scale factor
@@ -68,7 +69,6 @@
              (if @(((.-scenes (sequencers 0))0):enabled)
                (do
                    (. controller interrupt)
-                   (set! (.. controller -target -style -opacity) .3)
                    (reset! (. controller -playing) (animations 0))
                    (.fire (animations 0)
                          (fn []  
@@ -97,7 +97,6 @@
                                       (.fire (animations 2)
                                             (fn []
                                                 (reset! (.-rested (sequencers 0)) true)
-                                                ( set! (.. controller -target -style -opacity) 1)
                                                 (reset! (. controller -playing) nil)
                                                 (js.setTimeout (. controller -resume) 700))))))))))))
                (do
@@ -123,7 +122,7 @@
                                       (.fire (animations 4) ;from left corner main to top right main
                                         (fn []
                                              (set! (.. controller -target -currentTime) (/ 2430 15))
-                                             (..(elements :paintFrame) -clearit fire)
+                                             (.. elements/paintFrame -clearit fire)
                                              (reset! (. controller -playing) nil)
                                              (. controller doframe 2430))))))))))
                 (do
@@ -132,7 +131,6 @@
                   (js.requestAnimationFrame (. controller -cycler))
                   (.. controller -target play)))) 
          }
-   
      3  { :frame 2430  
           :sequence
          (fn []
@@ -173,9 +171,7 @@
           :sequence  
          (fn []
            (. controller interrupt)
-           (set! (.-src (elements :paintFrame)) (aget @(elements :mainVidOverlays) 0))
-           (set! (.-innerHTML (elements :liesScore)) "1")
-           (set! (.-innerHTML (elements :unlawfulsScore)) "1")
+           (set! (.-src elements/paintFrame) (aget @elements/mainVidOverlays 0))
            (if-not @(((.-scenes (sequencers 0))4):enabled)
              (do
                (pause 500
@@ -208,6 +204,6 @@
 
  })                             
  
-)
+) 
 
 

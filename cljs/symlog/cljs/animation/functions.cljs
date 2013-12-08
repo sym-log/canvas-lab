@@ -1,22 +1,30 @@
 (ns symlog.cljs.animation.functions)
 
-(defn loading-circle [ target ]
-  (this-as this 
+(defn loadingCircle [ target ]
+  (this-as this
+     (set! (. this -target) target)     
      (set! (. this -rotation) (atom 0))
      (set! (. this -timer) (goog.Timer. 100))
-     (set! (. this -fire) (fn [] (.. this -timer start)))
-     
+     (set! (. this -fire)
+           (fn []
+             (if (. this -playing) nil
+                 (do
+                   (set! (. this -playing) true)
+                   (set! (.. (. this -target) -parentNode -style -display) "inline")
+                   (.. this -timer start)))))
      (set! (. this -play)
            (fn []
               (swap! (. this -rotation) + 30)
-              (. target setAttribute
+              (.(. this -target) setAttribute
                     "transform"
                     (str
                        "rotate("
                        @(. this -rotation)
                        ",50,50)"))))
-
-     (set! (. this -stop) (fn [] (.. this -timer stop)))
+     (set! (. this -stop)
+           (fn []
+             (set! (.. this -target -parentNode -style -display) "none")
+             (.. this -timer stop)))
      
      (goog.events.listen (. this -timer)
                          goog.Timer.TICK

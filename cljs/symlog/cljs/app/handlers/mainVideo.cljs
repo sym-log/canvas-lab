@@ -1,21 +1,25 @@
 (ns symlog.cljs.app.handlers.mainVideo
-  (:use    [symlog.cljs.app.dom :only [elements]]))
+  (:require [symlog.cljs.app.elements :as elements]))
 
 (defn init []
-   (def videoDuration (.-duration (elements :mainVideo)))
-   (def travelLength 532)
+  
+   (def videoDuration (.-duration elements/mainVideo))
+   (def travelLength 2000)
    (def multiplier (/ travelLength videoDuration))
    (def buttonStartY 2)
-   (def buttonEndY 534)
-   (def video (elements :mainVideo))
-   (def playButton (elements :mainVideoPlayButton))
-   (def FPS (elements :FPS) )
-   (def button (elements :controlButton))
+   (def buttonEndY 2000)
+   (def controllerPath elements/controllerTouchArea)
+   (def video elements/mainVideo)
+   (def playButton elements/mainVideoPlayButton)
+   (def FPS elements/FPS)
+   (def button elements/controlButton )
    (def buttonHandler (controlButton. button))
-   (def touchArea (elements :mainVideoPlayTouchArea))
+   (def touchArea elements/mainVideoPlayTouchArea)
    (def touchHandler (touchScreen. video))
-   (def _subseq (.-sequencer (elements :narratorVid))) ; just a one-off to button if narrator has interrupted.  will need to change when more subsequencers are added
-   
+   (def buttonHandler (controlButton. button))
+   (def _subseq (.-sequencer elements/narratorVid))
+   (def buttonOffset 58)
+  
    (goog.events.listen ;THIS MOVES THE CONTROL BUTTON DOWN THE TRACK AS THE VIDEO PLAYS
       video
       "timeupdate"
@@ -23,52 +27,67 @@
         (let [ locY  (* multiplier (.. evt -target -currentTime)) ]
           (cond
               (= 0 locY)
-                (set! (.. button -style -top) (str buttonStartY "px"))
+                (set! (.. button -y -baseVal -value) buttonStartY)
               (= travelLength locY)
-                (set! (.. button -style -top) (str buttonEndY "px"))
+                (set! (.. button -y -baseVal -value) buttonEndY)
               :else
-                (set! (.. button -style -top) (str locY "px"))))))
+              (set! (.. button -y -baseVal -value) locY)))))
 
-   (goog.events.listen ; THE HANDLER FOR THE CONTROL BUTTON
+   (goog.events.listen
+    touchArea
+    "click"
+    (.-fire touchHandler))
+    
+   (goog.events.listen
       button
       (array "mousedown" "mousemove" "mouseup" "mouseout")
-      (. buttonHandler -fire))
-
-   (goog.events.listen ; THE HANDLER FOR THE TOUCH SCREEN
-      touchArea
-      "click"
-      (. touchHandler -handler )
-      false  )
+      (.-fire buttonHandler)
+      true)
    
+   (goog.events.listen
+    controllerPath
+    "click"
+    controlButtonPath)
+
  )
 
+(defn controlButtonPath [ evt ]
+  (let [ locY (-
+               (. evt -clientY)
+               buttonOffset
+               (js.parseInt (.. evt -target -parentElement -style -top))) ]
+    (set! (.. button -y -baseVal -value) locY)
+    (set! (.-currentTime video)
+          (* videoDuration (/ locY travelLength)))))
+  
 (defn controlButton [button]
   (this-as this
     (set! (. this -fire)
        (fn [evt]
          (.preventDefault evt)
-         
+
          (cond
+          (= (. evt -type) "mousedown")
           
-             (= (. evt -type) "mousedown")
-             (if @(. _subseq -rested)
-               (do
-                  (set! (. this -selected) true)
-                  (set! (. this -startY) (. evt -screenY))
-                  (set! (. this -beginY) (js.parseInt (.. button  -style -top)))
-                  (symlog.cljs.app.controller.main.pause)
-                  (if ( = @(. touchHandler -state) 0)
-                   (goog.events.fireListeners
-                     touchArea
-                     "click"
-                     false
-                     (js-obj "type" "click" "target" touchArea)))))
+               (if @(. _subseq -rested)
+                 (do
+                   (set! (. this -selected) true)
+                   (set! (. this -startY) (. evt -screenY))
+                   (set! (. this -beginY) (.. button  -y -baseVal -value))
+                   (symlog.cljs.app.controller.main.pause)
+                   (if ( = @(. touchHandler -state) 0)
+                       (goog.events.fireListeners
+                          touchArea
+                         "click"
+                         false
+                         (js-obj "type" "click" "target" touchArea)))))
  
              (or
                 (= (. evt -type)  "mouseup")
                 (= (. evt -type)  "mouseout"))
+             
              (if (. this -selected)
-               (let [ locY (js.parseInt (.. button -style -top)) ]
+               (let [ locY (.. button -y -baseVal -value) ]
                  (set! (. this -selected) false)
                  (cond
                   (= locY buttonStartY) (set! (.-currentTime video) 0)
@@ -80,23 +99,22 @@
                   (js.Math.round (* (. video -currentTime)FPS)))))
  
              (= (. evt -type) "mousemove")
+             (do
                (if (. this -selected)
                  (let [ locY (+ (. this -beginY) (- (. evt -screenY) (. this -startY))) ]
                    (cond                  
-                    (> locY buttonEndY)     (set! (.. button -style -top) (str buttonEndY "px"))
-                    (< locY buttonStartY)   (set! (.. button -style -top) (str buttonStartY "px"))
+                    (> locY buttonEndY)     (set! (.. button -y -baseVal -value) buttonEndY)
+                    (< locY buttonStartY)   (set! (.. button -y -baseVal -value) buttonStartY)
                     :else
-                      (set! (.. button -style -top)  
-                            (str
-                             (+ (. this -beginY) (- (. evt -screenY) (. this -startY)))
-                             "px")))))
-
- )))this))
+                    (do
+                    (set! (.. button -y -baseVal -value) (+ (. this -beginY) (- (. evt -screenY) (. this -startY)))))))))
+  )))this))
+                    
 
 (defn touchScreen [ video  ]
    (this-as this
      (set! (. this -state) (atom 0))
-     (set! (. this -handler )
+     (set! (. this -fire )
            (fn [evt]
              (cond
               (= 0 @(. this -state))

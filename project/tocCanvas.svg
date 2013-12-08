@@ -1,0 +1,143 @@
+<svg id="tocCanvas" xmlns="http://www.w3.org/2000/svg" style="top:0px" >
+ <rect id="controllerPath" style="stroke-linejoin:round;stroke-dashoffset:0;stroke:#000000;stroke-linecap:round;stroke-dasharray:none;stroke-miterlimit:4;stroke-width:3.71603918;fill:#000000;" height="2000" width="0.84992" y="22" x="235.86"/>
+<!--narrator scene tags-->
+ <g id="ns.0" fstart="0" fend="155" class="nscene"  tidx="0" transform="translate(0,3.5)" style="opacity:1;">
+   <g class="playbutton" transform="translate(0, -1)">
+    <path  style="stroke-miterlimit:4;stroke:#a68e00; stroke-width:1.92750549;stroke-dasharray:none;fill:none;" d="m24.973,17.941a9.5046,9.5049,0,1,1,-19.009,0,9.5046,9.5049,0,1,1,19.009,0z"/>
+    <path  style="fill:#a68e00;" d="m22.809,17.805-5.7721,3.3325-5.7721,3.3325,0-6.6651,0-6.6651,5.7721,3.3325z"/>
+  </g>
+  <g class="playlabel" style="opacity:1">
+   <text y="22.499437" x="31.429688" style="font-size:18px;font-weight:normal;letter-spacing:0px;font-style:normal;word-spacing:0px;font-family:Sans;line-height:125%;fill:#000000;" xml:space="preserve"><tspan id="tspan4824" y="22.499437" x="31.429688" style="font-size:16px;fill:#a68e00;">Introduction</tspan></text>
+   <path  style="stroke-linejoin:miter;stroke:#a68e00;stroke-width:1px;stroke-linecap:butt;fill:#a68e00;" d="m130.76,18.593,101-0.04593"/>
+  </g>
+ </g>
+ <g id="ns.1" fstart="170" fend="595"  tidx="0" class="nscene" transform="translate(0,3.5)" style="display:none">
+  <g class="playlabel" />
+  <g class="playbutton"/>
+ </g>
+ <g id="ns.2" fstart="607" fend="3523" class="nscene"  tidx="2420" transform="translate(0,60)" style="opacity:1;">
+  <g class="playbutton" transform="translate(0, -1)">
+   <path  style="stroke-miterlimit:4;stroke:#a68e00; stroke-width:1.92750549;stroke-dasharray:none;fill:none;" d="m24.973,17.941a9.5046,9.5049,0,1,1,-19.009,0,9.5046,9.5049,0,1,1,19.009,0z"/>
+   <path  style="fill:#a68e00;" d="m22.809,17.805-5.7721,3.3325-5.7721,3.3325,0-6.6651,0-6.6651,5.7721,3.3325z"/>
+ </g>
+ <g class="playlabel" style="opacity:1">
+   <text y="22.499437" x="31.429688" style="font-size:18px;font-weight:normal;letter-spacing:0px;font-style:normal;word-spacing:0px;font-family:Sans;line-height:125%;fill:#000000;" xml:space="preserve"><tspan id="tspan4824" y="22.499437" x="31.429688" style="font-size:16px;fill:#a68e00;">Introduction</tspan></text>
+   <path  style="stroke-linejoin:miter;stroke:#a68e00;stroke-width:1px;stroke-linecap:butt;fill:#a68e00;" d="m130.76,18.593,101-0.04593"/>
+ </g>
+</g>
+
+ <g id="ns.3" class="nscene" fstart="3536" fend="8744"  tidx="2430" style="opacity:1;" transform="translate(0,80)">
+ <g class="playbutton" transform="translate(0, -1)">
+   <path  style="stroke-miterlimit:4;stroke:#a68e00; stroke-width:1.92750549;stroke-dasharray:none;fill:none;" d="m24.973,17.941a9.5046,9.5049,0,1,1,-19.009,0,9.5046,9.5049,0,1,1,19.009,0z"/>
+   <path  style="fill:#a68e00;" d="m22.809,17.805-5.7721,3.3325-5.7721,3.3325,0-6.6651,0-6.6651,5.7721,3.3325z"/>
+ </g>
+ <g class="playlabel" style="opacity:1">
+  <text y="22.499437" x="31.429688" style="font-size:18px;font-weight:normal;letter-spacing:0px;font-style:normal;word-spacing:0px;font-family:Sans;line-height:125%;fill:#000000;" xml:space="preserve"><tspan id="tspan4824" y="22.499437" x="31.429688" style="font-size:16px;fill:#a68e00;">Intro</tspan></text>
+  <path  style="stroke-linejoin:miter;stroke:#a68e00;stroke-width:1px;stroke-linecap:butt;fill:#a68e00;" d="m72.3,18.593,159-0.04593"/>
+ </g>
+</g>
+
+
+ <g id="ns4" class="nscene" fstart="607" fend="3523"  tidx="4285" style="opacity:1;" transform="translate(0,120)">
+ <g class="playbutton" transform="translate(0, -1)">
+   <path  style="stroke-miterlimit:4;stroke:#a68e00; stroke-width:1.92750549;stroke-dasharray:none;fill:none;" d="m24.973,17.941a9.5046,9.5049,0,1,1,-19.009,0,9.5046,9.5049,0,1,1,19.009,0z"/>
+   <path  style="fill:#a68e00;" d="m22.809,17.805-5.7721,3.3325-5.7721,3.3325,0-6.6651,0-6.6651,5.7721,3.3325z"/>
+ </g>
+ <g class="playlabel" style="opacity:1">
+  <text y="22.499437" x="31.429688" style="font-size:18px;font-weight:normal;letter-spacing:0px;font-style:normal;word-spacing:0px;font-family:Sans;line-height:125%;fill:#000000;" xml:space="preserve"><tspan id="tspan4824" y="22.499437" x="31.429688" style="font-size:16px;fill:#a68e00;">Intro</tspan></text>
+  <path  style="stroke-linejoin:miter;stroke:#a68e00;stroke-width:1px;stroke-linecap:butt;fill:#a68e00;" d="m72.3,18.593,159-0.04593"/>
+ </g>
+</g>
+
+
+ <g id="ns5" class="nscene" fstart="3536" fend="8744"  tidx="15000" style="opacity:1;" transform="translate(0,140)">
+ <g class="playbutton" transform="translate(0, -1)">
+   <path  style="stroke-miterlimit:4;stroke:#a68e00; stroke-width:1.92750549;stroke-dasharray:none;fill:none;" d="m24.973,17.941a9.5046,9.5049,0,1,1,-19.009,0,9.5046,9.5049,0,1,1,19.009,0z"/>
+   <path  style="fill:#a68e00;" d="m22.809,17.805-5.7721,3.3325-5.7721,3.3325,0-6.6651,0-6.6651,5.7721,3.3325z"/>
+ </g>
+ <g class="playlabel" style="opacity:1">
+  <text y="22.499437" x="31.429688" style="font-size:18px;font-weight:normal;letter-spacing:0px;font-style:normal;word-spacing:0px;font-family:Sans;line-height:125%;fill:#000000;" xml:space="preserve"><tspan id="tspan4824" y="22.499437" x="31.429688" style="font-size:16px;fill:#a68e00;">Intro</tspan></text>
+  <path  style="stroke-linejoin:miter;stroke:#a68e00;stroke-width:1px;stroke-linecap:butt;fill:#a68e00;" d="m72.3,18.593,159-0.04593"/>
+ </g>
+</g>
+
+
+ <g id="ns6" class="nscene" fstart="8745" fend="13355"  tidx="15000" style="opacity:1;" transform="translate(0,200)">
+ <g class="playbutton" transform="translate(0, -1)">
+   <path  style="stroke-miterlimit:4;stroke:#a68e00; stroke-width:1.92750549;stroke-dasharray:none;fill:none;" d="m24.973,17.941a9.5046,9.5049,0,1,1,-19.009,0,9.5046,9.5049,0,1,1,19.009,0z"/>
+   <path  style="fill:#a68e00;" d="m22.809,17.805-5.7721,3.3325-5.7721,3.3325,0-6.6651,0-6.6651,5.7721,3.3325z"/>
+ </g>
+ <g class="playlabel" style="opacity:1">
+  <text y="22.499437" x="31.429688" style="font-size:18px;font-weight:normal;letter-spacing:0px;font-style:normal;word-spacing:0px;font-family:Sans;line-height:125%;fill:#000000;" xml:space="preserve"><tspan id="tspan4824" y="22.499437" x="31.429688" style="font-size:16px;fill:#a68e00;">Intro</tspan></text>
+  <path  style="stroke-linejoin:miter;stroke:#a68e00;stroke-width:1px;stroke-linecap:butt;fill:#a68e00;" d="m72.3,18.593,159-0.04593"/>
+ </g>
+</g>
+
+
+ <g id="ns7" fstart="15000" fend="16000" class="nscene"   tidx="15000" style="opacity:1;" class="nscene" transform="translate(0,240)">
+ <g class="playbutton" transform="translate(0, -1)">
+   <path  style="stroke-miterlimit:4;stroke:#a68e00; stroke-width:1.92750549;stroke-dasharray:none;fill:none;" d="m24.973,17.941a9.5046,9.5049,0,1,1,-19.009,0,9.5046,9.5049,0,1,1,19.009,0z"/>
+   <path  style="fill:#a68e00;" d="m22.809,17.805-5.7721,3.3325-5.7721,3.3325,0-6.6651,0-6.6651,5.7721,3.3325z"/>
+ </g>
+ <g class="playlabel" style="opacity:1">
+  <text y="22.499437" x="31.429688" style="font-size:18px;font-weight:normal;letter-spacing:0px;font-style:normal;word-spacing:0px;font-family:Sans;line-height:125%;fill:#000000;" xml:space="preserve"><tspan id="tspan4824" y="22.499437" x="31.429688" style="font-size:16px;fill:#a68e00;">Intro</tspan></text>
+  <path  style="stroke-linejoin:miter;stroke:#a68e00;stroke-width:1px;stroke-linecap:butt;fill:#a68e00;" d="m72.3,18.593,159-0.04593"/>
+ </g>
+</g>
+
+<g id="ns20" fstart="0" fend="155" class="nscene" tidx="15000" transform="translate(0,535.5)" style="opacity:1;">
+ <g class="playbutton" transform="translate(0, -1)">
+   <path  style="stroke-miterlimit:4;stroke:#a68e00; stroke-width:1.92750549;stroke-dasharray:none;fill:none;" d="m24.973,17.941a9.5046,9.5049,0,1,1,-19.009,0,9.5046,9.5049,0,1,1,19.009,0z"/>
+   <path  style="fill:#a68e00;" d="m22.809,17.805-5.7721,3.3325-5.7721,3.3325,0-6.6651,0-6.6651,5.7721,3.3325z"/>
+ </g>
+ <g class="playlabel" style="opacity:1">
+   <text y="22.499437" x="31.429688" style="font-size:18px;font-weight:normal;letter-spacing:0px;font-style:normal;word-spacing:0px;font-family:Sans;line-height:125%;fill:#000000;" xml:space="preserve"><tspan id="tspan4824" y="22.499437" x="31.429688" style="font-size:16px;fill:#a68e00;">Last Words</tspan></text>
+   <path  style="stroke-linejoin:miter;stroke:#a68e00;stroke-width:1px;stroke-linecap:butt;fill:#a68e00;" d="m125,18.593,106-0.04593"/>
+ </g>
+</g>
+<!--mainVideoSceneTags-->
+<g id="ms.0" fstart="0" fend="155" class="nscene" tidx="15000" transform="translate(0,25.5)" style="opacity:1;">
+ <g class="playbutton" transform="translate(90, -1)">
+   <path  style="stroke-miterlimit:4;stroke:#4867d6; stroke-width:1.92750549;stroke-dasharray:none;fill:none;" d="m24.973,17.941a9.5046,9.5049,0,1,1,-19.009,0,9.5046,9.5049,0,1,1,19.009,0z"/>
+   <path  style="fill:#4867d6;" d="m22.809,17.805-5.7721,3.3325-5.7721,3.3325,0-6.6651,0-6.6651,5.7721,3.3325z"/>
+ </g>
+ <g class="playlabel" style="opacity:1">
+   <text y="22.499437" x="31.429688" style="font-size:18px;font-weight:normal;letter-spacing:0px;font-style:normal;word-spacing:0px;font-family:Sans;line-height:125%;fill:#000000;" xml:space="preserve"><tspan id="tspan4824" y="22.499437" x="120.429688" style="font-size:16px;fill:#4867d6;">Last Words:</tspan></text>
+ </g>
+</g>
+
+<g transform="translate(215.5,2)"
+   id="controlButton" >  
+<path
+     d="M 34.120823,6.2162062 A 19.87097,19.619397 19.090473 1 1 6.167602,33.89087 19.87097,19.619397 19.090473 0 1 34.120823,6.2162062 z"
+     id="path3970"
+     style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none" />
+  <path
+     d="m 37.857402,19.197499 a 18.279661,18.372833 0 0 1 -36.559322,0 18.279661,18.372833 0 1 1 36.559322,0 z"
+     id="path3970-5"
+     style="fill:#282828;fill-opacity:1;fill-rule:evenodd;stroke:none" />
+  <rect
+     width="4"
+     height="28"
+     x="18.603165"
+     y="6.129714"
+     id="rect4718"
+     style="fill:#a68e00;fill-opacity:1;fill-rule:evenodd;stroke:none" />
+  <rect
+     width="4"
+     height="28"
+     x="18.129713"
+     y="-34.603161"
+     transform="matrix(0,1,-1,0,0,0)"
+     id="rect4718-3"
+     style="fill:#a68e00;fill-opacity:1;fill-rule:evenodd;stroke:none" />
+  <rect
+     width="40"
+     height="40"
+     x="0"
+     y="0"
+     id="rect2994"
+     style="opacity:0;fill:#a68e00;fill-opacity:1;fill-rule:evenodd;stroke:none" />
+</g>
+
+</svg>

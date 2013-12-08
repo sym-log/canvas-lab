@@ -1,15 +1,12 @@
 goog.provide('symlog.cljs.app.sequencers.narrator.sequence');
 goog.require('cljs.core');
 goog.require('symlog.cljs.animation.functions');
-goog.require('symlog.cljs.animation.timing');
-goog.require('symlog.cljs.app.dom');
+goog.require('symlog.cljs.app.elements');
 goog.require('symlog.cljs.animation.functions');
-goog.require('symlog.cljs.animation.timing');
-goog.require('symlog.cljs.app.dom');
 symlog.cljs.app.sequencers.narrator.sequence.init = (function init(){
 symlog.cljs.app.sequencers.narrator.sequence.sequencer = symlog.cljs.app.sequencers.narrator.sequencer;
-symlog.cljs.app.dom.elements.call(null,"\uFDD0:narratorVid").sequencer = symlog.cljs.app.sequencers.narrator.sequence.sequencer;
-symlog.cljs.app.sequencers.narrator.sequence.animations = cljs.core.vector.call(null,(new symlog.cljs.animation.functions.paint_frames(symlog.cljs.app.dom.elements.call(null,"\uFDD0:paintFrame"),cljs.core.deref.call(null,symlog.cljs.app.dom.elements.call(null,"\uFDD0:narratorFrameBuffer")).slice(0,32),(1000 / 20))),(new symlog.cljs.animation.functions.paint_frames(symlog.cljs.app.dom.elements.call(null,"\uFDD0:paintFrame"),cljs.core.deref.call(null,symlog.cljs.app.dom.elements.call(null,"\uFDD0:narratorFrameBuffer")).slice(33,67),(1000 / 20))),(new symlog.cljs.animation.functions.paint_frames(symlog.cljs.app.dom.elements.call(null,"\uFDD0:paintFrame"),cljs.core.deref.call(null,symlog.cljs.app.dom.elements.call(null,"\uFDD0:narratorFrameBuffer")).slice(68,99),(1000 / 20))),(new symlog.cljs.animation.functions.paint_frames(symlog.cljs.app.dom.elements.call(null,"\uFDD0:paintFrame"),cljs.core.deref.call(null,symlog.cljs.app.dom.elements.call(null,"\uFDD0:narratorFrameBuffer")).slice(100,130),(1000 / 20))),(new symlog.cljs.animation.functions.paint_frames(symlog.cljs.app.dom.elements.call(null,"\uFDD0:paintFrame"),cljs.core.deref.call(null,symlog.cljs.app.dom.elements.call(null,"\uFDD0:narratorFrameBuffer")).slice(131,135),(1000 / 20))),(new symlog.cljs.animation.functions.paint_frames(symlog.cljs.app.dom.elements.call(null,"\uFDD0:paintFrame"),cljs.core.deref.call(null,symlog.cljs.app.dom.elements.call(null,"\uFDD0:narratorFrameBuffer")).slice(136,140),(1000 / 20))),(new symlog.cljs.animation.functions.paint_frames(symlog.cljs.app.dom.elements.call(null,"\uFDD0:paintFrame"),cljs.core.deref.call(null,symlog.cljs.app.dom.elements.call(null,"\uFDD0:narratorFrameBuffer")).slice(141,144),(1000 / 20))),(new symlog.cljs.animation.functions.paint_frames(symlog.cljs.app.dom.elements.call(null,"\uFDD0:paintFrame"),cljs.core.deref.call(null,symlog.cljs.app.dom.elements.call(null,"\uFDD0:narratorFrameBuffer")).slice(145,163),(1000 / 20))),(new symlog.cljs.animation.functions.paint_frames(symlog.cljs.app.dom.elements.call(null,"\uFDD0:paintFrame"),cljs.core.deref.call(null,symlog.cljs.app.dom.elements.call(null,"\uFDD0:narratorFrameBuffer")).slice(164,185),(1000 / 20))),(new symlog.cljs.animation.functions.paint_frames(symlog.cljs.app.dom.elements.call(null,"\uFDD0:paintFrame"),cljs.core.deref.call(null,symlog.cljs.app.dom.elements.call(null,"\uFDD0:narratorFrameBuffer")).slice(186,228),(1000 / 20))),(new symlog.cljs.animation.functions.paint_frames(symlog.cljs.app.dom.elements.call(null,"\uFDD0:paintFrame"),cljs.core.deref.call(null,symlog.cljs.app.dom.elements.call(null,"\uFDD0:narratorFrameBuffer")).slice(229,262),(1000 / 20))),(new symlog.cljs.animation.functions.paint_frames(symlog.cljs.app.dom.elements.call(null,"\uFDD0:paintFrame"),cljs.core.deref.call(null,symlog.cljs.app.dom.elements.call(null,"\uFDD0:narratorFrameBuffer")).slice(263,268),(1000 / 20))),(new symlog.cljs.animation.functions.paint_frames(symlog.cljs.app.dom.elements.call(null,"\uFDD0:paintFrame"),cljs.core.deref.call(null,symlog.cljs.app.dom.elements.call(null,"\uFDD0:narratorFrameBuffer")).slice(269,278),(1000 / 20))),(new symlog.cljs.animation.functions.paint_frames(symlog.cljs.app.dom.elements.call(null,"\uFDD0:paintFrame"),cljs.core.deref.call(null,symlog.cljs.app.dom.elements.call(null,"\uFDD0:narratorFrameBuffer")).slice(279,300),(1000 / 20))),(new symlog.cljs.animation.functions.paint_frames(symlog.cljs.app.dom.elements.call(null,"\uFDD0:paintFrame"),cljs.core.deref.call(null,symlog.cljs.app.dom.elements.call(null,"\uFDD0:narratorFrameBuffer")).slice(301,306),(1000 / 20))));
+symlog.cljs.app.elements.narratorVid.sequencer = symlog.cljs.app.sequencers.narrator.sequence.sequencer;
+symlog.cljs.app.sequencers.narrator.sequence.animations = cljs.core.vector.call(null,(new symlog.cljs.animation.functions.paint_frames(symlog.cljs.app.elements.paintFrame,symlog.cljs.app.elements.narratorFrameBuffer.slice(0,32),(1000 / 20))),(new symlog.cljs.animation.functions.paint_frames(symlog.cljs.app.elements.paintFrame,symlog.cljs.app.elements.narratorFrameBuffer.slice(33,67),(1000 / 20))),(new symlog.cljs.animation.functions.paint_frames(symlog.cljs.app.elements.paintFrame,symlog.cljs.app.elements.narratorFrameBuffer.slice(68,99),(1000 / 20))),(new symlog.cljs.animation.functions.paint_frames(symlog.cljs.app.elements.paintFrame,symlog.cljs.app.elements.narratorFrameBuffer.slice(100,130),(1000 / 20))),(new symlog.cljs.animation.functions.paint_frames(symlog.cljs.app.elements.paintFrame,symlog.cljs.app.elements.narratorFrameBuffer.slice(131,135),(1000 / 20))),(new symlog.cljs.animation.functions.paint_frames(symlog.cljs.app.elements.paintFrame,symlog.cljs.app.elements.narratorFrameBuffer.slice(136,140),(1000 / 20))),(new symlog.cljs.animation.functions.paint_frames(symlog.cljs.app.elements.paintFrame,symlog.cljs.app.elements.narratorFrameBuffer.slice(141,144),(1000 / 20))),(new symlog.cljs.animation.functions.paint_frames(symlog.cljs.app.elements.paintFrame,symlog.cljs.app.elements.narratorFrameBuffer.slice(145,163),(1000 / 20))),(new symlog.cljs.animation.functions.paint_frames(symlog.cljs.app.elements.paintFrame,symlog.cljs.app.elements.narratorFrameBuffer.slice(164,185),(1000 / 20))),(new symlog.cljs.animation.functions.paint_frames(symlog.cljs.app.elements.paintFrame,symlog.cljs.app.elements.narratorFrameBuffer.slice(186,228),(1000 / 20))),(new symlog.cljs.animation.functions.paint_frames(symlog.cljs.app.elements.paintFrame,symlog.cljs.app.elements.narratorFrameBuffer.slice(229,262),(1000 / 20))),(new symlog.cljs.animation.functions.paint_frames(symlog.cljs.app.elements.paintFrame,symlog.cljs.app.elements.narratorFrameBuffer.slice(263,268),(1000 / 20))),(new symlog.cljs.animation.functions.paint_frames(symlog.cljs.app.elements.paintFrame,symlog.cljs.app.elements.narratorFrameBuffer.slice(269,278),(1000 / 20))),(new symlog.cljs.animation.functions.paint_frames(symlog.cljs.app.elements.paintFrame,symlog.cljs.app.elements.narratorFrameBuffer.slice(279,300),(1000 / 20))),(new symlog.cljs.animation.functions.paint_frames(symlog.cljs.app.elements.paintFrame,symlog.cljs.app.elements.narratorFrameBuffer.slice(301,306),(1000 / 20))));
 symlog.cljs.app.sequencers.narrator.sequence.seqmap = cljs.core.PersistentHashMap.fromArrays([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21],[cljs.core.PersistentArrayMap.fromArray(["\uFDD0:frame",927,"\uFDD0:sequence",(function seqmap(){
 cljs.core.reset_BANG_.call(null,symlog.cljs.app.sequencers.narrator.sequence.sequencer.playing,symlog.cljs.app.sequencers.narrator.sequence.animations.call(null,0));
 return symlog.cljs.app.sequencers.narrator.sequence.animations.call(null,0).fire((function (){
@@ -31,7 +28,7 @@ return symlog.cljs.app.sequencers.narrator.sequence.animations.call(null,3).fire
 return cljs.core.reset_BANG_.call(null,symlog.cljs.app.sequencers.narrator.sequence.sequencer.playing,null);
 }));
 })], true),cljs.core.PersistentArrayMap.fromArray(["\uFDD0:frame",3448,"\uFDD0:sequence",(function seqmap(){
-symlog.cljs.app.dom.elements.call(null,"\uFDD0:paintFrame").clearit.fire();
+symlog.cljs.app.elements.paintFrame.clearit.fire();
 return cljs.core.reset_BANG_.call(null,symlog.cljs.app.sequencers.narrator.sequence.sequencer.playing,null);
 })], true),cljs.core.PersistentArrayMap.fromArray(["\uFDD0:frame",5036,"\uFDD0:sequence",(function seqmap(){
 cljs.core.reset_BANG_.call(null,symlog.cljs.app.sequencers.narrator.sequence.sequencer.playing,symlog.cljs.app.sequencers.narrator.sequence.animations.call(null,4));
@@ -49,7 +46,7 @@ return symlog.cljs.app.sequencers.narrator.sequence.animations.call(null,6).fire
 return cljs.core.reset_BANG_.call(null,symlog.cljs.app.sequencers.narrator.sequence.sequencer.playing,null);
 }));
 })], true),cljs.core.PersistentArrayMap.fromArray(["\uFDD0:frame",5480,"\uFDD0:sequence",(function seqmap(){
-symlog.cljs.app.dom.elements.call(null,"\uFDD0:paintFrame").clearit.fire();
+symlog.cljs.app.elements.paintFrame.clearit.fire();
 return cljs.core.reset_BANG_.call(null,symlog.cljs.app.sequencers.narrator.sequence.sequencer.playing,null);
 })], true),cljs.core.PersistentArrayMap.fromArray(["\uFDD0:frame",5629,"\uFDD0:sequence",(function seqmap(){
 cljs.core.reset_BANG_.call(null,symlog.cljs.app.sequencers.narrator.sequence.sequencer.playing,symlog.cljs.app.sequencers.narrator.sequence.animations.call(null,7));
@@ -72,7 +69,7 @@ return symlog.cljs.app.sequencers.narrator.sequence.animations.call(null,10).fir
 return cljs.core.reset_BANG_.call(null,symlog.cljs.app.sequencers.narrator.sequence.sequencer.playing,null);
 }));
 })], true),cljs.core.PersistentArrayMap.fromArray(["\uFDD0:frame",6140,"\uFDD0:sequence",(function seqmap(){
-symlog.cljs.app.dom.elements.call(null,"\uFDD0:paintFrame").clearit.fire();
+symlog.cljs.app.elements.paintFrame.clearit.fire();
 return cljs.core.reset_BANG_.call(null,symlog.cljs.app.sequencers.narrator.sequence.sequencer.playing,null);
 })], true),cljs.core.PersistentArrayMap.fromArray(["\uFDD0:frame",6673,"\uFDD0:sequence",(function seqmap(){
 cljs.core.reset_BANG_.call(null,symlog.cljs.app.sequencers.narrator.sequence.sequencer.playing,symlog.cljs.app.sequencers.narrator.sequence.animations.call(null,11));
@@ -90,7 +87,7 @@ return symlog.cljs.app.sequencers.narrator.sequence.animations.call(null,13).fir
 return cljs.core.reset_BANG_.call(null,symlog.cljs.app.sequencers.narrator.sequence.sequencer.playing,null);
 }));
 })], true),cljs.core.PersistentArrayMap.fromArray(["\uFDD0:frame",7410,"\uFDD0:sequence",(function seqmap(){
-symlog.cljs.app.dom.elements.call(null,"\uFDD0:paintFrame").clearit.fire();
+symlog.cljs.app.elements.paintFrame.clearit.fire();
 return cljs.core.reset_BANG_.call(null,symlog.cljs.app.sequencers.narrator.sequence.sequencer.playing,null);
 })], true),cljs.core.PersistentArrayMap.fromArray(["\uFDD0:frame",7745,"\uFDD0:sequence",(function seqmap(){
 cljs.core.reset_BANG_.call(null,symlog.cljs.app.sequencers.narrator.sequence.sequencer.playing,symlog.cljs.app.sequencers.narrator.sequence.animations.call(null,14));
@@ -98,7 +95,7 @@ return symlog.cljs.app.sequencers.narrator.sequence.animations.call(null,14).fir
 return cljs.core.reset_BANG_.call(null,symlog.cljs.app.sequencers.narrator.sequence.sequencer.playing,null);
 }));
 })], true),cljs.core.PersistentArrayMap.fromArray(["\uFDD0:frame",8409,"\uFDD0:sequence",(function seqmap(){
-symlog.cljs.app.dom.elements.call(null,"\uFDD0:paintFrame").clearit.fire();
+symlog.cljs.app.elements.paintFrame.clearit.fire();
 return cljs.core.reset_BANG_.call(null,symlog.cljs.app.sequencers.narrator.sequence.sequencer.playing,null);
 })], true),cljs.core.PersistentArrayMap.fromArray(["\uFDD0:frame",15000,"\uFDD0:sequence",(function seqmap(){
 return console.log("done");

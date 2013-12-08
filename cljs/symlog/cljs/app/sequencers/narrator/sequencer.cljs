@@ -1,12 +1,10 @@
 (ns symlog.cljs.app.sequencers.narrator.sequencer
-  (:use    [symlog.cljs.app.dom :only [elements]]
-           [symlog.cljs.animation.timing :only [listenTo serialize chain enChain]]
-           [symlog.cljs.animation.functions :only [paint-frames animate-path]]))
+  (:require [symlog.cljs.app.elements :as  elements]))
 
 (def ctxt                             symlog.cljs.app.sequencers.narrator.sequencer)
 (def label                             "narrator")
-(def target                           (goog.dom.getElement "narratorVid"))
-(def container                        (elements :narratorDiv))
+(def target                           elements/narratorVid )
+(def container                        elements/narratorDiv)
 (def frameRate                        15)
 (def startFrame                       (atom 0))
 (def endFrame                         (atom 0))
@@ -17,7 +15,8 @@
 (def rested                           (atom true))
 (def callback                         (atom nil))
 (def scene                            (atom 0))
-(def paintFrame                       (elements :paintFrame))
+(def paintFrame                       elements/paintFrame )
+(def scenes                           elements/narratorScenes)
 
 (defn init [controller]
   (def controller controller)
@@ -30,23 +29,37 @@
                  {
                    :fstart (js.parseInt (.. elem -attributes -fstart -value))
                    :fend   (js.parseInt (.. elem -attributes -fend -value))
-                   :playbutton (aget (. elem -children)  0)
-                   :playlabel  (aget (. elem -children)  1)
+                   :playlabel (aget (. elem -children)  0)
+                   :playlink  (aget (. elem -children)  1)
+                   :playtoggle  (aget (. elem -children)  2)
                    :tIdx (js.parseInt (.. elem -attributes -tidx -value))
                    :id (. elem -id)
-                   :sceneNo (js.parseInt (first
-                                      (filter #(goog.string.isNumeric %)
-                                              (. elem -id))))
-                   :toc (goog.dom.getElement
-                          (str "nt" (first
-                                      (filter #(goog.string.isNumeric %)
-                                              (. elem -id)))))
-                  :enabled (atom true)
+                   :sceneNo
+                    (js.parseInt
+                     (apply str
+                      (filter #(goog.string.isNumeric %)(. elem -id))))
+                   :toc
+                    (goog.dom.getElement
+                     (str "nt"
+                          (apply str
+                           (filter #(goog.string.isNumeric %)(. elem -id)))))
+                   :tocNodes
+                    (symlog.cljs.util.nodelist->coll
+                     (goog.dom.getElementsByClass
+                      "toc"
+                      (goog.dom.getElement
+                       (str "nt"
+                            (apply str
+                            (filter #(goog.string.isNumeric %) (. elem -id)))))))
+                   :enabled (atom true)
                              
                   })
-               (vec (symlog.cljs.util.nodelist->coll (elements :narratorScenes))))))
-  (set! (.(elements :narratorVid) -sequencer) ctxt)
-  (symlog.cljs.app.handlers.narrator.init))
+               (vec (symlog.cljs.util.nodelist->coll scenes)))))
+  
+  (set! (. target -sequencer) ctxt)
+  (symlog.cljs.app.handlers.narrator.init)
+
+  )
 
 (defn fire [ sceneNo returnFunc ]
   (reset! startFrame ((scenes sceneNo):fstart))

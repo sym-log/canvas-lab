@@ -33,7 +33,6 @@
              (if (= -1 (.indexOf dbBuffers x))
                (requestFrameBuffer BUFFERURL worker x)))))))
 
-  (def dispatcher (symlog.cljs.util.dispatcher.))
  )
 
 (defn array->db [ message ]
@@ -144,6 +143,5 @@
                 (reset! buf0ready true)
                 (callback (getFrame frame))))))
       (do
-        (callback (getFrame frame))))
- (. dispatcher send "done"))
+        (callback (getFrame frame)))))
 

@@ -1,17 +1,25 @@
 goog.provide('symlog.cljs.animation.functions');
 goog.require('cljs.core');
-symlog.cljs.animation.functions.loading_circle = (function loading_circle(target){
+symlog.cljs.animation.functions.loadingCircle = (function loadingCircle(target){
 var this$ = this;
+this$.target = target;
 this$.rotation = cljs.core.atom.call(null,0);
 this$.timer = (new goog.Timer(100));
 this$.fire = (function (){
+if(cljs.core.truth_(this$.playing))
+{return null;
+} else
+{this$.playing = true;
+this$.target.parentNode.style.display = "inline";
 return this$.timer.start();
+}
 });
 this$.play = (function (){
 cljs.core.swap_BANG_.call(null,this$.rotation,cljs.core._PLUS_,30);
-return target.setAttribute("transform",[cljs.core.str("rotate("),cljs.core.str(cljs.core.deref.call(null,this$.rotation)),cljs.core.str(",50,50)")].join(''));
+return this$.target.setAttribute("transform",[cljs.core.str("rotate("),cljs.core.str(cljs.core.deref.call(null,this$.rotation)),cljs.core.str(",50,50)")].join(''));
 });
 this$.stop = (function (){
+this$.target.parentNode.style.display = "none";
 return this$.timer.stop();
 });
 goog.events.listen(this$.timer,goog.Timer.TICK,this$.play,false,this$);

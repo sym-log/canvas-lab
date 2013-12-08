@@ -1,39 +1,47 @@
 goog.provide('symlog.cljs.app.handlers.mainVideo');
 goog.require('cljs.core');
-goog.require('symlog.cljs.app.dom');
-goog.require('symlog.cljs.app.dom');
+goog.require('symlog.cljs.app.elements');
 symlog.cljs.app.handlers.mainVideo.init = (function init(){
-symlog.cljs.app.handlers.mainVideo.videoDuration = symlog.cljs.app.dom.elements.call(null,"\uFDD0:mainVideo").duration;
-symlog.cljs.app.handlers.mainVideo.travelLength = 532;
+symlog.cljs.app.handlers.mainVideo.videoDuration = symlog.cljs.app.elements.mainVideo.duration;
+symlog.cljs.app.handlers.mainVideo.travelLength = 2000;
 symlog.cljs.app.handlers.mainVideo.multiplier = (symlog.cljs.app.handlers.mainVideo.travelLength / symlog.cljs.app.handlers.mainVideo.videoDuration);
 symlog.cljs.app.handlers.mainVideo.buttonStartY = 2;
-symlog.cljs.app.handlers.mainVideo.buttonEndY = 534;
-symlog.cljs.app.handlers.mainVideo.video = symlog.cljs.app.dom.elements.call(null,"\uFDD0:mainVideo");
-symlog.cljs.app.handlers.mainVideo.playButton = symlog.cljs.app.dom.elements.call(null,"\uFDD0:mainVideoPlayButton");
-symlog.cljs.app.handlers.mainVideo.FPS = symlog.cljs.app.dom.elements.call(null,"\uFDD0:FPS");
-symlog.cljs.app.handlers.mainVideo.button = symlog.cljs.app.dom.elements.call(null,"\uFDD0:controlButton");
+symlog.cljs.app.handlers.mainVideo.buttonEndY = 2000;
+symlog.cljs.app.handlers.mainVideo.controllerPath = symlog.cljs.app.elements.controllerTouchArea;
+symlog.cljs.app.handlers.mainVideo.video = symlog.cljs.app.elements.mainVideo;
+symlog.cljs.app.handlers.mainVideo.playButton = symlog.cljs.app.elements.mainVideoPlayButton;
+symlog.cljs.app.handlers.mainVideo.FPS = symlog.cljs.app.elements.FPS;
+symlog.cljs.app.handlers.mainVideo.button = symlog.cljs.app.elements.controlButton;
 symlog.cljs.app.handlers.mainVideo.buttonHandler = (new symlog.cljs.app.handlers.mainVideo.controlButton(symlog.cljs.app.handlers.mainVideo.button));
-symlog.cljs.app.handlers.mainVideo.touchArea = symlog.cljs.app.dom.elements.call(null,"\uFDD0:mainVideoPlayTouchArea");
+symlog.cljs.app.handlers.mainVideo.touchArea = symlog.cljs.app.elements.mainVideoPlayTouchArea;
 symlog.cljs.app.handlers.mainVideo.touchHandler = (new symlog.cljs.app.handlers.mainVideo.touchScreen(symlog.cljs.app.handlers.mainVideo.video));
-symlog.cljs.app.handlers.mainVideo._subseq = symlog.cljs.app.dom.elements.call(null,"\uFDD0:narratorVid").sequencer;
+symlog.cljs.app.handlers.mainVideo.buttonHandler = (new symlog.cljs.app.handlers.mainVideo.controlButton(symlog.cljs.app.handlers.mainVideo.button));
+symlog.cljs.app.handlers.mainVideo._subseq = symlog.cljs.app.elements.narratorVid.sequencer;
+symlog.cljs.app.handlers.mainVideo.buttonOffset = 58;
 goog.events.listen(symlog.cljs.app.handlers.mainVideo.video,"timeupdate",(function (evt){
 var locY = (symlog.cljs.app.handlers.mainVideo.multiplier * evt.target.currentTime);
 if(cljs.core._EQ_.call(null,0,locY))
-{return symlog.cljs.app.handlers.mainVideo.button.style.top = [cljs.core.str(symlog.cljs.app.handlers.mainVideo.buttonStartY),cljs.core.str("px")].join('');
+{return symlog.cljs.app.handlers.mainVideo.button.y.baseVal.value = symlog.cljs.app.handlers.mainVideo.buttonStartY;
 } else
 {if(cljs.core._EQ_.call(null,symlog.cljs.app.handlers.mainVideo.travelLength,locY))
-{return symlog.cljs.app.handlers.mainVideo.button.style.top = [cljs.core.str(symlog.cljs.app.handlers.mainVideo.buttonEndY),cljs.core.str("px")].join('');
+{return symlog.cljs.app.handlers.mainVideo.button.y.baseVal.value = symlog.cljs.app.handlers.mainVideo.buttonEndY;
 } else
 {if("\uFDD0:else")
-{return symlog.cljs.app.handlers.mainVideo.button.style.top = [cljs.core.str(locY),cljs.core.str("px")].join('');
+{return symlog.cljs.app.handlers.mainVideo.button.y.baseVal.value = locY;
 } else
 {return null;
 }
 }
 }
 }));
-goog.events.listen(symlog.cljs.app.handlers.mainVideo.button,["mousedown","mousemove","mouseup","mouseout"],symlog.cljs.app.handlers.mainVideo.buttonHandler.fire);
-return goog.events.listen(symlog.cljs.app.handlers.mainVideo.touchArea,"click",symlog.cljs.app.handlers.mainVideo.touchHandler.handler,false);
+goog.events.listen(symlog.cljs.app.handlers.mainVideo.touchArea,"click",symlog.cljs.app.handlers.mainVideo.touchHandler.fire);
+goog.events.listen(symlog.cljs.app.handlers.mainVideo.button,["mousedown","mousemove","mouseup","mouseout"],symlog.cljs.app.handlers.mainVideo.buttonHandler.fire,true);
+return goog.events.listen(symlog.cljs.app.handlers.mainVideo.controllerPath,"click",symlog.cljs.app.handlers.mainVideo.controlButtonPath);
+});
+symlog.cljs.app.handlers.mainVideo.controlButtonPath = (function controlButtonPath(evt){
+var locY = ((evt.clientY - symlog.cljs.app.handlers.mainVideo.buttonOffset) - parseInt(evt.target.parentElement.style.top));
+symlog.cljs.app.handlers.mainVideo.button.y.baseVal.value = locY;
+return symlog.cljs.app.handlers.mainVideo.video.currentTime = (symlog.cljs.app.handlers.mainVideo.videoDuration * (locY / symlog.cljs.app.handlers.mainVideo.travelLength));
 });
 symlog.cljs.app.handlers.mainVideo.controlButton = (function controlButton(button){
 var this$ = this;
@@ -43,7 +51,7 @@ if(cljs.core._EQ_.call(null,evt.type,"mousedown"))
 {if(cljs.core.truth_(cljs.core.deref.call(null,symlog.cljs.app.handlers.mainVideo._subseq.rested)))
 {this$.selected = true;
 this$.startY = evt.screenY;
-this$.beginY = parseInt(button.style.top);
+this$.beginY = button.y.baseVal.value;
 symlog.cljs.app.controller.main.pause.call(null);
 if(cljs.core._EQ_.call(null,cljs.core.deref.call(null,symlog.cljs.app.handlers.mainVideo.touchHandler.state),0))
 {return goog.events.fireListeners(symlog.cljs.app.handlers.mainVideo.touchArea,"click",false,{"type":"click","target":symlog.cljs.app.handlers.mainVideo.touchArea});
@@ -62,7 +70,7 @@ if(or__3943__auto__)
 }
 })())
 {if(cljs.core.truth_(this$.selected))
-{var locY = parseInt(button.style.top);
+{var locY = button.y.baseVal.value;
 this$.selected = false;
 if(cljs.core._EQ_.call(null,locY,symlog.cljs.app.handlers.mainVideo.buttonStartY))
 {symlog.cljs.app.handlers.mainVideo.video.currentTime = 0;
@@ -85,13 +93,13 @@ return symlog.cljs.app.controller.main.reset.call(null,Math.round((symlog.cljs.a
 {if(cljs.core.truth_(this$.selected))
 {var locY = (this$.beginY + (evt.screenY - this$.startY));
 if((locY > symlog.cljs.app.handlers.mainVideo.buttonEndY))
-{return button.style.top = [cljs.core.str(symlog.cljs.app.handlers.mainVideo.buttonEndY),cljs.core.str("px")].join('');
+{return button.y.baseVal.value = symlog.cljs.app.handlers.mainVideo.buttonEndY;
 } else
 {if((locY < symlog.cljs.app.handlers.mainVideo.buttonStartY))
-{return button.style.top = [cljs.core.str(symlog.cljs.app.handlers.mainVideo.buttonStartY),cljs.core.str("px")].join('');
+{return button.y.baseVal.value = symlog.cljs.app.handlers.mainVideo.buttonStartY;
 } else
 {if("\uFDD0:else")
-{return button.style.top = [cljs.core.str((this$.beginY + (evt.screenY - this$.startY))),cljs.core.str("px")].join('');
+{return button.y.baseVal.value = (this$.beginY + (evt.screenY - this$.startY));
 } else
 {return null;
 }
@@ -111,7 +119,7 @@ return this$;
 symlog.cljs.app.handlers.mainVideo.touchScreen = (function touchScreen(video){
 var this$ = this;
 this$.state = cljs.core.atom.call(null,0);
-this$.handler = (function (evt){
+this$.fire = (function (evt){
 if(cljs.core._EQ_.call(null,0,cljs.core.deref.call(null,this$.state)))
 {if(cljs.core.not.call(null,cljs.core.deref.call(null,video.sequencer.interrupted)))
 {cljs.core.reset_BANG_.call(null,this$.state,1);

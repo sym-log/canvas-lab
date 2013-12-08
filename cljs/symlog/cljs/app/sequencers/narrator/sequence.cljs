@@ -1,75 +1,74 @@
 (ns symlog.cljs.app.sequencers.narrator.sequence
-  (:use    [symlog.cljs.app.dom :only [elements]]
-           [symlog.cljs.animation.timing :only [listenTo serialize chain enChain]]
-           [symlog.cljs.animation.functions :only [paint-frames animate-path]]))
+  (:use    [symlog.cljs.animation.functions :only [paint-frames animate-path]])
+  (:require [symlog.cljs.app.elements :as elements]))
 
 (defn init []
 
 (def sequencer symlog.cljs.app.sequencers.narrator.sequencer)
   
-(set! (.(elements :narratorVid)-sequencer) sequencer)
+(set! (. elements/narratorVid -sequencer) sequencer)
 
 (def animations
   (vector
    (paint-frames.
-     (elements :paintFrame)
-     (.slice @(elements :narratorFrameBuffer) 0 32) ;   1 - FIRST CHIRON - UNDERSTANDS AND RESPECTS
+     elements/paintFrame
+     (.slice elements/narratorFrameBuffer 0 32) ;   1 - FIRST CHIRON - UNDERSTANDS AND RESPECTS
      (/ 1000 20))
    (paint-frames.
-     (elements :paintFrame)
-     (.slice @(elements :narratorFrameBuffer) 33 67) ;   2 - SECOND CHIRON - NOT CONFRONTATIONAL...
+     elements/paintFrame
+     (.slice elements/narratorFrameBuffer 33 67) ;   2 - SECOND CHIRON - NOT CONFRONTATIONAL...
      (/ 1000 20))
    (paint-frames.
-     (elements :paintFrame)
-     (.slice @(elements :narratorFrameBuffer) 68 99) ;   3 - THIRD CHIRON - PROFSSIONAL
+     elements/paintFrame
+     (.slice elements/narratorFrameBuffer 68 99) ;   3 - THIRD CHIRON - PROFSSIONAL
      (/ 1000 20))
    (paint-frames.
-     (elements :paintFrame)
-     (.slice @(elements :narratorFrameBuffer) 100 130) ;  4 - FOURTH CHIRON - INTEGRITY
+     elements/paintFrame
+     (.slice elements/narratorFrameBuffer 100 130) ;  4 - FOURTH CHIRON - INTEGRITY
      (/ 1000 20 ))
    (paint-frames.
-     (elements :paintFrame)
-     (.slice @(elements :narratorFrameBuffer) 131 135) ; 5 - ARROW TO LEFT
+     elements/paintFrame
+     (.slice elements/narratorFrameBuffer 131 135) ; 5 - ARROW TO LEFT
      (/ 1000 20))
    (paint-frames.
-     (elements :paintFrame)
-     (.slice @(elements :narratorFrameBuffer) 136 140) ; 6 - ARROW TO RIGHT
+     elements/paintFrame
+     (.slice elements/narratorFrameBuffer 136 140) ; 6 - ARROW TO RIGHT
      (/ 1000 20))
    (paint-frames.
-     (elements :paintFrame)
-     (.slice @(elements :narratorFrameBuffer) 141 144) ; 7 - ARROW TO BACK
+     elements/paintFrame
+     (.slice elements/narratorFrameBuffer 141 144) ; 7 - ARROW TO BACK
      (/ 1000 20))
    (paint-frames.
-     (elements :paintFrame)
-     (.slice @(elements :narratorFrameBuffer) 145 163) ; 8 - ON PRIVATE PROPERTY 
+     elements/paintFrame
+     (.slice elements/narratorFrameBuffer 145 163) ; 8 - ON PRIVATE PROPERTY 
      (/ 1000 20))
    (paint-frames.
-     (elements :paintFrame)
-     (.slice @(elements :narratorFrameBuffer) 164 185) ; 9 - WITH OWNER CONSENT 
+     elements/paintFrame
+     (.slice elements/narratorFrameBuffer 164 185) ; 9 - WITH OWNER CONSENT 
      (/ 1000 20))
    (paint-frames.
-     (elements :paintFrame)
-     (.slice @(elements :narratorFrameBuffer) 186 228) ;10 - NOT RESPONDING...  
+     elements/paintFrame
+     (.slice elements/narratorFrameBuffer 186 228) ;10 - NOT RESPONDING...  
      (/ 1000 20))
    (paint-frames.
-     (elements :paintFrame)
-     (.slice @(elements :narratorFrameBuffer) 229 262) ;11 - PATROLLING LOT 
+     elements/paintFrame
+     (.slice elements/narratorFrameBuffer 229 262) ;11 - PATROLLING LOT 
      (/ 1000 20))
    (paint-frames.
-     (elements :paintFrame)
-     (.slice @(elements :narratorFrameBuffer) 263 268 );12 - REASONABLE SUSPICION
+     elements/paintFrame
+     (.slice elements/narratorFrameBuffer 263 268 );12 - REASONABLE SUSPICION
      (/ 1000 20))
    (paint-frames.
-     (elements :paintFrame)
-     (.slice @(elements :narratorFrameBuffer) 269 278 );13 - CIRCLE AROUND REASONABLE 
+     elements/paintFrame
+     (.slice elements/narratorFrameBuffer 269 278 );13 - CIRCLE AROUND REASONABLE 
      (/ 1000 20))
    (paint-frames.
-     (elements :paintFrame)
-     (.slice @(elements :narratorFrameBuffer) 279 300 );14 - FACT OUTSIDE IMAGINATION
+     elements/paintFrame
+     (.slice elements/narratorFrameBuffer 279 300 );14 - FACT OUTSIDE IMAGINATION
      (/ 1000 20))
    (paint-frames.
-     (elements :paintFrame)
-     (.slice @(elements :narratorFrameBuffer) 301 306 ); ALWAYS GIVE BENEFIT OF THE DOUBT
+     elements/paintFrame
+     (.slice elements/narratorFrameBuffer 301 306 ); ALWAYS GIVE BENEFIT OF THE DOUBT
      (/ 1000 20))
 
 ))   
@@ -113,7 +112,7 @@
    5 { ; CLEAR CANVAS
 
       :frame 3448
-      :sequence (fn [] (..(elements :paintFrame)-clearit fire)
+      :sequence (fn [] (.. elements/paintFrame -clearit fire)
                        (reset! (. sequencer -playing) nil))
       } 
 
@@ -143,7 +142,7 @@
 
    9 {   ; CLEAR CANVAS
         :frame 5480
-        :sequence (fn [] (..(elements :paintFrame)-clearit fire)
+        :sequence (fn [] (.. elements/paintFrame -clearit fire)
                        (reset! (. sequencer -playing) nil))
       }
 
@@ -182,7 +181,7 @@
 
   14 { ; CLEAR CANVAS
        :frame 6140
-       :sequence (fn [] (..(elements :paintFrame)-clearit fire)
+       :sequence (fn [] (.. elements/paintFrame -clearit fire)
                        (reset! (. sequencer -playing) nil))
       }
       
@@ -212,7 +211,7 @@
 
   18 {   ; CLEAR CANVAS
        :frame 7410
-       :sequence (fn [] (..(elements :paintFrame)-clearit fire)
+       :sequence (fn [] (.. elements/paintFrame -clearit fire)
                        (reset! (. sequencer -playing) nil))
       }
 
@@ -226,7 +225,7 @@
       
   20 {   ; CLEAR CANVS
       :frame 8409
-      :sequence (fn [] (..(elements :paintFrame)-clearit fire)
+      :sequence (fn [] (.. elements/paintFrame -clearit fire)
                        (reset! (. sequencer -playing) nil))
  
       }

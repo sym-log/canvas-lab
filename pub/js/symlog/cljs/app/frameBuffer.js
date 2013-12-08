@@ -11,7 +11,7 @@ symlog.cljs.app.frameBuffer.switched__GT_buf0 = cljs.core.atom.call(null,true);
 symlog.cljs.app.frameBuffer.switched__GT_buf1 = cljs.core.atom.call(null,false);
 symlog.cljs.app.frameBuffer.init = (function init(){
 symlog.cljs.app.frameBuffer.worker = symlog.cljs.threads.create_thread.call(null,symlog.cljs.threads.functions.getImageArray,symlog.cljs.app.frameBuffer.array__GT_db);
-goog.events.listenOnce(symlog.cljs.app.frameBuffer.dbcache = (new symlog.cljs.idb.Idb("mainFrames",1)),"dbOpen",(function (){
+return goog.events.listenOnce(symlog.cljs.app.frameBuffer.dbcache = (new symlog.cljs.idb.Idb("mainFrames",1)),"dbOpen",(function (){
 return symlog.cljs.app.frameBuffer.dbcache.get("keys",(function (keys){
 symlog.cljs.app.frameBuffer.dbBuffers = keys;
 if(!(cljs.core._EQ_.call(null,-1,symlog.cljs.app.frameBuffer.dbBuffers.indexOf(1000))))
@@ -22,60 +22,60 @@ if(!(cljs.core._EQ_.call(null,-1,symlog.cljs.app.frameBuffer.dbBuffers.indexOf(2
 {symlog.cljs.app.frameBuffer.db__GT_buffer1.call(null,2000);
 } else
 {}
-var seq__74447 = cljs.core.seq.call(null,cljs.core.range.call(null,1000,17000,1000));
-var chunk__74448 = null;
-var count__74449 = 0;
-var i__74450 = 0;
+var seq__7276 = cljs.core.seq.call(null,cljs.core.range.call(null,1000,17000,1000));
+var chunk__7277 = null;
+var count__7278 = 0;
+var i__7279 = 0;
 while(true){
-if((i__74450 < count__74449))
-{var x = cljs.core._nth.call(null,chunk__74448,i__74450);
+if((i__7279 < count__7278))
+{var x = cljs.core._nth.call(null,chunk__7277,i__7279);
 if(cljs.core._EQ_.call(null,-1,symlog.cljs.app.frameBuffer.dbBuffers.indexOf(x)))
 {symlog.cljs.app.frameBuffer.requestFrameBuffer.call(null,symlog.cljs.app.frameBuffer.BUFFERURL,symlog.cljs.app.frameBuffer.worker,x);
 } else
 {}
 {
-var G__74451 = seq__74447;
-var G__74452 = chunk__74448;
-var G__74453 = count__74449;
-var G__74454 = (i__74450 + 1);
-seq__74447 = G__74451;
-chunk__74448 = G__74452;
-count__74449 = G__74453;
-i__74450 = G__74454;
+var G__7280 = seq__7276;
+var G__7281 = chunk__7277;
+var G__7282 = count__7278;
+var G__7283 = (i__7279 + 1);
+seq__7276 = G__7280;
+chunk__7277 = G__7281;
+count__7278 = G__7282;
+i__7279 = G__7283;
 continue;
 }
 } else
-{var temp__4092__auto__ = cljs.core.seq.call(null,seq__74447);
+{var temp__4092__auto__ = cljs.core.seq.call(null,seq__7276);
 if(temp__4092__auto__)
-{var seq__74447__$1 = temp__4092__auto__;
-if(cljs.core.chunked_seq_QMARK_.call(null,seq__74447__$1))
-{var c__2754__auto__ = cljs.core.chunk_first.call(null,seq__74447__$1);
+{var seq__7276__$1 = temp__4092__auto__;
+if(cljs.core.chunked_seq_QMARK_.call(null,seq__7276__$1))
+{var c__2754__auto__ = cljs.core.chunk_first.call(null,seq__7276__$1);
 {
-var G__74455 = cljs.core.chunk_rest.call(null,seq__74447__$1);
-var G__74456 = c__2754__auto__;
-var G__74457 = cljs.core.count.call(null,c__2754__auto__);
-var G__74458 = 0;
-seq__74447 = G__74455;
-chunk__74448 = G__74456;
-count__74449 = G__74457;
-i__74450 = G__74458;
+var G__7284 = cljs.core.chunk_rest.call(null,seq__7276__$1);
+var G__7285 = c__2754__auto__;
+var G__7286 = cljs.core.count.call(null,c__2754__auto__);
+var G__7287 = 0;
+seq__7276 = G__7284;
+chunk__7277 = G__7285;
+count__7278 = G__7286;
+i__7279 = G__7287;
 continue;
 }
 } else
-{var x = cljs.core.first.call(null,seq__74447__$1);
+{var x = cljs.core.first.call(null,seq__7276__$1);
 if(cljs.core._EQ_.call(null,-1,symlog.cljs.app.frameBuffer.dbBuffers.indexOf(x)))
 {symlog.cljs.app.frameBuffer.requestFrameBuffer.call(null,symlog.cljs.app.frameBuffer.BUFFERURL,symlog.cljs.app.frameBuffer.worker,x);
 } else
 {}
 {
-var G__74459 = cljs.core.next.call(null,seq__74447__$1);
-var G__74460 = null;
-var G__74461 = 0;
-var G__74462 = 0;
-seq__74447 = G__74459;
-chunk__74448 = G__74460;
-count__74449 = G__74461;
-i__74450 = G__74462;
+var G__7288 = cljs.core.next.call(null,seq__7276__$1);
+var G__7289 = null;
+var G__7290 = 0;
+var G__7291 = 0;
+seq__7276 = G__7288;
+chunk__7277 = G__7289;
+count__7278 = G__7290;
+i__7279 = G__7291;
 continue;
 }
 }
@@ -87,7 +87,6 @@ break;
 }
 }));
 }));
-symlog.cljs.app.frameBuffer.dispatcher = (new symlog.cljs.util.dispatcher());
 });
 symlog.cljs.app.frameBuffer.array__GT_db = (function array__GT_db(message){
 symlog.cljs.app.frameBuffer.dbcache.put(message.data.imagearr,message.data.idx);
@@ -233,28 +232,27 @@ if(or__3943__auto____$1)
 }
 }
 })())
-{var idx_74463 = ((Math.floor((frame / symlog.cljs.app.frameBuffer.BUFFSIZE)) * symlog.cljs.app.frameBuffer.BUFFSIZE) + symlog.cljs.app.frameBuffer.BUFFSIZE);
+{var idx = ((Math.floor((frame / symlog.cljs.app.frameBuffer.BUFFSIZE)) * symlog.cljs.app.frameBuffer.BUFFSIZE) + symlog.cljs.app.frameBuffer.BUFFSIZE);
 cljs.core.reset_BANG_.call(null,symlog.cljs.app.frameBuffer.buf0ready,false);
 cljs.core.reset_BANG_.call(null,symlog.cljs.app.frameBuffer.buf1ready,false);
-if(!(((idx_74463 + symlog.cljs.app.frameBuffer.BUFFSIZE) > symlog.cljs.app.frameBuffer.MAXBUF)))
-{symlog.cljs.app.frameBuffer.dbcache.get(idx_74463,(function (data){
+if(!(((idx + symlog.cljs.app.frameBuffer.BUFFSIZE) > symlog.cljs.app.frameBuffer.MAXBUF)))
+{return symlog.cljs.app.frameBuffer.dbcache.get(idx,(function (data){
 symlog.cljs.app.frameBuffer.buf0 = data;
 cljs.core.reset_BANG_.call(null,symlog.cljs.app.frameBuffer.buf0ready,true);
-return symlog.cljs.app.frameBuffer.dbcache.get((idx_74463 + symlog.cljs.app.frameBuffer.BUFFSIZE),(function (data__$1){
+return symlog.cljs.app.frameBuffer.dbcache.get((idx + symlog.cljs.app.frameBuffer.BUFFSIZE),(function (data__$1){
 symlog.cljs.app.frameBuffer.buf1 = data__$1;
 cljs.core.reset_BANG_.call(null,symlog.cljs.app.frameBuffer.buf1ready,true);
 return callback.call(null,symlog.cljs.app.frameBuffer.getFrame.call(null,frame));
 }));
 }));
 } else
-{symlog.cljs.app.frameBuffer.dbcache.get(idx_74463,(function (data){
+{return symlog.cljs.app.frameBuffer.dbcache.get(idx,(function (data){
 symlog.cljs.app.frameBuffer.buf0 = data;
 cljs.core.reset_BANG_.call(null,symlog.cljs.app.frameBuffer.buf0ready,true);
 return callback.call(null,symlog.cljs.app.frameBuffer.getFrame.call(null,frame));
 }));
 }
 } else
-{callback.call(null,symlog.cljs.app.frameBuffer.getFrame.call(null,frame));
+{return callback.call(null,symlog.cljs.app.frameBuffer.getFrame.call(null,frame));
 }
-return symlog.cljs.app.frameBuffer.dispatcher.send("done");
 });
